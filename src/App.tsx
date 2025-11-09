@@ -1,5 +1,14 @@
 import { Fragment, useEffect, useRef } from 'react'
+import type { CSSProperties } from 'react'
 import './App.css'
+
+type AnimatedStyle = CSSProperties & {
+  '--delay'?: string;
+};
+
+const withDelay = (delay: number): AnimatedStyle => ({
+  '--delay': `${delay}s`
+});
 
 
 const MomentumLanding = () => {
@@ -22,7 +31,7 @@ const MomentumLanding = () => {
 
     // Observe all animated elements
     const elementsToObserve = document.querySelectorAll(
-      '.client-logo-large, .story-visual, .testimonial-card, .flow-node, .comparison-card, .why-item, .process-item, .award-item, .faq-item, .cta-content'
+      '[data-animate], .client-logo-large, .story-visual, .testimonial-card, .flow-node, .comparison-card, .why-item, .process-item, .award-item, .faq-item, .cta-content'
     );
 
     elementsToObserve.forEach(el => {
@@ -59,6 +68,132 @@ const MomentumLanding = () => {
     document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const heroInsights = [
+    {
+      label: 'Customers Delivered',
+      value: '847',
+      helper: 'per market launch into Quebec'
+    },
+    {
+      label: 'CAC Locked',
+      value: '$180',
+      helper: 'pay-per-customer. No retainers.'
+    },
+    {
+      label: 'Market Coverage',
+      value: '85%',
+      helper: 'households touched across three channels'
+    }
+  ];
+
+  const channels = [
+    {
+      name: 'Retail & In-Person',
+      desc: 'Field sales teams in stores, events, door-to-door, B2B offices',
+      icon: '🏪'
+    },
+    {
+      name: 'Phone Outreach',
+      desc: 'Dedicated inside sales teams for outbound calling and inbound qualification',
+      icon: '📞'
+    },
+    {
+      name: 'Digital Campaigns',
+      desc: 'Paid social, paid search, SEO, content marketing, landing pages',
+      icon: '💻'
+    },
+    {
+      name: 'Social Selling',
+      desc: 'LinkedIn outreach, Instagram DMs, Facebook groups, community building',
+      icon: '📱'
+    },
+    {
+      name: 'Direct Outreach',
+      desc: 'Cold email sequences, SMS campaigns, direct mail',
+      icon: '✉️'
+    },
+    {
+      name: 'Partnership Networks',
+      desc: 'Channel partnerships, affiliate programs, co-marketing deals',
+      icon: '🤝'
+    }
+  ];
+
+  const comparisonRows = [
+    {
+      label: 'Monthly retainer',
+      traditional: '$10K–$50K locked in contracts',
+      momentum: '$0. Only pay when customers arrive'
+    },
+    {
+      label: 'Payment structure',
+      traditional: 'Guaranteed, regardless of performance',
+      momentum: 'Performance-based. We get paid per customer'
+    },
+    {
+      label: 'What they measure',
+      traditional: 'Activities (calls, emails, impressions)',
+      momentum: 'Customers acquired across every channel'
+    },
+    {
+      label: 'Accountability',
+      traditional: 'None — retainers protect them',
+      momentum: 'Complete — no results, no invoice'
+    }
+  ];
+
+  const comparisonPanels = [
+    {
+      variant: 'traditional',
+      title: 'Traditional Agency',
+      badge: 'Retainer-First',
+      lead: 'Fees guaranteed. Results optional.',
+      highlights: [
+        '$240K in retainers + media fees',
+        '847 marketing “leads” handed to sales',
+        '12 customers actually closed'
+      ],
+      result: 'You paid $20,000 per customer.'
+    },
+    {
+      variant: 'momentum',
+      title: 'Momentum Management',
+      badge: 'Performance Partner',
+      lead: 'We only earn when customers land.',
+      highlights: [
+        '$0 until pipeline converts',
+        '847 customers delivered to your CRM',
+        'CAC locked at $180 per customer'
+      ],
+      result: 'You profit $1.2M after delivery.'
+    }
+  ];
+
+  const performanceStats = [
+    {
+      label: 'Customers Delivered',
+      traditional: { value: '12', helper: 'hand-offs that closed' },
+      momentum: { value: '847', helper: 'ready-to-bill customers' },
+      traditionalPercent: 8,
+      momentumPercent: 100
+    },
+    {
+      label: 'Customer Acquisition Cost',
+      traditional: { value: '$20K', helper: 'per customer' },
+      momentum: { value: '$180', helper: 'pay-per-customer' },
+      traditionalPercent: 100,
+      momentumPercent: 12,
+      inverse: true
+    },
+    {
+      label: 'Profit Impact',
+      traditional: { value: '-$216K', helper: 'after spend' },
+      momentum: { value: '+$1.2M', helper: 'incremental profit' },
+      traditionalPercent: 20,
+      momentumPercent: 100
+    }
+  ];
+
   return (
     <>
       <header>
@@ -75,25 +210,48 @@ const MomentumLanding = () => {
       <main>
         {/* Hero Section */}
         <section className="hero">
-          <div className="container">
-            <div className="hero-badge">✓ TELUS Authorized Partner</div>
-            <h1>
+          <div className="hero-gradient hero-gradient-one" aria-hidden="true" />
+          <div className="hero-gradient hero-gradient-two" aria-hidden="true" />
+          <div className="hero-noise" aria-hidden="true" />
+          <div className="container hero-layout">
+            <div className="hero-badge" data-animate style={withDelay(0)}>
+              ✓ TELUS Authorized Partner · Quebec-native teams
+            </div>
+            <h1 data-animate style={withDelay(0.1)}>
               We Generated<br />
               <span className="hero-number">$40M</span>
               for TELUS<br />
-              <span className="hero-punchline">in Quebec.</span>
+              <span className="hero-punchline">across Quebec.</span>
             </h1>
-            <p className="hero-subtitle">
-              No fluff. Just multi-channel sales teams that actually deliver results.
-              Because building in-house takes forever, and you've got revenue targets to hit now.
+            <p className="hero-subtitle" data-animate style={withDelay(0.2)}>
+              <span className="inline-highlight">No fluff.</span> Just multi-channel sales pods that actually deliver
+              <span className="inline-highlight">customers you can invoice</span> while you stay focused on the product.
             </p>
-            <div className="hero-cta-group">
+            <div className="hero-cta-group" data-animate style={withDelay(0.3)}>
               <button className="btn-large btn-primary" onClick={scrollToContact}>
                 Let's Talk Growth →
               </button>
               <button className="btn-large btn-secondary" onClick={scrollToStory}>
                 See How We Did It
               </button>
+            </div>
+            <div className="hero-insights">
+              {heroInsights.map((insight, index) => (
+                <div
+                  className="hero-insight-card"
+                  key={insight.label}
+                  data-animate
+                  style={withDelay(0.4 + index * 0.08)}
+                >
+                  <p className="hero-insight-label">{insight.label}</p>
+                  <p className="hero-insight-value">{insight.value}</p>
+                  <p className="hero-insight-helper">{insight.helper}</p>
+                </div>
+              ))}
+            </div>
+            <div className="hero-scroll-hint" data-animate style={withDelay(0.65)}>
+              <span>Scroll to see the TELUS playbook</span>
+              <span className="scroll-arrow" aria-hidden="true">↓</span>
             </div>
           </div>
         </section>
@@ -137,205 +295,299 @@ const MomentumLanding = () => {
               </p>
             </div>
             <div className="sales-stats-grid">
-              <div className="sales-stat-item">
+              <div className="sales-stat-item" data-animate style={withDelay(0.05)}>
                 <div className="sales-stat-number">$50M+</div>
                 <div className="sales-stat-label">Revenue generated for partner brands</div>
               </div>
-              <div className="sales-stat-item">
+              <div className="sales-stat-item" data-animate style={withDelay(0.1)}>
                 <div className="sales-stat-number">50+</div>
                 <div className="sales-stat-label">Trained sales professionals across channels</div>
               </div>
-              <div className="sales-stat-item">
+              <div className="sales-stat-item" data-animate style={withDelay(0.15)}>
                 <div className="sales-stat-number">3</div>
                 <div className="sales-stat-label">Markets expanded in the last year</div>
               </div>
-              <div className="sales-stat-item">
+              <div className="sales-stat-item" data-animate style={withDelay(0.2)}>
                 <div className="sales-stat-number">20,000+</div>
                 <div className="sales-stat-label">Customers acquired through direct outreach</div>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Story Section */}
-        <section className="story-section" id="story">
+        {/* Pain Points Section */}
+        <section className="pain-points-section">
           <div className="container">
-            <div className="story-grid">
-              <div className="story-content">
-                <div className="story-label">The Proof</div>
-                <h2>How We Built $40M for TELUS</h2>
+            <div className="pain-points-header">
+              <h2 className="pain-points-title">68% of Companies Miss Their Revenue Targets</h2>
+              <p className="pain-points-subtitle">
+                Not because of bad products. Not because of weak demand. Because their customer acquisition is broken.
+              </p>
+              <p className="pain-points-question">Does this sound like you?</p>
+            </div>
+
+            <div className="pain-points-grid">
+              <div className="pain-point-card" data-animate style={withDelay(0)}>
+                <h3 className="pain-point-title">Revenue Stagnation</h3>
+                <p className="pain-point-text">
+                  Your growth is stuck at 15-20% when projections called for 50%+. You've tried new channels. Hired more reps. Increased ad spend. Nothing moves the needle. The pipeline stays flat.
+                </p>
               </div>
-              <div className="story-visual">
-                <p className="story-text">
-                  Over the past 5 years, <strong>TELUS partnered with Momentum Management to break into the Quebec market</strong> and scale customer acquisition. By deploying our expert sales team across in-person, phone, and social media channels, we helped TELUS establish a strong local presence and generate <strong>over $40 million in revenue</strong>. This long-term collaboration continues to fuel consistent growth and retention in one of Canada's most competitive markets.
+
+              <div className="pain-point-card" data-animate style={withDelay(0.05)}>
+                <h3 className="pain-point-title">Inconsistent Pipeline</h3>
+                <p className="pain-point-text">
+                  Q1 looked great. Q2 was a disaster. Q3 might recover. You can't forecast. Your acquisition system produces random results month to month.
+                </p>
+              </div>
+
+              <div className="pain-point-card" data-animate style={withDelay(0.1)}>
+                <h3 className="pain-point-title">High CAC, Shrinking Margins</h3>
+                <p className="pain-point-text">
+                  Customer acquisition cost climbed from $150 to $380 in 18 months. Customer lifetime value stayed flat. The math doesn't work anymore.
+                </p>
+              </div>
+
+              <div className="pain-point-card" data-animate style={withDelay(0.15)}>
+                <h3 className="pain-point-title">Market Expansion Failures</h3>
+                <p className="pain-point-text">
+                  You tried entering new regions. Hired local reps. Spent six figures on campaigns. Result: 23 customers and a lot of "learnings."
+                </p>
+              </div>
+
+              <div className="pain-point-card" data-animate style={withDelay(0.2)}>
+                <h3 className="pain-point-title">Disconnected Sales & Marketing</h3>
+                <p className="pain-point-text">
+                  Marketing generates leads. Sales says they're garbage. Sales complains about lead quality. Marketing says sales can't close. Meanwhile, nobody's acquiring actual customers.
+                </p>
+              </div>
+
+              <div className="pain-point-card" data-animate style={withDelay(0.25)}>
+                <h3 className="pain-point-title">Agency Disappointment</h3>
+                <p className="pain-point-text">
+                  The last agency promised results. They delivered a beautiful dashboard showing activity that never converted to revenue.
                 </p>
               </div>
             </div>
+
+            <p className="pain-points-closing">That's why we do things differently.</p>
           </div>
         </section>
-
-        {/* Testimonials Section */}
-        <section className="testimonial-section">
+        {/* Business Model Section */}
+        <section className="business-model-section">
           <div className="container">
-            <div className="section-label">What Our Clients Say</div>
-            <h2 className="section-title-large">Real Results,<br />Real People</h2>
-            <div className="testimonial-grid">
-              <div className="testimonial-card">
-                <div className="testimonial-quote">
-                  "Momentum's work has been transformational for us. Their multi-channel approach accelerated our Quebec market entry and delivered qualified customers consistently. The ROI has been exceptional."
+            <div className="business-model-content">
+              <h2 className="business-model-title">We Sell. You Pay.</h2>
+              <p className="business-model-intro">Here's our entire business model:</p>
+
+              <div className="business-model-steps">
+                <div className="business-step" data-animate style={withDelay(0)}>
+                  <span className="step-number">1.</span>
+                  <span className="step-text">We deploy acquisition teams across multiple channels</span>
                 </div>
-                <div className="testimonial-author">
-                  <div className="author-name">TELUS Partnership Team</div>
-                  <div className="author-title">National Expansion Lead</div>
+                <div className="business-step" data-animate style={withDelay(0.08)}>
+                  <span className="step-number">2.</span>
+                  <span className="step-text">We acquire customers for your business</span>
                 </div>
-                <div className="testimonial-metric">
-                  <div className="metric-number">$40M</div>
-                  <div className="metric-label">Revenue Generated</div>
+                <div className="business-step" data-animate style={withDelay(0.16)}>
+                  <span className="step-number">3.</span>
+                  <span className="step-text">You pay based on customers delivered</span>
                 </div>
               </div>
 
-              <div className="testimonial-card">
-                <div className="testimonial-quote">
-                  "What sets Momentum apart is their deep Quebec market knowledge. They didn't just bring sales expertise—they brought cultural understanding that made all the difference."
-                </div>
-                <div className="testimonial-author">
-                  <div className="author-name">Quebec Operations Director</div>
-                  <div className="author-title">TELUS</div>
-                </div>
-                <div className="testimonial-metric">
-                  <div className="metric-number">85%</div>
-                  <div className="metric-label">Market Coverage</div>
-                </div>
+              <div className="business-model-guarantee">
+                <p className="guarantee-text">
+                  No monthly retainers. No upfront fees. No payment until you have results.
+                </p>
               </div>
 
-              <div className="testimonial-card">
-                <div className="testimonial-quote">
-                  "We got up and running in 30 days. Their team handled everything—from strategy to execution. Five years later, they're still driving consistent growth for us."
-                </div>
-                <div className="testimonial-author">
-                  <div className="author-name">Customer Acquisition Lead</div>
-                  <div className="author-title">TELUS</div>
-                </div>
-                <div className="testimonial-metric">
-                  <div className="metric-number">5+</div>
-                  <div className="metric-label">Years & Growing</div>
-                </div>
-              </div>
+              <p className="business-model-closing">
+                We've done this successfully for 5 years. We know our systems work. We'd rather get paid for performance than promises.
+              </p>
+
+              <button className="btn-large btn-primary" onClick={scrollToContact}>
+                Let's Discuss Your Growth →
+              </button>
             </div>
           </div>
         </section>
 
-        {/* Flow Section */}
-        <section className="flow-section">
+        {/* Omnichannel Section */}
+        <section className="omnichannel-section">
           <div className="container">
-            <div className="flow-header">
-              <h2>How We Get You<br />Customers</h2>
-              <p className="flow-subtitle">Three channels, one coordinated strategy, maximum results</p>
+            <h2 className="omnichannel-title">Six Channels. One Coordinated System.</h2>
+
+            <div className="omnichannel-visual">
+              <div className="orbit-ring">
+                {channels.map((channel, index) => (
+                  <div
+                    key={channel.name}
+                    className="channel-icon"
+                    style={{ '--index': index } as CSSProperties}
+                  >
+                    <span aria-hidden="true">{channel.icon}</span>
+                    <span className="sr-only">{channel.name}</span>
+                  </div>
+                ))}
+                <div className="orbit-path"></div>
+              </div>
+              <div className="center-hub">
+                <div className="hub-pulse"></div>
+                <div className="hub-text">Your<br />Business</div>
+              </div>
             </div>
-            <div className="flow-diagram">
-              <div className="flow-node">
-                <div className="flow-icon">🎯</div>
-                <div className="flow-title">Target Market</div>
-                <div className="flow-desc">Quebec Businesses</div>
-              </div>
 
-              <div className="flow-arrow"></div>
-
-              <div className="flow-row">
-                <div className="flow-node">
-                  <div className="flow-icon">🏪</div>
-                  <div className="flow-title">In-Person</div>
-                  <div className="flow-desc">Retail & Events</div>
+            <div className="channels-grid">
+              {channels.map((channel, index) => (
+                <div
+                  className="channel-item"
+                  key={channel.name}
+                  data-animate
+                  style={withDelay(index * 0.07)}
+                >
+                  <h3 className="channel-name">{channel.name}</h3>
+                  <p className="channel-desc">{channel.desc}</p>
                 </div>
-                <div className="flow-node">
-                  <div className="flow-icon">📞</div>
-                  <div className="flow-title">Phone</div>
-                  <div className="flow-desc">Outbound Calls</div>
-                </div>
-                <div className="flow-node">
-                  <div className="flow-icon">📱</div>
-                  <div className="flow-title">Social Media</div>
-                  <div className="flow-desc">Digital Outreach</div>
-                </div>
-              </div>
-
-              <div className="flow-arrow"></div>
-
-              <div className="flow-node">
-                <div className="flow-icon">⚙️</div>
-                <div className="flow-title">Qualification</div>
-                <div className="flow-desc">Lead Scoring & Nurture</div>
-              </div>
-
-              <div className="flow-arrow"></div>
-
-              <div className="flow-node">
-                <div className="flow-icon">✨</div>
-                <div className="flow-title">Your Customer</div>
-                <div className="flow-desc">Converted & Retained</div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Comparison Section */}
-        <section className="comparison-section">
+        {/* Comparison Section - Agency vs Momentum */}
+        <section className="agency-comparison-section">
           <div className="container">
-            <h2 className="section-title-large">Momentum vs<br />Other Agencies</h2>
-            <p className="section-subtitle">The Momentum difference: Real results, not excuses</p>
-            <div className="comparison-grid">
-              <div className="comparison-card">
-                <div className="card-label-large avoid">❌ Broken</div>
-                <h3>Traditional Approach</h3>
-                <ul className="comparison-list">
-                  <li><span className="list-icon">💸</span> 12-18 months to hire and train—revenue targets don't wait that long</li>
-                  <li><span className="list-icon">😰</span> $500K+ in overhead before your first sale—ouch</li>
-                  <li><span className="list-icon">🎲</span> Trial and error in unfamiliar markets—expensive guesswork</li>
-                  <li><span className="list-icon">😓</span> Managing payroll, turnover, and HR headaches—not your core business</li>
-                  <li><span className="list-icon">📉</span> Single-channel limits your reach—leaving money on the table</li>
-                  <li><span className="list-icon">🤷</span> No proven playbook—just hope and prayer</li>
-                </ul>
-              </div>
-
-              <div className="comparison-card momentum-card">
-                <div className="card-label-large recommended">✓ Fixed</div>
-                <h3>The Momentum Way</h3>
-                <ul className="comparison-list">
-                  <li><span className="list-icon">🚀</span> Launch in 30 days with battle-tested teams—start generating revenue now</li>
-                  <li><span className="list-icon">💰</span> Performance-based pricing—we eat our own cooking</li>
-                  <li><span className="list-icon">🎯</span> 5+ years of Quebec expertise baked in—we know what works</li>
-                  <li><span className="list-icon">😌</span> Zero HR headaches—we handle everything</li>
-                  <li><span className="list-icon">📈</span> Multi-channel omnipresence from day one—maximize every opportunity</li>
-                  <li><span className="list-icon">💪</span> $40M track record—results speak for themselves</li>
-                </ul>
+            <div className="comparison-heading">
+              <p className="section-label">Outcome-based partnership</p>
+              <h2 className="comparison-main-title">They Get Paid To Try. We Get Paid To Deliver.</h2>
+              <div className="comparison-intro">
+                <p>
+                  Most agencies charge monthly retainers whether you get customers or not. Their incentive is keeping the contract,
+                  not delivering results.
+                </p>
+                <p>
+                  We only get paid when you get customers. Our incentive is acquiring as many customers as efficiently as possible.
+                </p>
               </div>
             </div>
+
+            <div className="comparison-panels">
+              {comparisonPanels.map((panel, index) => (
+                <article
+                  className={`comparison-card ${panel.variant}-card`}
+                  key={panel.title}
+                  data-animate
+                  style={withDelay(index * 0.1)}
+                >
+                  <header className={`card-header ${panel.variant}-header`}>
+                    <span className="card-badge">{panel.badge}</span>
+                    <h3>{panel.title}</h3>
+                    <p className="card-lead">{panel.lead}</p>
+                  </header>
+                  <ul className="card-highlights">
+                    {panel.highlights.map(highlight => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                  <div className={`result-box ${panel.variant}-result`}>
+                    <p className="result-title">Result:</p>
+                    <p className="result-highlight">{panel.result}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+
+            <div className="comparison-table" role="table" aria-label="Traditional agency versus Momentum">
+              <div className="comparison-table-head" role="rowgroup">
+                <div className="table-cell label-cell" role="columnheader">Levers</div>
+                <div className="table-cell traditional-cell" role="columnheader">Traditional Agency</div>
+                <div className="table-cell momentum-cell" role="columnheader">Momentum</div>
+              </div>
+              <div role="rowgroup">
+                {comparisonRows.map(row => (
+                  <div className="comparison-table-row" role="row" key={row.label}>
+                    <div className="table-cell label-cell" role="cell">{row.label}</div>
+                    <div className="table-cell traditional-cell" role="cell">{row.traditional}</div>
+                    <div className="table-cell momentum-cell" role="cell">{row.momentum}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="performance-metrics">
+              {performanceStats.map((stat, index) => (
+                <div
+                  className={`metric-card${stat.inverse ? ' metric-card-inverse' : ''}`}
+                  key={stat.label}
+                  data-animate
+                  style={withDelay(0.2 + index * 0.08)}
+                >
+                  <div className="metric-header">
+                    <p className="metric-label">{stat.label}</p>
+                  </div>
+                  <div className="metric-values">
+                    <div className="metric-value traditional">
+                      <span>{stat.traditional.value}</span>
+                      <small>{stat.traditional.helper}</small>
+                    </div>
+                    <div className="metric-value momentum">
+                      <span>{stat.momentum.value}</span>
+                      <small>{stat.momentum.helper}</small>
+                    </div>
+                  </div>
+                  <div className="metric-bars">
+                    <span
+                      className="metric-bar traditional"
+                      style={{ width: `${stat.traditionalPercent}%` }}
+                    />
+                    <span
+                      className="metric-bar momentum"
+                      style={{ width: `${stat.momentumPercent}%` }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="comparison-savings-callout" data-animate style={withDelay(0.45)}>
+              <div className="savings-figure">
+                <span className="savings-label">Average cash preserved</span>
+                <strong>$220K+</strong>
+                <span className="savings-helper">in the first 6 months by stopping retainers</span>
+              </div>
+              <ul className="savings-list">
+                <li>Every dollar moves to channels that prove ROI in days, not quarters.</li>
+                <li>We plug into your CRM, attribution, and billing so revenue shows up tied to owners.</li>
+                <li>You keep the upside, because we only earn when you do.</li>
+              </ul>
+            </div>
+
+            <button className="btn-large btn-primary" onClick={scrollToContact}>
+              See How Much You Could Save →
+            </button>
           </div>
         </section>
-
-        {/* Why Section */}
-        <section className="why-section">
+        {/* TELUS Case Study Section */}
+        <section className="telus-case-study-section">
           <div className="container">
-            <h2 className="section-title-large">Why TELUS Chose Us</h2>
-            <div className="why-grid">
-              <div className="why-item">
-                <div className="why-number">/ 01</div>
-                <h3 className="why-title">Quebec Market Expertise</h3>
-                <p className="why-text">Deep understanding of Quebec's unique business culture, language nuances, and customer preferences that national teams miss.</p>
-              </div>
-              <div className="why-item">
-                <div className="why-number">/ 02</div>
-                <h3 className="why-title">Multi-Channel Mastery</h3>
-                <p className="why-text">Integrated approach across in-person, phone, and social media creates multiple touchpoints for maximum reach.</p>
-              </div>
-              <div className="why-item">
-                <div className="why-number">/ 03</div>
-                <h3 className="why-title">Proven Track Record</h3>
-                <p className="why-text">5+ years of consistent results. When market entry is critical, you need a partner who's done it before.</p>
-              </div>
+            <div className="case-study-badge" data-animate style={withDelay(0)}>
+              Case Study
+            </div>
+            <h2 className="case-study-title" data-animate style={withDelay(0.1)}>
+              $40M for TELUS in 5 Years
+            </h2>
+
+            <div className="case-study-content" data-animate style={withDelay(0.2)}>
+              <p className="case-study-text">
+                Over the past 5 years, TELUS partnered with Momentum Management to break into the Quebec market and scale customer acquisition. By deploying our expert sales team across in-person, phone, and social media channels, we helped TELUS establish a strong local presence and generate over $40 million in revenue.
+              </p>
+              <p className="case-study-text">
+                This long-term collaboration continues to fuel consistent growth and retention in one of Canada's most competitive markets.
+              </p>
             </div>
           </div>
         </section>
+
+
 
         {/* Process Section */}
         <section className="process-section">
@@ -345,7 +597,7 @@ const MomentumLanding = () => {
               Three steps from first call to revenue growth
             </p>
             <div className="process-list">
-              <div className="process-item">
+              <div className="process-item" data-animate style={withDelay(0)}>
                 <div className="process-header">
                   <div className="process-number">/ 01</div>
                 </div>
@@ -355,7 +607,7 @@ const MomentumLanding = () => {
                 </p>
               </div>
 
-              <div className="process-item">
+              <div className="process-item" data-animate style={withDelay(0.08)}>
                 <div className="process-header">
                   <div className="process-number">/ 02</div>
                 </div>
@@ -365,7 +617,7 @@ const MomentumLanding = () => {
                 </p>
               </div>
 
-              <div className="process-item">
+              <div className="process-item" data-animate style={withDelay(0.16)}>
                 <div className="process-header">
                   <div className="process-number">/ 03</div>
                 </div>
@@ -452,21 +704,6 @@ const MomentumLanding = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="cta-section">
-          <div className="container">
-            <div className="cta-content">
-              <div className="cta-emoticon">♥‿♥</div>
-              <h2 className="cta-title">Ready to grow?<br />Let's talk.</h2>
-              <p className="cta-description">
-                No hard sell. No 47-slide deck. Just a real conversation about your growth goals and whether we're the right fit. Sound good?
-              </p>
-              <button className="btn-large btn-primary" onClick={scrollToContact}>
-                Book Your Strategy Call →
-              </button>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer>
