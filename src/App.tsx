@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
-import './MomentumNew.css'
+import './App.css'
 
 type AnimatedStyle = CSSProperties & {
   '--delay'?: string;
