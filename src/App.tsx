@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import './MomentumNew.css'
 
@@ -11,7 +11,7 @@ const withDelay = (delay: number): AnimatedStyle => ({
   '--delay': `${delay}s`
 });
 
-const MomentumNew = () => {
+const MomentumLanding = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [revenueCount, setRevenueCount] = useState(0);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
@@ -512,4 +512,4 @@ const MomentumNew = () => {
   );
 };
 
-export default MomentumNew;
+export default MomentumLanding;
