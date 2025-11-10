@@ -165,7 +165,7 @@ const MomentumLanding = () => {
         '847 customers delivered to your CRM',
         'CAC locked at $180 per customer'
       ],
-      result: 'You profit $1.2M after delivery.'
+      result: 'You profit $1.3M after delivery.'
     }
   ];
 
