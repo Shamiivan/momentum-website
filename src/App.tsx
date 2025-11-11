@@ -191,7 +191,7 @@ const MomentumLanding = () => {
     <>
       <header className="main-header">
         <div className="header-container">
-          <div className="logo-new">Momentum</div>
+          <div className="logo-new">Momentum Management</div>
           <nav className="main-nav">
             <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); }}>Services</a>
             <a href="#results">Results</a>
@@ -494,7 +494,7 @@ const MomentumLanding = () => {
             <div className="cta-content-new" data-animate>
               <h2 className="cta-title-new">Ready to Scale Customer Acquisition?</h2>
               <p className="cta-subtitle-new">
-                Let's discuss how commission-based sales can transform your growth trajectory.
+                Let's discuss how momentum management can transform your growth trajectory.
               </p>
               <button className="btn-cta-large" onClick={scrollToContact}>
                 Schedule Your Strategy Call
