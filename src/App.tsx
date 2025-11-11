@@ -81,7 +81,7 @@ const MomentumLanding = () => {
   };
 
   const partners = [
-    { name: 'TELUS', revenue: '$40M+ revenue', logo: 'TELUS' },
+    { name: 'TELUS', revenue: '$50M+ revenue', logo: 'TELUS' },
     { name: 'Partner Network', revenue: '5,000+ customers', logo: 'PARTNERS' },
     { name: 'Growth Metrics', revenue: '312% ROI', logo: 'METRICS' }
   ];
@@ -96,15 +96,15 @@ const MomentumLanding = () => {
   const painPoints = [
     {
       title: 'Revenue Stagnation',
-      text: 'Your growth is stuck at 15-20% when projections called for 50%+. You\'ve tried new channels. Hired more reps. Increased ad spend. Nothing moves the needle. The pipeline stays flat.'
+      text: 'You\'ve tried new channels. Hired more reps. Increased ad spend. Nothing moves the needle. The pipeline stays flat.'
     },
     {
       title: 'Inconsistent Pipeline',
-      text: 'Q1 looked great. Q2 was a disaster. Q3 might recover. You can\'t forecast. Your acquisition system produces random results month to month.'
+      text: 'You can\'t forecast. Your acquisition system produces random results month to month.'
     },
     {
       title: 'High CAC, Shrinking Margins',
-      text: 'Customer acquisition cost climbed from $150 to $380 in 18 months. Customer lifetime value stayed flat. The math doesn\'t work anymore.'
+      text: 'Customer lifetime value stayed flat.'
     },
     {
       title: 'Market Expansion Failures',
@@ -291,9 +291,7 @@ const MomentumLanding = () => {
               <p className="pain-subtitle" data-animate style={withDelay(0.1)}>
                 Not because of bad products. Not because of weak demand. Because their customer acquisition is broken.
               </p>
-              <p className="pain-question" data-animate style={withDelay(0.2)}>
-                Does this sound like you?
-              </p>
+
             </div>
             <div className="pain-grid">
               {painPoints.map((point, idx) => (
@@ -309,8 +307,16 @@ const MomentumLanding = () => {
               ))}
             </div>
             <p className="pain-closing" data-animate style={withDelay(0.35)}>
-              That's why we do things differently.
+                Does this sound like you? 
             </p>
+                    <button 
+                  className="btn-primary-new" 
+                  onClick={scrollToContact}
+                  data-animate 
+                  style={withDelay(0.5)}
+                >
+                  Let's see how we can help
+                </button>
           </div>
         </section>
 
