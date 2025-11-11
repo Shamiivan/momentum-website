@@ -358,15 +358,44 @@ body {
   margin-bottom: 3rem;
 }
 
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.partners-marquee-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.partners-marquee-wrapper::before,
+.partners-marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partners-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--color-white) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.partners-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--color-white) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.partners-marquee {
+  display: flex;
+  align-items: center;
   gap: 3rem;
-  max-width: 900px;
-  margin: 0 auto;
+  width: fit-content;
+  animation: partnersRoll 28s linear infinite;
+  will-change: transform;
 }
 
 .partner-card {
+  flex: 0 0 auto;
   text-align: center;
   transition: transform 0.3s var(--easing-smooth);
 }
@@ -376,11 +405,12 @@ body {
 }
 
 .partner-logo {
+  display: block;
   font-size: 2rem;
   font-weight: 800;
   color: var(--color-neutral-gray);
-  margin-bottom: 1rem;
-  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
   transition: color 0.3s ease;
 }
 
@@ -390,9 +420,18 @@ body {
 
 .partner-metric {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--color-success-green);
   font-weight: 600;
+}
+
+@keyframes partnersRoll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Service Overview Section */

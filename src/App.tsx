@@ -13,7 +13,8 @@ const withDelay = (delay: number): AnimatedStyle => ({
 
 const MomentumLanding = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const [revenueCount, setRevenueCount] = useState(0);
+  const revenueAnimationRef = useRef(false);
+  const [revenueCount, setRevenueCount] = useState(20);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
 
   useEffect(() => {
@@ -27,9 +28,9 @@ const MomentumLanding = () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          
+
           // Trigger counter animation for revenue
-          if (entry.target.classList.contains('revenue-counter')) {
+          if (entry.target.classList.contains('revenue-counter') && !revenueAnimationRef.current) {
             animateCounter();
           }
         }
@@ -52,20 +53,31 @@ const MomentumLanding = () => {
   }, []);
 
   const animateCounter = () => {
-    const duration = 2000;
-    const steps = 60;
-    const increment = 50 / steps;
-    let current = 0;
+    if (revenueAnimationRef.current) return;
+    revenueAnimationRef.current = true;
 
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= 50) {
-        setRevenueCount(50);
-        clearInterval(timer);
+    const startValue = 20;
+    const endValue = 50;
+    const duration = 1600;
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+    const startTime = performance.now();
+
+    const tick = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+      const currentValue = Math.round(startValue + (endValue - startValue) * easedProgress);
+
+      setRevenueCount(currentValue);
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
       } else {
-        setRevenueCount(Math.floor(current));
+        setRevenueCount(endValue);
       }
-    }, duration / steps);
+    };
+
+    requestAnimationFrame(tick);
   };
 
   const scrollToContact = () => {
@@ -81,14 +93,16 @@ const MomentumLanding = () => {
   };
 
   const partners = [
-    { name: 'TELUS', revenue: '$50M+ revenue', logo: 'TELUS' },
-    { name: 'Partner Network', revenue: '5,000+ customers', logo: 'PARTNERS' },
-    { name: 'Growth Metrics', revenue: '312% ROI', logo: 'METRICS' }
+    { name: 'Concordia', revenue: 'Campus growth partner', logo: 'CONCORDIA' },
+    { name: 'Amazon', revenue: 'Proof', logo: 'AMAZON' },
+    { name: 'Shopify', revenue: 'Proof', logo: 'SHOPIFY' },
+    { name: 'TELUS', revenue: 'Proof', logo: 'TELUS' },
+    { name: 'Rogers', revenue: 'Proof', logo: 'ROGERS' }
   ];
 
   const serviceStats = [
     { number: '$50M+', label: 'Revenue Generated', helper: 'for partner brands' },
-    { number: '50+', label: 'Trained Sales', helper: 'professionals across channels' },
+    { number: '500+', label: 'Trained Sales', helper: 'professionals across channels' },
     { number: '3', label: 'Markets', helper: 'expanded in last year' },
     { number: '20,000+', label: 'Customers', helper: 'acquired through outreach' }
   ];
@@ -211,10 +225,10 @@ const MomentumLanding = () => {
             <h1 className="revenue-counter" data-animate style={withDelay(0)}>
               <span className="revenue-line">${revenueCount} Million Generated For Brands</span>
             </h1>
-            <p className="hero-subtitle-new" data-animate style={withDelay(0.2)}>
+            <p className="hero-subtitle-new" data-animate style={withDelay(0.3)}>
               We bridge the gap between you and your customer. We sell for you on commission.
             </p>
-            <div className="hero-cta-group-new" data-animate style={withDelay(0.3)}>
+            <div className="hero-cta-group-new" data-animate style={withDelay(0.4)}>
               <button className="btn-primary-new" onClick={scrollToContact}>
                 Schedule Call
               </button>
@@ -232,18 +246,22 @@ const MomentumLanding = () => {
         <section className="social-proof-section">
           <div className="container-new">
             <p className="trusted-label">Trusted by:</p>
-            <div className="partners-grid">
-              {partners.map((partner, idx) => (
-                <div 
-                  key={partner.name} 
-                  className="partner-card"
-                  data-animate
-                  style={withDelay(idx * 0.15)}
-                >
-                  <div className="partner-logo">{partner.logo}</div>
-                  <div className="partner-metric">{partner.revenue}</div>
-                </div>
-              ))}
+            <div
+              className="partners-marquee-wrapper"
+              data-animate
+              style={withDelay(0.1)}
+            >
+              <div className="partners-marquee">
+                {[...partners, ...partners].map((partner, idx) => (
+                  <div
+                    key={`${partner.name}-${idx}`}
+                    className="partner-card"
+                  >
+                    <div className="partner-logo">{partner.logo}</div>
+                    <div className="partner-metric">{partner.revenue}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -256,7 +274,7 @@ const MomentumLanding = () => {
             </h2>
             <div className="service-description" data-animate style={withDelay(0.1)}>
               <p>
-                We deploy sales teams across every channel where your customers buy. Field reps in retail locations. 
+                We deploy sales teams across every channel where your customers buy. Field reps in retail locations.
                 Phone teams calling prospects. Digital campaigns on social media. All coordinated. All tracked. All delivering customers.
               </p>
               <p>
@@ -265,8 +283,8 @@ const MomentumLanding = () => {
             </div>
             <div className="stats-grid-new">
               {serviceStats.map((stat, idx) => (
-                <div 
-                  key={stat.label} 
+                <div
+                  key={stat.label}
                   className="stat-card-new"
                   data-animate
                   style={withDelay(0.2 + idx * 0.1)}
@@ -294,8 +312,8 @@ const MomentumLanding = () => {
             </div>
             <div className="pain-grid">
               {painPoints.map((point, idx) => (
-                <div 
-                  key={point.title} 
+                <div
+                  key={point.title}
                   className="pain-card"
                   data-animate
                   style={withDelay(idx * 0.05)}
@@ -306,16 +324,16 @@ const MomentumLanding = () => {
               ))}
             </div>
             <p className="pain-closing" data-animate style={withDelay(0.35)}>
-                Does this sound like you? 
+              Does this sound like you?
             </p>
-                    <button 
-                  className="btn-primary-new" 
-                  onClick={scrollToContact}
-                  data-animate 
-                  style={withDelay(0.5)}
-                >
-                  Let's see how we can help
-                </button>
+            <button
+              className="btn-primary-new"
+              onClick={scrollToContact}
+              data-animate
+              style={withDelay(0.5)}
+            >
+              Let's see how we can help
+            </button>
           </div>
         </section>
 
@@ -348,13 +366,13 @@ const MomentumLanding = () => {
                   </p>
                 </div>
                 <p className="value-closing" data-animate style={withDelay(0.4)}>
-                  We've done this successfully for 5 years. We know our systems work. 
+                  We've done this successfully for 5 years. We know our systems work.
                   We'd rather get paid for performance than promises.
                 </p>
-                <button 
-                  className="btn-primary-new" 
+                <button
+                  className="btn-primary-new"
                   onClick={scrollToContact}
-                  data-animate 
+                  data-animate
                   style={withDelay(0.5)}
                 >
                   Schedule Your Strategy Call
@@ -377,8 +395,8 @@ const MomentumLanding = () => {
             </h2>
             <div className="channels-grid-new">
               {channels.map((channel, idx) => (
-                <div 
-                  key={channel.title} 
+                <div
+                  key={channel.title}
                   className="channel-card-new"
                   data-animate
                   style={withDelay(idx * 0.08)}
@@ -405,8 +423,8 @@ const MomentumLanding = () => {
                 <div className="comparison-cell">Momentum Mgmt</div>
               </div>
               {comparisonRows.map((row, idx) => (
-                <div 
-                  key={row.label} 
+                <div
+                  key={row.label}
                   className="comparison-row"
                   data-animate
                   style={withDelay(0.3 + idx * 0.1)}
@@ -428,12 +446,12 @@ const MomentumLanding = () => {
               <h2 className="case-study-title-new">$40M for TELUS in 5 Years</h2>
               <div className="case-study-text-new">
                 <p>
-                  Over the past 5 years, TELUS partnered with Momentum Management to break into the Quebec market 
-                  and scale customer acquisition. By deploying our expert sales team across in-person, phone, and 
+                  Over the past 5 years, TELUS partnered with Momentum Management to break into the Quebec market
+                  and scale customer acquisition. By deploying our expert sales team across in-person, phone, and
                   social media channels, we helped TELUS establish a strong local presence and generate over $40 million in revenue.
                 </p>
                 <p>
-                  This long-term collaboration continues to fuel consistent growth and retention in one of Canada's 
+                  This long-term collaboration continues to fuel consistent growth and retention in one of Canada's
                   most competitive markets.
                 </p>
               </div>
@@ -461,14 +479,14 @@ const MomentumLanding = () => {
             <h2 className="section-title-new" data-animate>Frequently Asked Questions</h2>
             <div className="faq-list">
               {faqs.map((faq, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className={`faq-item-new ${activeAccordion === idx ? 'active' : ''}`}
                   data-animate
                   style={withDelay(idx * 0.05)}
                 >
-                  <button 
-                    className="faq-question" 
+                  <button
+                    className="faq-question"
                     onClick={() => toggleAccordion(idx)}
                   >
                     <span>{faq.q}</span>
