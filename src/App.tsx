@@ -210,7 +210,6 @@ const MomentumLanding = () => {
           <div className="hero-container">
             <h1 className="revenue-counter" data-animate style={withDelay(0)}>
               <span className="revenue-line">${revenueCount} Million Generated For Brands</span>
-              <span className="cost-line">$0 Upfront Cost</span>
             </h1>
             <p className="hero-subtitle-new" data-animate style={withDelay(0.2)}>
               We bridge the gap between you and your customer. We sell for you on commission.
