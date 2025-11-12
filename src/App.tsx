@@ -23,8 +23,8 @@ const MomentumLanding = () => {
   useEffect(() => {
     // Intersection Observer for scroll animations
     const observerOptions = {
-      threshold: 0.15,
-      rootMargin: '0px 0px -80px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
     };
 
     observerRef.current = new IntersectionObserver((entries) => {
@@ -318,10 +318,10 @@ const MomentumLanding = () => {
             <h1 className="revenue-counter" data-animate style={withDelay(0)}>
               <span className="revenue-line">${revenueCount} Million Generated For Brands</span>
             </h1>
-            <p className="hero-subtitle-new" data-animate style={withDelay(0.3)}>
+            <p className="hero-subtitle-new" data-animate style={withDelay(0.15)}>
               We bridge the gap between you and your customer.
             </p>
-            <div className="hero-cta-group-new" data-animate style={withDelay(0.4)}>
+            <div className="hero-cta-group-new" data-animate style={withDelay(0.25)}>
               <Link to="/contact" className="btn-primary-new">
                 Get Started
               </Link>
@@ -329,7 +329,7 @@ const MomentumLanding = () => {
                 See How We Work
               </button>
             </div>
-            <div className="scroll-indicator" data-animate style={withDelay(0.5)}>
+            <div className="scroll-indicator" data-animate style={withDelay(0.35)}>
               <span>↓</span>
             </div>
           </div>
@@ -383,7 +383,7 @@ const MomentumLanding = () => {
                   key={stat.label}
                   className="stat-card-new"
                   data-animate
-                  style={withDelay(0.2 + idx * 0.1)}
+                  style={withDelay(0.1 + idx * 0.05)}
                 >
                   <div className="stat-number-new">{stat.number}</div>
                   <div className="stat-label-new">{stat.label}</div>
@@ -413,7 +413,7 @@ const MomentumLanding = () => {
                   key={point.title}
                   className="pain-card"
                   data-animate
-                  style={withDelay(idx * 0.05)}
+                  style={withDelay(idx * 0.03)}
                 >
                   <h3>{point.title}</h3>
                   <p>{point.text}</p>
@@ -472,14 +472,43 @@ const MomentumLanding = () => {
                   Schedule Your Strategy Call
                 </Link>
               </div>
-              <div className="value-image" data-animate style={withDelay(0.3)}>
-                <img
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop&q=80"
-                  alt="Professional sales team collaborating"
-                  className="value-image-photo"
-                />
-                <div className="image-overlay">
-                  <p className="image-note">Placeholder - Replace with your team photo</p>
+              <div className="value-bento-grid" data-animate style={withDelay(0.3)}>
+                <div className="bento-grid">
+                  <div className="bento-item bento-large">
+                    <img
+                      src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=800&fit=crop&q=80"
+                      alt="Team collaboration"
+                      className="bento-photo"
+                    />
+                  </div>
+                  <div className="bento-item bento-tall">
+                    <img
+                      src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=600&fit=crop&q=80"
+                      alt="Sales professional"
+                      className="bento-photo"
+                    />
+                  </div>
+                  <div className="bento-item bento-wide">
+                    <img
+                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&q=80"
+                      alt="Business meeting"
+                      className="bento-photo"
+                    />
+                  </div>
+                  <div className="bento-item bento-small">
+                    <img
+                      src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=400&fit=crop&q=80"
+                      alt="Team success"
+                      className="bento-photo"
+                    />
+                  </div>
+                  <div className="bento-item bento-small">
+                    <img
+                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=400&fit=crop&q=80"
+                      alt="Team meeting"
+                      className="bento-photo"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -489,17 +518,24 @@ const MomentumLanding = () => {
         {/* Six Channels Section */}
         <section className="channels-section">
           <div className="container-new">
-            <h2 className="section-title-new" data-animate>
-              Six Channels. One Coordinated System.
-            </h2>
+            <div className="channels-header">
+              <h2 className="section-title-new" data-animate>
+                Six Channels. One Coordinated System.
+              </h2>
+              <p className="channels-subtitle" data-animate style={withDelay(0.1)}>
+                We don't just pick one channel and hope it works. We deploy across all six,
+                orchestrating them together to create a unified customer acquisition engine.
+              </p>
+            </div>
             <div className="channels-grid-new">
               {channels.map((channel, idx) => (
                 <div
                   key={channel.title}
                   className="channel-card-new"
                   data-animate
-                  style={withDelay(idx * 0.08)}
+                  style={withDelay(idx * 0.04)}
                 >
+                  <div className="channel-number">{String(idx + 1).padStart(2, '0')}</div>
                   <div className="channel-image-container">
                     <img
                       src={channel.image}
@@ -582,7 +618,7 @@ const MomentumLanding = () => {
             </p>
 
             <div className="testimonials-grid">
-              <div className="testimonial-card" data-animate style={withDelay(0.2)}>
+              <div className="testimonial-card" data-animate style={withDelay(0.1)}>
                 <div className="testimonial-content">
                   <div className="quote-icon">"</div>
                   <p className="testimonial-text">
@@ -602,7 +638,7 @@ const MomentumLanding = () => {
                 </div>
               </div>
 
-              <div className="testimonial-card" data-animate style={withDelay(0.3)}>
+              <div className="testimonial-card" data-animate style={withDelay(0.15)}>
                 <div className="testimonial-content">
                   <div className="quote-icon">"</div>
                   <p className="testimonial-text">
@@ -622,7 +658,7 @@ const MomentumLanding = () => {
                 </div>
               </div>
 
-              <div className="testimonial-card" data-animate style={withDelay(0.4)}>
+              <div className="testimonial-card" data-animate style={withDelay(0.2)}>
                 <div className="testimonial-content">
                   <div className="quote-icon">"</div>
                   <p className="testimonial-text">
@@ -643,7 +679,7 @@ const MomentumLanding = () => {
               </div>
             </div>
 
-            <div className="testimonials-note" data-animate style={withDelay(0.5)}>
+            <div className="testimonials-note" data-animate style={withDelay(0.25)}>
               <p>
                 <strong>Note:</strong> These testimonials are placeholders. Replace with verified client testimonials
                 including full names, titles, companies, and specific results (with client permission).
@@ -662,7 +698,7 @@ const MomentumLanding = () => {
                   key={idx}
                   className={`faq-item-new ${activeAccordion === idx ? 'active' : ''}`}
                   data-animate
-                  style={withDelay(idx * 0.05)}
+                  style={withDelay(idx * 0.02)}
                 >
                   <button
                     className="faq-question"
@@ -682,24 +718,15 @@ const MomentumLanding = () => {
 
         {/* Final CTA Section */}
         <section className="final-cta-section" id="cta">
-          <div className="floating-shapes">
-            <div className="shape shape-1"></div>
-            <div className="shape shape-2"></div>
-            <div className="shape shape-3"></div>
-          </div>
           <div className="container-new">
             <div className="cta-content-new" data-animate>
-              <h2 className="cta-title-new">Ready to Scale Customer Acquisition?</h2>
+              <h2 className="cta-title-new">Let's Talk</h2>
               <p className="cta-subtitle-new">
-                Let's discuss how momentum management can transform your growth trajectory.
+                Get in touch to discuss how we can help grow your business.
               </p>
               <Link to="/contact" className="btn-cta-large">
-                Schedule Your Strategy Call
+                Contact Us
               </Link>
-              <p className="response-time">
-                <span className="pulse-dot"></span>
-                Average response time: &lt; 2 hours
-              </p>
             </div>
           </div>
         </section>
