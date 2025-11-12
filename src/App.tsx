@@ -591,7 +591,50 @@ const MomentumLanding = () => {
 
       <footer className="footer-new">
         <div className="container-new">
-          <p>© 2025 Momentum Management. Building growth partnerships.</p>
+          <div className="footer-content">
+            <div className="footer-column footer-brand">
+              <h3 className="footer-logo">Momentum Management</h3>
+              <p className="footer-tagline">Performance-based customer acquisition. We only get paid when you get customers.</p>
+            </div>
+
+            <div className="footer-column">
+              <h4 className="footer-heading">Company</h4>
+              <ul className="footer-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#results">Careers</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#cta">Contact</a></li>
+              </ul>
+            </div>
+
+            <div className="footer-column">
+              <h4 className="footer-heading">Solutions</h4>
+              <ul className="footer-links">
+                <li><a href="#services">Partnerships</a></li>
+                <li><a href="#services">Staff Training</a></li>
+                <li><a href="#services">Executive Coaching</a></li>
+                <li><a href="#services">Sales Teams</a></li>
+              </ul>
+            </div>
+
+            <div className="footer-column">
+              <h4 className="footer-heading">Contact</h4>
+              <ul className="footer-contact">
+                <li>Montreal, Quebec</li>
+                <li><a href="mailto:contact@momentummgmt.com">contact@momentummanagment.com</a></li>
+                <li><a href="tel:+15141234567">+1 (514) 123-4567</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="footer-bottom">
+            <p>© 2025 Momentum Management. All rights reserved.</p>
+            <div className="footer-legal">
+              <a href="#privacy">Privacy Policy</a>
+              <span className="footer-separator">•</span>
+              <a href="#terms">Terms of Service</a>
+            </div>
+          </div>
         </div>
       </footer>
     </>
