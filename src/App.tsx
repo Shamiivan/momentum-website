@@ -17,6 +17,8 @@ const MomentumLanding = () => {
   const revenueAnimationRef = useRef(false);
   const [revenueCount, setRevenueCount] = useState(20);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
   useEffect(() => {
     // Intersection Observer for scroll animations
@@ -262,13 +264,45 @@ const MomentumLanding = () => {
     <>
       <header className="main-header">
         <div className="header-container">
-          <div className="logo-new">Momentum Management</div>
-          <nav className="main-nav">
-            <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); }}>Services</a>
-            <a href="#results">Results</a>
-            <a href="#faq">FAQ</a>
+          <Link to="/" className="logo-new">Momentum Management</Link>
+
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+
+          <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+            <div className="nav-dropdown">
+              <button
+                className="nav-link nav-dropdown-trigger"
+                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+              >
+                Services
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div className={`nav-dropdown-menu ${servicesDropdownOpen ? 'open' : ''}`}>
+                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); }}>Partnerships</a>
+                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); }}>Sales Training</a>
+                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); }}>Executive Coaching</a>
+              </div>
+            </div>
+            <a href="#results" onClick={() => setMobileMenuOpen(false)}>Careers</a>
+            <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
+            <Link to="/contact" className="nav-cta-mobile" onClick={() => setMobileMenuOpen(false)}>
+              Contact Us
+            </Link>
           </nav>
-          <Link to="/contact" className="header-cta-new">
+
+          <Link to="/contact" className="header-cta-new header-cta-desktop">
             Contact Us
           </Link>
         </div>
@@ -357,6 +391,7 @@ const MomentumLanding = () => {
             </div>
           </div>
         </section>
+
 
         {/* Pain Points Section */}
         <section className="pain-section">
@@ -470,30 +505,24 @@ const MomentumLanding = () => {
           </div>
         </section>
 
-        {/* Comparison Section */}
-        <section className="comparison-section-new">
+        {/* Trust Signals Section */}
+        <section className="trust-signals-section">
           <div className="container-new">
-            <h2 className="comparison-title" data-animate>
-              They Get Paid To Try. We Get Paid To Deliver.
-            </h2>
-            <div className="comparison-table-new" data-animate style={withDelay(0.2)}>
-              <div className="comparison-row comparison-header">
-                <div className="comparison-cell"></div>
-                <div className="comparison-cell">Most Agencies</div>
-                <div className="comparison-cell">Momentum Mgmt</div>
+            <div className="trust-signals-wrapper" data-animate>
+              <div className="certification-badge-container">
+                <img
+                  src="/certification.webp"
+                  alt="Top-performing sales and marketing partner certification"
+                  className="certification-badge"
+                />
               </div>
-              {comparisonRows.map((row, idx) => (
-                <div
-                  key={row.label}
-                  className="comparison-row"
-                  data-animate
-                  style={withDelay(0.3 + idx * 0.1)}
-                >
-                  <div className="comparison-cell cell-label">{row.label}</div>
-                  <div className="comparison-cell cell-traditional">{row.traditional}</div>
-                  <div className="comparison-cell cell-momentum">{row.momentum}</div>
-                </div>
-              ))}
+              <div className="certification-content">
+                <h3 className="certification-title">Recognized Excellence</h3>
+                <p className="certification-text">
+                  Momentum Management is recognized as a top-performing sales and marketing partner,
+                  known for delivering high-volume results and unmatched client satisfaction.
+                </p>
+              </div>
             </div>
           </div>
         </section>

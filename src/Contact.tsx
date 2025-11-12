@@ -1,7 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import './App.css'
 import './Contact.css'
 
 const Contact = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -10,15 +15,48 @@ const Contact = () => {
     <>
       <header className="main-header">
         <div className="header-container">
-          <a href="/" className="logo-new">Momentum Management</a>
-          <nav className="main-nav">
-            <a href="/#services">Services</a>
-            <a href="/#results">Results</a>
-            <a href="/#faq">FAQ</a>
+          <Link to="/" className="logo-new">Momentum Management</Link>
+
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+
+          <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+            <div className="nav-dropdown">
+              <button
+                className="nav-link nav-dropdown-trigger"
+                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+              >
+                Services
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className={`nav-dropdown-menu ${servicesDropdownOpen ? 'open' : ''}`}>
+                <a href="/#services" onClick={() => setMobileMenuOpen(false)}>Partnerships</a>
+                <a href="/#services" onClick={() => setMobileMenuOpen(false)}>Sales</a>
+                <a href="/#services" onClick={() => setMobileMenuOpen(false)}>Staff Training & Executive Coaching</a>
+              </div>
+            </div>
+            <a href="/#results" onClick={() => setMobileMenuOpen(false)}>Results</a>
+            <a href="/#results" onClick={() => setMobileMenuOpen(false)}>Careers</a>
+            <a href="/#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
+            <Link to="/contact" className="nav-cta-mobile" onClick={() => setMobileMenuOpen(false)}>
+              Contact Us
+            </Link>
           </nav>
-          <a href="/contact" className="header-cta-new">
+
+          <Link to="/contact" className="header-cta-new header-cta-desktop">
             Contact Us
-          </a>
+          </Link>
         </div>
       </header>
 
