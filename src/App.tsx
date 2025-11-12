@@ -93,11 +93,10 @@ const MomentumLanding = () => {
   };
 
   const partners = [
-    { name: 'Concordia', revenue: 'Campus growth partner', logo: 'CONCORDIA' },
-    { name: 'Amazon', revenue: 'Proof', logo: 'AMAZON' },
-    { name: 'Shopify', revenue: 'Proof', logo: 'SHOPIFY' },
-    { name: 'TELUS', revenue: 'Proof', logo: 'TELUS' },
-    { name: 'Rogers', revenue: 'Proof', logo: 'ROGERS' }
+    { name: 'Amazon', revenue: '', logo: '/amazon-com-logo-svg.svg' },
+    { name: 'Shopify', revenue: '', logo: '/shopify-color.svg' },
+    { name: 'TELUS', revenue: '', logo: '/telus.svg' },
+    { name: 'Rogers', revenue: '', logo: '/rogers.svg' }
   ];
 
   const serviceStats = [
@@ -178,7 +177,7 @@ const MomentumLanding = () => {
       strokeLinejoin: "round" as const
     };
 
-    switch(iconType) {
+    switch (iconType) {
       case 'retail':
         return (
           <svg {...iconProps} viewBox="0 0 24 24">
@@ -318,8 +317,11 @@ const MomentumLanding = () => {
                     key={`${partner.name}-${idx}`}
                     className="partner-card"
                   >
-                    <div className="partner-logo">{partner.logo}</div>
-                    <div className="partner-metric">{partner.revenue}</div>
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      className="partner-logo-img"
+                    />
                   </div>
                 ))}
               </div>

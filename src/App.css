@@ -364,7 +364,11 @@ body {
 .partners-marquee-wrapper {
   position: relative;
   overflow: hidden;
-  padding: 1rem 0;
+  padding: 2rem 0;
+}
+
+.partners-marquee-wrapper:hover .partners-marquee {
+  animation-play-state: paused;
 }
 
 .partners-marquee-wrapper::before,
@@ -373,7 +377,7 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 80px;
+  width: 120px;
   z-index: 2;
   pointer-events: none;
 }
@@ -391,42 +395,44 @@ body {
 .partners-marquee {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 5rem;
   width: fit-content;
-  animation: partnersRoll 28s linear infinite;
+  animation: partnersRoll 35s linear infinite;
   will-change: transform;
 }
 
 .partner-card {
   flex: 0 0 auto;
   text-align: center;
-  transition: transform 0.3s var(--easing-smooth);
+  padding: 2rem 3rem;
+  background: var(--color-white);
+  border: 1px solid rgba(10, 22, 40, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.35s var(--easing-smooth);
 }
 
 .partner-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: rgba(212, 175, 55, 0.3);
 }
 
-.partner-logo {
+.partner-logo-img {
   display: block;
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-neutral-gray);
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.08em;
-  transition: color 0.3s ease;
+  height: 70px;
+  width: auto;
+  max-width: 200px;
+  min-width: 140px;
+  object-fit: contain;
+  margin: 0 auto;
+  opacity: 0.9;
+  transition: all 0.35s var(--easing-smooth);
 }
 
-.partner-card:hover .partner-logo {
-  color: var(--color-primary-dark);
-}
-
-.partner-metric {
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
-  color: var(--color-success-green);
-  font-weight: 600;
+.partner-card:hover .partner-logo-img {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 @keyframes partnersRoll {
