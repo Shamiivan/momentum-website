@@ -136,36 +136,97 @@ const MomentumLanding = () => {
 
   const channels = [
     {
-      icon: '🏪',
+      icon: 'retail',
       title: 'Retail & In-Person',
       desc: 'Field sales teams in stores, events, door-to-door, B2B offices'
     },
     {
-      icon: '📞',
+      icon: 'phone',
       title: 'Phone Outreach',
       desc: 'Dedicated inside sales teams for outbound calling and inbound qualification'
     },
     {
-      icon: '💻',
+      icon: 'digital',
       title: 'Digital Campaigns',
       desc: 'Paid social, paid search, SEO, content marketing, landing pages'
     },
     {
-      icon: '📱',
+      icon: 'social',
       title: 'Social Selling',
       desc: 'LinkedIn outreach, Instagram DMs, Facebook groups, community building'
     },
     {
-      icon: '✉️',
+      icon: 'email',
       title: 'Direct Outreach',
       desc: 'Cold email sequences, SMS campaigns, direct mail'
     },
     {
-      icon: '🤝',
+      icon: 'partnership',
       title: 'Partnership Networks',
       desc: 'Channel partnerships, affiliate programs, co-marketing deals'
     }
   ];
+
+  const getChannelIcon = (iconType: string) => {
+    const iconProps = {
+      width: "48",
+      height: "48",
+      fill: "none",
+      stroke: "#D4AF37",
+      strokeWidth: "2",
+      strokeLinecap: "round" as const,
+      strokeLinejoin: "round" as const
+    };
+
+    switch(iconType) {
+      case 'retail':
+        return (
+          <svg {...iconProps} viewBox="0 0 24 24">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+        );
+      case 'phone':
+        return (
+          <svg {...iconProps} viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+        );
+      case 'digital':
+        return (
+          <svg {...iconProps} viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+          </svg>
+        );
+      case 'social':
+        return (
+          <svg {...iconProps} viewBox="0 0 24 24">
+            <path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z" />
+            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+            <circle cx="17.5" cy="6.5" r="1.5" fill="#D4AF37" />
+          </svg>
+        );
+      case 'email':
+        return (
+          <svg {...iconProps} viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+        );
+      case 'partnership':
+        return (
+          <svg {...iconProps} viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
+          </svg>
+        );
+      default:
+        return null;
+    }
+  };
 
   const comparisonRows = [
     { label: 'Monthly retainer', traditional: '❌ $10K–$50K locked in contracts', momentum: '✅ $0. Only pay when customers arrive' },
@@ -401,7 +462,7 @@ const MomentumLanding = () => {
                   data-animate
                   style={withDelay(idx * 0.08)}
                 >
-                  <div className="channel-icon-new">{channel.icon}</div>
+                  <div className="channel-icon-new">{getChannelIcon(channel.icon)}</div>
                   <h3 className="channel-title-new">{channel.title}</h3>
                   <p className="channel-desc-new">{channel.desc}</p>
                 </div>
