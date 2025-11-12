@@ -99,10 +99,10 @@ const MomentumLanding = () => {
   ];
 
   const serviceStats = [
-    { number: '$50M+', label: 'Revenue Generated', helper: 'for partner brands' },
-    { number: '500+', label: 'Trained Professionals', helper: 'across channels' },
+    { number: '$50M', label: 'Revenue Generated', helper: 'for partner brands' },
+    { number: '500', label: 'Trained Professionals', helper: 'across channels' },
     { number: '3', label: 'Markets', helper: 'expanded in last year' },
-    { number: '40,000+', label: 'Customers', helper: 'acquired through outreach' }
+    { number: '40,000', label: 'Customers', helper: 'acquired through outreach' }
   ];
 
   const painPoints = [
@@ -319,7 +319,7 @@ const MomentumLanding = () => {
               <span className="revenue-line">${revenueCount} Million Generated For Brands</span>
             </h1>
             <p className="hero-subtitle-new" data-animate style={withDelay(0.3)}>
-              We bridge the gap between you and your customer. We sell for you on commission.
+              We bridge the gap between you and your customer.
             </p>
             <div className="hero-cta-group-new" data-animate style={withDelay(0.4)}>
               <Link to="/contact" className="btn-primary-new">
