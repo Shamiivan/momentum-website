@@ -1,67 +1,17 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import './App.css'
 import './Contact.css'
 
 const Contact = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
-      <header className="main-header">
-        <div className="header-container">
-          <Link to="/" className="logo-new">Momentum Management</Link>
-
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </button>
-
-          <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-            <div className="nav-dropdown" onMouseEnter={() => setServicesDropdownOpen(true)} onMouseLeave={() => setServicesDropdownOpen(false)}>
-              <button
-                className="nav-link nav-dropdown-trigger"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setServicesDropdownOpen(!servicesDropdownOpen);
-                }}
-              >
-                Services
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <div className={`nav-dropdown-menu ${servicesDropdownOpen ? 'open' : ''}`}>
-                <a href="/#services" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Partnerships</a>
-                <a href="/#services" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Sales</a>
-                <a href="/#services" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Staff Training & Executive Coaching</a>
-              </div>
-            </div>
-            <a href="/#results" onClick={() => setMobileMenuOpen(false)}>Results</a>
-            <a href="/#results" onClick={() => setMobileMenuOpen(false)}>Careers</a>
-            <a href="/#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
-            <Link to="/contact" className="nav-cta-mobile" onClick={() => setMobileMenuOpen(false)}>
-              Contact Us
-            </Link>
-          </nav>
-
-          <Link to="/contact" className="header-cta-new header-cta-desktop">
-            Contact Us
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       <main className="contact-page">
         <section className="contact-hero">
@@ -174,7 +124,8 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4>Location</h4>
-                        <p>Montreal, Quebec</p>
+                        <p>4845 Rue Jean-Talon O</p>
+                        <p>Montreal, QC H4P 1W7</p>
                       </div>
                     </div>
 
@@ -187,7 +138,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4>Email</h4>
-                        <a href="mailto:contact@momentummanagment.com">contact@momentummanagment.com</a>
+                        <a href="mailto:info@momentummanagement.ca">info@momentummanagement.ca</a>
                       </div>
                     </div>
 
@@ -199,7 +150,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4>Phone</h4>
-                        <a href="tel:+15141234567">+1 (514) 123-4567</a>
+                        <a href="tel:+18773540317">+1 (877) 354-0317</a>
                       </div>
                     </div>
                   </div>
@@ -207,7 +158,7 @@ const Contact = () => {
                   <div className="contact-cta-box">
                     <h4>Looking for immediate assistance?</h4>
                     <p>Schedule a call with our team to discuss your customer acquisition strategy.</p>
-                    <a href="mailto:contact@momentummanagment.com" className="btn-contact-alt">
+                    <a href="mailto:info@momentummanagement.ca" className="btn-contact-alt">
                       Email Us
                     </a>
                   </div>
@@ -218,54 +169,7 @@ const Contact = () => {
         </section>
       </main>
 
-      <footer className="footer-new">
-        <div className="container-new">
-          <div className="footer-content">
-            <div className="footer-column footer-brand">
-              <h3 className="footer-logo">Momentum Management</h3>
-              <p className="footer-tagline">Performance-based customer acquisition. We only get paid when you get customers.</p>
-            </div>
-
-            <div className="footer-column">
-              <h4 className="footer-heading">Company</h4>
-              <ul className="footer-links">
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/#results">Careers</a></li>
-                <li><a href="/#faq">FAQ</a></li>
-                <li><a href="/contact">Contact</a></li>
-              </ul>
-            </div>
-
-            <div className="footer-column">
-              <h4 className="footer-heading">Solutions</h4>
-              <ul className="footer-links">
-                <li><a href="/#services">Partnerships</a></li>
-                <li><a href="/#services">Staff Training</a></li>
-                <li><a href="/#services">Executive Coaching</a></li>
-                <li><a href="/#services">Sales Teams</a></li>
-              </ul>
-            </div>
-
-            <div className="footer-column">
-              <h4 className="footer-heading">Contact</h4>
-              <ul className="footer-contact">
-                <li>Montreal, Quebec</li>
-                <li><a href="mailto:contact@momentummanagment.com">contact@momentummanagment.com</a></li>
-                <li><a href="tel:+15141234567">+1 (514) 123-4567</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="footer-bottom">
-            <p>© 2025 Momentum Management. All rights reserved.</p>
-            <div className="footer-legal">
-              <a href="#privacy">Privacy Policy</a>
-              <span className="footer-separator">•</span>
-              <a href="#terms">Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };

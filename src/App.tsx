@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import "./App.css"
 
 type AnimatedStyle = CSSProperties & {
@@ -17,8 +19,6 @@ const MomentumLanding = () => {
   const revenueAnimationRef = useRef(false);
   const [revenueCount, setRevenueCount] = useState(20);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
   useEffect(() => {
     // Intersection Observer for scroll animations
@@ -261,54 +261,7 @@ const MomentumLanding = () => {
 
   return (
     <>
-      <header className="main-header">
-        <div className="header-container">
-          <Link to="/" className="logo-new">Momentum Management</Link>
-
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </button>
-
-          <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-            <div className="nav-dropdown" onMouseEnter={() => setServicesDropdownOpen(true)} onMouseLeave={() => setServicesDropdownOpen(false)}>
-              <button
-                className="nav-link nav-dropdown-trigger"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setServicesDropdownOpen(!servicesDropdownOpen);
-                }}
-              >
-                Services
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <div className={`nav-dropdown-menu ${servicesDropdownOpen ? 'open' : ''}`}>
-                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Partnerships</a>
-                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Sales Training</a>
-                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Executive Coaching</a>
-              </div>
-            </div>
-            <a href="#results" onClick={() => setMobileMenuOpen(false)}>Careers</a>
-            <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
-            <Link to="/contact" className="nav-cta-mobile" onClick={() => setMobileMenuOpen(false)}>
-              Contact Us
-            </Link>
-          </nav>
-
-          <Link to="/contact" className="header-cta-new header-cta-desktop">
-            Contact Us
-          </Link>
-        </div>
-      </header>
+      <Header onServicesClick={scrollToServices} />
 
       <main className="main-new">
         {/* Hero Section */}
@@ -338,7 +291,7 @@ const MomentumLanding = () => {
         {/* Social Proof Section */}
         <section className="social-proof-section">
           <div className="container-new">
-            <p className="trusted-label">Trusted by:</p>
+            <p className="trusted-label">Trusted by Industry-leading brands across North America:</p>
             <div
               className="partners-marquee-wrapper"
               data-animate
@@ -678,13 +631,6 @@ const MomentumLanding = () => {
                 </div>
               </div>
             </div>
-
-            <div className="testimonials-note" data-animate style={withDelay(0.25)}>
-              <p>
-                <strong>Note:</strong> These testimonials are placeholders. Replace with verified client testimonials
-                including full names, titles, companies, and specific results (with client permission).
-              </p>
-            </div>
           </div>
         </section>
 
@@ -698,7 +644,7 @@ const MomentumLanding = () => {
                   key={idx}
                   className={`faq-item-new ${activeAccordion === idx ? 'active' : ''}`}
                   data-animate
-                  style={withDelay(idx * 0.02)}
+                  style={withDelay(0)}
                 >
                   <button
                     className="faq-question"
@@ -732,54 +678,7 @@ const MomentumLanding = () => {
         </section>
       </main>
 
-      <footer className="footer-new">
-        <div className="container-new">
-          <div className="footer-content">
-            <div className="footer-column footer-brand">
-              <h3 className="footer-logo">Momentum Management</h3>
-              <p className="footer-tagline">Performance-based customer acquisition. We only get paid when you get customers.</p>
-            </div>
-
-            <div className="footer-column">
-              <h4 className="footer-heading">Company</h4>
-              <ul className="footer-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#results">Careers</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><Link to="/contact">Contact</Link></li>
-              </ul>
-            </div>
-
-            <div className="footer-column">
-              <h4 className="footer-heading">Solutions</h4>
-              <ul className="footer-links">
-                <li><a href="#services">Partnerships</a></li>
-                <li><a href="#services">Staff Training</a></li>
-                <li><a href="#services">Executive Coaching</a></li>
-                <li><a href="#services">Sales Teams</a></li>
-              </ul>
-            </div>
-
-            <div className="footer-column">
-              <h4 className="footer-heading">Contact</h4>
-              <ul className="footer-contact">
-                <li>Montreal, Quebec</li>
-                <li><a href="mailto:contact@momentummgmt.com">contact@momentummanagment.com</a></li>
-                <li><a href="tel:+15141234567">+1 (514) 123-4567</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="footer-bottom">
-            <p>© 2025 Momentum Management. All rights reserved.</p>
-            <div className="footer-legal">
-              <a href="#privacy">Privacy Policy</a>
-              <span className="footer-separator">•</span>
-              <a href="#terms">Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };
