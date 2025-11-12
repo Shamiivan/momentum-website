@@ -136,32 +136,38 @@ const MomentumLanding = () => {
     {
       icon: 'retail',
       title: 'Retail & In-Person',
-      desc: 'Field sales teams in stores, events, door-to-door, B2B offices'
+      desc: 'Field sales teams in stores, events, door-to-door, B2B offices',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&q=80'
     },
     {
       icon: 'phone',
       title: 'Phone Outreach',
-      desc: 'Dedicated inside sales teams for outbound calling and inbound qualification'
+      desc: 'Dedicated inside sales teams for outbound calling and inbound qualification',
+      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop&q=80'
     },
     {
       icon: 'digital',
       title: 'Digital Campaigns',
-      desc: 'Paid social, paid search, SEO, content marketing, landing pages'
+      desc: 'Paid social, paid search, SEO, content marketing, landing pages',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&q=80'
     },
     {
       icon: 'social',
       title: 'Social Selling',
-      desc: 'LinkedIn outreach, Instagram DMs, Facebook groups, community building'
+      desc: 'LinkedIn outreach, Instagram DMs, Facebook groups, community building',
+      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop&q=80'
     },
     {
       icon: 'email',
       title: 'Direct Outreach',
-      desc: 'Cold email sequences, SMS campaigns, direct mail'
+      desc: 'Cold email sequences, SMS campaigns, direct mail',
+      image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=400&h=300&fit=crop&q=80'
     },
     {
       icon: 'partnership',
       title: 'Partnership Networks',
-      desc: 'Channel partnerships, affiliate programs, co-marketing deals'
+      desc: 'Channel partnerships, affiliate programs, co-marketing deals',
+      image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=300&fit=crop&q=80'
     }
   ];
 
@@ -272,10 +278,13 @@ const MomentumLanding = () => {
           </button>
 
           <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-            <div className="nav-dropdown">
+            <div className="nav-dropdown" onMouseEnter={() => setServicesDropdownOpen(true)} onMouseLeave={() => setServicesDropdownOpen(false)}>
               <button
                 className="nav-link nav-dropdown-trigger"
-                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setServicesDropdownOpen(!servicesDropdownOpen);
+                }}
               >
                 Services
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
@@ -283,9 +292,9 @@ const MomentumLanding = () => {
                 </svg>
               </button>
               <div className={`nav-dropdown-menu ${servicesDropdownOpen ? 'open' : ''}`}>
-                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); }}>Partnerships</a>
-                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); }}>Sales Training</a>
-                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); }}>Executive Coaching</a>
+                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Partnerships</a>
+                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Sales Training</a>
+                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToServices(); setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Executive Coaching</a>
               </div>
             </div>
             <a href="#results" onClick={() => setMobileMenuOpen(false)}>Careers</a>
@@ -464,8 +473,13 @@ const MomentumLanding = () => {
                 </Link>
               </div>
               <div className="value-image" data-animate style={withDelay(0.3)}>
-                <div className="image-placeholder">
-                  <span>Sales Team Working</span>
+                <img
+                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop&q=80"
+                  alt="Professional sales team collaborating"
+                  className="value-image-photo"
+                />
+                <div className="image-overlay">
+                  <p className="image-note">Placeholder - Replace with your team photo</p>
                 </div>
               </div>
             </div>
@@ -486,7 +500,14 @@ const MomentumLanding = () => {
                   data-animate
                   style={withDelay(idx * 0.08)}
                 >
-                  <div className="channel-icon-new">{getChannelIcon(channel.icon)}</div>
+                  <div className="channel-image-container">
+                    <img
+                      src={channel.image}
+                      alt={channel.title}
+                      className="channel-image"
+                    />
+                    <div className="channel-icon-overlay">{getChannelIcon(channel.icon)}</div>
+                  </div>
                   <h3 className="channel-title-new">{channel.title}</h3>
                   <p className="channel-desc-new">{channel.desc}</p>
                 </div>
@@ -548,6 +569,85 @@ const MomentumLanding = () => {
                   <div className="case-stat-label">Market</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="testimonials-section">
+          <div className="container-new">
+            <h2 className="section-title-new" data-animate>What Our Partners Say</h2>
+            <p className="testimonials-subtitle" data-animate style={withDelay(0.1)}>
+              Real results from businesses we've helped grow
+            </p>
+
+            <div className="testimonials-grid">
+              <div className="testimonial-card" data-animate style={withDelay(0.2)}>
+                <div className="testimonial-content">
+                  <div className="quote-icon">"</div>
+                  <p className="testimonial-text">
+                    Working with Momentum Management transformed our Quebec market strategy. Their local expertise
+                    and multi-channel approach delivered consistent customer growth we couldn't achieve on our own.
+                  </p>
+                </div>
+                <div className="testimonial-author">
+                  <div className="author-info">
+                    <h4 className="author-name">[Client Name]</h4>
+                    <p className="author-title">[Title], [Company Name]</p>
+                  </div>
+                  <div className="testimonial-result">
+                    <span className="result-label">Result:</span>
+                    <span className="result-value">[Specific metric]</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="testimonial-card" data-animate style={withDelay(0.3)}>
+                <div className="testimonial-content">
+                  <div className="quote-icon">"</div>
+                  <p className="testimonial-text">
+                    The performance-based model aligned perfectly with our goals. No upfront costs, and they only
+                    got paid when we acquired customers. It's refreshing to work with a partner who shares our risk.
+                  </p>
+                </div>
+                <div className="testimonial-author">
+                  <div className="author-info">
+                    <h4 className="author-name">[Client Name]</h4>
+                    <p className="author-title">[Title], [Company Name]</p>
+                  </div>
+                  <div className="testimonial-result">
+                    <span className="result-label">Result:</span>
+                    <span className="result-value">[Specific metric]</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="testimonial-card" data-animate style={withDelay(0.4)}>
+                <div className="testimonial-content">
+                  <div className="quote-icon">"</div>
+                  <p className="testimonial-text">
+                    After disappointing results with traditional agencies, Momentum Management's focus on actual
+                    customer acquisition—not just lead generation—was exactly what we needed.
+                  </p>
+                </div>
+                <div className="testimonial-author">
+                  <div className="author-info">
+                    <h4 className="author-name">[Client Name]</h4>
+                    <p className="author-title">[Title], [Company Name]</p>
+                  </div>
+                  <div className="testimonial-result">
+                    <span className="result-label">Result:</span>
+                    <span className="result-value">[Specific metric]</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="testimonials-note" data-animate style={withDelay(0.5)}>
+              <p>
+                <strong>Note:</strong> These testimonials are placeholders. Replace with verified client testimonials
+                including full names, titles, companies, and specific results (with client permission).
+              </p>
             </div>
           </div>
         </section>

@@ -30,10 +30,13 @@ const Contact = () => {
           </button>
 
           <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-            <div className="nav-dropdown">
+            <div className="nav-dropdown" onMouseEnter={() => setServicesDropdownOpen(true)} onMouseLeave={() => setServicesDropdownOpen(false)}>
               <button
                 className="nav-link nav-dropdown-trigger"
-                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setServicesDropdownOpen(!servicesDropdownOpen);
+                }}
               >
                 Services
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
@@ -41,9 +44,9 @@ const Contact = () => {
                 </svg>
               </button>
               <div className={`nav-dropdown-menu ${servicesDropdownOpen ? 'open' : ''}`}>
-                <a href="/#services" onClick={() => setMobileMenuOpen(false)}>Partnerships</a>
-                <a href="/#services" onClick={() => setMobileMenuOpen(false)}>Sales</a>
-                <a href="/#services" onClick={() => setMobileMenuOpen(false)}>Staff Training & Executive Coaching</a>
+                <a href="/#services" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Partnerships</a>
+                <a href="/#services" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Sales</a>
+                <a href="/#services" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Staff Training & Executive Coaching</a>
               </div>
             </div>
             <a href="/#results" onClick={() => setMobileMenuOpen(false)}>Results</a>
