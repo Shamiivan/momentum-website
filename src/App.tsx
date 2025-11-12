@@ -100,35 +100,35 @@ const MomentumLanding = () => {
 
   const serviceStats = [
     { number: '$50M+', label: 'Revenue Generated', helper: 'for partner brands' },
-    { number: '500+', label: 'Trained Sales', helper: 'professionals across channels' },
+    { number: '500+', label: 'Trained Professionals', helper: 'across channels' },
     { number: '3', label: 'Markets', helper: 'expanded in last year' },
-    { number: '20,000+', label: 'Customers', helper: 'acquired through outreach' }
+    { number: '40,000+', label: 'Customers', helper: 'acquired through outreach' }
   ];
 
   const painPoints = [
     {
-      title: 'Revenue Stagnation',
-      text: 'You\'ve tried new channels. Hired more reps. Increased ad spend. Nothing moves the needle. The pipeline stays flat.'
+      title: 'Scaling Customer Acquisition',
+      text: 'Traditional methods plateau. We deploy multi-channel strategies that consistently deliver new customers month over month.'
     },
     {
-      title: 'Inconsistent Pipeline',
-      text: 'You can\'t forecast. Your acquisition system produces random results month to month.'
+      title: 'Predictable Revenue Growth',
+      text: 'Inconsistent results make planning difficult. Our systematic approach creates reliable, forecasted customer acquisition.'
     },
     {
-      title: 'High CAC, Shrinking Margins',
-      text: 'Customer lifetime value stayed flat.'
+      title: 'Optimizing CAC',
+      text: 'High customer acquisition costs compress margins. We focus on efficient, performance-based customer delivery.'
     },
     {
-      title: 'Market Expansion Failures',
-      text: 'You tried entering new regions. Hired local reps. Spent six figures on campaigns. Result: 23 customers and a lot of "learnings."'
+      title: 'Market Expansion',
+      text: 'Entering new regions requires local expertise and established networks. We specialize in Quebec market entry and expansion.'
     },
     {
-      title: 'Disconnected Sales & Marketing',
-      text: 'Marketing generates leads. Sales says they\'re garbage. Sales complains about lead quality. Marketing says sales can\'t close. Meanwhile, nobody\'s acquiring actual customers.'
+      title: 'Sales & Marketing Alignment',
+      text: 'Disconnected teams create inefficiency. Our integrated approach ensures every channel works toward customer acquisition.'
     },
     {
-      title: 'Agency Disappointment',
-      text: 'The last agency promised results. They delivered a beautiful dashboard showing activity that never converted to revenue.'
+      title: 'Results-Driven Partnership',
+      text: 'Activity metrics don\'t pay the bills. We measure success by one thing: customers acquired and revenue generated.'
     }
   ];
 
@@ -225,13 +225,6 @@ const MomentumLanding = () => {
         return null;
     }
   };
-
-  const comparisonRows = [
-    { label: 'Monthly retainer', traditional: '❌ $10K–$50K locked in contracts', momentum: '✅ $0. Only pay when customers arrive' },
-    { label: 'Payment structure', traditional: '❌ Guaranteed, regardless of performance', momentum: '✅ Performance-based. We get paid per customer' },
-    { label: 'What they measure', traditional: '❌ Activities (calls, emails, impressions)', momentum: '✅ Customers acquired across every channel' },
-    { label: 'Accountability', traditional: '❌ None — retainers protect them', momentum: '✅ Complete — no results, no invoice' }
-  ];
 
   const faqs = [
     {
@@ -398,10 +391,10 @@ const MomentumLanding = () => {
           <div className="container-new">
             <div className="pain-header">
               <h2 className="pain-title" data-animate>
-                68% of Companies Miss Their Revenue Targets
+                Common Growth Challenges We Solve
               </h2>
               <p className="pain-subtitle" data-animate style={withDelay(0.1)}>
-                Not because of bad products. Not because of weak demand. Because their customer acquisition is broken.
+                Growing businesses face similar customer acquisition challenges. Here's how we help overcome them.
               </p>
 
             </div>
@@ -418,9 +411,6 @@ const MomentumLanding = () => {
                 </div>
               ))}
             </div>
-            <p className="pain-closing" data-animate style={withDelay(0.35)}>
-              Does this sound like you?
-            </p>
             <Link
               to="/contact"
               className="btn-primary-new"

@@ -12,11 +12,11 @@
   --color-white: #FFFFFF;
   --color-text-muted: #94A3B8;
   --color-dark-gradient-end: #1e3a5f;
-  
+
   --font-display: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
-  
+
   --easing-smooth: cubic-bezier(0.4, 0.0, 0.2, 1);
   --easing-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -181,7 +181,7 @@ body {
   padding: 0;
 }
 
-.main-nav > a::after {
+.main-nav>a::after {
   content: '';
   position: absolute;
   bottom: -8px;
@@ -192,12 +192,12 @@ body {
   transition: width 0.3s ease;
 }
 
-.main-nav > a:hover,
+.main-nav>a:hover,
 .nav-link:hover {
   color: var(--color-accent-gold);
 }
 
-.main-nav > a:hover::after {
+.main-nav>a:hover::after {
   width: 100%;
 }
 
@@ -329,14 +329,14 @@ body {
     transform: translateY(0);
   }
 
-  .main-nav > a,
+  .main-nav>a,
   .nav-link {
     padding: 1rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 1.1rem;
   }
 
-  .main-nav > a::after {
+  .main-nav>a::after {
     display: none;
   }
 
@@ -409,7 +409,7 @@ body {
 .animated-grid {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -421,6 +421,7 @@ body {
   0% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(50px, 50px);
   }
@@ -545,9 +546,12 @@ body {
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -557,12 +561,12 @@ body {
   .hero-container {
     padding: 0 2rem;
   }
-  
+
   .hero-cta-group-new {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .btn-primary-new,
   .btn-secondary-new {
     width: 100%;
@@ -663,6 +667,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -1038,7 +1043,7 @@ body {
   .value-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .value-image {
     order: -1;
   }
@@ -1109,86 +1114,6 @@ body {
 @media (max-width: 768px) {
   .channels-grid-new {
     grid-template-columns: 1fr;
-  }
-}
-
-/* Comparison Section */
-.comparison-section-new {
-  padding: 7.5rem 0;
-  background: var(--color-primary-dark);
-}
-
-.comparison-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 4rem;
-  color: var(--color-white);
-  line-height: 1.1;
-}
-
-.comparison-table-new {
-  max-width: 1100px;
-  margin: 0 auto;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.comparison-row {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 0;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.comparison-row:last-child {
-  border-bottom: none;
-}
-
-.comparison-header {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.comparison-cell {
-  padding: 1.5rem;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-}
-
-.comparison-header .comparison-cell {
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.85rem;
-  color: var(--color-accent-gold);
-}
-
-.cell-label {
-  font-weight: 700;
-  color: var(--color-white);
-}
-
-.cell-traditional {
-  color: var(--color-warning-red);
-  border-left: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.cell-momentum {
-  color: var(--color-success-green);
-  border-left: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-@media (max-width: 968px) {
-  .comparison-table-new {
-    overflow-x: auto;
-  }
-  
-  .comparison-row {
-    min-width: 640px;
   }
 }
 
@@ -1406,12 +1331,16 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
+
   33% {
     transform: translate(30px, -30px) scale(1.1);
   }
+
   66% {
     transform: translate(-20px, 20px) scale(0.9);
   }
@@ -1481,10 +1410,13 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.5;
     transform: scale(1.2);
@@ -1641,19 +1573,19 @@ body {
   .section-title-new {
     font-size: 2rem;
   }
-  
+
   .pain-title {
     font-size: 2rem;
   }
-  
+
   .value-title {
     font-size: 2.5rem;
   }
-  
+
   .cta-title-new {
     font-size: 2rem;
   }
-  
+
   .case-study-title-new {
     font-size: 2.5rem;
   }
