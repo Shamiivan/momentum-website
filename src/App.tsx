@@ -403,11 +403,11 @@ const MomentumLanding = () => {
           <div className="container-new">
             <div className="value-grid">
               <div className="value-content">
-                <h2 className="value-title" data-animate>We Sell. You Pay.</h2>
+                <h2 className="value-title" data-animate>They Buy. We Sell. You Win.</h2>
                 <p className="value-intro" data-animate style={withDelay(0.1)}>
-                  Here's our entire business model:
+                  Everyone Loves Buying. Nobody Loves Being Sold. We Bridge The Gap.
                 </p>
-                <div className="value-steps" data-animate style={withDelay(0.2)}>
+                <div className="value-steps" data-animate style={withDelay(0.1)}>
                   <div className="value-step">
                     <span className="check-icon">✓</span>
                     <span>We deploy acquisition teams across multiple channels</span>
@@ -421,12 +421,12 @@ const MomentumLanding = () => {
                     <span>You pay based on customers delivered</span>
                   </div>
                 </div>
-                <div className="value-guarantee" data-animate style={withDelay(0.3)}>
+                <div className="value-guarantee" data-animate style={withDelay(0.2)}>
                   <p>
                     No monthly retainers. No upfront fees. No payment until you have results.
                   </p>
                 </div>
-                <p className="value-closing" data-animate style={withDelay(0.4)}>
+                <p className="value-closing" data-animate style={withDelay(0.2)}>
                   We've done this successfully for 5 years. We know our systems work.
                   We'd rather get paid for performance than promises.
                 </p>
@@ -434,7 +434,7 @@ const MomentumLanding = () => {
                   className="btn-primary-new"
                   onClick={scrollToContact}
                   data-animate
-                  style={withDelay(0.5)}
+                  style={withDelay(0.1)}
                 >
                   Schedule Your Strategy Call
                 </button>
