@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
+import { Link } from 'react-router-dom'
 import "./App.css"
 
 type AnimatedStyle = CSSProperties & {
@@ -78,10 +79,6 @@ const MomentumLanding = () => {
     };
 
     requestAnimationFrame(tick);
-  };
-
-  const scrollToContact = () => {
-    document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToServices = () => {
@@ -271,9 +268,9 @@ const MomentumLanding = () => {
             <a href="#results">Results</a>
             <a href="#faq">FAQ</a>
           </nav>
-          <button className="header-cta-new" onClick={scrollToContact}>
-            Schedule Call
-          </button>
+          <Link to="/contact" className="header-cta-new">
+            Contact Us
+          </Link>
         </div>
       </header>
 
@@ -289,9 +286,9 @@ const MomentumLanding = () => {
               We bridge the gap between you and your customer. We sell for you on commission.
             </p>
             <div className="hero-cta-group-new" data-animate style={withDelay(0.4)}>
-              <button className="btn-primary-new" onClick={scrollToContact}>
-                Schedule Call
-              </button>
+              <Link to="/contact" className="btn-primary-new">
+                Get Started
+              </Link>
               <button className="btn-secondary-new" onClick={scrollToServices}>
                 See How We Work
               </button>
@@ -389,14 +386,14 @@ const MomentumLanding = () => {
             <p className="pain-closing" data-animate style={withDelay(0.35)}>
               Does this sound like you?
             </p>
-            <button
+            <Link
+              to="/contact"
               className="btn-primary-new"
-              onClick={scrollToContact}
               data-animate
               style={withDelay(0.5)}
             >
               Let's see how we can help
-            </button>
+            </Link>
           </div>
         </section>
 
@@ -432,14 +429,14 @@ const MomentumLanding = () => {
                   We've done this successfully for 5 years. We know our systems work.
                   We'd rather get paid for performance than promises.
                 </p>
-                <button
+                <Link
+                  to="/contact"
                   className="btn-primary-new"
-                  onClick={scrollToContact}
                   data-animate
                   style={withDelay(0.1)}
                 >
                   Schedule Your Strategy Call
-                </button>
+                </Link>
               </div>
               <div className="value-image" data-animate style={withDelay(0.3)}>
                 <div className="image-placeholder">
@@ -577,9 +574,9 @@ const MomentumLanding = () => {
               <p className="cta-subtitle-new">
                 Let's discuss how momentum management can transform your growth trajectory.
               </p>
-              <button className="btn-cta-large" onClick={scrollToContact}>
+              <Link to="/contact" className="btn-cta-large">
                 Schedule Your Strategy Call
-              </button>
+              </Link>
               <p className="response-time">
                 <span className="pulse-dot"></span>
                 Average response time: &lt; 2 hours
@@ -603,7 +600,7 @@ const MomentumLanding = () => {
                 <li><a href="#services">Services</a></li>
                 <li><a href="#results">Careers</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#cta">Contact</a></li>
+                <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
 

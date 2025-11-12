@@ -146,6 +146,7 @@ body {
 }
 
 .header-cta-new {
+  display: inline-block;
   padding: 12px 32px;
   background: var(--color-accent-gold);
   color: var(--color-primary-dark);
@@ -155,6 +156,7 @@ body {
   font-weight: 600;
   font-family: var(--font-primary);
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s var(--easing-smooth);
 }
 
@@ -273,6 +275,7 @@ body {
 }
 
 .btn-primary-new {
+  display: inline-block;
   padding: 16px 40px;
   background: var(--color-accent-gold);
   color: var(--color-primary-dark);
@@ -282,6 +285,8 @@ body {
   font-weight: 600;
   font-family: var(--font-primary);
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
   transition: all 0.3s var(--easing-smooth);
 }
 
@@ -1143,6 +1148,7 @@ body {
 }
 
 .btn-cta-large {
+  display: inline-block;
   padding: 20px 50px;
   background: var(--color-accent-gold);
   color: var(--color-primary-dark);
@@ -1152,6 +1158,7 @@ body {
   font-weight: 700;
   font-family: var(--font-primary);
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s var(--easing-smooth);
   margin-bottom: 2rem;
 }
