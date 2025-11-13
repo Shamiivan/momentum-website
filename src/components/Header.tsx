@@ -19,7 +19,7 @@ const Header = () => {
     <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <Link to="/" className="logo-new">
-          <img src="/LOGO-NO-BG 1.svg" alt="Momentum Management" className="logo-image" />
+          <img src="/LOGO-NEW.svg" alt="Momentum Management" className="logo-image" />
         </Link>
 
         <button

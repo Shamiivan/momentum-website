@@ -132,7 +132,7 @@ body {
 }
 
 .logo-image {
-  height: 50px;
+  height: 55px;
   width: auto;
   object-fit: contain;
 }
@@ -2438,6 +2438,9 @@ body {
 
 .footer-brand {
   max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer-logo {
@@ -2449,13 +2452,13 @@ body {
 }
 
 .footer-logo-image {
-  height: 70px;
-  /* Larger logo for better brand presence */
+  height: 65px;
   width: auto;
   object-fit: contain;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.02em;
+  object-position: left center;
+  margin-bottom: 1rem;
   transition: opacity 0.3s ease;
+  display: block;
 }
 
 .footer-logo-image:hover {
@@ -2467,6 +2470,7 @@ body {
   line-height: 1.6;
   color: var(--color-text-muted);
   margin: 0;
+  padding-left: 0;
 }
 
 .footer-heading {
