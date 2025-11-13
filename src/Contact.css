@@ -109,6 +109,7 @@
   color: var(--color-primary-dark);
   transition: all 0.3s ease;
   background: var(--color-white);
+  min-height: 44px;
 }
 
 .form-group input:focus,
@@ -271,7 +272,7 @@
 
 .btn-contact-alt {
   display: inline-block;
-  padding: 0.75rem 1.75rem;
+  padding: 0.875rem 1.75rem;
   background: var(--color-accent-gold);
   color: var(--color-primary-dark);
   border: none;
@@ -281,6 +282,7 @@
   font-family: var(--font-primary);
   text-decoration: none;
   transition: all 0.3s var(--easing-smooth);
+  min-height: 44px;
 }
 
 .btn-contact-alt:hover {
@@ -295,13 +297,19 @@
     gap: 3rem;
   }
 
+  .contact-form-container,
+  .contact-info-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
   .form-row {
     grid-template-columns: 1fr;
   }
 
-  .contact-form-container,
-  .contact-info-card {
-    padding: 2rem;
+  .contact-wrapper {
+    gap: 2.5rem;
   }
 }
 

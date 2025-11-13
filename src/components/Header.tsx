@@ -8,7 +8,9 @@ const Header = () => {
   return (
     <header className="main-header">
       <div className="header-container">
-        <Link to="/" className="logo-new">Momentum Management</Link>
+        <Link to="/" className="logo-new">
+          <img src="/LOGO-NO-BG 1.svg" alt="Momentum Management" className="logo-image" />
+        </Link>
 
         <button
           className="mobile-menu-toggle"
