@@ -155,7 +155,7 @@ const MomentumLanding = () => {
       icon: 'social',
       title: 'Social Selling',
       desc: 'LinkedIn outreach, Instagram DMs, Facebook groups, community building',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop&q=80'
+      image: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=400&h=300&fit=crop&q=80'
     },
     {
       icon: 'email',
@@ -261,7 +261,7 @@ const MomentumLanding = () => {
 
   return (
     <>
-      <Header onServicesClick={scrollToServices} />
+      <Header />
 
       <main className="main-new">
         {/* Hero Section */}
@@ -276,7 +276,7 @@ const MomentumLanding = () => {
             </p>
             <div className="hero-cta-group-new" data-animate style={withDelay(0.25)}>
               <Link to="/contact" className="btn-primary-new">
-                Get Started
+                Schedule a Free Consultation
               </Link>
               <button className="btn-secondary-new" onClick={scrollToServices}>
                 See How We Work
@@ -643,8 +643,6 @@ const MomentumLanding = () => {
                 <div
                   key={idx}
                   className={`faq-item-new ${activeAccordion === idx ? 'active' : ''}`}
-                  data-animate
-                  style={withDelay(0)}
                 >
                   <button
                     className="faq-question"

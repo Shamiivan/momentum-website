@@ -1,25 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-interface HeaderProps {
-  onServicesClick?: () => void;
-}
-
-const Header = ({ onServicesClick }: HeaderProps) => {
+const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-
-  const handleServicesClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (onServicesClick) {
-      e.preventDefault();
-      onServicesClick();
-      setMobileMenuOpen(false);
-      setServicesDropdownOpen(false);
-    } else {
-      setMobileMenuOpen(false);
-      setServicesDropdownOpen(false);
-    }
-  };
 
   return (
     <header className="main-header">
@@ -54,9 +38,9 @@ const Header = ({ onServicesClick }: HeaderProps) => {
               </svg>
             </button>
             <div className={`nav-dropdown-menu ${servicesDropdownOpen ? 'open' : ''}`}>
-              <a href="/#services" onClick={handleServicesClick}>Partnerships</a>
-              <a href="/#services" onClick={handleServicesClick}>Sales</a>
-              <a href="/#services" onClick={handleServicesClick}>Staff Training & Executive Coaching</a>
+              <Link to="/services/partnerships" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Partnerships</Link>
+              <Link to="/services/staff-training" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Staff Training</Link>
+              <Link to="/services/executive-coaching" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Executive Coaching</Link>
             </div>
           </div>
           <a href="/#results" onClick={() => setMobileMenuOpen(false)}>Careers</a>
