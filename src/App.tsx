@@ -269,7 +269,7 @@ const MomentumLanding = () => {
           <div className="animated-grid"></div>
           <div className="hero-container">
             <h1 className="revenue-counter" data-animate style={withDelay(0)}>
-              <span className="revenue-line">${revenueCount} Million Generated For Brands</span>
+              <span className="revenue-line">Sales and Marketing Done For You</span>
             </h1>
             <p className="hero-subtitle-new" data-animate style={withDelay(0.15)}>
               We bridge the gap between you and your customer.
@@ -319,7 +319,7 @@ const MomentumLanding = () => {
         <section className="service-overview-section" id="services">
           <div className="container-new">
             <h2 className="section-title-new" data-animate>
-              Sales and Marketing Done for You
+              <span className="">${revenueCount} Million Generated For Brands</span>
             </h2>
             <div className="service-description" data-animate style={withDelay(0.1)}>
               <p>
