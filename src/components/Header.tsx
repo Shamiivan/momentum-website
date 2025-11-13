@@ -55,7 +55,7 @@ const Header = () => {
               <Link to="/services/executive-coaching" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Executive Coaching</Link>
             </div>
           </div>
-          <a href="/#results" onClick={() => setMobileMenuOpen(false)}>Careers</a>
+          <Link to="/careers" onClick={() => setMobileMenuOpen(false)}>Careers</Link>
           <a href="/#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
           <Link to="/contact" className="nav-cta-mobile" onClick={() => setMobileMenuOpen(false)}>
             Contact Us

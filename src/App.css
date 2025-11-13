@@ -4,7 +4,8 @@
 /* CSS Variables */
 :root {
   --color-primary-dark: #0A1628;
-  --color-accent-gold: #C9A961; /* More sophisticated champagne gold */
+  --color-accent-gold: #C9A961;
+  /* More sophisticated champagne gold */
   --color-success-green: #10B981;
   --color-warning-red: #EF4444;
   --color-neutral-gray: #64748B;
@@ -518,7 +519,8 @@ body {
 
 .hero-subtitle-new {
   font-size: clamp(1.15rem, 2.5vw, 1.5rem);
-  color: rgba(255, 255, 255, 0.85); /* Improved contrast for better readability */
+  color: rgba(255, 255, 255, 0.85);
+  /* Improved contrast for better readability */
   max-width: 600px;
   margin: 0 auto 3rem;
   line-height: 1.7;
@@ -538,7 +540,8 @@ body {
   background: var(--color-accent-gold);
   color: var(--color-primary-dark);
   border: none;
-  border-radius: 10px; /* Slightly larger radius */
+  border-radius: 10px;
+  /* Slightly larger radius */
   font-size: 1rem;
   font-weight: 600;
   font-family: var(--font-primary);
@@ -566,7 +569,8 @@ body {
 .btn-primary-new:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 16px 32px rgba(212, 175, 55, 0.35);
-  background: #d4b76e; /* Slightly lighter on hover */
+  background: #d4b76e;
+  /* Slightly lighter on hover */
 }
 
 .btn-primary-new:hover::before {
@@ -583,7 +587,8 @@ body {
   background: transparent;
   color: var(--color-accent-gold);
   border: 2px solid var(--color-accent-gold);
-  border-radius: 10px; /* Match primary button */
+  border-radius: 10px;
+  /* Match primary button */
   font-size: 1rem;
   font-weight: 600;
   font-family: var(--font-primary);
@@ -653,6 +658,7 @@ body {
 }
 
 @media (max-width: 375px) {
+
   .btn-primary-new,
   .btn-secondary-new {
     max-width: 100%;
@@ -724,7 +730,8 @@ body {
   padding: 2.5rem 3.5rem;
   background: var(--color-white);
   border: 1px solid rgba(10, 22, 40, 0.08);
-  border-radius: 16px; /* Larger radius for consistency */
+  border-radius: 16px;
+  /* Larger radius for consistency */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   transition: all 0.35s var(--easing-smooth);
   position: relative;
@@ -812,7 +819,8 @@ body {
 }
 
 .certification-badge {
-  width: 140px; /* Larger for better visibility */
+  width: 140px;
+  /* Larger for better visibility */
   height: 140px;
   object-fit: contain;
   filter: drop-shadow(0 4px 16px rgba(212, 175, 55, 0.3));
@@ -871,7 +879,8 @@ body {
 
 /* Service Overview Section */
 .service-overview-section {
-  padding: 8.5rem 0; /* Increased vertical padding */
+  padding: 8.5rem 0;
+  /* Increased vertical padding */
   background: var(--color-light-gray);
   position: relative;
 }
@@ -924,11 +933,15 @@ body {
 
 .stat-card-new {
   background: var(--color-white);
-  padding: 2.5rem 2rem; /* Increased padding for better spacing */
-  border-radius: 16px; /* Larger radius for premium feel */
+  padding: 2.5rem 2rem;
+  /* Increased padding for better spacing */
+  border-radius: 16px;
+  /* Larger radius for premium feel */
   text-align: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04); /* Elevated shadow */
-  border: 1px solid rgba(212, 175, 55, 0.1); /* Subtle border */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  /* Elevated shadow */
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  /* Subtle border */
   transition: all 0.4s var(--easing-smooth);
   position: relative;
   overflow: hidden;
@@ -948,7 +961,8 @@ body {
 }
 
 .stat-card-new:hover {
-  transform: translateY(-12px); /* More pronounced lift */
+  transform: translateY(-12px);
+  /* More pronounced lift */
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(212, 175, 55, 0.1);
   border-color: rgba(212, 175, 55, 0.3);
 }
@@ -994,7 +1008,8 @@ body {
 
 /* Pain Points Section */
 .pain-section {
-  padding: 8.5rem 0; /* Increased for consistency */
+  padding: 8.5rem 0;
+  /* Increased for consistency */
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-dark-gradient-end) 100%);
   position: relative;
 }
@@ -1059,10 +1074,12 @@ body {
 }
 
 .pain-card {
-  padding: 3rem; /* Increased padding for better spacing */
+  padding: 3rem;
+  /* Increased padding for better spacing */
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: 20px; /* Larger radius to match other cards */
+  border-radius: 20px;
+  /* Larger radius to match other cards */
   backdrop-filter: blur(10px);
   transition: all 0.4s var(--easing-smooth);
   position: relative;
@@ -1083,8 +1100,10 @@ body {
 
 .pain-card:hover {
   border-color: var(--color-accent-gold);
-  background: rgba(255, 255, 255, 0.10); /* Slightly more opaque */
-  transform: translateY(-8px); /* More pronounced lift */
+  background: rgba(255, 255, 255, 0.10);
+  /* Slightly more opaque */
+  transform: translateY(-8px);
+  /* More pronounced lift */
   box-shadow: 0 12px 32px rgba(212, 175, 55, 0.2);
 }
 
@@ -1261,9 +1280,9 @@ body {
   height: 100%;
   min-height: 600px;
   padding: 2rem;
-  background: white;
+  background: transparent;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.08);
 }
 
 .bento-grid {
@@ -1720,7 +1739,8 @@ body {
 
 /* Case Study Section */
 .case-study-section-new {
-  padding: 9rem 0; /* Increased padding for prominence */
+  padding: 9rem 0;
+  /* Increased padding for prominence */
   background: linear-gradient(135deg, #0a0e17 0%, #1a2332 50%, #0d1825 100%);
   position: relative;
   overflow: hidden;
@@ -1759,7 +1779,8 @@ body {
 
 .telus-logo-large {
   font-family: var(--font-display);
-  font-size: 1.25rem; /* Smaller, more refined */
+  font-size: 1.25rem;
+  /* Smaller, more refined */
   font-weight: 600;
   color: var(--color-accent-gold);
   margin-bottom: 1rem;
@@ -1864,7 +1885,8 @@ body {
 
 /* Testimonials Section */
 .testimonials-section {
-  padding: 8.5rem 0; /* Increased padding for consistency */
+  padding: 8.5rem 0;
+  /* Increased padding for consistency */
   background: var(--color-light-gray);
   position: relative;
 }
@@ -1888,7 +1910,8 @@ body {
   font-size: 1.25rem;
   color: var(--color-neutral-gray);
   max-width: 700px;
-  margin: -1.5rem auto 5rem; /* Increased bottom margin */
+  margin: -1.5rem auto 5rem;
+  /* Increased bottom margin */
   line-height: 1.7;
   font-weight: 400;
 }
@@ -1896,15 +1919,19 @@ body {
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 3rem; /* Increased gap for better breathing room */
+  gap: 3rem;
+  /* Increased gap for better breathing room */
   margin-bottom: 3rem;
 }
 
 .testimonial-card {
   background: var(--color-white);
-  border-radius: 20px; /* Larger radius to match other cards */
-  padding: 3rem; /* Increased padding */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04); /* Enhanced shadow */
+  border-radius: 20px;
+  /* Larger radius to match other cards */
+  padding: 3rem;
+  /* Increased padding */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  /* Enhanced shadow */
   border: 1px solid rgba(212, 175, 55, 0.1);
   transition: all 0.4s var(--easing-smooth);
   display: flex;
@@ -1929,7 +1956,8 @@ body {
 }
 
 .testimonial-card:hover {
-  transform: translateY(-10px); /* More pronounced lift to match stat cards */
+  transform: translateY(-10px);
+  /* More pronounced lift to match stat cards */
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(212, 175, 55, 0.1);
   border-color: rgba(212, 175, 55, 0.3);
 }
@@ -2065,7 +2093,8 @@ body {
 
 /* FAQ Section */
 .faq-section-new {
-  padding: 8.5rem 0; /* Increased for consistency */
+  padding: 8.5rem 0;
+  /* Increased for consistency */
   background: var(--color-light-gray);
   position: relative;
 }
@@ -2092,8 +2121,10 @@ body {
 .faq-item-new {
   background: var(--color-white);
   border: 1px solid rgba(10, 22, 40, 0.1);
-  border-radius: 16px; /* Larger radius for consistency */
-  margin-bottom: 1.5rem; /* Increased spacing */
+  border-radius: 16px;
+  /* Larger radius for consistency */
+  margin-bottom: 1.5rem;
+  /* Increased spacing */
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -2341,9 +2372,12 @@ body {
 .footer-new {
   background: #0a1628;
   color: var(--color-white);
-  padding: 5rem 0 2.5rem; /* Increased padding for better visual prominence */
-  border-top: 2px solid rgba(212, 175, 55, 0.3); /* Thicker border for emphasis */
-  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 5rem 0 2.5rem;
+  /* Increased padding for better visual prominence */
+  border-top: 2px solid rgba(212, 175, 55, 0.3);
+  /* Thicker border for emphasis */
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
 }
 
 .footer-content {
@@ -2374,7 +2408,8 @@ body {
 }
 
 .footer-logo-image {
-  height: 70px; /* Larger logo for better brand presence */
+  height: 70px;
+  /* Larger logo for better brand presence */
   width: auto;
   object-fit: contain;
   margin-bottom: 1.5rem;
