@@ -1,0 +1,51 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="orangeDigital" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35"/>
+      <stop offset="100%" style="stop-color:#F7931E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Monitor screen -->
+  <rect x="12" y="15" width="36" height="24" rx="2" fill="url(#orangeDigital)" opacity="0.2"/>
+  <rect x="14" y="17" width="32" height="20" rx="1" fill="none" stroke="url(#orangeDigital)" stroke-width="2"/>
+
+  <!-- Monitor stand -->
+  <rect x="26" y="39" width="8" height="4" fill="url(#orangeDigital)" opacity="0.5"/>
+  <rect x="22" y="43" width="16" height="2" fill="url(#orangeDigital)"/>
+
+  <!-- Browser window elements -->
+  <circle cx="17" cy="21" r="1.5" fill="#FF6B35"/>
+  <circle cx="21" cy="21" r="1.5" fill="#F7931E"/>
+  <circle cx="25" cy="21" r="1.5" fill="#00D9A3"/>
+
+  <!-- Analytics chart -->
+  <path d="M 18 28 L 22 26 L 26 29 L 30 24 L 34 26 L 38 22 L 42 25"
+        stroke="#00D9A3"
+        stroke-width="2"
+        fill="none"
+        stroke-linecap="round">
+    <animate attributeName="stroke-dasharray" values="0 100; 100 100" dur="2s" fill="freeze"/>
+  </path>
+
+  <!-- Data points -->
+  <circle cx="22" cy="26" r="2" fill="#00D9A3">
+    <animate attributeName="r" values="0;2" dur="0.5s" begin="0.3s" fill="freeze"/>
+  </circle>
+  <circle cx="30" cy="24" r="2" fill="#FF6B35">
+    <animate attributeName="r" values="0;2" dur="0.5s" begin="0.6s" fill="freeze"/>
+  </circle>
+  <circle cx="38" cy="22" r="2" fill="#F7931E">
+    <animate attributeName="r" values="0;2" dur="0.5s" begin="0.9s" fill="freeze"/>
+  </circle>
+
+  <!-- Cursor pointer -->
+  <path d="M 40 30 L 40 35 L 42 33 L 44 36 L 45 35 L 43 32 L 46 32 Z" fill="url(#orangeDigital)">
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="0,0; 2,-2; 0,0"
+      dur="1.5s"
+      repeatCount="indefinite"/>
+  </path>
+</svg>

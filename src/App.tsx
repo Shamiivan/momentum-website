@@ -99,10 +99,10 @@ const MomentumLanding = () => {
   ];
 
   const serviceStats = [
-    { number: '$50M', label: 'Revenue Generated', helper: 'for partner brands' },
-    { number: '500', label: 'Trained Professionals', helper: 'across multiple channels' },
-    { number: '3', label: 'Markets', helper: 'expanded in last year' },
-    { number: '40K', label: 'Customers', helper: 'acquired through outreach' }
+    { number: '$50M', label: 'Revenue Generated', helper: 'for partner brands', icon: '/illustrations/icon-revenue.svg' },
+    { number: '500', label: 'Trained Professionals', helper: 'across multiple channels', icon: '/illustrations/icon-team.svg' },
+    { number: '3', label: 'Markets', helper: 'expanded in last year', icon: '/illustrations/icon-growth.svg' },
+    { number: '40K', label: 'Customers', helper: 'acquired through outreach', icon: '/illustrations/icon-target.svg' }
   ];
 
   const painPoints = [
@@ -172,6 +172,25 @@ const MomentumLanding = () => {
   ];
 
   const getChannelIcon = (iconType: string) => {
+    const iconMap: { [key: string]: string } = {
+      'retail': '/illustrations/icon-retail.svg',
+      'phone': '/illustrations/icon-phone.svg',
+      'digital': '/illustrations/icon-digital.svg',
+      'social': '/illustrations/icon-social.svg',
+      'email': '/illustrations/icon-email.svg',
+      'partnership': '/illustrations/icon-partnership.svg'
+    };
+
+    return (
+      <img
+        src={iconMap[iconType] || iconMap['retail']}
+        alt={iconType}
+        style={{ width: '60px', height: '60px', display: 'block' }}
+      />
+    );
+  };
+
+  const getChannelIconOld = (iconType: string) => {
     const iconProps = {
       width: "48",
       height: "48",
@@ -183,27 +202,6 @@ const MomentumLanding = () => {
     };
 
     switch (iconType) {
-      case 'retail':
-        return (
-          <svg {...iconProps} viewBox="0 0 24 24">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-            <polyline points="9 22 9 12 15 12 15 22" />
-          </svg>
-        );
-      case 'phone':
-        return (
-          <svg {...iconProps} viewBox="0 0 24 24">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-          </svg>
-        );
-      case 'digital':
-        return (
-          <svg {...iconProps} viewBox="0 0 24 24">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-            <line x1="8" y1="21" x2="16" y2="21" />
-            <line x1="12" y1="17" x2="12" y2="21" />
-          </svg>
-        );
       case 'social':
         return (
           <svg {...iconProps} viewBox="0 0 24 24">
@@ -267,6 +265,21 @@ const MomentumLanding = () => {
         {/* Hero Section */}
         <section className="hero-new">
           <div className="animated-grid"></div>
+
+          {/* Floating geometric decorations for hero */}
+          <div className="floating-geo slow" style={{ top: '15%', left: '8%', width: '90px', height: '90px' }}>
+            <img src="/illustrations/geo-hexagon.svg" alt="" />
+          </div>
+          <div className="floating-geo reverse" style={{ bottom: '20%', left: '5%', width: '70px', height: '70px' }}>
+            <img src="/illustrations/geo-circle.svg" alt="" />
+          </div>
+          <div className="floating-geo slow" style={{ top: '25%', right: '10%', width: '60px', height: '60px', opacity: 0.4 }}>
+            <img src="/illustrations/geo-triangle.svg" alt="" />
+          </div>
+
+          <div className="hero-illustration" data-animate style={withDelay(0.4)}>
+            <img src="/illustrations/hero-growth.svg" alt="Growth illustration" />
+          </div>
           <div className="hero-container">
             <h1 className="revenue-counter" data-animate style={withDelay(0)}>
               <span className="revenue-line">${revenueCount} Million Generated For Brands</span>
@@ -290,6 +303,20 @@ const MomentumLanding = () => {
 
         {/* Social Proof Section */}
         <section className="social-proof-section">
+          {/* Floating geometric decorations */}
+          <div className="floating-geo slow" style={{ top: '10%', left: '5%', width: '80px', height: '80px' }}>
+            <img src="/illustrations/geo-circle.svg" alt="" />
+          </div>
+          <div className="floating-geo reverse" style={{ top: '60%', right: '8%', width: '100px', height: '100px' }}>
+            <img src="/illustrations/geo-square.svg" alt="" />
+          </div>
+          <div className="floating-geo slow" style={{ bottom: '15%', left: '10%', width: '70px', height: '70px' }}>
+            <img src="/illustrations/geo-triangle.svg" alt="" />
+          </div>
+          <div className="floating-geo reverse" style={{ top: '20%', right: '15%', width: '60px', height: '60px' }}>
+            <img src="/illustrations/geo-hexagon.svg" alt="" />
+          </div>
+
           <div className="container-new">
             <p className="trusted-label">Trusted by Industry-leading brands across North America:</p>
             <div
@@ -317,6 +344,14 @@ const MomentumLanding = () => {
 
         {/* Service Overview Section */}
         <section className="service-overview-section" id="services">
+          {/* Floating geometric decorations */}
+          <div className="floating-geo reverse" style={{ top: '10%', right: '5%', width: '75px', height: '75px' }}>
+            <img src="/illustrations/geo-square.svg" alt="" />
+          </div>
+          <div className="floating-geo slow" style={{ bottom: '10%', left: '8%', width: '65px', height: '65px' }}>
+            <img src="/illustrations/geo-hexagon.svg" alt="" />
+          </div>
+
           <div className="container-new">
             <h2 className="section-title-new" data-animate>
               Sales and Marketing Done for You
@@ -338,6 +373,9 @@ const MomentumLanding = () => {
                   data-animate
                   style={withDelay(0.1 + idx * 0.05)}
                 >
+                  <div className="stat-icon">
+                    <img src={stat.icon} alt={stat.label} />
+                  </div>
                   <div className="stat-number-new">{stat.number}</div>
                   <div className="stat-label-new">{stat.label}</div>
                   <div className="stat-helper">{stat.helper}</div>
@@ -350,6 +388,17 @@ const MomentumLanding = () => {
 
         {/* Pain Points Section */}
         <section className="pain-section">
+          <div className="decorative-accent top-right">
+            <img src="/illustrations/accent-circle.svg" alt="" />
+          </div>
+          {/* Floating geometric shapes */}
+          <div className="floating-geo slow" style={{ top: '15%', left: '5%', width: '70px', height: '70px' }}>
+            <img src="/illustrations/geo-square.svg" alt="" />
+          </div>
+          <div className="floating-geo reverse" style={{ bottom: '10%', right: '8%', width: '80px', height: '80px' }}>
+            <img src="/illustrations/geo-hexagon.svg" alt="" />
+          </div>
+
           <div className="container-new">
             <div className="pain-header">
               <h2 className="pain-title" data-animate>
@@ -452,6 +501,17 @@ const MomentumLanding = () => {
 
         {/* Six Channels Section */}
         <section className="channels-section">
+          <div className="decorative-accent bottom-left">
+            <img src="/illustrations/accent-circle.svg" alt="" />
+          </div>
+          {/* Additional floating shapes */}
+          <div className="floating-geo slow" style={{ top: '5%', right: '10%', width: '80px', height: '80px' }}>
+            <img src="/illustrations/geo-circle.svg" alt="" />
+          </div>
+          <div className="floating-geo reverse" style={{ bottom: '30%', right: '5%', width: '70px', height: '70px' }}>
+            <img src="/illustrations/geo-triangle.svg" alt="" />
+          </div>
+
           <div className="container-new">
             <div className="channels-header">
               <h2 className="section-title-new" data-animate>

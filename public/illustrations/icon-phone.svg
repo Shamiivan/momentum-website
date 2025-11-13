@@ -1,0 +1,38 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="orangePhone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35"/>
+      <stop offset="100%" style="stop-color:#F7931E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Phone handset -->
+  <path d="M 18 15 Q 15 15 15 18 L 15 42 Q 15 45 18 45 L 42 45 Q 45 45 45 42 L 45 18 Q 45 15 42 15 Z"
+        fill="url(#orangePhone)" opacity="0.2"/>
+
+  <!-- Phone outline -->
+  <rect x="20" y="12" width="20" height="36" rx="3" fill="none" stroke="url(#orangePhone)" stroke-width="2"/>
+
+  <!-- Screen -->
+  <rect x="22" y="17" width="16" height="24" rx="1" fill="url(#orangePhone)" opacity="0.3"/>
+
+  <!-- Speaker -->
+  <rect x="27" y="14" width="6" height="1.5" rx="0.75" fill="#FF6B35"/>
+
+  <!-- Home button -->
+  <circle cx="30" cy="44" r="2" fill="none" stroke="#FF6B35" stroke-width="1.5"/>
+
+  <!-- Sound waves -->
+  <path d="M 48 20 Q 52 25 48 30" stroke="#00D9A3" stroke-width="2" fill="none" stroke-linecap="round">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 52 18 Q 58 25 52 32" stroke="#00D9A3" stroke-width="2" fill="none" stroke-linecap="round">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Call indicator -->
+  <circle cx="30" cy="25" r="6" fill="#00D9A3" opacity="0.5">
+    <animate attributeName="r" values="6;8;6" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <path d="M 28 23 L 28 27 L 32 25 Z" fill="#FFFFFF"/>
+</svg>

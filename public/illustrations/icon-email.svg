@@ -1,0 +1,52 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="orangeEmail" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35"/>
+      <stop offset="100%" style="stop-color:#F7931E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Envelope body -->
+  <rect x="12" y="20" width="36" height="24" rx="2" fill="url(#orangeEmail)" opacity="0.2"/>
+  <rect x="12" y="20" width="36" height="24" rx="2" fill="none" stroke="url(#orangeEmail)" stroke-width="2"/>
+
+  <!-- Envelope flap -->
+  <path d="M 12 20 L 30 34 L 48 20"
+        stroke="url(#orangeEmail)"
+        stroke-width="2"
+        fill="none"
+        stroke-linejoin="round"
+        stroke-linecap="round"/>
+
+  <!-- Letter lines inside -->
+  <line x1="18" y1="30" x2="34" y2="30" stroke="#FF6B35" stroke-width="1.5" opacity="0.4"/>
+  <line x1="18" y1="34" x2="38" y2="34" stroke="#FF6B35" stroke-width="1.5" opacity="0.4"/>
+  <line x1="18" y1="38" x2="30" y2="38" stroke="#FF6B35" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Sending animation - flying envelope -->
+  <g opacity="0">
+    <rect x="40" y="12" width="12" height="8" rx="1" fill="url(#orangeEmail)" opacity="0.6"/>
+    <path d="M 40 12 L 46 16 L 52 12" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite"/>
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="0,0; 8,-8; 8,-8; 8,-8"
+      dur="3s"
+      repeatCount="indefinite"/>
+  </g>
+
+  <!-- Success checkmark -->
+  <circle cx="45" cy="38" r="6" fill="#00D9A3" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+  <path d="M 42 38 L 44 40 L 48 35"
+        stroke="#FFFFFF"
+        stroke-width="2"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+  </path>
+</svg>

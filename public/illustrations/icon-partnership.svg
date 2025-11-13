@@ -1,0 +1,64 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="orangePartnership" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35"/>
+      <stop offset="100%" style="stop-color:#F7931E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Two hands shaking -->
+  <!-- Left hand/arm -->
+  <path d="M 10 35 L 25 35 L 28 30 L 30 28 L 32 30"
+        stroke="url(#orangePartnership)"
+        stroke-width="3"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M 25 35 L 25 40 L 10 40 L 10 35"
+        fill="url(#orangePartnership)"
+        opacity="0.6"/>
+
+  <!-- Right hand/arm -->
+  <path d="M 50 35 L 35 35 L 32 30 L 30 28 L 28 30"
+        stroke="#00D9A3"
+        stroke-width="3"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M 35 35 L 35 40 L 50 40 L 50 35"
+        fill="#00D9A3"
+        opacity="0.6"/>
+
+  <!-- Connection point (handshake) -->
+  <circle cx="30" cy="28" r="4" fill="url(#orangePartnership)"/>
+  <circle cx="30" cy="28" r="6" fill="none" stroke="#00D9A3" stroke-width="2" opacity="0.5">
+    <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Partnership symbols -->
+  <!-- Star 1 -->
+  <path d="M 15 18 L 16 21 L 19 21 L 17 23 L 18 26 L 15 24 L 12 26 L 13 23 L 11 21 L 14 21 Z"
+        fill="#FF6B35"
+        opacity="0.7">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Star 2 -->
+  <path d="M 45 18 L 46 21 L 49 21 L 47 23 L 48 26 L 45 24 L 42 26 L 43 23 L 41 21 L 44 21 Z"
+        fill="#00D9A3"
+        opacity="0.7">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Success sparkle -->
+  <circle cx="30" cy="48" r="2" fill="#F7931E">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="22" cy="50" r="1.5" fill="#FF6B35">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="38" cy="50" r="1.5" fill="#00D9A3">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+  </circle>
+</svg>
