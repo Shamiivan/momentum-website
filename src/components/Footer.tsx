@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-column footer-brand">
             <img src="/LOGO-NO-BG 1.svg" alt="Momentum Management" className="footer-logo-image" />
-            <p className="footer-tagline">Performance-based customer acquisition. We only get paid when you get customers.</p>
+            <p className="footer-tagline">We bridge the gap between you and your customers.</p>
           </div>
 
           <div className="footer-column">

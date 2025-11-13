@@ -100,9 +100,9 @@ const MomentumLanding = () => {
 
   const serviceStats = [
     { number: '$50M', label: 'Revenue Generated', helper: 'for partner brands' },
-    { number: '500', label: 'Trained Professionals', helper: 'across channels' },
+    { number: '500', label: 'Trained Professionals', helper: 'across multiple channels' },
     { number: '3', label: 'Markets', helper: 'expanded in last year' },
-    { number: '40,000', label: 'Customers', helper: 'acquired through outreach' }
+    { number: '40K', label: 'Customers', helper: 'acquired through outreach' }
   ];
 
   const painPoints = [
@@ -513,7 +513,6 @@ const MomentumLanding = () => {
         <section className="case-study-section-new">
           <div className="container-new">
             <div className="case-study-content-new" data-animate>
-              <div className="telus-logo-large">TELUS</div>
               <h2 className="case-study-title-new">$40M for TELUS in 5 Years</h2>
               <div className="case-study-text-new">
                 <p>
