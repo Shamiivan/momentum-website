@@ -394,28 +394,10 @@ const MomentumLanding = () => {
                   Everyone Loves Buying. Nobody Loves Being Sold. We Bridge The Gap.
                 </p>
                 <div className="value-steps" data-animate style={withDelay(0.1)}>
-                  <div className="value-step">
-                    <span className="check-icon">✓</span>
-                    <span>We deploy acquisition teams across multiple channels</span>
-                  </div>
-                  <div className="value-step">
-                    <span className="check-icon">✓</span>
-                    <span>We acquire customers for your business</span>
-                  </div>
-                  <div className="value-step">
-                    <span className="check-icon">✓</span>
-                    <span>You pay based on customers delivered</span>
-                  </div>
+                  <p>We deploy acquisition teams across multiple channels</p>
+                  <p>We acquire customers for your business</p>
+                  <p>You pay based on customers delivered</p>
                 </div>
-                <div className="value-guarantee" data-animate style={withDelay(0.2)}>
-                  <p>
-                    No monthly retainers. No upfront fees. No payment until you have results.
-                  </p>
-                </div>
-                <p className="value-closing" data-animate style={withDelay(0.2)}>
-                  We've done this successfully for 5 years. We know our systems work.
-                  We'd rather get paid for performance than promises.
-                </p>
                 <Link
                   to="/contact"
                   className="btn-primary-new"
