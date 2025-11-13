@@ -190,46 +190,6 @@ const MomentumLanding = () => {
     );
   };
 
-  const getChannelIconOld = (iconType: string) => {
-    const iconProps = {
-      width: "48",
-      height: "48",
-      fill: "none",
-      stroke: "#D4AF37",
-      strokeWidth: "2",
-      strokeLinecap: "round" as const,
-      strokeLinejoin: "round" as const
-    };
-
-    switch (iconType) {
-      case 'social':
-        return (
-          <svg {...iconProps} viewBox="0 0 24 24">
-            <path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z" />
-            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-            <circle cx="17.5" cy="6.5" r="1.5" fill="#D4AF37" />
-          </svg>
-        );
-      case 'email':
-        return (
-          <svg {...iconProps} viewBox="0 0 24 24">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-            <polyline points="22,6 12,13 2,6" />
-          </svg>
-        );
-      case 'partnership':
-        return (
-          <svg {...iconProps} viewBox="0 0 24 24">
-            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-            <path d="M2 17l10 5 10-5" />
-            <path d="M2 12l10 5 10-5" />
-          </svg>
-        );
-      default:
-        return null;
-    }
-  };
-
   const faqs = [
     {
       q: 'How does payment actually work?',
