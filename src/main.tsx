@@ -6,6 +6,8 @@ import App from './App.tsx'
 import Contact from './Contact.tsx'
 import About from './About.tsx'
 import Careers from './Careers.tsx'
+import Services from './Services.tsx'
+import CaseStudies from './CaseStudies.tsx'
 import Partnerships from './services/Partnerships.tsx'
 import StaffTraining from './services/StaffTraining.tsx'
 import ExecutiveCoaching from './services/ExecutiveCoaching.tsx'
@@ -18,6 +20,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/services/partnerships" element={<Partnerships />} />
         <Route path="/services/staff-training" element={<StaffTraining />} />
         <Route path="/services/executive-coaching" element={<ExecutiveCoaching />} />

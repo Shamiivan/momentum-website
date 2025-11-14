@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -36,25 +35,8 @@ const Header = () => {
 
         <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-          <div className="nav-dropdown" onMouseEnter={() => setServicesDropdownOpen(true)} onMouseLeave={() => setServicesDropdownOpen(false)}>
-            <button
-              className="nav-link nav-dropdown-trigger"
-              onClick={(e) => {
-                e.preventDefault();
-                setServicesDropdownOpen(!servicesDropdownOpen);
-              }}
-            >
-              Services
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <div className={`nav-dropdown-menu ${servicesDropdownOpen ? 'open' : ''}`}>
-              <Link to="/services/partnerships" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Partnerships</Link>
-              <Link to="/services/staff-training" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Staff Training</Link>
-              <Link to="/services/executive-coaching" onClick={() => { setMobileMenuOpen(false); setServicesDropdownOpen(false); }}>Executive Coaching</Link>
-            </div>
-          </div>
+          <Link to="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link to="/case-studies" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
           <Link to="/careers" onClick={() => setMobileMenuOpen(false)}>Careers</Link>
           <a href="/#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
           <Link to="/contact" className="nav-cta-mobile" onClick={() => setMobileMenuOpen(false)}>
