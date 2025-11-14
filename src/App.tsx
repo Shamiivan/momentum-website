@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import "./App.css"
+
+gsap.registerPlugin(ScrollTrigger)
 
 type AnimatedStyle = CSSProperties & {
   '--delay'?: string;
@@ -15,41 +19,67 @@ const withDelay = (delay: number): AnimatedStyle => ({
 });
 
 const MomentumLanding = () => {
-  const observerRef = useRef<IntersectionObserver | null>(null);
   const revenueAnimationRef = useRef(false);
   const [revenueCount, setRevenueCount] = useState(20);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+  const [imagesLoaded, setImagesLoaded] = useState<{ [key: string]: boolean }>({});
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    };
+    // GSAP ScrollTrigger animations for all data-animate elements
+    const elementsToAnimate = gsap.utils.toArray('[data-animate]');
 
-    observerRef.current = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+    elementsToAnimate.forEach((element: any) => {
+      // Only use delay for hero section elements
+      const isHeroElement = element.closest('.hero-new');
+      const delay = isHeroElement ? parseFloat(element.style.getPropertyValue('--delay') || '0') : 0;
 
-          if (entry.target.classList.contains('revenue-counter') && !revenueAnimationRef.current) {
-            animateCounter();
+      gsap.fromTo(element,
+        {
+          opacity: 0,
+          y: 5
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: isHeroElement ? 0.4 : 0.01,
+          delay: delay,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 98%',
+            toggleActions: 'play none none none'
           }
         }
-      });
-    }, observerOptions);
+      );
 
-    const elementsToObserve = document.querySelectorAll('[data-animate]');
-    elementsToObserve.forEach(el => {
-      if (observerRef.current) {
-        observerRef.current.observe(el);
+      // Trigger revenue counter animation
+      if (element.classList.contains('revenue-counter')) {
+        ScrollTrigger.create({
+          trigger: element,
+          start: 'top 90%',
+          onEnter: () => {
+            if (!revenueAnimationRef.current) {
+              animateCounter();
+            }
+          }
+        });
       }
     });
 
     return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
+  }, []);
+
+  useEffect(() => {
+    // Handle scroll-to-top button visibility
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
 
@@ -57,32 +87,27 @@ const MomentumLanding = () => {
     if (revenueAnimationRef.current) return;
     revenueAnimationRef.current = true;
 
-    const startValue = 20;
-    const endValue = 50;
-    const duration = 1600;
-    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
-    const startTime = performance.now();
-
-    const tick = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easedProgress = easeOutCubic(progress);
-      const currentValue = Math.round(startValue + (endValue - startValue) * easedProgress);
-
-      setRevenueCount(currentValue);
-
-      if (progress < 1) {
-        requestAnimationFrame(tick);
-      } else {
-        setRevenueCount(endValue);
+    // Use GSAP for smoother counter animation
+    gsap.to({ value: 20 }, {
+      value: 50,
+      duration: 1.6,
+      ease: 'power2.out',
+      onUpdate: function() {
+        setRevenueCount(Math.round(this.targets()[0].value));
       }
-    };
-
-    requestAnimationFrame(tick);
+    });
   };
 
   const toggleAccordion = (index: number) => {
     setActiveAccordion(activeAccordion === index ? null : index);
+  };
+
+  const handleImageLoad = (key: string) => {
+    setImagesLoaded(prev => ({ ...prev, [key]: true }));
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const partners = [
@@ -130,9 +155,9 @@ const MomentumLanding = () => {
     <>
       <Header />
 
-      <main className="main-new">
+      <main className="main-new" role="main">
         {/* Hero Section */}
-        <section className="hero-new">
+        <section className="hero-new" aria-label="Hero section">
           <div className="animated-grid"></div>
           <div className="hero-container">
             <h1 className="revenue-counter" data-animate style={withDelay(0)}>
@@ -156,7 +181,7 @@ const MomentumLanding = () => {
         </section>
 
         {/* Social Proof Section */}
-        <section className="social-proof-section">
+        <section className="social-proof-section" aria-label="Trusted partners">
           <div className="container-new">
             <p className="trusted-label">Trusted by Industry-leading brands across North America:</p>
             <div
@@ -174,6 +199,7 @@ const MomentumLanding = () => {
                       src={partner.logo}
                       alt={`${partner.name} logo`}
                       className="partner-logo-img"
+                      loading="lazy"
                     />
                   </div>
                 ))}
@@ -183,9 +209,9 @@ const MomentumLanding = () => {
         </section>
 
         {/* Service Overview Section */}
-        <section className="service-overview-section" id="services">
+        <section className="service-overview-section" id="services" aria-labelledby="services-heading">
           <div className="container-new">
-            <h2 className="section-title-new" data-animate>
+            <h2 className="section-title-new" data-animate id="services-heading">
               Sales and Marketing Done For You
             </h2>
             <div className="service-description" data-animate style={withDelay(0.1)}>
@@ -215,7 +241,7 @@ const MomentumLanding = () => {
         </section>
 
         {/* Value Proposition Section */}
-        <section className="value-section">
+        <section className="value-section" aria-label="Value proposition">
           <div className="container-new">
             <div className="value-grid">
               <div className="value-content">
@@ -237,38 +263,53 @@ const MomentumLanding = () => {
               <div className="value-bento-grid" data-animate style={withDelay(0.3)}>
                 <div className="bento-grid">
                   <div className="bento-item bento-large">
+                    {!imagesLoaded['bento-1'] && <div className="skeleton-loader"></div>}
                     <img
                       src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=800&fit=crop&q=80"
                       alt="Team collaboration"
-                      className="bento-photo"
+                      className={`bento-photo ${imagesLoaded['bento-1'] ? 'loaded' : ''}`}
+                      loading="lazy"
+                      onLoad={() => handleImageLoad('bento-1')}
                     />
                   </div>
                   <div className="bento-item bento-tall">
+                    {!imagesLoaded['bento-2'] && <div className="skeleton-loader"></div>}
                     <img
                       src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=600&fit=crop&q=80"
                       alt="Sales professional"
-                      className="bento-photo"
+                      className={`bento-photo ${imagesLoaded['bento-2'] ? 'loaded' : ''}`}
+                      loading="lazy"
+                      onLoad={() => handleImageLoad('bento-2')}
                     />
                   </div>
                   <div className="bento-item bento-wide">
+                    {!imagesLoaded['bento-3'] && <div className="skeleton-loader"></div>}
                     <img
                       src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&q=80"
                       alt="Business meeting"
-                      className="bento-photo"
+                      className={`bento-photo ${imagesLoaded['bento-3'] ? 'loaded' : ''}`}
+                      loading="lazy"
+                      onLoad={() => handleImageLoad('bento-3')}
                     />
                   </div>
                   <div className="bento-item bento-small">
+                    {!imagesLoaded['bento-4'] && <div className="skeleton-loader"></div>}
                     <img
                       src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=400&fit=crop&q=80"
                       alt="Team success"
-                      className="bento-photo"
+                      className={`bento-photo ${imagesLoaded['bento-4'] ? 'loaded' : ''}`}
+                      loading="lazy"
+                      onLoad={() => handleImageLoad('bento-4')}
                     />
                   </div>
                   <div className="bento-item bento-small">
+                    {!imagesLoaded['bento-5'] && <div className="skeleton-loader"></div>}
                     <img
                       src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=400&fit=crop&q=80"
                       alt="Team meeting"
-                      className="bento-photo"
+                      className={`bento-photo ${imagesLoaded['bento-5'] ? 'loaded' : ''}`}
+                      loading="lazy"
+                      onLoad={() => handleImageLoad('bento-5')}
                     />
                   </div>
                 </div>
@@ -278,11 +319,11 @@ const MomentumLanding = () => {
         </section>
 
         {/* Case Study Teaser */}
-        <section className="case-study-section-new">
+        <section className="case-study-section-new" aria-label="TELUS case study">
           <div className="container-new">
             <div className="case-study-grid">
               <div className="case-study-visual" data-animate>
-                <img src="/growth-chart.svg" alt="Revenue Growth Chart" className="growth-chart" />
+                <img src="/growth-chart.svg" alt="Revenue Growth Chart" className="growth-chart" loading="lazy" />
               </div>
               <div className="case-study-content-new" data-animate style={withDelay(0.1)}>
                 <h2 className="case-study-title-new">$40M for TELUS in 5 Years</h2>
@@ -305,8 +346,36 @@ const MomentumLanding = () => {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="faq-section-new" id="faq" aria-labelledby="faq-heading">
+          <div className="container-new">
+            <h2 className="section-title-new" data-animate id="faq-heading">Frequently Asked Questions</h2>
+            <div className="faq-list">
+              {faqs.map((faq, idx) => (
+                <div
+                  key={idx}
+                  className={`faq-item-new ${activeAccordion === idx ? 'active' : ''}`}
+                >
+                  <button
+                    className="faq-question"
+                    onClick={() => toggleAccordion(idx)}
+                    aria-expanded={activeAccordion === idx}
+                    aria-controls={`faq-answer-${idx}`}
+                  >
+                    <span>{faq.q}</span>
+                    <span className="faq-icon" aria-hidden="true">{activeAccordion === idx ? '−' : '+'}</span>
+                  </button>
+                  <div className="faq-answer" id={`faq-answer-${idx}`} role="region">
+                    <p>{faq.a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA Section */}
-        <section className="final-cta-section" id="cta">
+        <section className="final-cta-section" id="cta" aria-label="Contact call-to-action">
           <div className="container-new">
             <div className="cta-content-new" data-animate>
               <h2 className="cta-title-new">Let's Talk</h2>
@@ -319,33 +388,16 @@ const MomentumLanding = () => {
             </div>
           </div>
         </section>
-        {/* FAQ Section */}
-        <section className="faq-section-new" id="faq">
-          <div className="container-new">
-            <h2 className="section-title-new" data-animate>Frequently Asked Questions</h2>
-            <div className="faq-list">
-              {faqs.map((faq, idx) => (
-                <div
-                  key={idx}
-                  className={`faq-item-new ${activeAccordion === idx ? 'active' : ''}`}
-                >
-                  <button
-                    className="faq-question"
-                    onClick={() => toggleAccordion(idx)}
-                  >
-                    <span>{faq.q}</span>
-                    <span className="faq-icon">{activeAccordion === idx ? '−' : '+'}</span>
-                  </button>
-                  <div className="faq-answer">
-                    <p>{faq.a}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
       </main>
+
+      {/* Scroll to Top Button */}
+      <button
+        className={`scroll-to-top ${showScrollTop ? 'visible' : ''}`}
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+      >
+        ↑
+      </button>
 
       <Footer />
     </>

@@ -3578,3 +3578,466 @@ body {
     gap: 2rem;
   }
 }
+
+/* Skeleton Loaders */
+.skeleton-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.bento-photo {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.bento-photo.loaded {
+  opacity: 1;
+}
+
+/* Mobile Touch Target Improvements */
+@media (max-width: 768px) {
+  /* Ensure all interactive elements have minimum touch target size of 44x44px */
+  .btn-primary-new,
+  .btn-secondary-new,
+  .header-cta-new,
+  .btn-cta-large,
+  .faq-question {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 14px 28px;
+  }
+
+  /* Improve spacing for touch interactions */
+  .hero-cta-group-new {
+    gap: 1rem;
+  }
+
+  .main-nav a {
+    padding: 16px 20px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Better mobile typography */
+  .hero-subtitle-new {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  .section-title-new {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  /* Improve form inputs on mobile */
+  input,
+  textarea,
+  button {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Better spacing on mobile */
+  .container-new {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Improve partner logo sizing */
+  .partner-logo-img {
+    max-height: 40px;
+    width: auto;
+  }
+
+  /* Better stat cards on mobile */
+  .stat-card-new {
+    padding: 2rem 1.5rem;
+  }
+
+  .stat-number-new {
+    font-size: 2.5rem;
+  }
+
+  /* FAQ improvements */
+  .faq-question {
+    font-size: 1rem;
+    padding: 1.25rem;
+  }
+
+  .faq-answer {
+    padding: 1rem 1.25rem 1.5rem;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 375px) {
+  .btn-primary-new,
+  .btn-secondary-new {
+    font-size: 0.875rem;
+    padding: 12px 20px;
+  }
+
+  .hero-subtitle-new {
+    font-size: 1rem;
+  }
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-accent-gold);
+  color: var(--color-primary-dark);
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100px);
+  transition: all 0.3s var(--easing-smooth);
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.scroll-to-top:hover {
+  background: var(--color-accent-secondary);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-2px);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+}
+
+/* Enhanced Focus States for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.btn-primary-new:focus-visible,
+.btn-secondary-new:focus-visible,
+.btn-cta-large:focus-visible {
+  outline: 3px solid var(--color-accent-gold);
+  outline-offset: 4px;
+}
+
+.main-nav a:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 2px;
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.faq-question:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: -2px;
+}
+
+/* Skip to main content link */
+.skip-to-main {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-accent-gold);
+  color: var(--color-primary-dark);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 10000;
+  transition: top 0.3s;
+}
+
+.skip-to-main:focus {
+  top: 0;
+}
+
+/* Improved keyboard navigation for accordions */
+.faq-question {
+  position: relative;
+}
+
+.faq-question:focus {
+  z-index: 1;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  *:focus-visible {
+    outline-width: 3px;
+    outline-offset: 4px;
+  }
+}
+
+/* Ensure interactive elements are keyboard accessible */
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: rgba(212, 175, 55, 0.2);
+}
+
+/* Micro-interactions and Enhanced Hover States */
+
+/* Button hover effects */
+.btn-primary-new {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s var(--easing-smooth);
+}
+
+.btn-primary-new::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary-new:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary-new:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+}
+
+.btn-primary-new:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary-new {
+  position: relative;
+  transition: all 0.3s var(--easing-smooth);
+}
+
+.btn-secondary-new:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--color-accent-secondary);
+  transform: translateY(-2px);
+}
+
+.btn-secondary-new:active {
+  transform: translateY(0);
+}
+
+/* Card hover effects */
+.stat-card-new {
+  transition: all 0.3s var(--easing-smooth);
+}
+
+.stat-card-new:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
+}
+
+.partner-card {
+  transition: all 0.3s var(--easing-smooth);
+}
+
+.partner-card:hover {
+  transform: scale(1.05);
+}
+
+/* Bento grid image hover */
+.bento-photo {
+  transition: all 0.4s var(--easing-smooth);
+}
+
+.bento-item:hover .bento-photo {
+  transform: scale(1.05);
+}
+
+/* FAQ hover and active states */
+.faq-item-new {
+  transition: all 0.3s var(--easing-smooth);
+}
+
+.faq-question {
+  transition: all 0.2s var(--easing-smooth);
+}
+
+.faq-question:hover {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.faq-icon {
+  transition: transform 0.3s var(--easing-smooth);
+}
+
+.faq-item-new.active .faq-icon {
+  transform: rotate(90deg);
+}
+
+/* Navigation link hover */
+.main-nav a {
+  position: relative;
+  transition: all 0.2s var(--easing-smooth);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent-gold);
+  transform: translateX(-50%);
+  transition: width 0.3s var(--easing-smooth);
+}
+
+.main-nav a:hover::after {
+  width: 80%;
+}
+
+.main-nav a:hover {
+  color: var(--color-accent-gold);
+}
+
+/* Scroll indicator animation */
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(10px);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+a,
+button,
+input,
+textarea {
+  transition: all 0.2s var(--easing-smooth);
+}
+
+/* Add ripple effect on click for buttons */
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.btn-primary-new:active::after,
+.btn-secondary-new:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  animation: ripple 0.6s ease-out;
+}
+
+/* Loading state for images */
+.bento-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Smooth page transitions */
+.main-new > section {
+  transition: opacity 0.3s var(--easing-smooth);
+}
+
+/* Add subtle scale on hover for CTA sections */
+.cta-content-new {
+  transition: transform 0.3s var(--easing-smooth);
+}
+
+.cta-content-new:hover {
+  transform: scale(1.02);
+}
+
+/* Partner logo marquee smooth animation */
+.partners-marquee {
+  animation: scroll 30s linear infinite;
+}
+
+.partners-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Revenue counter pulse effect */
+.revenue-counter {
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
