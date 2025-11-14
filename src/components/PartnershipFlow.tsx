@@ -197,7 +197,7 @@ const PartnershipFlow = () => {
             <div key={step.id} className="flow-item">
               <div
                 className="flow-step"
-                ref={(el) => (stepsRef.current[index] = el)}
+                ref={(el) => { stepsRef.current[index] = el; }}
                 style={{ '--step-color': step.color } as React.CSSProperties}
               >
                 <div className="flow-step-icon">
@@ -213,7 +213,7 @@ const PartnershipFlow = () => {
         </div>
 
         {/* Connector arrows */}
-        <div className="flow-connector-group" ref={(el) => (connectorsRef.current[0] = el)}>
+        <div className="flow-connector-group" ref={(el) => { connectorsRef.current[0] = el; }}>
           {[...Array(5)].map((_, i) => (
             <svg key={i} className="flow-arrow" width="16" height="24" viewBox="0 0 16 24" fill="none">
               <path
@@ -231,7 +231,7 @@ const PartnershipFlow = () => {
         <div className="flow-result">
           <div
             className="flow-step flow-step-result"
-            ref={(el) => (stepsRef.current[5] = el)}
+            ref={(el) => { stepsRef.current[5] = el; }}
             style={{ '--step-color': steps[5].color } as React.CSSProperties}
           >
             <div className="flow-step-icon">

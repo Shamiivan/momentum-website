@@ -47,29 +47,6 @@ const About = () => {
     }
   ];
 
-  const timeline = [
-    {
-      year: '2019',
-      title: 'Founded',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
-    },
-    {
-      year: '2020',
-      title: 'TELUS Partnership',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
-    },
-    {
-      year: '2023',
-      title: '$40M Milestone',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
-    },
-    {
-      year: '2024',
-      title: 'Expanding Reach',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
-    }
-  ];
-
   return (
     <>
       <Header />

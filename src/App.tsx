@@ -314,6 +314,20 @@ const MomentumLanding = () => {
           </div>
         </section>
 
+        {/* Final CTA Section */}
+        <section className="final-cta-section" id="cta">
+          <div className="container-new">
+            <div className="cta-content-new" data-animate>
+              <h2 className="cta-title-new">Let's Talk</h2>
+              <p className="cta-subtitle-new">
+                Get in touch to discuss how we can help grow your business.
+              </p>
+              <Link to="/contact" className="btn-cta-large">
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        </section>
         {/* FAQ Section */}
         <section className="faq-section-new" id="faq">
           <div className="container-new">
@@ -340,20 +354,6 @@ const MomentumLanding = () => {
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="final-cta-section" id="cta">
-          <div className="container-new">
-            <div className="cta-content-new" data-animate>
-              <h2 className="cta-title-new">Let's Talk</h2>
-              <p className="cta-subtitle-new">
-                Get in touch to discuss how we can help grow your business.
-              </p>
-              <Link to="/contact" className="btn-cta-large">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />

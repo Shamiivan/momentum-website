@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import Header from './components/Header'
@@ -57,27 +57,35 @@ const Services = () => {
       const channelCards = channelsSectionRef.current?.querySelectorAll('.channel-card-new');
       const header = channelsSectionRef.current?.querySelector('.channels-header');
 
-      gsap.set(header, { opacity: 0, y: 40 });
-      gsap.set(channelCards, {
-        opacity: 0,
-        y: 60,
-        scale: 0.9,
-        rotateX: 15
-      });
+      if (header) {
+        gsap.set(header, { opacity: 0, y: 40 });
+      }
 
-      gsap.to(header, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: channelsSectionRef.current,
-          start: 'top 75%',
-          toggleActions: 'play none none none'
-        }
-      });
+      if (channelCards && channelCards.length > 0) {
+        gsap.set(channelCards, {
+          opacity: 0,
+          y: 60,
+          scale: 0.9,
+          rotateX: 15
+        });
+      }
 
-      gsap.to(channelCards, {
+      if (header) {
+        gsap.to(header, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: channelsSectionRef.current,
+            start: 'top 75%',
+            toggleActions: 'play none none none'
+          }
+        });
+      }
+
+      if (channelCards && channelCards.length > 0) {
+        gsap.to(channelCards, {
         opacity: 1,
         y: 0,
         scale: 1,
@@ -94,7 +102,8 @@ const Services = () => {
           start: 'top 70%',
           toggleActions: 'play none none none'
         }
-      });
+        });
+      }
 
       channelCards?.forEach((card) => {
         const number = card.querySelector('.channel-number');
