@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import "./App.css"
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 type AnimatedStyle = CSSProperties & {
   '--delay'?: string;
@@ -17,6 +21,7 @@ const withDelay = (delay: number): AnimatedStyle => ({
 const MomentumLanding = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const revenueAnimationRef = useRef(false);
+  const channelsSectionRef = useRef<HTMLDivElement>(null);
   const [revenueCount, setRevenueCount] = useState(20);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
 
@@ -53,6 +58,81 @@ const MomentumLanding = () => {
         observerRef.current.disconnect();
       }
     };
+  }, []);
+
+  // GSAP animation for channels section
+  useEffect(() => {
+    if (!channelsSectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const channelCards = channelsSectionRef.current?.querySelectorAll('.channel-card-new');
+      const header = channelsSectionRef.current?.querySelector('.channels-header');
+
+      // Set initial states
+      gsap.set(header, { opacity: 0, y: 40 });
+      gsap.set(channelCards, {
+        opacity: 0,
+        y: 60,
+        scale: 0.9,
+        rotateX: 15
+      });
+
+      // Create timeline for header
+      gsap.to(header, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: channelsSectionRef.current,
+          start: 'top 75%',
+          toggleActions: 'play none none none'
+        }
+      });
+
+      // Animate cards with stagger
+      gsap.to(channelCards, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        rotateX: 0,
+        duration: 0.8,
+        stagger: {
+          each: 0.12,
+          from: 'start',
+          ease: 'power2.out'
+        },
+        ease: 'back.out(1.2)',
+        scrollTrigger: {
+          trigger: channelsSectionRef.current,
+          start: 'top 70%',
+          toggleActions: 'play none none none'
+        }
+      });
+
+      // Add hover animations for each card
+      channelCards?.forEach((card) => {
+        const number = card.querySelector('.channel-number');
+        const image = card.querySelector('.channel-image');
+        const icon = card.querySelector('.channel-icon-overlay');
+
+        card.addEventListener('mouseenter', () => {
+          gsap.to(card, { y: -12, duration: 0.4, ease: 'power2.out' });
+          gsap.to(number, { scale: 1.15, rotation: 8, duration: 0.4, ease: 'back.out(2)' });
+          gsap.to(image, { scale: 1.1, duration: 0.5, ease: 'power2.out' });
+          gsap.to(icon, { scale: 1.1, rotation: -5, duration: 0.4, ease: 'back.out(2)' });
+        });
+
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, { y: 0, duration: 0.4, ease: 'power2.out' });
+          gsap.to(number, { scale: 1, rotation: 0, duration: 0.4, ease: 'power2.out' });
+          gsap.to(image, { scale: 1, duration: 0.5, ease: 'power2.out' });
+          gsap.to(icon, { scale: 1, rotation: 0, duration: 0.4, ease: 'power2.out' });
+        });
+      });
+    }, channelsSectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   const animateCounter = () => {
@@ -269,7 +349,7 @@ const MomentumLanding = () => {
           <div className="animated-grid"></div>
           <div className="hero-container">
             <h1 className="revenue-counter" data-animate style={withDelay(0)}>
-              <span className="revenue-line">Sales and Marketing Done For You</span>
+              <span className="revenue-line">${revenueCount} Million Generated For Brands</span>
             </h1>
             <p className="hero-subtitle-new" data-animate style={withDelay(0.15)}>
               We bridge the gap between you and your customer.
@@ -319,7 +399,7 @@ const MomentumLanding = () => {
         <section className="service-overview-section" id="services">
           <div className="container-new">
             <h2 className="section-title-new" data-animate>
-              <span className="">${revenueCount} Million Generated For Brands</span>
+              Sales and Marketing Done For You
             </h2>
             <div className="service-description" data-animate style={withDelay(0.1)}>
               <p>
@@ -451,13 +531,13 @@ const MomentumLanding = () => {
         </section>
 
         {/* Six Channels Section */}
-        <section className="channels-section">
+        <section className="channels-section" ref={channelsSectionRef}>
           <div className="container-new">
             <div className="channels-header">
-              <h2 className="section-title-new" data-animate>
+              <h2 className="section-title-new">
                 Six Channels. One Coordinated System.
               </h2>
-              <p className="channels-subtitle" data-animate style={withDelay(0.1)}>
+              <p className="channels-subtitle">
                 We don't just pick one channel and hope it works. We deploy across all six,
                 orchestrating them together to create a unified customer acquisition engine.
               </p>
@@ -467,8 +547,6 @@ const MomentumLanding = () => {
                 <div
                   key={channel.title}
                   className="channel-card-new"
-                  data-animate
-                  style={withDelay(idx * 0.04)}
                 >
                   <div className="channel-number">{String(idx + 1).padStart(2, '0')}</div>
                   <div className="channel-image-container">

@@ -1602,9 +1602,10 @@ body {
   border: 1px solid rgba(212, 175, 55, 0.2);
   overflow: hidden;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   position: relative;
+  perspective: 1000px;
+  will-change: transform;
 }
 
 .channel-card-new::before {
@@ -1627,7 +1628,6 @@ body {
 }
 
 .channel-card-new:hover {
-  transform: translateY(-8px);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
   border-color: var(--color-accent-gold);
 }
@@ -1649,11 +1649,7 @@ body {
   font-weight: 700;
   z-index: 10;
   box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.channel-card-new:hover .channel-number {
-  transform: scale(1.1) rotate(5deg);
+  will-change: transform;
 }
 
 .channel-image-container {
@@ -1667,12 +1663,11 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
   filter: brightness(0.95);
+  will-change: transform;
 }
 
 .channel-card-new:hover .channel-image {
-  transform: scale(1.08);
   filter: brightness(1);
 }
 
@@ -1691,13 +1686,13 @@ body {
   padding: 0.75rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(212, 175, 55, 0.3);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
 }
 
 .channel-card-new:hover .channel-icon-overlay {
   background: rgba(212, 175, 55, 0.95);
   border-color: var(--color-accent-gold);
-  transform: scale(1.1);
 }
 
 .channel-icon-overlay svg {
