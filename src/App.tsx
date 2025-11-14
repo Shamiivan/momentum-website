@@ -292,20 +292,6 @@ const MomentumLanding = () => {
                     by deploying expert sales teams across in-person, phone, and social media channels.
                   </p>
                 </div>
-                <div className="case-stats">
-                  <div className="case-stat">
-                    <div className="case-stat-number">$40M</div>
-                    <div className="case-stat-label">Revenue Generated</div>
-                  </div>
-                  <div className="case-stat">
-                    <div className="case-stat-number">5 Years</div>
-                    <div className="case-stat-label">Partnership Duration</div>
-                  </div>
-                  <div className="case-stat">
-                    <div className="case-stat-number">Quebec</div>
-                    <div className="case-stat-label">Market Expansion</div>
-                  </div>
-                </div>
                 <Link
                   to="/case-studies"
                   className="btn-secondary-new"
