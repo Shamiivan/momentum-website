@@ -280,36 +280,41 @@ const MomentumLanding = () => {
         {/* Case Study Teaser */}
         <section className="case-study-section-new">
           <div className="container-new">
-            <div className="case-study-content-new" data-animate>
-              <h2 className="case-study-title-new">$40M for TELUS in 5 Years</h2>
-              <div className="case-study-text-new">
-                <p>
-                  Over the past 5 years, we helped TELUS break into the Quebec market and generate over $40 million in revenue
-                  by deploying expert sales teams across in-person, phone, and social media channels.
-                </p>
+            <div className="case-study-grid">
+              <div className="case-study-visual" data-animate>
+                <img src="/growth-chart.svg" alt="Revenue Growth Chart" className="growth-chart" />
               </div>
-              <div className="case-stats">
-                <div className="case-stat">
-                  <div className="case-stat-number">$40M</div>
-                  <div className="case-stat-label">Revenue</div>
+              <div className="case-study-content-new" data-animate style={withDelay(0.1)}>
+                <h2 className="case-study-title-new">$40M for TELUS in 5 Years</h2>
+                <div className="case-study-text-new">
+                  <p>
+                    Over the past 5 years, we helped TELUS break into the Quebec market and generate over $40 million in revenue
+                    by deploying expert sales teams across in-person, phone, and social media channels.
+                  </p>
                 </div>
-                <div className="case-stat">
-                  <div className="case-stat-number">5 Years</div>
-                  <div className="case-stat-label">Partnership</div>
+                <div className="case-stats">
+                  <div className="case-stat">
+                    <div className="case-stat-number">$40M</div>
+                    <div className="case-stat-label">Revenue Generated</div>
+                  </div>
+                  <div className="case-stat">
+                    <div className="case-stat-number">5 Years</div>
+                    <div className="case-stat-label">Partnership Duration</div>
+                  </div>
+                  <div className="case-stat">
+                    <div className="case-stat-number">Quebec</div>
+                    <div className="case-stat-label">Market Expansion</div>
+                  </div>
                 </div>
-                <div className="case-stat">
-                  <div className="case-stat-number">Quebec</div>
-                  <div className="case-stat-label">Market</div>
-                </div>
+                <Link
+                  to="/case-studies"
+                  className="btn-secondary-new"
+                  data-animate
+                  style={withDelay(0.2)}
+                >
+                  Read Full Case Study
+                </Link>
               </div>
-              <Link
-                to="/case-studies"
-                className="btn-secondary-new"
-                data-animate
-                style={withDelay(0.2)}
-              >
-                Read Full Case Study
-              </Link>
             </div>
           </div>
         </section>

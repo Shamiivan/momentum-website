@@ -1,0 +1,101 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chartGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8941F;stop-opacity:0.6" />
+    </linearGradient>
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#B8941F;stop-opacity:0.4" />
+      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#B8941F;stop-opacity:0.4" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Grid lines -->
+  <g opacity="0.2">
+    <line x1="50" y1="240" x2="350" y2="240" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="50" y1="190" x2="350" y2="190" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="50" y1="140" x2="350" y2="140" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="50" y1="90" x2="350" y2="90" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- Axes -->
+  <line x1="50" y1="40" x2="50" y2="250" stroke="#0A1628" stroke-width="2"/>
+  <line x1="50" y1="250" x2="360" y2="250" stroke="#0A1628" stroke-width="2"/>
+
+  <!-- Growth bars with animation -->
+  <g class="bars">
+    <rect x="80" y="220" width="40" height="0" fill="url(#chartGold)" rx="4">
+      <animate attributeName="height" from="0" to="30" dur="1s" fill="freeze" begin="0.2s"/>
+      <animate attributeName="y" from="220" to="190" dur="1s" fill="freeze" begin="0.2s"/>
+    </rect>
+    <rect x="140" y="220" width="40" height="0" fill="url(#chartGold)" rx="4">
+      <animate attributeName="height" from="0" to="60" dur="1s" fill="freeze" begin="0.4s"/>
+      <animate attributeName="y" from="220" to="160" dur="1s" fill="freeze" begin="0.4s"/>
+    </rect>
+    <rect x="200" y="220" width="40" height="0" fill="url(#chartGold)" rx="4">
+      <animate attributeName="height" from="0" to="100" dur="1s" fill="freeze" begin="0.6s"/>
+      <animate attributeName="y" from="220" to="120" dur="1s" fill="freeze" begin="0.6s"/>
+    </rect>
+    <rect x="260" y="220" width="40" height="0" fill="url(#chartGold)" rx="4">
+      <animate attributeName="height" from="0" to="150" dur="1s" fill="freeze" begin="0.8s"/>
+      <animate attributeName="y" from="220" to="70" dur="1s" fill="freeze" begin="0.8s"/>
+    </rect>
+    <rect x="320" y="220" width="40" height="0" fill="url(#chartGold)" rx="4">
+      <animate attributeName="height" from="0" to="180" dur="1s" fill="freeze" begin="1s"/>
+      <animate attributeName="y" from="220" to="40" dur="1s" fill="freeze" begin="1s"/>
+    </rect>
+  </g>
+
+  <!-- Growth line overlay with glow -->
+  <path d="M 100 205 L 160 175 L 220 135 L 280 85 L 340 50"
+        stroke="#D4AF37"
+        stroke-width="3"
+        fill="none"
+        filter="url(#glow)"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-dasharray="400"
+        stroke-dashoffset="400">
+    <animate attributeName="stroke-dashoffset" from="400" to="0" dur="2s" fill="freeze" begin="0.5s"/>
+  </path>
+
+  <!-- Data points -->
+  <g class="points">
+    <circle cx="100" cy="205" r="0" fill="#D4AF37" filter="url(#glow)">
+      <animate attributeName="r" from="0" to="6" dur="0.3s" fill="freeze" begin="1s"/>
+    </circle>
+    <circle cx="160" cy="175" r="0" fill="#D4AF37" filter="url(#glow)">
+      <animate attributeName="r" from="0" to="6" dur="0.3s" fill="freeze" begin="1.2s"/>
+    </circle>
+    <circle cx="220" cy="135" r="0" fill="#D4AF37" filter="url(#glow)">
+      <animate attributeName="r" from="0" to="6" dur="0.3s" fill="freeze" begin="1.4s"/>
+    </circle>
+    <circle cx="280" cy="85" r="0" fill="#D4AF37" filter="url(#glow)">
+      <animate attributeName="r" from="0" to="6" dur="0.3s" fill="freeze" begin="1.6s"/>
+    </circle>
+    <circle cx="340" cy="50" r="0" fill="#D4AF37" filter="url(#glow)">
+      <animate attributeName="r" from="0" to="8" dur="0.3s" fill="freeze" begin="1.8s"/>
+    </circle>
+  </g>
+
+  <!-- Success arrow -->
+  <g opacity="0">
+    <path d="M 350 45 L 365 50 L 350 55 Z" fill="#D4AF37" filter="url(#glow)"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="2s"/>
+  </g>
+
+  <!-- Year labels -->
+  <text x="100" y="270" fill="#64748B" font-size="12" text-anchor="middle" font-family="Inter, sans-serif">2020</text>
+  <text x="160" y="270" fill="#64748B" font-size="12" text-anchor="middle" font-family="Inter, sans-serif">2021</text>
+  <text x="220" y="270" fill="#64748B" font-size="12" text-anchor="middle" font-family="Inter, sans-serif">2022</text>
+  <text x="280" y="270" fill="#64748B" font-size="12" text-anchor="middle" font-family="Inter, sans-serif">2023</text>
+  <text x="340" y="270" fill="#64748B" font-size="12" text-anchor="middle" font-family="Inter, sans-serif">2024</text>
+</svg>
