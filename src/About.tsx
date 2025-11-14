@@ -94,28 +94,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Images Section */}
-        <section className="about-images-section">
-          <div className="container-new">
-            <div className="about-images-grid" data-animate>
-              <div className="about-image-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80"
-                  alt="Team collaboration"
-                  className="about-image"
-                />
-              </div>
-              <div className="about-image-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop&q=80"
-                  alt="Professional team member"
-                  className="about-image"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Our Story Section */}
         <section className="about-story-section">
           <div className="container-new">
@@ -148,6 +126,28 @@ const About = () => {
             </div>
           </div>
         </section>
+        {/* Team Images Section */}
+        <section className="about-images-section">
+          <div className="container-new">
+            <div className="about-images-grid" data-animate>
+              <div className="about-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80"
+                  alt="Team collaboration"
+                  className="about-image"
+                />
+              </div>
+              <div className="about-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop&q=80"
+                  alt="Professional team member"
+                  className="about-image"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
 
         {/* Mission & Values Section */}
         <section className="about-mission-section">
@@ -175,30 +175,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Timeline Section */}
-        <section className="about-timeline-section">
-          <div className="container-new">
-            <h2 className="about-section-title centered" data-animate>
-              Our Journey
-            </h2>
-            <div className="about-timeline">
-              {timeline.map((item, idx) => (
-                <div
-                  key={item.year}
-                  className="timeline-item"
-                  data-animate
-                  style={{ '--delay': `${idx * 0.1}s` } as React.CSSProperties}
-                >
-                  <div className="timeline-year">{item.year}</div>
-                  <div className="timeline-content">
-                    <h3 className="timeline-title">{item.title}</h3>
-                    <p className="timeline-description">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Team Culture Section */}
         <section className="about-culture-section">

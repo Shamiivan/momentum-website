@@ -34,10 +34,9 @@ const Header = () => {
         </button>
 
         <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-          <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
           <Link to="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
-          <Link to="/case-studies" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
           <Link to="/careers" onClick={() => setMobileMenuOpen(false)}>Careers</Link>
+          <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
           <a href="/#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
           <Link to="/contact" className="nav-cta-mobile" onClick={() => setMobileMenuOpen(false)}>
             Contact Us

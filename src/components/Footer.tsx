@@ -27,7 +27,6 @@ const Footer = () => {
               <li><a href="/#services">Partnerships</a></li>
               <li><a href="/#services">Staff Training</a></li>
               <li><a href="/#services">Executive Coaching</a></li>
-              <li><a href="/#services">Sales Teams</a></li>
             </ul>
           </div>
 
