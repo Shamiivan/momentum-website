@@ -57,27 +57,11 @@ const About = () => {
           <div className="container-new">
             <p className="about-label" data-animate>ABOUT US</p>
             <h1 className="about-hero-title" data-animate>
-              We're The Bridge Between Brands and Customers
+              We're here to help you grow
             </h1>
             <p className="about-hero-subtitle" data-animate>
               Performance-based growth across 6 channels. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
-            {/* Bridge Animation Placeholder */}
-            <div style={{ margin: '3rem 0', display: 'flex', justifyContent: 'center' }} data-animate>
-              <div style={{
-                fontSize: '5rem',
-                background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-accent-gold))',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}>
-                🌉
-              </div>
-            </div>
-            <div className="about-hero-cta" data-animate>
-              <Link to="/contact" className="btn-primary-new">
-                Work With Us
-              </Link>
-            </div>
           </div>
         </section>
 
@@ -184,7 +168,7 @@ const About = () => {
                 </div>
               </div>
               <div className="about-culture-content">
-                <h2 className="about-section-title" data-animate>Our Approach</h2>
+                <h2 className="about-section-title" data-animate>Mission Statement</h2>
                 <div className="about-culture-text" data-animate>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
@@ -218,7 +202,7 @@ const About = () => {
             </div>
           </div>
         </section>
-      </main>
+      </main >
 
       <Footer />
     </>

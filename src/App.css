@@ -399,7 +399,7 @@ body {
   }
 
   .logo-image {
-    height: 40px;
+    height: 50px;
   }
 
   .main-nav {
@@ -745,7 +745,7 @@ body {
   }
 
   .logo-image {
-    height: 35px;
+    height: 45px;
   }
 }
 
@@ -770,8 +770,10 @@ body {
   padding: 2rem 0;
 }
 
-.partners-marquee-wrapper:hover .partners-marquee {
-  animation-play-state: paused;
+@media (hover: hover) {
+  .partners-marquee-wrapper:hover .partners-marquee {
+    animation-play-state: paused;
+  }
 }
 
 .partners-marquee-wrapper::before,
@@ -871,7 +873,13 @@ body {
   }
 
   .partner-card {
-    padding: 1.5rem 2rem;
+    padding: 2rem 2.5rem;
+  }
+
+  .partner-logo-img {
+    height: 60px;
+    max-width: 180px;
+    min-width: 120px;
   }
 }
 
@@ -3667,7 +3675,9 @@ body {
 
   /* Improve partner logo sizing */
   .partner-logo-img {
-    max-height: 40px;
+    height: 50px;
+    max-width: 150px;
+    min-width: 100px;
     width: auto;
   }
 
@@ -4019,14 +4029,7 @@ textarea {
   transform: scale(1.02);
 }
 
-/* Partner logo marquee smooth animation */
-.partners-marquee {
-  animation: scroll 30s linear infinite;
-}
-
-.partners-marquee:hover {
-  animation-play-state: paused;
-}
+/* Partner logo marquee smooth animation - defined earlier in the file */
 
 /* Revenue counter pulse effect */
 .revenue-counter {

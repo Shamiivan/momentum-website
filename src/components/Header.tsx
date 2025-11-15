@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Logo from './Logo'
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,9 +19,7 @@ const Header = () => {
   return (
     <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <Link to="/" className="logo-new">
-          <img src="/LOGO-NEW.svg" alt="Momentum Management" className="logo-image" />
-        </Link>
+        <Logo />
 
         <button
           className="mobile-menu-toggle"

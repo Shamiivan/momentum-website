@@ -3,9 +3,9 @@ import './B2BServicesSection.css';
 
 const B2BServicesSection = () => {
   const services = [
-    { title: 'Partnerships', link: '/partnerships' },
-    { title: 'Staff/Sales Training', link: '/training' },
-    { title: 'Executive coaching', link: '/coaching' }
+    { title: 'Partnerships', link: '/services/partnerships' },
+    { title: 'Staff/Sales Training', link: '/services/staff-training' },
+    { title: 'Executive coaching', link: '/services/executive-coaching' }
   ];
 
   const channels = [
