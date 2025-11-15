@@ -35,7 +35,7 @@ const Partnerships = () => {
         <section className="contact-hero">
           <div className="container-new">
             <h1 className="contact-page-title" data-animate>
-              We Build Your Sales System, Then Hand You The Keys
+              We build the bridge between your business and your customers.
             </h1>
             <p className="contact-page-subtitle" data-animate style={{ marginTop: '2rem' }}>
               Performance-based partnerships that create self-sufficient sales teams through multi-channel deployment.
