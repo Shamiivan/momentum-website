@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import PartnershipPipeline from '../components/PartnershipPipeline'
 import '../App.css'
 
 const Partnerships = () => {
@@ -30,17 +31,17 @@ const Partnerships = () => {
   return (
     <>
       <Header />
-      <main className="contact-page">
+      <main className="about-page">
         {/* Hero Section */}
-        <section className="contact-hero">
+        <section className="about-hero">
           <div className="container-new">
-            <h1 className="contact-page-title" data-animate>
+            <h1 className="about-hero-title" data-animate>
               We build the bridge between your business and your customers.
             </h1>
-            <p className="contact-page-subtitle" data-animate style={{ marginTop: '2rem' }}>
+            <p className="about-hero-subtitle" data-animate>
               Performance-based partnerships that create self-sufficient sales teams through multi-channel deployment.
             </p>
-            <div style={{ marginTop: '3rem' }} data-animate>
+            <div className="about-hero-cta" data-animate>
               <Link to="/contact" className="btn-primary-new">
                 Start Your Partnership
               </Link>
@@ -75,72 +76,6 @@ const Partnerships = () => {
                   <p className="about-value-description" style={{ fontSize: '0.95rem' }}>{item.desc}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* What You Get */}
-        <section className="about-mission-section">
-          <div className="container-new">
-            <h2 className="about-section-title centered" data-animate>
-              What You Get
-            </h2>
-            <div className="about-values-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
-              {[
-                { title: 'Multi-Channel Execution', desc: 'Simultaneous deployment across 6 channels with integrated strategy and coordinated approach.' },
-                { title: 'Training & Knowledge Transfer', desc: 'Your team learns our proven methods with documented processes and comprehensive playbooks.' },
-                { title: 'Systems & Processes', desc: 'CRM setup, sales workflows, reporting dashboards, and performance tracking tools.' }
-              ].map((item, idx) => (
-                <div
-                  key={item.title}
-                  className="about-value-card"
-                  data-animate
-                  style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
-                >
-                  <h3 className="about-value-title">{item.title}</h3>
-                  <p className="about-value-description">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Performance Model */}
-        <section className="about-story-section">
-          <div className="container-new">
-            <h2 className="about-section-title centered" data-animate>
-              We Only Win When You Win
-            </h2>
-            <div className="about-story-grid">
-              <div className="about-story-content" data-animate>
-                <p>
-                  Our performance-based model means we only get paid when you get customers. No monthly retainers, no upfront costs—just results.
-                </p>
-                <p>
-                  <strong>Aligned Incentives:</strong> We're motivated to deliver quality customers, not just volume.
-                </p>
-                <p>
-                  <strong>No Risk For You:</strong> Predictable customer acquisition cost with budget flexibility and ROI guaranteed by design.
-                </p>
-              </div>
-              <div className="about-story-image" data-animate>
-                <div style={{
-                  background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-dark-gradient-end))',
-                  borderRadius: '12px',
-                  padding: '3rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  minHeight: '300px'
-                }}>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🤝</div>
-                    <p style={{ fontSize: '1.5rem', color: 'var(--color-accent-gold)' }}>
-                      Performance-Based Model
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>

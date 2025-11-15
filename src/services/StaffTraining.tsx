@@ -38,7 +38,8 @@ const StaffTraining = () => {
               Train Your Team to Sell Like We Do
             </h1>
             <p className="contact-page-subtitle" data-animate style={{ marginTop: '2rem' }}>
-              Shadow-based training that transforms customer service into revenue generators across all 6 channels.
+              Explore our professional development programs designed to elevate your team's performance.
+
             </p>
             <div style={{
               fontSize: '3rem',
