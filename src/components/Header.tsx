@@ -55,7 +55,7 @@ const Header = () => {
                   Partnerships
                 </Link>
                 <Link to="/services/staff-training">
-                  Staff Training
+                  Staff/Sales Training
                 </Link>
                 <Link to="/services/executive-coaching">
                   Executive Coaching
@@ -80,7 +80,7 @@ const Header = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 style={{ fontSize: '0.9rem', opacity: 0.8 }}
               >
-                → Staff Training
+                → Staff/Sales Training
               </Link>
               <Link
                 to="/services/executive-coaching"
@@ -121,8 +121,7 @@ const Header = () => {
           min-width: 200px;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
           z-index: 1000;
-          margin-top: 0.25rem;
-          padding-top: 0.5rem;
+          margin-top: 0;
         }
 
         .dropdown-menu a {
