@@ -208,7 +208,7 @@ const MomentumLanding = () => {
           </div>
         </section>
 
-        {/* Service Overview Section */}
+        {/* Services Section */}
         <section className="service-overview-section" id="services" aria-labelledby="services-heading">
           <div className="container-new">
             <h2 className="section-title-new" data-animate id="services-heading">
@@ -223,18 +223,91 @@ const MomentumLanding = () => {
                 You focus on your product. We focus on acquiring customers for it.
               </p>
             </div>
-            <div className="stats-grid-new">
-              {serviceStats.map((stat, idx) => (
-                <div
-                  key={stat.label}
-                  className="stat-card-new"
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '2rem',
+              marginTop: '3rem'
+            }}>
+              {[
+                {
+                  id: 'partnerships',
+                  icon: '🤝',
+                  title: 'Partnerships',
+                  desc: 'We build your sales system, then hand you the keys. Shadow-based partnerships that create self-sufficient sales teams.',
+                  link: '/services/partnerships'
+                },
+                {
+                  id: 'staff-training',
+                  icon: '🎓',
+                  title: 'Staff Training',
+                  desc: 'Train your team to sell like we do. Shadow-based training that transforms customer service into revenue generators.',
+                  link: '/services/staff-training'
+                },
+                {
+                  id: 'executive-coaching',
+                  icon: '🎯',
+                  title: 'Executive Coaching',
+                  desc: 'Leadership is earned, not given. Strategic coaching for leaders who work FOR their people.',
+                  link: '/services/executive-coaching'
+                }
+              ].map((service, idx) => (
+                <Link
+                  key={service.id}
+                  to={service.link}
                   data-animate
-                  style={withDelay(0.1 + idx * 0.05)}
+                  style={{
+                    '--delay': `${0.15 + idx * 0.1}s`,
+                    display: 'block',
+                    background: 'var(--color-white)',
+                    borderRadius: '12px',
+                    padding: '2.5rem',
+                    textDecoration: 'none',
+                    border: '1px solid rgba(212, 175, 55, 0.1)',
+                    transition: 'all 0.3s ease'
+                  } as React.CSSProperties}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
+                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(212, 175, 55, 0.15)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.1)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
                 >
-                  <div className="stat-number-new">{stat.number}</div>
-                  <div className="stat-label-new">{stat.label}</div>
-                  <div className="stat-helper">{stat.helper}</div>
-                </div>
+                  <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>
+                    {service.icon}
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: 'var(--color-primary-dark)',
+                    marginBottom: '0.75rem'
+                  }}>
+                    {service.title}
+                  </h3>
+                  <p style={{
+                    color: 'var(--color-text-muted)',
+                    lineHeight: '1.6',
+                    fontSize: '1rem'
+                  }}>
+                    {service.desc}
+                  </p>
+                  <div style={{
+                    marginTop: '1.5rem',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    color: 'var(--color-accent-gold)',
+                    fontWeight: '600',
+                    fontSize: '1rem'
+                  }}>
+                    Learn more →
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

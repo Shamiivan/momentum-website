@@ -168,7 +168,7 @@ const Services = () => {
                     ))}
                   </ul>
                   <Link
-                    to="/contact"
+                    to={`/services/${service.id}`}
                     className="btn-secondary-new"
                     style={{
                       marginTop: '1.5rem',
