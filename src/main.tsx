@@ -10,6 +10,7 @@ import CaseStudies from './CaseStudies.tsx'
 import Partnerships from './services/Partnerships.tsx'
 import StaffTraining from './services/StaffTraining.tsx'
 import ExecutiveCoaching from './services/ExecutiveCoaching.tsx'
+import JobDetail from './careers/JobDetail.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/careers/:jobSlug" element={<JobDetail />} />
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/services/partnerships" element={<Partnerships />} />
         <Route path="/services/staff-training" element={<StaffTraining />} />

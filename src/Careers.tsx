@@ -154,7 +154,7 @@ const Careers = () => {
               margin: '0 auto',
               lineHeight: '1.6'
             }} data-animate>
-              Join a team where authority is questioned, leadership is earned, and we believe in everyone until proven otherwise.
+              Join a team where authority is questioned, leadership is earned, that believes in everyone until proven otherwise.
             </p>
           </div>
         </section>
@@ -284,7 +284,7 @@ const Careers = () => {
               Open positions
             </h2>
             <p style={{ color: 'var(--color-text-muted)', marginBottom: '4rem', maxWidth: '800px' }} data-animate>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. We're looking for talented individuals to join our growing team.
+              Join a performance-driven team where you'll learn real sales, work with major brands, and have a clear path to advancement.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
@@ -319,34 +319,20 @@ const Careers = () => {
                       fontSize: '1.75rem',
                       fontWeight: '700',
                       color: 'var(--color-primary-dark)',
-                      marginBottom: '1rem'
+                      marginBottom: '0.75rem'
                     }}>
                       {role.title}
                     </h3>
-                    <div style={{
-                      display: 'flex',
-                      gap: '1.5rem',
-                      flexWrap: 'wrap',
-                      alignItems: 'center',
+                    <p style={{
                       color: 'var(--color-text-muted)',
-                      fontSize: '0.95rem'
+                      fontSize: '1rem',
+                      lineHeight: '1.6'
                     }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <span>👤</span>
-                        <span>Full-time</span>
-                      </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <span>📍</span>
-                        <span>Remote</span>
-                      </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <span>💼</span>
-                        <span>Performance-based</span>
-                      </div>
-                    </div>
+                      {role.whatYouDo[0]}
+                    </p>
                   </div>
                   <Link
-                    to="/contact"
+                    to={`/careers/${role.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}`}
                     style={{
                       background: 'var(--color-accent-gold)',
                       color: 'var(--color-primary-dark)',
@@ -370,7 +356,7 @@ const Careers = () => {
                       e.currentTarget.style.transform = 'translateX(0)';
                     }}
                   >
-                    Apply now
+                    View Details
                     <span>→</span>
                   </Link>
                 </div>
