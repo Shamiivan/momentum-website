@@ -23,7 +23,6 @@ const MomentumLanding = () => {
   const revenueAnimationRef = useRef(false);
   const [revenueCount, setRevenueCount] = useState(20);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
-  const [imagesLoaded, setImagesLoaded] = useState<{ [key: string]: boolean }>({});
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -101,10 +100,6 @@ const MomentumLanding = () => {
 
   const toggleAccordion = (index: number) => {
     setActiveAccordion(activeAccordion === index ? null : index);
-  };
-
-  const handleImageLoad = (key: string) => {
-    setImagesLoaded(prev => ({ ...prev, [key]: true }));
   };
 
   const scrollToTop = () => {
