@@ -114,14 +114,6 @@ const Careers = () => {
     }
   ];
 
-  const cultureHighlights = [
-    { icon: '🤝', title: 'teammates', desc: 'Collaborative environment where everyone contributes' },
-    { icon: '🌍', title: 'nationalities', desc: 'Diverse team from around the world' },
-    { icon: '🎯', title: 'eNPS', desc: 'High employee satisfaction and engagement' },
-    { icon: '👩‍💼', title: 'female leaders', desc: 'Strong representation in leadership roles' },
-    { icon: '🐾', title: 'proud pet parents', desc: 'Pet-friendly and family-oriented culture' }
-  ];
-
   const lifePhotos = [
     { url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop&q=80', alt: 'Team collaboration' },
     { url: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop&q=80', alt: 'Team meeting' },
@@ -283,39 +275,7 @@ const Careers = () => {
           </div>
         </section>
 
-        {/* Advantages Section */}
-        <section className="about-mission-section">
-          <div className="container-new">
-            <h2 className="about-section-title centered" data-animate>
-              Why Join Momentum
-            </h2>
-            <p className="about-mission-intro" data-animate>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. What makes working here different.
-            </p>
 
-            <div className="about-values-grid">
-              {[
-                { icon: '🚀', title: 'Career Growth', desc: 'Lorem ipsum dolor sit amet. Clear paths from intern to BDR to AE. Most promotions come from within.' },
-                { icon: '💰', title: 'Performance Bonuses', desc: 'Lorem ipsum dolor sit amet. Uncapped commissions and revenue share opportunities for top performers.' },
-                { icon: '🎓', title: 'Real Learning', desc: 'Lorem ipsum dolor sit amet. Shadow $50M+ deals. Learn from people who have actually done it.' },
-                { icon: '🤝', title: 'Work with Top Brands', desc: 'Lorem ipsum dolor sit amet. Amazon, Shopify, TELUS, Rogers. Not just startups.' },
-                { icon: '⚡', title: 'Fast-Paced Environment', desc: 'Lorem ipsum dolor sit amet. Hands-on from day 1. You\'ll be on calls within your first week.' },
-                { icon: '🌟', title: 'Ownership & Autonomy', desc: 'Lorem ipsum dolor sit amet. We trust you with responsibility. Your ideas are heard and valued.' }
-              ].map((item, idx) => (
-                <div
-                  key={item.title}
-                  className="about-value-card"
-                  data-animate
-                  style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
-                >
-                  <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{item.icon}</div>
-                  <h3 className="about-value-title">{item.title}</h3>
-                  <p className="about-value-description">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Open Positions Section */}
         <section className="about-story-section">

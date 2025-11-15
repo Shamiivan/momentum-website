@@ -8,15 +8,6 @@ const B2BServicesSection = () => {
     { title: 'Executive coaching', link: '/services/executive-coaching' }
   ];
 
-  const channels = [
-    'Cold email outreach',
-    'Cold and intent calling',
-    'Voicemails',
-    'SMS / WhatsApp',
-    'LinkedIn lead generation',
-    'Paid advertising'
-  ];
-
   return (
     <section className="b2b-services-section">
       <div className="b2b-services-container">
