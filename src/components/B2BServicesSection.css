@@ -1,0 +1,356 @@
+.b2b-services-section {
+  padding: 80px 0;
+  background: var(--color-white);
+  border-top: 3px solid var(--color-accent-gold);
+}
+
+.b2b-services-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Left Side - Omnichannel */
+.b2b-services-left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.b2b-services-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.b2b-services-image {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  background: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  color: var(--color-accent-gold);
+  transition: all 0.3s ease;
+}
+
+.icon-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.4);
+}
+
+.icon-phone-1 {
+  top: 10%;
+  left: -8%;
+}
+
+.icon-whatsapp {
+  top: 10%;
+  right: -8%;
+}
+
+.icon-email {
+  bottom: 10%;
+  left: -8%;
+}
+
+.icon-video {
+  bottom: 10%;
+  right: -8%;
+}
+
+/* Dashed connection lines */
+.icon-circle::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, transparent 0%, transparent 50%, var(--color-accent-gold) 50%, var(--color-accent-gold) 100%);
+  background-size: 8px 2px;
+  opacity: 0.3;
+}
+
+.icon-phone-1::before {
+  top: 50%;
+  left: 100%;
+  transform: rotate(-45deg);
+  transform-origin: 0 50%;
+}
+
+.icon-whatsapp::before {
+  top: 50%;
+  right: 100%;
+  transform: rotate(45deg);
+  transform-origin: 100% 50%;
+}
+
+.icon-email::before {
+  bottom: 50%;
+  left: 100%;
+  transform: rotate(45deg);
+  transform-origin: 0 50%;
+}
+
+.icon-video::before {
+  bottom: 50%;
+  right: 100%;
+  transform: rotate(-45deg);
+  transform-origin: 100% 50%;
+}
+
+.b2b-services-title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1e293b;
+  margin: 0;
+}
+
+.b2b-services-channels {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.b2b-services-channel-item {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  padding-left: 24px;
+  position: relative;
+}
+
+.b2b-services-channel-item::before {
+  content: '•';
+  position: absolute;
+  left: 8px;
+  color: var(--color-accent-gold);
+  font-size: 20px;
+}
+
+.b2b-services-cta-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent-gold);
+  background: transparent;
+  color: var(--color-accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+
+.b2b-services-cta-button:hover {
+  background: var(--color-accent-gold);
+  color: var(--color-primary-dark);
+  transform: translateX(8px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+}
+
+/* Right Side - Services Grid */
+.b2b-services-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.b2b-services-right .service-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #334155;
+  margin: 0;
+}
+
+.b2b-services-subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.8;
+  color: #334155;
+  margin: 0;
+}
+
+.strikethrough-animation {
+  position: relative;
+  display: inline-block;
+}
+
+.strikethrough-animation::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent-gold);
+  transform: translateY(-50%);
+  animation: strikethrough 1.5s ease-in-out 0.5s forwards;
+}
+
+@keyframes strikethrough {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.b2b-services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+}
+
+.b2b-service-card {
+  background: var(--color-white);
+  padding: 24px 28px;
+  border-radius: 12px;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.b2b-service-card:hover {
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
+  transform: translateY(-4px);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.b2b-service-card:hover .b2b-service-arrow {
+  transform: translateX(4px);
+  color: var(--color-accent-gold);
+}
+
+.b2b-service-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #334155;
+  transition: color 0.3s ease;
+}
+
+.b2b-service-card:hover .b2b-service-title {
+  color: var(--color-accent-gold);
+}
+
+.b2b-service-arrow {
+  flex-shrink: 0;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .b2b-services-container {
+    gap: 60px;
+  }
+
+  .b2b-services-title {
+    font-size: 36px;
+  }
+
+  .b2b-services-subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 968px) {
+  .b2b-services-container {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .b2b-services-left {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .b2b-services-image-wrapper {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .b2b-services-container {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .b2b-services-section {
+    padding: 60px 0;
+  }
+
+  .b2b-services-container {
+    padding: 0 1.5rem;
+    gap: 48px;
+  }
+
+  .b2b-services-title {
+    font-size: 32px;
+  }
+
+  .b2b-services-subtitle {
+    font-size: 18px;
+  }
+
+  .b2b-services-channels {
+    grid-template-columns: 1fr;
+  }
+
+  .b2b-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .icon-circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .icon-circle svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .icon-phone-1 {
+    left: 0;
+  }
+
+  .icon-whatsapp {
+    right: 0;
+  }
+
+  .icon-email {
+    left: 0;
+  }
+
+  .icon-video {
+    right: 0;
+  }
+}

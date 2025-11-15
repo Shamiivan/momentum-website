@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import "./App.css"
+import B2BServicesSection from './components/B2BServicesSection'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -208,10 +209,10 @@ const MomentumLanding = () => {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section className="service-overview-section" id="services" aria-labelledby="services-heading">
+        {/* Service Overview Section */}
+        <section className="service-overview-section" id="services">
           <div className="container-new">
-            <h2 className="section-title-new" data-animate id="services-heading">
+            <h2 className="section-title-new" data-animate>
               Sales and Marketing Done For You
             </h2>
             <div className="service-description" data-animate style={withDelay(0.1)}>
@@ -223,174 +224,24 @@ const MomentumLanding = () => {
                 You focus on your product. We focus on acquiring customers for it.
               </p>
             </div>
-
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '2rem',
-              marginTop: '3rem'
-            }}>
-              {[
-                {
-                  id: 'partnerships',
-                  icon: '🤝',
-                  title: 'Partnerships',
-                  desc: 'We build your sales system, then hand you the keys. Shadow-based partnerships that create self-sufficient sales teams.',
-                  link: '/services/partnerships'
-                },
-                {
-                  id: 'staff-training',
-                  icon: '🎓',
-                  title: 'Staff Training',
-                  desc: 'Train your team to sell like we do. Shadow-based training that transforms customer service into revenue generators.',
-                  link: '/services/staff-training'
-                },
-                {
-                  id: 'executive-coaching',
-                  icon: '🎯',
-                  title: 'Executive Coaching',
-                  desc: 'Leadership is earned, not given. Strategic coaching for leaders who work FOR their people.',
-                  link: '/services/executive-coaching'
-                }
-              ].map((service, idx) => (
-                <Link
-                  key={service.id}
-                  to={service.link}
+            <div className="stats-grid-new">
+              {serviceStats.map((stat, idx) => (
+                <div
+                  key={stat.label}
+                  className="stat-card-new"
                   data-animate
-                  style={{
-                    '--delay': `${0.15 + idx * 0.1}s`,
-                    display: 'block',
-                    background: 'var(--color-white)',
-                    borderRadius: '12px',
-                    padding: '2.5rem',
-                    textDecoration: 'none',
-                    border: '1px solid rgba(212, 175, 55, 0.1)',
-                    transition: 'all 0.3s ease'
-                  } as React.CSSProperties}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-8px)';
-                    e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
-                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(212, 175, 55, 0.15)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.1)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
+                  style={withDelay(0.1 + idx * 0.05)}
                 >
-                  <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>
-                    {service.icon}
-                  </div>
-                  <h3 style={{
-                    fontSize: '1.5rem',
-                    fontWeight: '700',
-                    color: 'var(--color-primary-dark)',
-                    marginBottom: '0.75rem'
-                  }}>
-                    {service.title}
-                  </h3>
-                  <p style={{
-                    color: 'var(--color-text-muted)',
-                    lineHeight: '1.6',
-                    fontSize: '1rem'
-                  }}>
-                    {service.desc}
-                  </p>
-                  <div style={{
-                    marginTop: '1.5rem',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    color: 'var(--color-accent-gold)',
-                    fontWeight: '600',
-                    fontSize: '1rem'
-                  }}>
-                    Learn more →
-                  </div>
-                </Link>
+                  <div className="stat-number-new">{stat.number}</div>
+                  <div className="stat-label-new">{stat.label}</div>
+                  <div className="stat-helper">{stat.helper}</div>
+                </div>
               ))}
             </div>
           </div>
         </section>
-
+        <B2BServicesSection />
         {/* Value Proposition Section */}
-        <section className="value-section" aria-label="Value proposition">
-          <div className="container-new">
-            <div className="value-grid">
-              <div className="value-content">
-                <h2 className="value-title" data-animate>Everyone Loves Buying. Nobody Loves Being Sold. Leave it to Us</h2>
-                <div className="value-steps" data-animate style={withDelay(0.1)}>
-                  <p>We deploy acquisition teams across multiple channels</p>
-                  <p>We acquire customers for your business</p>
-                  <p>You pay based on customers delivered</p>
-                </div>
-                <Link
-                  to="/contact"
-                  className="btn-primary-new"
-                  data-animate
-                  style={withDelay(0.1)}
-                >
-                  Schedule Your Strategy Call
-                </Link>
-              </div>
-              <div className="value-bento-grid" data-animate style={withDelay(0.3)}>
-                <div className="bento-grid">
-                  <div className="bento-item bento-large">
-                    {!imagesLoaded['bento-1'] && <div className="skeleton-loader"></div>}
-                    <img
-                      src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=800&fit=crop&q=80"
-                      alt="Team collaboration"
-                      className={`bento-photo ${imagesLoaded['bento-1'] ? 'loaded' : ''}`}
-                      loading="lazy"
-                      onLoad={() => handleImageLoad('bento-1')}
-                    />
-                  </div>
-                  <div className="bento-item bento-tall">
-                    {!imagesLoaded['bento-2'] && <div className="skeleton-loader"></div>}
-                    <img
-                      src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=600&fit=crop&q=80"
-                      alt="Sales professional"
-                      className={`bento-photo ${imagesLoaded['bento-2'] ? 'loaded' : ''}`}
-                      loading="lazy"
-                      onLoad={() => handleImageLoad('bento-2')}
-                    />
-                  </div>
-                  <div className="bento-item bento-wide">
-                    {!imagesLoaded['bento-3'] && <div className="skeleton-loader"></div>}
-                    <img
-                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&q=80"
-                      alt="Business meeting"
-                      className={`bento-photo ${imagesLoaded['bento-3'] ? 'loaded' : ''}`}
-                      loading="lazy"
-                      onLoad={() => handleImageLoad('bento-3')}
-                    />
-                  </div>
-                  <div className="bento-item bento-small">
-                    {!imagesLoaded['bento-4'] && <div className="skeleton-loader"></div>}
-                    <img
-                      src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=400&fit=crop&q=80"
-                      alt="Team success"
-                      className={`bento-photo ${imagesLoaded['bento-4'] ? 'loaded' : ''}`}
-                      loading="lazy"
-                      onLoad={() => handleImageLoad('bento-4')}
-                    />
-                  </div>
-                  <div className="bento-item bento-small">
-                    {!imagesLoaded['bento-5'] && <div className="skeleton-loader"></div>}
-                    <img
-                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=400&fit=crop&q=80"
-                      alt="Team meeting"
-                      className={`bento-photo ${imagesLoaded['bento-5'] ? 'loaded' : ''}`}
-                      loading="lazy"
-                      onLoad={() => handleImageLoad('bento-5')}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Case Study Teaser */}
         <section className="case-study-section-new" aria-label="TELUS case study">
           <div className="container-new">
