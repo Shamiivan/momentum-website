@@ -31,19 +31,19 @@ const About = () => {
   const values = [
     {
       title: 'Results-Driven',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.'
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Obsessed with measurable outcomes, not vanity metrics. Performance-based model reflects our commitment. We only win when you win.'
     },
     {
-      title: 'Local Expertise',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.'
+      title: 'North America Market Expertise',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Deep understanding of the North American market. Cultural fluency and proven track record across the region.'
     },
     {
-      title: 'Performance-Based',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.'
+      title: 'Performance-Based Partnership',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Only paid when clients get customers. Aligned incentives, no retainer risk. True partnership, shared success model.'
     },
     {
       title: 'Multi-Channel Mastery',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.'
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Unlike agencies specializing in one channel. 6 channels, integrated approach. We go where your customers are.'
     }
   ];
 
@@ -57,15 +57,25 @@ const About = () => {
           <div className="container-new">
             <p className="about-label" data-animate>ABOUT US</p>
             <h1 className="about-hero-title" data-animate>
-              We're here to help you grow
+              We're The Bridge Between Brands and Customers
             </h1>
             <p className="about-hero-subtitle" data-animate>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
+              Performance-based growth across 6 channels. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
+            {/* Bridge Animation Placeholder */}
+            <div style={{ margin: '3rem 0', display: 'flex', justifyContent: 'center' }} data-animate>
+              <div style={{
+                fontSize: '5rem',
+                background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-accent-gold))',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>
+                🌉
+              </div>
+            </div>
             <div className="about-hero-cta" data-animate>
               <Link to="/contact" className="btn-primary-new">
-                Let's get acquainted
+                Work With Us
               </Link>
             </div>
           </div>
@@ -76,20 +86,20 @@ const About = () => {
           <div className="container-new">
             <div className="about-story-grid">
               <div className="about-story-content">
-                <h2 className="about-section-title" data-animate>Our Story</h2>
+                <h2 className="about-section-title" data-animate>How It All Began</h2>
                 <div className="about-story-text" data-animate>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                    ut labore et dolore magna aliqua. Founded with a mission to bridge the gap between brands and customers.
                   </p>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. We saw a gap in the industry
+                    that needed to be filled - true performance-based partnerships.
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Today, 25+ companies served, $50M+ generated,
+                    and 500+ professionals trained. We continue to grow by staying true to our core mission.
                   </p>
                 </div>
               </div>

@@ -92,7 +92,7 @@ const MomentumLanding = () => {
       value: 50,
       duration: 1.6,
       ease: 'power2.out',
-      onUpdate: function() {
+      onUpdate: function () {
         setRevenueCount(Math.round(this.targets()[0].value));
       }
     });
@@ -171,7 +171,7 @@ const MomentumLanding = () => {
                 Schedule a Free Consultation
               </Link>
               <Link to="/services" className="btn-secondary-new">
-                Explore Our Services
+                See How We Do It
               </Link>
             </div>
             <div className="scroll-indicator" data-animate style={withDelay(0.35)}>
