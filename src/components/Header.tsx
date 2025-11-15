@@ -51,13 +51,13 @@ const Header = () => {
             </Link>
             {servicesOpen && (
               <div className="dropdown-menu">
-                <Link to="/services/partnerships">
+                <Link to="/services#partnerships">
                   Partnerships
                 </Link>
-                <Link to="/services/staff-training">
+                <Link to="/services#staff-training">
                   Staff Training
                 </Link>
-                <Link to="/services/executive-coaching">
+                <Link to="/services#executive-coaching">
                   Executive Coaching
                 </Link>
               </div>
@@ -69,21 +69,21 @@ const Header = () => {
             <Link to="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
             <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <Link
-                to="/services/partnerships"
+                to="/services#partnerships"
                 onClick={() => setMobileMenuOpen(false)}
                 style={{ fontSize: '0.9rem', opacity: 0.8 }}
               >
                 → Partnerships
               </Link>
               <Link
-                to="/services/staff-training"
+                to="/services#staff-training"
                 onClick={() => setMobileMenuOpen(false)}
                 style={{ fontSize: '0.9rem', opacity: 0.8 }}
               >
                 → Staff Training
               </Link>
               <Link
-                to="/services/executive-coaching"
+                to="/services#executive-coaching"
                 onClick={() => setMobileMenuOpen(false)}
                 style={{ fontSize: '0.9rem', opacity: 0.8 }}
               >
@@ -121,7 +121,8 @@ const Header = () => {
           min-width: 200px;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
           z-index: 1000;
-          margin-top: 0.5rem;
+          margin-top: 0.25rem;
+          padding-top: 0.5rem;
         }
 
         .dropdown-menu a {
