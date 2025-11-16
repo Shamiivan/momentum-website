@@ -1,13 +1,11 @@
-import { useEffect } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { usePageScroll } from './hooks/usePageScroll'
 import './App.css'
 import './Contact.css'
 
 const Contact = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  usePageScroll();
 
   return (
     <>

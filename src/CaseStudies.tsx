@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react'
 import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { usePageScroll } from './hooks/usePageScroll'
+import { useScrollAnimation } from './hooks/useScrollAnimation'
 import "./App.css"
 
 type AnimatedStyle = CSSProperties & {
@@ -14,35 +15,8 @@ const withDelay = (delay: number): AnimatedStyle => ({
 });
 
 const CaseStudies = () => {
-  const observerRef = useRef<IntersectionObserver | null>(null);
-
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    };
-
-    observerRef.current = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    const elementsToObserve = document.querySelectorAll('[data-animate]');
-    elementsToObserve.forEach(el => {
-      if (observerRef.current) {
-        observerRef.current.observe(el);
-      }
-    });
-
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, []);
+  usePageScroll();
+  useScrollAnimation();
 
   return (
     <>

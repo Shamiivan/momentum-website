@@ -1,48 +1,46 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { usePageScroll } from './hooks/usePageScroll'
+import { useScrollAnimation } from './hooks/useScrollAnimation'
 import './App.css'
 
 const About = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
+  usePageScroll();
+  useScrollAnimation();
 
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    const elementsToObserve = document.querySelectorAll('[data-animate]');
-    elementsToObserve.forEach(el => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
+  const founders = [
+    {
+      name: 'John Doe',
+      role: 'Co-Founder & CEO',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Over 15 years of experience in multi-channel sales and business development. Led partnerships with Fortune 500 companies generating $40M+ in revenue.',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&q=80',
+      linkedin: '#'
+    },
+    {
+      name: 'Jane Smith',
+      role: 'Co-Founder & COO',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Expert in Quebec market expansion and operational excellence. Built and trained sales teams of 500+ professionals across North America.',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&q=80',
+      linkedin: '#'
+    }
+  ];
 
   const values = [
     {
-      title: 'Results-Driven',
+      title: 'We Help, We do not Sell',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Obsessed with measurable outcomes, not vanity metrics. Performance-based model reflects our commitment. We only win when you win.'
     },
     {
-      title: 'North America Market Expertise',
+      title: 'Hardwork',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Deep understanding of the North American market. Cultural fluency and proven track record across the region.'
     },
     {
-      title: 'Performance-Based Partnership',
+      title: 'Energy',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Only paid when clients get customers. Aligned incentives, no retainer risk. True partnership, shared success model.'
     },
     {
-      title: 'Multi-Channel Mastery',
+      title: 'Meritocracy',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Unlike agencies specializing in one channel. 6 channels, integrated approach. We go where your customers are.'
     }
   ];
@@ -119,6 +117,40 @@ const About = () => {
           </div>
         </section>
 
+        {/* Leadership Team Section */}
+        <section className="about-leadership-section">
+          <div className="container-new">
+            <h2 className="about-section-title centered" data-animate>
+              Meet Our Founders
+            </h2>
+            <p className="about-leadership-intro" data-animate>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. The visionaries behind our success.
+            </p>
+            <div className="about-founders-grid">
+              {founders.map((founder, idx) => (
+                <div
+                  key={founder.name}
+                  className="founder-card"
+                  data-animate
+                  style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
+                >
+                  <div className="founder-image-wrapper">
+                    <img
+                      src={founder.image}
+                      alt={founder.name}
+                      className="founder-image"
+                    />
+                  </div>
+                  <div className="founder-info">
+                    <h3 className="founder-name">{founder.name}</h3>
+                    <p className="founder-role">{founder.role}</p>
+                    <p className="founder-bio">{founder.bio}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Mission & Values Section */}
         <section className="about-mission-section">

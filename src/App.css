@@ -2882,6 +2882,114 @@ body {
   transform: scale(1.05);
 }
 
+/* Leadership Section */
+.about-leadership-section {
+  padding: 8rem 0;
+  background: var(--color-light-gray);
+}
+
+.about-leadership-intro {
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--color-neutral-gray);
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.about-founders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.founder-card {
+  background: var(--color-white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s var(--easing-smooth), box-shadow 0.3s var(--easing-smooth);
+}
+
+.founder-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.founder-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-accent-gold) 0%, var(--color-accent-secondary) 100%);
+}
+
+.founder-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--easing-smooth);
+}
+
+.founder-card:hover .founder-image {
+  transform: scale(1.08);
+}
+
+.founder-info {
+  padding: 2rem;
+}
+
+.founder-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.founder-role {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+}
+
+.founder-bio {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-neutral-gray);
+  margin-bottom: 1.5rem;
+}
+
+.founder-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s var(--easing-smooth);
+  padding: 0.5rem 0;
+}
+
+.founder-linkedin:hover {
+  color: var(--color-accent-gold);
+}
+
+.founder-linkedin svg {
+  transition: transform 0.3s var(--easing-smooth);
+}
+
+.founder-linkedin:hover svg {
+  transform: translateX(3px);
+}
+
 /* About Story Section */
 .about-story-section {
   padding: 8rem 0;
@@ -3206,6 +3314,19 @@ body {
 
   .about-images-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-founders-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .founder-info {
+    padding: 1.5rem;
+  }
+
+  .founder-name {
+    font-size: 1.5rem;
   }
 
   .about-section-title {

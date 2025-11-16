@@ -1,32 +1,13 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import PartnershipPipeline from '../components/PartnershipPipeline'
+import { usePageScroll } from '../hooks/usePageScroll'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import '../App.css'
 
 const Partnerships = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    const elementsToObserve = document.querySelectorAll('[data-animate]');
-    elementsToObserve.forEach(el => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
+  usePageScroll();
+  useScrollAnimation();
 
   return (
     <>

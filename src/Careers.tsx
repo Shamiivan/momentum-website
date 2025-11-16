@@ -1,114 +1,14 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { usePageScroll } from './hooks/usePageScroll'
+import { useScrollAnimation } from './hooks/useScrollAnimation'
+import { jobs } from './data/jobs'
 import './App.css'
 
 const Careers = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    const elementsToObserve = document.querySelectorAll('[data-animate]');
-    elementsToObserve.forEach(el => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
-  const roles = [
-    {
-      title: 'BDR (Business Development Representative)',
-      whatYouDo: [
-        'Own the top of the funnel—find prospects, qualify leads, book meetings',
-        'Learn cold calling, email outreach, and prospecting',
-        'Work with brands like Amazon, Shopify, TELUS (not just startups)'
-      ],
-      youllThrive: [
-        'You\'re coachable and hungry (we can teach the rest)',
-        'Rejection doesn\'t break you',
-        'You want to learn sales from people who\'ve actually done it'
-      ],
-      whyJoin: [
-        'Clear path to Account Executive in 12-18 months (most BDRs get promoted)',
-        'Performance bonuses on top of base',
-        'Learn multi-channel prospecting (most agencies only know one)',
-        'Shadow $50M+ partnership deals'
-      ]
-    },
-    {
-      title: 'Closer (Account Executive)',
-      whatYouDo: [
-        'Take qualified meetings and turn them into revenue',
-        'Run demos, handle objections, negotiate deals',
-        'Close partnerships and customer acquisition contracts',
-        'Manage your own pipeline and revenue targets'
-      ],
-      youllThrive: [
-        'You\'ve closed before and want bigger deals',
-        'You\'re consultative, not pushy',
-        'You can handle 6-figure contracts without freaking out'
-      ],
-      whyJoin: [
-        'Uncapped commission (seriously—we mean it)',
-        'We book the meetings, you close them (no cold calling)',
-        'Multi-channel experience (phone, email, social, events)',
-        'Work with established brands that actually have budgets'
-      ]
-    },
-    {
-      title: 'Intern',
-      whatYouDo: [
-        'Shadow real deals (not make coffee)',
-        'Learn outreach, qualification, and pipeline management',
-        'Build lists, send campaigns, book meetings',
-        'Get mentored by BDRs and AEs who started where you are'
-      ],
-      youllThrive: [
-        'You\'re a student or recent grad who wants real experience',
-        'You\'re willing to be uncomfortable (growth happens there)',
-        'You want mentorship, not just a resume line'
-      ],
-      whyJoin: [
-        'Paid internship (we don\'t do free labor)',
-        'Hands-on from day 1—you\'ll be on calls within your first week',
-        'Clear path to BDR if you perform (we hire from within)',
-        'Learn sales from a performance-based team, not a classroom'
-      ]
-    },
-    {
-      title: 'Assistant Manager',
-      whatYouDo: [
-        'Coach and develop BDRs and interns',
-        'Manage pipeline quality and team performance',
-        'Run weekly training and call reviews',
-        'Help scale our systems as we grow'
-      ],
-      youllThrive: [
-        'You\'ve been a top performer and want to lead',
-        'You care about developing people, not just hitting numbers',
-        'You can coach without micromanaging'
-      ],
-      whyJoin: [
-        'Leadership track for high performers (not a dead-end middle management role)',
-        'Revenue share opportunities',
-        'Build systems that scale (not just manage people)',
-        'Work directly with the founder on strategy'
-      ]
-    }
-  ];
+  usePageScroll();
+  useScrollAnimation();
 
   const lifePhotos = [
     { url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop&q=80', alt: 'Team collaboration' },
@@ -306,9 +206,9 @@ const Careers = () => {
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                  {roles.map((role, idx) => (
+                  {jobs.map((job, idx) => (
                     <div
-                      key={role.title}
+                      key={job.title}
                       data-animate
                       style={{
                         '--delay': `${0.1 + idx * 0.1}s`,
@@ -339,18 +239,18 @@ const Careers = () => {
                           color: 'var(--color-primary-dark)',
                           marginBottom: '0.75rem'
                         }}>
-                          {role.title}
+                          {job.title}
                         </h3>
                         <p style={{
                           color: 'var(--color-text-muted)',
                           fontSize: '1rem',
                           lineHeight: '1.6'
                         }}>
-                          {role.whatYouDo[0]}
+                          {job.whatYouDo[0]}
                         </p>
                       </div>
                       <Link
-                        to={`/careers/${role.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}`}
+                        to={`/careers/${job.slug}`}
                         style={{
                           background: 'var(--color-accent-gold)',
                           color: 'var(--color-primary-dark)',
