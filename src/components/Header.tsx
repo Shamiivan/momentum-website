@@ -129,7 +129,22 @@ const Header = () => {
 
           <Link to="/careers" onClick={() => setMobileMenuOpen(false)}>Careers</Link>
           <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-          <a href="/#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
+          <a
+            href="/#faq"
+            onClick={(e) => {
+              setMobileMenuOpen(false);
+              // If we're already on the homepage, scroll to FAQ
+              if (window.location.pathname === '/') {
+                e.preventDefault();
+                const faqSection = document.getElementById('faq');
+                if (faqSection) {
+                  faqSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }}
+          >
+            FAQ
+          </a>
           <Link to="/contact" className="nav-cta-mobile" onClick={() => setMobileMenuOpen(false)}>
             Contact Us
           </Link>
