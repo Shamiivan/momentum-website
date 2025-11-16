@@ -25,6 +25,17 @@
   position: relative;
 }
 
+.nav-dropdown-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+}
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -79,15 +90,20 @@
 }
 
 .mobile-services-title {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 1rem 0.5rem;
   font-size: 1.1rem;
   color: var(--color-white);
   text-decoration: none;
   font-weight: 500;
   min-height: 48px;
-  display: flex;
-  align-items: center;
+  background: none;
+  border: none;
+  cursor: default;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
 }
 
 .mobile-services-submenu {

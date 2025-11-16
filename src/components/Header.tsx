@@ -74,21 +74,20 @@ const Header = () => {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <a
-              href="/#services"
-              className="nav-link"
+            <button
+              className="nav-link nav-dropdown-button"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}
             >
               Services
               <span style={{ fontSize: '0.7rem' }}>▼</span>
-            </a>
+            </button>
             {servicesOpen && (
               <div className="dropdown-menu">
                 <Link to="/services/partnerships">
                   Partnerships
                 </Link>
                 <Link to="/services/staff-training">
-                  Staff/Sales Training
+                  Staff Training
                 </Link>
                 <Link to="/services/executive-coaching">
                   Executive Coaching
@@ -99,9 +98,9 @@ const Header = () => {
 
           {/* Mobile Services (expandable) */}
           <div className="mobile-only mobile-services-section">
-            <a href="/#services" onClick={() => setMobileMenuOpen(false)} className="mobile-services-title">
+            <button className="mobile-services-title">
               Services
-            </a>
+            </button>
             <div className="mobile-services-submenu">
               <Link
                 to="/services/partnerships"
@@ -115,7 +114,7 @@ const Header = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="mobile-submenu-item"
               >
-                <span className="submenu-arrow">→</span> Staff/Sales Training
+                <span className="submenu-arrow">→</span> Staff Training
               </Link>
               <Link
                 to="/services/executive-coaching"
