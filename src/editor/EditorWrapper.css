@@ -1,0 +1,300 @@
+.editor-wrapper {
+  width: 100%;
+  height: 100vh;
+  background: #f5f5f5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.editor-content {
+  display: flex;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+.editor-sidebar {
+  width: 280px;
+  background: white;
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.editor-canvas {
+  flex: 1;
+  background: #fafafa;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  height: 100%;
+  /* Ensure smooth scrolling within canvas */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Canvas content wrapper */
+.editor-canvas > div {
+  min-height: 100%;
+  background: white;
+}
+
+/* Empty canvas state */
+.editor-canvas [data-cy="root-container"]:empty::before {
+  content: 'Drag components here to get started';
+  display: block;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+/* Craft.js Frame styles */
+.editor-canvas .craftjs-renderer {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.editor-settings {
+  width: 320px;
+  background: white;
+  border-left: 1px solid #e0e0e0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+/* Topbar styles */
+.editor-topbar {
+  height: 60px;
+  background: #1a1a1a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.editor-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.editor-topbar-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.editor-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.editor-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.editor-btn-toggle {
+  background: #333;
+  color: white;
+}
+
+.editor-btn-toggle:hover {
+  background: #444;
+}
+
+.editor-btn-toggle.active {
+  background: #d4af37;
+  color: #1a1a1a;
+}
+
+.editor-btn-save {
+  background: #d4af37;
+  color: #1a1a1a;
+}
+
+.editor-btn-save:hover {
+  background: #c29d2f;
+}
+
+.editor-btn-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Toolbox styles */
+.editor-toolbox {
+  padding: 1.5rem;
+}
+
+.editor-toolbox-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #666;
+  margin: 0 0 1rem 0;
+}
+
+.editor-toolbox-components {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.editor-component-item {
+  padding: 0.75rem 1rem;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: move;
+  transition: all 0.2s;
+}
+
+.editor-component-item:hover {
+  background: #f0f0f0;
+  border-color: #d4af37;
+}
+
+.editor-component-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem 0;
+}
+
+.editor-component-desc {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Settings Panel styles */
+.editor-settings-panel {
+  padding: 1.5rem;
+}
+
+.editor-settings-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #666;
+  margin: 0 0 1rem 0;
+}
+
+.editor-settings-empty {
+  color: #999;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.editor-settings-section {
+  margin-bottom: 1.5rem;
+}
+
+.editor-settings-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  display: block;
+}
+
+.editor-settings-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.editor-settings-input:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+.editor-settings-textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  min-height: 80px;
+  resize: vertical;
+}
+
+.editor-settings-textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+.editor-settings-select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: white;
+  cursor: pointer;
+}
+
+.editor-settings-select:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+/* Indicator for editable components */
+.craft-editable {
+  position: relative;
+  transition: outline 0.2s;
+}
+
+.craft-editable:hover {
+  outline: 2px dashed #d4af37;
+  outline-offset: 4px;
+}
+
+.craft-selected {
+  outline: 2px solid #d4af37;
+  outline-offset: 4px;
+}
+
+/* Fix for Craft.js internal elements */
+.editor-canvas [data-craftjs-id] {
+  /* Prevent transform issues with ScrollTrigger */
+  will-change: auto !important;
+}
+
+/* Ensure all animations are disabled in editor */
+.editor-wrapper * {
+  animation: none !important;
+  transition: outline 0.2s, border-color 0.2s, background 0.2s !important;
+}
+
+/* Re-enable necessary transitions for editor UI */
+.editor-btn,
+.editor-component-item,
+.editor-settings-input,
+.editor-settings-select,
+.editor-settings-textarea {
+  transition: all 0.2s !important;
+}

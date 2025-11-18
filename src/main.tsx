@@ -11,21 +11,47 @@ import Partnerships from './services/Partnerships.tsx'
 import StaffTraining from './services/StaffTraining.tsx'
 import ExecutiveCoaching from './services/ExecutiveCoaching.tsx'
 import JobDetail from './careers/JobDetail.tsx'
+import { AuthProvider } from './editor/AuthContext.tsx'
+import { ProtectedRoute } from './editor/ProtectedRoute.tsx'
+import { LoginPage } from './editor/LoginPage.tsx'
+import { AdminDashboard } from './editor/AdminDashboard.tsx'
+import { EditorPage } from './editor/EditorPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/careers" element={<Careers />} />
-        <Route path="/careers/:jobSlug" element={<JobDetail />} />
-        <Route path="/case-studies" element={<CaseStudies />} />
-        <Route path="/services/partnerships" element={<Partnerships />} />
-        <Route path="/services/staff-training" element={<StaffTraining />} />
-        <Route path="/services/executive-coaching" element={<ExecutiveCoaching />} />
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:jobSlug" element={<JobDetail />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/services/partnerships" element={<Partnerships />} />
+          <Route path="/services/staff-training" element={<StaffTraining />} />
+          <Route path="/services/executive-coaching" element={<ExecutiveCoaching />} />
+
+          {/* Admin routes */}
+          <Route path="/admin/login" element={<LoginPage />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/editor/:pageId"
+            element={
+              <ProtectedRoute>
+                <EditorPage />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   </StrictMode>,
 )
