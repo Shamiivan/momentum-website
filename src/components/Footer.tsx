@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Logo from './Logo';
 
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
       <div className="container-new">
         <div className="footer-content">
           <div className="footer-column footer-brand">
-            <img src="/LOGO-NEW.svg" alt="Momentum Management" className="footer-logo-image" />
+            <Logo />
             <p className="footer-tagline">We bridge the gap between you and your customers.</p>
           </div>
 

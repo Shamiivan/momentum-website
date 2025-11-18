@@ -11,7 +11,7 @@ const Logo = () => {
 
   return (
     <Link to="/" className="logo-new" onClick={handleLogoClick}>
-      <img src="/LOGO-NEW.svg" alt="Momentum Management" className="logo-image" />
+      <img src="/LOGO-WITH-TEXT-ALIGNED-BOTTOM.svg" alt="Momentum Management" className="logo-image" />
     </Link>
   );
 };
