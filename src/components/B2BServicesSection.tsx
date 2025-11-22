@@ -50,7 +50,7 @@ const B2BServicesSection = () => {
 
         {/* Right side - Services grid */}
         <div className="b2b-services-right">
-          <h2 className="b2b-services-title">Everyone Loves Buying. Nobody Loves Being Sold. Leave it to Us.</h2>
+          <h2 className="b2b-services-title">Everyone Loves Buying. Everybody Hates Being Sold.</h2>
           <p className="service-description">We specialize in B2B sales and marketing, helping you connect with your ideal customers through tailored strategies and expert guidance.</p>
 
           <div className="b2b-services-grid">

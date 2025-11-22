@@ -154,6 +154,106 @@ const Careers = () => {
             </p>
           </div>
         </section>
+        <section className="about-story-section" style={{ background: '#fafafa' }}>
+          <div className="container-new">
+            <h2 className="about-section-title centered" data-animate>
+              A Day in the Life
+            </h2>
+            <p className="about-mission-intro" data-animate>
+              Real glimpses into what it's like to work at Momentum. No stock photos, just our culture.
+            </p>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              marginTop: '3rem'
+            }}>
+              {lifePhotos.map((photo, idx) => (
+                <div
+                  key={idx}
+                  data-animate
+                  style={{
+                    '--delay': `${idx * 0.1}s`,
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    aspectRatio: '3/2',
+                    position: 'relative',
+                    border: '1px solid #e5e7eb'
+                  } as React.CSSProperties}
+                >
+                  <img
+                    src={photo.url}
+                    alt={photo.alt}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: 'linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent)',
+                    padding: '2rem 1.5rem 1.5rem',
+                    color: 'white',
+                    fontSize: '1rem',
+                    fontWeight: '600'
+                  }}>
+                    {photo.alt}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Culture Highlights */}
+            <div style={{
+              marginTop: '4rem',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              {[
+                { title: 'Monday Kick-offs', desc: 'Start the week together, share wins, set goals' },
+                { title: 'Friday Wins', desc: 'Celebrate closed deals and team achievements' },
+                { title: 'Live Call Reviews', desc: 'Learn from real calls, get instant feedback' },
+                { title: 'Monthly Challenges', desc: 'Friendly competition with real prizes' }
+              ].map((item, idx) => (
+                <div
+                  key={item.title}
+                  data-animate
+                  style={{
+                    '--delay': `${idx * 0.1}s`,
+                    background: 'var(--color-white)',
+                    borderRadius: '8px',
+                    padding: '1.5rem',
+                    border: '1px solid #e5e7eb'
+                  } as React.CSSProperties}
+                >
+                  <h4 style={{
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    color: 'var(--color-primary-dark)',
+                    marginBottom: '0.5rem'
+                  }}>
+                    {item.title}
+                  </h4>
+                  <p style={{
+                    fontSize: '0.9rem',
+                    color: 'var(--color-text-muted)',
+                    margin: 0,
+                    lineHeight: '1.6'
+                  }}>
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
         <section id="open-positions" className="about-story-section">
           <div className="container-new">
@@ -373,106 +473,6 @@ const Careers = () => {
         </section>
 
         {/* Life at Momentum Section */}
-        <section className="about-story-section" style={{ background: '#fafafa' }}>
-          <div className="container-new">
-            <h2 className="about-section-title centered" data-animate>
-              A Day in the Life
-            </h2>
-            <p className="about-mission-intro" data-animate>
-              Real glimpses into what it's like to work at Momentum. No stock photos, just our culture.
-            </p>
-
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem',
-              marginTop: '3rem'
-            }}>
-              {lifePhotos.map((photo, idx) => (
-                <div
-                  key={idx}
-                  data-animate
-                  style={{
-                    '--delay': `${idx * 0.1}s`,
-                    borderRadius: '8px',
-                    overflow: 'hidden',
-                    aspectRatio: '3/2',
-                    position: 'relative',
-                    border: '1px solid #e5e7eb'
-                  } as React.CSSProperties}
-                >
-                  <img
-                    src={photo.url}
-                    alt={photo.alt}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover'
-                    }}
-                  />
-                  <div style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    background: 'linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent)',
-                    padding: '2rem 1.5rem 1.5rem',
-                    color: 'white',
-                    fontSize: '1rem',
-                    fontWeight: '600'
-                  }}>
-                    {photo.alt}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Culture Highlights */}
-            <div style={{
-              marginTop: '4rem',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '1.5rem'
-            }}>
-              {[
-                { title: 'Monday Kick-offs', desc: 'Start the week together, share wins, set goals' },
-                { title: 'Friday Wins', desc: 'Celebrate closed deals and team achievements' },
-                { title: 'Live Call Reviews', desc: 'Learn from real calls, get instant feedback' },
-                { title: 'Monthly Challenges', desc: 'Friendly competition with real prizes' }
-              ].map((item, idx) => (
-                <div
-                  key={item.title}
-                  data-animate
-                  style={{
-                    '--delay': `${idx * 0.1}s`,
-                    background: 'var(--color-white)',
-                    borderRadius: '8px',
-                    padding: '1.5rem',
-                    border: '1px solid #e5e7eb'
-                  } as React.CSSProperties}
-                >
-                  <h4 style={{
-                    fontSize: '1rem',
-                    fontWeight: '600',
-                    color: 'var(--color-primary-dark)',
-                    marginBottom: '0.5rem'
-                  }}>
-                    {item.title}
-                  </h4>
-                  <p style={{
-                    fontSize: '0.9rem',
-                    color: 'var(--color-text-muted)',
-                    margin: 0,
-                    lineHeight: '1.6'
-                  }}>
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Open Positions Section */}
         {/* CTA Section */}
         <section className="about-cta-section">

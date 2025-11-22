@@ -114,8 +114,8 @@ const MomentumLanding = () => {
   ];
 
   const serviceStats = [
-    { number: '$50M', label: 'Revenue Generated', helper: 'for partner brands' },
-    { number: '500', label: 'Trained Professionals', helper: 'across multiple channels' },
+    { number: '$65M', label: 'Revenue Generated', helper: 'for partner brands' },
+    { number: '1000', label: 'Trained Professionals', helper: 'across multiple channels' },
     { number: '3', label: 'Markets', helper: 'expanded in last year' },
     { number: '40K', label: 'Customers', helper: 'acquired through outreach' }
   ];
@@ -208,7 +208,7 @@ const MomentumLanding = () => {
         <section className="service-overview-section" id="services">
           <div className="container-new">
             <h2 className="section-title-new" data-animate>
-              Sales and Marketing Done For You
+                The power behind the pitch
             </h2>
             <div className="service-description" data-animate style={withDelay(0.1)}>
               <p>
@@ -245,10 +245,10 @@ const MomentumLanding = () => {
                 <img src="/growth-chart.svg" alt="Revenue Growth Chart" className="growth-chart" loading="lazy" />
               </div>
               <div className="case-study-content-new" data-animate style={withDelay(0.1)}>
-                <h2 className="case-study-title-new">$40M for TELUS in 5 Years</h2>
+                <h2 className="case-study-title-new">$57.3M for TELUS in 4 Years</h2>
                 <div className="case-study-text-new">
                   <p>
-                    Over the past 5 years, we helped TELUS break into the Quebec market and generate over $40 million in revenue
+                    Over the past 5 years, we helped TELUS break into the Quebec market and generate over $57.3 million in revenue
                     by deploying expert sales teams across in-person, phone, and social media channels.
                   </p>
                 </div>
