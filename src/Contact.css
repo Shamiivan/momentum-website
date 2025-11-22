@@ -1,7 +1,7 @@
 /* Contact Page Styles */
 .contact-page {
   min-height: 100vh;
-  padding-top: 80px;
+  padding-top: 5rem;
   background: var(--color-white);
 }
 
@@ -21,7 +21,7 @@
   background-image:
     linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
+  background-size: 3.125rem 3.125rem;
   opacity: 0.5;
 }
 
@@ -38,7 +38,7 @@
 .contact-page-subtitle {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
   color: var(--color-text-muted);
-  max-width: 700px;
+  max-width: 43.75rem;
   margin: 0 auto;
   line-height: 1.7;
   position: relative;
@@ -55,7 +55,7 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 4rem;
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
 }
 
@@ -63,8 +63,8 @@
 .contact-form-container {
   background: var(--color-white);
   padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.08);
 }
 
 .form-section-title {
@@ -103,13 +103,13 @@
 .form-group textarea {
   padding: 0.875rem 1rem;
   border: 1px solid rgba(10, 22, 40, 0.15);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-size: 1rem;
   font-family: var(--font-primary);
   color: var(--color-primary-dark);
   transition: all 0.3s ease;
   background: var(--color-white);
-  min-height: 44px;
+  min-height: 2.75rem;
 }
 
 .form-group input:focus,
@@ -127,15 +127,15 @@
 
 .form-group textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 7.5rem;
 }
 
 .btn-submit-contact {
-  padding: 1rem 2.5rem;
+  padding: var(--button-padding-y) var(--button-padding-x);
   background: var(--color-accent-gold);
   color: var(--color-primary-dark);
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-size: 1.1rem;
   font-weight: 600;
   font-family: var(--font-primary);
@@ -145,8 +145,8 @@
 }
 
 .btn-submit-contact:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.5rem 1.25rem rgba(212, 175, 55, 0.3);
 }
 
 .btn-submit-contact:active {
@@ -171,9 +171,9 @@
 .contact-info-card {
   background: #0a1628;
   padding: 3rem;
-  border-radius: 16px;
+  border-radius: 1rem;
   color: var(--color-white);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.15);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -209,10 +209,10 @@
 
 .contact-icon {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   background: rgba(212, 175, 55, 0.15);
-  border-radius: 12px;
+  border-radius: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -220,8 +220,8 @@
 }
 
 .contact-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .contact-detail-item h4 {
@@ -252,7 +252,7 @@
   padding: 2rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: 12px;
+  border-radius: 0.75rem;
 }
 
 .contact-cta-box h4 {
@@ -272,26 +272,26 @@
 
 .btn-contact-alt {
   display: inline-block;
-  padding: 0.875rem 1.75rem;
+  padding: calc(var(--button-padding-y) * 0.875) calc(var(--button-padding-x) * 0.7);
   background: var(--color-accent-gold);
   color: var(--color-primary-dark);
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
   font-family: var(--font-primary);
   text-decoration: none;
   transition: all 0.3s var(--easing-smooth);
-  min-height: 44px;
+  min-height: 2.75rem;
 }
 
 .btn-contact-alt:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.375rem 1rem rgba(212, 175, 55, 0.3);
 }
 
 /* Responsive */
-@media (max-width: 968px) {
+@media (max-width: 60.5rem) {
   .contact-wrapper {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -303,7 +303,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -313,7 +313,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 40rem) {
   .contact-hero {
     padding: 4rem 0 3rem;
   }

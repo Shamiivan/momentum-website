@@ -181,7 +181,6 @@ const EditableHeroSettings = () => {
             onChange={(e) =>
               setProp((p: EditableHeroProps) => (p.showScrollIndicator = e.target.checked))
             }
-            style={{ marginRight: '0.5rem' }}
           />
           Show Scroll Indicator
         </label>

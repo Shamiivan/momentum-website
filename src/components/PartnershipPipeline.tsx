@@ -82,7 +82,7 @@ const PartnershipPipeline = () => {
               </p>
             </div>
 
-            <h3 className="pipeline-section-title" style={{ marginTop: '3rem' }}>Your part in the process</h3>
+            <h3 className="pipeline-section-title mt-7">Your part in the process</h3>
 
             <div className="pipeline-stage">
               <div className="stage-header">

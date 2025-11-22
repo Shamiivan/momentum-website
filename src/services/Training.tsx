@@ -17,18 +17,17 @@ const Training = () => {
         <section className="contact-hero">
           <div className="container-new">
             <h1 className="contact-page-title">Staff Training & Executive Coaching</h1>
-            <p className="contact-page-subtitle" style={{
+            <p className="contact-page-subtitle mt-7" style={{
               fontSize: '2.5rem',
               fontWeight: '300',
-              marginTop: '3rem',
               color: '#D4AF37'
             }}>
               Coming Soon
             </p>
-            <p className="contact-page-subtitle" style={{ marginTop: '2rem' }}>
+            <p className="contact-page-subtitle mt-6">
               Explore our professional development programs designed to elevate your team's performance.
             </p>
-            <div style={{ marginTop: '3rem' }}>
+            <div className="mt-7">
               <Link to="/contact" className="btn-primary-new">
                 Get In Touch
               </Link>

@@ -35,29 +35,26 @@ const JobDetail = () => {
         <section className="about-story-section">
           <div className="container-new">
             <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-              <p style={{
+              <p className="mb-7" style={{
                 fontSize: '1rem',
                 lineHeight: '1.8',
-                color: 'var(--color-text-muted)',
-                marginBottom: '3rem'
+                color: 'var(--color-text-muted)'
               }} data-animate>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
 
-              <p style={{
+              <p className="mb-7" style={{
                 fontSize: '1rem',
                 lineHeight: '1.8',
-                color: 'var(--color-text-muted)',
-                marginBottom: '3rem'
+                color: 'var(--color-text-muted)'
               }} data-animate>
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
               </p>
 
-              <div style={{
+              <div className="mt-8" style={{
                 display: 'flex',
                 gap: '1rem',
-                flexWrap: 'wrap',
-                marginTop: '4rem'
+                flexWrap: 'wrap'
               }} data-animate>
                 <Link
                   to="/contact"

@@ -134,11 +134,10 @@ const Careers = () => {
           padding: '8rem 2rem 6rem'
         }}>
           <div className="container-new" style={{ textAlign: 'center', position: 'relative', zIndex: 5 }}>
-            <h1 style={{
+            <h1 className="mb-5" style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: '700',
               color: 'var(--color-white)',
-              marginBottom: '1.5rem',
               lineHeight: '1.2'
             }} data-animate>
               Shape your growth with us
@@ -163,11 +162,10 @@ const Careers = () => {
               Real glimpses into what it's like to work at Momentum. No stock photos, just our culture.
             </p>
 
-            <div style={{
+            <div className="mt-7" style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem',
-              marginTop: '3rem'
+              gap: '2rem'
             }}>
               {lifePhotos.map((photo, idx) => (
                 <div
@@ -209,8 +207,7 @@ const Careers = () => {
             </div>
 
             {/* Culture Highlights */}
-            <div style={{
-              marginTop: '4rem',
+            <div className="mt-8" style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
               gap: '1.5rem'
@@ -232,11 +229,10 @@ const Careers = () => {
                     border: '1px solid #e5e7eb'
                   } as React.CSSProperties}
                 >
-                  <h4 style={{
+                  <h4 className="mb-2" style={{
                     fontSize: '1rem',
                     fontWeight: '600',
-                    color: 'var(--color-primary-dark)',
-                    marginBottom: '0.5rem'
+                    color: 'var(--color-primary-dark)'
                   }}>
                     {item.title}
                   </h4>
@@ -257,10 +253,10 @@ const Careers = () => {
 
         <section id="open-positions" className="about-story-section">
           <div className="container-new">
-            <h2 className="about-section-title" data-animate style={{ fontSize: '3rem', marginBottom: '1rem' }}>
+            <h2 className="about-section-title mb-4" data-animate style={{ fontSize: '3rem' }}>
               Available positions
             </h2>
-            <p style={{ color: 'var(--color-text-muted)', marginBottom: '4rem', maxWidth: '800px' }} data-animate>
+            <p className="mb-8" style={{ color: 'var(--color-text-muted)', maxWidth: '800px' }} data-animate>
               Join a performance-driven team where you'll learn real sales, work with major brands, and have a clear path to advancement.
             </p>
 
@@ -292,11 +288,10 @@ const Careers = () => {
                   }}
                 >
                   <div style={{ flex: 1 }}>
-                    <h3 style={{
+                    <h3 className="mb-3" style={{
                       fontSize: '1.75rem',
                       fontWeight: '700',
-                      color: 'var(--color-primary-dark)',
-                      marginBottom: '0.75rem'
+                      color: 'var(--color-primary-dark)'
                     }}>
                       {role.title}
                     </h3>
@@ -343,29 +338,26 @@ const Careers = () => {
             {/* Didn't find the perfect fit CTA */}
             <div
               data-animate
+              className="mt-8 p-8"
               style={{
-                marginTop: '5rem',
                 background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-dark-gradient-end))',
                 borderRadius: '16px',
-                padding: '4rem 3rem',
                 textAlign: 'center',
                 border: '1px solid rgba(212, 175, 55, 0.2)'
               }}
             >
-              <h3 style={{
+              <h3 className="mb-4" style={{
                 fontSize: '2rem',
                 fontWeight: '700',
-                color: 'var(--color-white)',
-                marginBottom: '1rem'
+                color: 'var(--color-white)'
               }}>
                 Didn't find the perfect fit?
               </h3>
-              <p style={{
+              <p className="mb-6" style={{
                 fontSize: '1.125rem',
                 color: 'rgba(255, 255, 255, 0.8)',
-                marginBottom: '2rem',
                 maxWidth: '600px',
-                margin: '0 auto 2rem'
+                margin: '0 auto'
               }}>
                 Tell us more about yourself, and we'll reach out when the right opportunity comes along.
               </p>
@@ -398,11 +390,10 @@ const Careers = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
 
-            <div style={{
+            <div className="mt-7" style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '2rem',
-              marginTop: '3rem'
+              gap: '2rem'
             }}>
               {[
                 {
@@ -450,11 +441,10 @@ const Careers = () => {
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  <h3 style={{
+                  <h3 className="mb-3" style={{
                     fontSize: '1.15rem',
                     fontWeight: '600',
-                    color: 'var(--color-primary-dark)',
-                    marginBottom: '0.75rem'
+                    color: 'var(--color-primary-dark)'
                   }}>
                     {perk.title}
                   </h3>

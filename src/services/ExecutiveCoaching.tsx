@@ -95,7 +95,7 @@ const ExecutiveCoaching = () => {
         <section className="about-story-section">
           <div className="container-new">
             <h2 className="about-section-title" data-animate>Our Leadership Philosophy</h2>
-            <div className="about-values-grid" style={{ marginTop: '3rem' }}>
+            <div className="about-values-grid mt-7">
               {philosophyPoints.map((point, idx) => (
                 <div
                   key={point.title}

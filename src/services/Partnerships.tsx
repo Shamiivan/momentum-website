@@ -46,11 +46,11 @@ const Partnerships = () => {
               ].map((item, idx) => (
                 <div
                   key={item.step}
-                  className="about-value-card"
+                  className="about-value-card p-6"
                   data-animate
-                  style={{ '--delay': `${0.1 + idx * 0.1}s`, padding: '2rem' } as React.CSSProperties}
+                  style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
                 >
-                  <div style={{ fontSize: '2.5rem', fontWeight: '700', color: 'var(--color-accent-gold)', opacity: 0.3, marginBottom: '0.75rem' }}>
+                  <div className="mb-3" style={{ fontSize: '2.5rem', fontWeight: '700', color: 'var(--color-accent-gold)', opacity: 0.3 }}>
                     {item.step}
                   </div>
                   <h3 className="about-value-title" style={{ fontSize: '1.3rem' }}>{item.title}</h3>

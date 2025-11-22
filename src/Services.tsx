@@ -47,10 +47,10 @@ const Services = () => {
             <h1 className="contact-page-title" data-animate>
               We bridge the gap between you and your customers
             </h1>
-            <p className="contact-page-subtitle" data-animate style={{ marginTop: '2rem' }}>
+            <p className="contact-page-subtitle mt-6" data-animate>
               Performance-based growth solutions across 6 channels. We only win when you win.
             </p>
-            <div style={{ marginTop: '3rem' }} data-animate>
+            <div className="mt-7" data-animate>
               <Link to="/contact" className="btn-primary-new">
                 Schedule Free Consultation
               </Link>
@@ -91,29 +91,27 @@ const Services = () => {
                 <div
                   key={service.id}
                   id={service.id}
-                  className="about-value-card"
+                  className="about-value-card p-8"
                   data-animate
                   style={{
                     '--delay': `${idx * 0.1}s`,
-                    padding: '2.5rem',
-                    scrollMarginTop: '100px'
+                    scrollMarginTop: '6.25rem'
                   } as React.CSSProperties}
                 >
-                  <div style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>
+                  <div className="mb-4" style={{ fontSize: '3.5rem' }}>
                     {service.icon}
                   </div>
-                  <h3 className="about-value-title" style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>
+                  <h3 className="about-value-title mb-2" style={{ fontSize: '1.75rem' }}>
                     {service.title}
                   </h3>
-                  <p style={{
+                  <p className="mb-4" style={{
                     fontSize: '1.1rem',
                     fontWeight: '600',
-                    color: 'var(--color-accent-gold)',
-                    marginBottom: '1rem'
+                    color: 'var(--color-accent-gold)'
                   }}>
                     {service.tagline}
                   </p>
-                  <p className="about-value-description" style={{ marginBottom: '1.5rem' }}>
+                  <p className="about-value-description mb-5">
                     {service.desc}
                   </p>
                   <ul style={{
@@ -138,9 +136,8 @@ const Services = () => {
                   </ul>
                   <Link
                     to={`/services/${service.id}`}
-                    className="btn-secondary-new"
+                    className="btn-secondary-new mt-5"
                     style={{
-                      marginTop: '1.5rem',
                       display: 'inline-block',
                       width: '100%',
                       textAlign: 'center'
@@ -160,7 +157,7 @@ const Services = () => {
             <h2 className="about-section-title centered" data-animate>
               How It Works
             </h2>
-            <p className="about-mission-intro" data-animate style={{ marginBottom: '3rem' }}>
+            <p className="about-mission-intro mb-7" data-animate>
               Our proven 4-step process applies across all our services
             </p>
 
@@ -173,16 +170,15 @@ const Services = () => {
               ].map((item, idx) => (
                 <div
                   key={item.step}
-                  className="about-value-card"
+                  className="about-value-card p-6"
                   data-animate
-                  style={{ '--delay': `${0.1 + idx * 0.1}s`, padding: '2rem' } as React.CSSProperties}
+                  style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
                 >
-                  <div style={{
+                  <div className="mb-3" style={{
                     fontSize: '2.5rem',
                     fontWeight: '700',
                     color: 'var(--color-accent-gold)',
-                    opacity: 0.3,
-                    marginBottom: '0.75rem'
+                    opacity: 0.3
                   }}>
                     {item.step}
                   </div>
@@ -201,12 +197,11 @@ const Services = () => {
               Proven Results
             </h2>
 
-            <div style={{
+            <div className="mt-7" style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
               gap: '2rem',
-              textAlign: 'center',
-              marginTop: '3rem'
+              textAlign: 'center'
             }}>
               {[
                 { number: '$50M+', label: 'Revenue Generated' },
@@ -219,11 +214,10 @@ const Services = () => {
                   data-animate
                   style={{ '--delay': `${idx * 0.1}s` } as React.CSSProperties}
                 >
-                  <div style={{
+                  <div className="mb-2" style={{
                     fontSize: '2.5rem',
                     fontWeight: '700',
-                    color: 'var(--color-accent-gold)',
-                    marginBottom: '0.5rem'
+                    color: 'var(--color-accent-gold)'
                   }}>
                     {stat.number}
                   </div>

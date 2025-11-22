@@ -32,7 +32,7 @@ export const EditorPage = () => {
 
   if (loading) {
     return (
-      <div style={{ padding: '2rem', textAlign: 'center' }}>
+      <div className="p-6" style={{ textAlign: 'center' }}>
         <p>Loading editor...</p>
       </div>
     );
