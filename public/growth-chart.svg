@@ -1,13 +1,13 @@
 <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="chartGold" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#B8941F;stop-opacity:0.6" />
+    <linearGradient id="chartBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:0.6" />
     </linearGradient>
     <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#B8941F;stop-opacity:0.4" />
-      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:0.9" />
-      <stop offset="100%" style="stop-color:#B8941F;stop-opacity:0.4" />
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:0.4" />
+      <stop offset="50%" style="stop-color:#0A1628;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:0.4" />
     </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
@@ -19,11 +19,11 @@
   </defs>
 
   <!-- Grid lines -->
-  <g opacity="0.2">
-    <line x1="50" y1="240" x2="350" y2="240" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4 4"/>
-    <line x1="50" y1="190" x2="350" y2="190" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4 4"/>
-    <line x1="50" y1="140" x2="350" y2="140" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4 4"/>
-    <line x1="50" y1="90" x2="350" y2="90" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4 4"/>
+  <g opacity="0.15">
+    <line x1="50" y1="240" x2="350" y2="240" stroke="#0A1628" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="50" y1="190" x2="350" y2="190" stroke="#0A1628" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="50" y1="140" x2="350" y2="140" stroke="#0A1628" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="50" y1="90" x2="350" y2="90" stroke="#0A1628" stroke-width="1" stroke-dasharray="4 4"/>
   </g>
 
   <!-- Axes -->
@@ -32,23 +32,23 @@
 
   <!-- Growth bars with animation -->
   <g class="bars">
-    <rect x="80" y="220" width="40" height="0" fill="url(#chartGold)" rx="4">
+    <rect x="80" y="220" width="40" height="0" fill="url(#chartBlue)" rx="4">
       <animate attributeName="height" from="0" to="30" dur="1s" fill="freeze" begin="0.2s"/>
       <animate attributeName="y" from="220" to="190" dur="1s" fill="freeze" begin="0.2s"/>
     </rect>
-    <rect x="140" y="220" width="40" height="0" fill="url(#chartGold)" rx="4">
+    <rect x="140" y="220" width="40" height="0" fill="url(#chartBlue)" rx="4">
       <animate attributeName="height" from="0" to="60" dur="1s" fill="freeze" begin="0.4s"/>
       <animate attributeName="y" from="220" to="160" dur="1s" fill="freeze" begin="0.4s"/>
     </rect>
-    <rect x="200" y="220" width="40" height="0" fill="url(#chartGold)" rx="4">
+    <rect x="200" y="220" width="40" height="0" fill="url(#chartBlue)" rx="4">
       <animate attributeName="height" from="0" to="100" dur="1s" fill="freeze" begin="0.6s"/>
       <animate attributeName="y" from="220" to="120" dur="1s" fill="freeze" begin="0.6s"/>
     </rect>
-    <rect x="260" y="220" width="40" height="0" fill="url(#chartGold)" rx="4">
+    <rect x="260" y="220" width="40" height="0" fill="url(#chartBlue)" rx="4">
       <animate attributeName="height" from="0" to="150" dur="1s" fill="freeze" begin="0.8s"/>
       <animate attributeName="y" from="220" to="70" dur="1s" fill="freeze" begin="0.8s"/>
     </rect>
-    <rect x="320" y="220" width="40" height="0" fill="url(#chartGold)" rx="4">
+    <rect x="320" y="220" width="40" height="0" fill="url(#chartBlue)" rx="4">
       <animate attributeName="height" from="0" to="180" dur="1s" fill="freeze" begin="1s"/>
       <animate attributeName="y" from="220" to="40" dur="1s" fill="freeze" begin="1s"/>
     </rect>
