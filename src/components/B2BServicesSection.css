@@ -1,7 +1,7 @@
 .b2b-services-section {
   padding: 80px 0;
-  background: var(--color-white);
-  border-top: 3px solid var(--color-primary-dark);
+  background: var(--color-primary-dark);
+  border-top: 3px solid var(--color-accent-gold);
 }
 
 .b2b-services-container {
@@ -41,23 +41,24 @@
 }
 
 .b2b-content-card {
-  background: linear-gradient(135deg, rgba(30, 58, 138, 0.03) 0%, rgba(30, 58, 138, 0.01) 100%);
-  border: 1px solid rgba(30, 58, 138, 0.08);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 24px;
   padding: 48px;
   display: flex;
   flex-direction: column;
   gap: 24px;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   min-height: 320px;
+  backdrop-filter: blur(10px);
 }
 
 .b2b-content-headline {
   font-size: 32px;
   font-weight: 700;
   line-height: 1.25;
-  color: #0f172a;
+  color: var(--color-white);
   margin: 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: -0.02em;
@@ -66,7 +67,7 @@
 .b2b-content-body {
   font-size: 17px;
   line-height: 1.7;
-  color: #475569;
+  color: #cbd5e1;
   margin: 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -77,10 +78,10 @@
   gap: 10px;
   padding: 16px 32px;
   background: transparent;
-  color: var(--color-primary-dark);
+  color: var(--color-accent-gold);
   border: 2px solid transparent;
   text-decoration: underline;
-  text-decoration-color: var(--color-primary-dark);
+  text-decoration-color: var(--color-accent-gold);
   text-underline-offset: 0.3em;
   border-radius: 12px;
   font-weight: 600;
@@ -100,7 +101,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border: 2px solid var(--color-primary-dark);
+  border: 2px solid var(--color-accent-gold);
   border-radius: 12px;
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   transition: clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -126,7 +127,7 @@
   font-size: 48px;
   font-weight: 800;
   line-height: 1.15;
-  color: #0f172a;
+  color: var(--color-white);
   margin: 0;
   text-align: center;
   letter-spacing: -0.02em;
@@ -143,7 +144,7 @@
 .service-description {
   font-size: 1.125rem;
   line-height: 1.75;
-  color: #475569;
+  color: #cbd5e1;
   margin: 0;
   text-align: center;
   font-weight: 400;
@@ -158,91 +159,93 @@
 }
 
 .b2b-service-card {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.05);
   padding: 20px 24px;
   border-radius: 16px;
-  border: 1.5px solid rgba(30, 58, 138, 0.08);
+  border: 1.5px solid rgba(212, 175, 55, 0.2);
   display: flex;
   align-items: center;
   gap: 16px;
   text-decoration: none;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   width: 100%;
   text-align: left;
   font-family: inherit;
   position: relative;
+  backdrop-filter: blur(10px);
 }
 
 .b2b-service-card:hover {
-  border-color: rgba(30, 58, 138, 0.25);
-  box-shadow: 0 4px 16px rgba(30, 58, 138, 0.08);
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
   transform: translateY(-2px);
-  background: rgba(30, 58, 138, 0.02);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .b2b-service-card.active {
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
+  background: var(--color-accent-gold);
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
   transform: scale(1.02);
 }
 
 .b2b-service-icon {
-  color: var(--color-primary-dark);
+  color: #cbd5e1;
   flex-shrink: 0;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .b2b-service-card:hover .b2b-service-icon {
   transform: scale(1.05);
+  color: var(--color-accent-gold);
 }
 
 .b2b-service-card.active .b2b-service-icon {
-  color: var(--color-white); /* White icon when active */
+  color: var(--color-primary-dark);
 }
 
 .b2b-service-card.active .b2b-service-title {
-  color: var(--color-white); /* White text when active */
+  color: var(--color-primary-dark);
   font-weight: 600;
 }
 
 .b2b-service-card.active .b2b-service-arrow {
-  color: var(--color-white); /* White arrow when active */
+  color: var(--color-primary-dark);
 }
 
 .b2b-service-card:hover .b2b-service-arrow {
   transform: translateX(4px);
-  color: var(--color-primary-dark);
+  color: var(--color-accent-gold);
 }
 
 .b2b-service-card.active:hover {
-  background: var(--color-primary-dark);
+  background: var(--color-accent-gold);
   transform: scale(1.02);
-  box-shadow: 0 6px 24px rgba(30, 58, 138, 0.25);
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.5);
 }
 
 .b2b-service-card.active:hover .b2b-service-arrow {
-  color: var(--color-white);
+  color: var(--color-primary-dark);
 }
 
 .b2b-service-title {
   font-size: 15px;
   font-weight: 600;
-  color: #1e293b;
+  color: #cbd5e1;
   transition: color 0.3s ease;
   margin-right: auto;
   letter-spacing: -0.01em;
 }
 
 .b2b-service-card:hover .b2b-service-title {
-  color: var(--color-primary-dark);
+  color: var(--color-accent-gold);
 }
 
 .b2b-service-arrow {
   flex-shrink: 0;
-  color: #666;
+  color: #64748b;
   transition: all 0.3s ease;
 }
 

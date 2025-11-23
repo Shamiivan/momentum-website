@@ -212,10 +212,6 @@ const MomentumLanding = () => {
             </h2>
             <div className="service-description" data-animate style={withDelay(0.1)}>
               <p>
-                We deploy sales teams across every channel where your customers buy. Field reps in retail locations.
-                Phone teams calling prospects. Digital campaigns on social media. All coordinated. All tracked. All delivering customers.
-              </p>
-              <p>
                 You focus on your product. We focus on acquiring customers for it.
               </p>
             </div>
