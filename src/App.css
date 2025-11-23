@@ -2515,10 +2515,9 @@ body {
 /* Final CTA Section */
 .final-cta-section {
   padding: 2rem 0;
-  background: linear-gradient(135deg, var(--color-accent-gold) 0%, var(--color-accent-secondary) 50%, var(--color-accent-gold) 100%);
+  background: var(--color-light-gray);
   position: relative;
-  border-top: 0.1875rem solid var(--color-accent-secondary);
-  box-shadow: 0 -0.5rem 1.5rem rgba(184, 148, 31, 0.3);
+  border-top: 0.0625rem solid rgba(212, 175, 55, 0.15);
   overflow: hidden;
 }
 
@@ -2527,8 +2526,8 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 70% 50%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -2602,7 +2601,6 @@ body {
   line-height: 1.1;
   color: var(--color-primary-dark);
   letter-spacing: -0.02em;
-  text-shadow: 0 0.125rem 0.25rem rgba(212, 175, 55, 0.2);
 }
 
 .cta-subtitle-new {
@@ -3405,9 +3403,10 @@ body {
 
 /* About CTA Section */
 .about-cta-section {
-  padding: var(--section-padding-mobile) 0;
-  background: var(--color-primary-dark);
+  padding: 2rem 0;
+  background: var(--color-light-gray);
   text-align: center;
+  border-top: 0.0625rem solid rgba(212, 175, 55, 0.15);
 }
 
 .about-cta-content {
@@ -3420,13 +3419,13 @@ body {
   font-weight: 700;
   margin-bottom: 1.5rem;
   font-family: var(--font-display);
-  color: var(--color-white);
+  color: var(--color-primary-dark);
 }
 
 .about-cta-subtitle {
   font-size: 1.375rem;
   line-height: 1.6;
-  color: var(--color-text-muted);
+  color: var(--color-neutral-gray);
   margin-bottom: 3rem;
 }
 
@@ -3442,9 +3441,12 @@ body {
   .about-story-section,
   .about-mission-section,
   .about-timeline-section,
-  .about-culture-section,
-  .about-cta-section {
+  .about-culture-section {
     padding: var(--section-padding-tablet) 0;
+  }
+
+  .about-cta-section {
+    padding: 2.5rem 0;
   }
 }
 
@@ -3454,9 +3456,12 @@ body {
   .about-story-section,
   .about-mission-section,
   .about-timeline-section,
-  .about-culture-section,
-  .about-cta-section {
+  .about-culture-section {
     padding: var(--section-padding-desktop) 0;
+  }
+
+  .about-cta-section {
+    padding: 3rem 0;
   }
 }
 
@@ -3570,6 +3575,10 @@ body {
 
   .about-cta-subtitle {
     font-size: 1.125rem;
+  }
+
+  .about-cta-section {
+    padding: 5rem 0;
   }
 }
 

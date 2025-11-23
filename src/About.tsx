@@ -117,41 +117,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Leadership Team Section */}
-        <section className="about-leadership-section">
-          <div className="container-new">
-            <h2 className="about-section-title centered" data-animate>
-              Meet Our Founders
-            </h2>
-            <p className="about-leadership-intro" data-animate>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. The visionaries behind our success.
-            </p>
-            <div className="about-founders-grid">
-              {founders.map((founder, idx) => (
-                <div
-                  key={founder.name}
-                  className="founder-card"
-                  data-animate
-                  style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
-                >
-                  <div className="founder-image-wrapper">
-                    <img
-                      src={founder.image}
-                      alt={founder.name}
-                      className="founder-image"
-                    />
-                  </div>
-                  <div className="founder-info">
-                    <h3 className="founder-name">{founder.name}</h3>
-                    <p className="founder-role">{founder.role}</p>
-                    <p className="founder-bio">{founder.bio}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Mission & Values Section */}
         <section className="about-mission-section">
           <div className="container-new">
@@ -177,6 +142,7 @@ const About = () => {
             </div>
           </div>
         </section>
+
 
 
         {/* Team Culture Section */}
@@ -220,6 +186,40 @@ const About = () => {
           </div>
         </section>
 
+        {/* Leadership Team Section */}
+        <section className="about-leadership-section">
+          <div className="container-new">
+            <h2 className="about-section-title centered" data-animate>
+              Meet Our Founders
+            </h2>
+            <p className="about-leadership-intro" data-animate>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. The visionaries behind our success.
+            </p>
+            <div className="about-founders-grid">
+              {founders.map((founder, idx) => (
+                <div
+                  key={founder.name}
+                  className="founder-card"
+                  data-animate
+                  style={{ '--delay': `${0.1 + idx * 0.1}s` } as React.CSSProperties}
+                >
+                  <div className="founder-image-wrapper">
+                    <img
+                      src={founder.image}
+                      alt={founder.name}
+                      className="founder-image"
+                    />
+                  </div>
+                  <div className="founder-info">
+                    <h3 className="founder-name">{founder.name}</h3>
+                    <p className="founder-role">{founder.role}</p>
+                    <p className="founder-bio">{founder.bio}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         {/* Final CTA Section */}
         <section className="about-cta-section">
           <div className="container-new">
