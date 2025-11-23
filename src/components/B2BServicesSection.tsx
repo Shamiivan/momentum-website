@@ -10,7 +10,7 @@ const B2BServicesSection = () => {
       title: 'Partnerships', 
       link: '/services/partnerships',
       valueOffering: 'Forge Strategic Alliances',
-      description: 'We build and manage high-performing sales channels for your brand, connecting you with new customers and driving revenue growth. Our expertise in the Quebec market ensures your message resonates with the local audience.',
+      description: 'We build and manage high-performing sales channels for your brand, connecting you with new customers and driving revenue growth. Our expertise in North America markets ensures your message resonates with the local audience.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -24,7 +24,7 @@ const B2BServicesSection = () => {
       title: 'Staff/Sales Training', 
       link: '/services/staff-training',
       valueOffering: 'Empower Your Team',
-      description: 'We provide comprehensive training programs that equip your sales team with the skills and knowledge they need to excel. From prospecting to closing, we cover it all.',
+      description: 'We provide comprehensive training programs that equip your sales team and customer service with the skills and knowledge they need to excel. From prospecting, closing and delivering, we cover it all.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 14l9-5-9-5-9 5 9 5z"/>
