@@ -7,9 +7,17 @@ import './App.css'
 
 const Careers = () => {
   const [expandedJob, setExpandedJob] = useState<string | null>(null);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Parallax scroll handler
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
 
     // Intersection Observer for scroll animations
     const observerOptions = {
@@ -28,7 +36,10 @@ const Careers = () => {
     const elementsToObserve = document.querySelectorAll('[data-animate]');
     elementsToObserve.forEach(el => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const lifePhotos = [
@@ -49,33 +60,93 @@ const Careers = () => {
         <section style={{
           position: 'relative',
           minHeight: '600px',
-          background: `linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.85)), url('/damon/DSCF5634_19-9.webp')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          overflow: 'hidden',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           padding: '8rem 2rem 6rem'
         }}>
-          <div className="container-new" style={{ textAlign: 'center', position: 'relative', zIndex: 5 }}>
+          {/* Animated Gradient Background */}
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(-45deg, #0a1628, #1a2c4a, #2d4a6e, #1a3456)',
+            backgroundSize: '400% 400%',
+            animation: 'gradientShift 15s ease infinite',
+            zIndex: 1
+          }} />
+
+          {/* Hero Image with Parallax */}
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: `url('/damon/DSCF5634_19-9.webp')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: `translateY(${scrollY * 0.5}px)`,
+            zIndex: 2,
+            opacity: 0.4
+          }} />
+
+          {/* Dark Overlay */}
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(45, 74, 110, 0.75) 100%)',
+            zIndex: 4
+          }} />
+
+          {/* Content */}
+          <div className="container-new" style={{
+            textAlign: 'center',
+            position: 'relative',
+            zIndex: 5,
+            transform: `translateY(${scrollY * 0.15}px)`
+          }}>
             <h1 className="mb-5" style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: '700',
               color: 'var(--color-white)',
-              lineHeight: '1.2'
+              lineHeight: '1.2',
+              textShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
             }} data-animate>
               Shape your growth with us
             </h1>
             <p style={{
               fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
-              color: 'rgba(255, 255, 255, 0.9)',
+              color: 'rgba(255, 255, 255, 0.95)',
               maxWidth: '800px',
               margin: '0 auto',
-              lineHeight: '1.6'
+              lineHeight: '1.6',
+              textShadow: '0 2px 10px rgba(0, 0, 0, 0.2)'
             }} data-animate>
               Join a team where authority is questioned, leadership is earned, that believes in everyone until proven otherwise.
             </p>
           </div>
+
+          {/* Keyframes for gradient animation */}
+          <style>{`
+            @keyframes gradientShift {
+              0% {
+                background-position: 0% 50%;
+              }
+              50% {
+                background-position: 100% 50%;
+              }
+              100% {
+                background-position: 0% 50%;
+              }
+            }
+          `}</style>
         </section>
         <section className="about-story-section" style={{
           background: 'linear-gradient(180deg, #ffffff 0%, #f9fafb 100%)',
