@@ -1,10 +1,13 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { jobs } from './data/jobs'
 import './App.css'
 
 const Careers = () => {
+  const [expandedJob, setExpandedJob] = useState<string | null>(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -27,88 +30,6 @@ const Careers = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  const roles = [
-    {
-      title: 'BDR (Business Development Representative)',
-      whatYouDo: [
-        'Own the top of the funnel—find prospects, qualify leads, book meetings',
-        'Learn cold calling, email outreach, and prospecting',
-        'Work with brands like Amazon, Shopify, TELUS (not just startups)'
-      ],
-      youllThrive: [
-        'You\'re coachable and hungry (we can teach the rest)',
-        'Rejection doesn\'t break you',
-        'You want to learn sales from people who\'ve actually done it'
-      ],
-      whyJoin: [
-        'Clear path to Account Executive in 12-18 months (most BDRs get promoted)',
-        'Performance bonuses on top of base',
-        'Learn multi-channel prospecting (most agencies only know one)',
-        'Shadow $50M+ partnership deals'
-      ]
-    },
-    {
-      title: 'Closer (Account Executive)',
-      whatYouDo: [
-        'Take qualified meetings and turn them into revenue',
-        'Run demos, handle objections, negotiate deals',
-        'Close partnerships and customer acquisition contracts',
-        'Manage your own pipeline and revenue targets'
-      ],
-      youllThrive: [
-        'You\'ve closed before and want bigger deals',
-        'You\'re consultative, not pushy',
-        'You can handle 6-figure contracts without freaking out'
-      ],
-      whyJoin: [
-        'Uncapped commission (seriously—we mean it)',
-        'We book the meetings, you close them (no cold calling)',
-        'Multi-channel experience (phone, email, social, events)',
-        'Work with established brands that actually have budgets'
-      ]
-    },
-    {
-      title: 'Intern',
-      whatYouDo: [
-        'Shadow real deals (not make coffee)',
-        'Learn outreach, qualification, and pipeline management',
-        'Build lists, send campaigns, book meetings',
-        'Get mentored by BDRs and AEs who started where you are'
-      ],
-      youllThrive: [
-        'You\'re a student or recent grad who wants real experience',
-        'You\'re willing to be uncomfortable (growth happens there)',
-        'You want mentorship, not just a resume line'
-      ],
-      whyJoin: [
-        'Paid internship (we don\'t do free labor)',
-        'Hands-on from day 1—you\'ll be on calls within your first week',
-        'Clear path to BDR if you perform (we hire from within)',
-        'Learn sales from a performance-based team, not a classroom'
-      ]
-    },
-    {
-      title: 'Assistant Manager',
-      whatYouDo: [
-        'Coach and develop BDRs and interns',
-        'Manage pipeline quality and team performance',
-        'Run weekly training and call reviews',
-        'Help scale our systems as we grow'
-      ],
-      youllThrive: [
-        'You\'ve been a top performer and want to lead',
-        'You care about developing people, not just hitting numbers',
-        'You can coach without micromanaging'
-      ],
-      whyJoin: [
-        'Leadership track for high performers (not a dead-end middle management role)',
-        'Revenue share opportunities',
-        'Build systems that scale (not just manage people)',
-        'Work directly with the founder on strategy'
-      ]
-    }
-  ];
 
   const lifePhotos = [
     { url: '/damon/DSCF5557.webp', alt: 'We are all friends' },
@@ -272,80 +193,318 @@ const Careers = () => {
               Join a performance-driven team where you'll learn real sales, work with major brands, and have a clear path to advancement.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-              {roles.map((role, idx) => (
-                <div
-                  key={role.title}
-                  data-animate
-                  style={{
-                    '--delay': `${0.1 + idx * 0.1}s`,
-                    background: 'var(--color-light-gray)',
-                    borderRadius: '12px',
-                    padding: '2.5rem',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    gap: '2rem',
-                    flexWrap: 'wrap',
-                    border: '1px solid rgba(212, 175, 55, 0.1)',
-                    transition: 'all 0.3s ease'
-                  } as React.CSSProperties}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.1)';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
-                >
-                  <div style={{ flex: 1 }}>
-                    <h3 className="mb-3" style={{
-                      fontSize: '1.75rem',
-                      fontWeight: '700',
-                      color: 'var(--color-primary-dark)'
-                    }}>
-                      {role.title}
-                    </h3>
-                    <p style={{
-                      color: 'var(--color-text-muted)',
-                      fontSize: '1rem',
-                      lineHeight: '1.6'
-                    }}>
-                      {role.whatYouDo[0]}
-                    </p>
-                  </div>
-                  <Link
-                    to={`/careers/${role.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '')}`}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              {jobs.map((job, idx) => {
+                const isExpanded = expandedJob === job.slug;
+                return (
+                  <div
+                    key={job.slug}
+                    data-animate
                     style={{
-                      background: 'var(--color-accent-gold)',
-                      color: 'var(--color-primary-dark)',
-                      padding: '0.875rem 2rem',
-                      borderRadius: '8px',
-                      fontWeight: '600',
-                      fontSize: '1rem',
-                      textDecoration: 'none',
+                      '--delay': `${0.1 + idx * 0.1}s`,
+                      background: 'var(--color-white)',
+                      borderRadius: '16px',
+                      border: `2px solid ${isExpanded ? 'rgba(212, 175, 55, 0.4)' : '#e5e7eb'}`,
                       transition: 'all 0.3s ease',
-                      whiteSpace: 'nowrap',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.5rem'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'var(--color-accent-secondary-gold)';
-                      e.currentTarget.style.transform = 'translateX(4px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'var(--color-accent-gold)';
-                      e.currentTarget.style.transform = 'translateX(0)';
-                    }}
+                      boxShadow: isExpanded ? '0 8px 32px rgba(0, 0, 0, 0.12)' : '0 2px 8px rgba(0, 0, 0, 0.04)',
+                      overflow: 'hidden'
+                    } as React.CSSProperties}
                   >
-                    View Details
-                    <span>→</span>
-                  </Link>
-                </div>
-              ))}
+                    {/* Header - Always Visible */}
+                    <div
+                      onClick={() => setExpandedJob(isExpanded ? null : job.slug)}
+                      style={{
+                        padding: '2rem 2.5rem',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        gap: '2rem',
+                        flexWrap: 'wrap'
+                      }}
+                    >
+                      <div style={{ flex: 1 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.75rem' }}>
+                          <span style={{ fontSize: '2rem', lineHeight: '1' }}>{job.icon}</span>
+                          <h3 style={{
+                            fontSize: '1.5rem',
+                            fontWeight: '700',
+                            color: 'var(--color-primary-dark)',
+                            margin: 0
+                          }}>
+                            {job.title}
+                          </h3>
+                        </div>
+                        <p style={{
+                          color: '#6b7280',
+                          fontSize: '1rem',
+                          lineHeight: '1.6',
+                          margin: 0
+                        }}>
+                          {job.description}
+                        </p>
+                      </div>
+                      <button
+                        style={{
+                          background: isExpanded ? 'var(--color-primary-dark)' : 'var(--color-accent-gold)',
+                          color: isExpanded ? 'var(--color-white)' : 'var(--color-primary-dark)',
+                          padding: '0.875rem 2rem',
+                          borderRadius: '8px',
+                          fontWeight: '600',
+                          fontSize: '1rem',
+                          border: 'none',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s ease',
+                          whiteSpace: 'nowrap',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.5rem'
+                        }}
+                      >
+                        {isExpanded ? 'Close' : 'View Details'}
+                        <span style={{
+                          transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                          transition: 'transform 0.3s ease',
+                          display: 'inline-block'
+                        }}>
+                          ▼
+                        </span>
+                      </button>
+                    </div>
+
+                    {/* Expanded Content */}
+                    {isExpanded && (
+                      <div style={{
+                        padding: '0 2.5rem 2.5rem',
+                        borderTop: '1px solid #e5e7eb',
+                        animation: 'fadeIn 0.3s ease-in-out'
+                      }}>
+                        <div style={{
+                          display: 'grid',
+                          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                          gap: '2.5rem',
+                          marginTop: '2rem'
+                        }}>
+                          {/* What You'll Do */}
+                          <div>
+                            <h4 style={{
+                              fontSize: '1.125rem',
+                              fontWeight: '700',
+                              color: 'var(--color-primary-dark)',
+                              marginBottom: '1rem'
+                            }}>
+                              What You'll Do
+                            </h4>
+                            <ul style={{
+                              listStyle: 'none',
+                              padding: 0,
+                              margin: 0
+                            }}>
+                              {job.whatYouDo.map((item, i) => (
+                                <li key={i} style={{
+                                  paddingLeft: '1.5rem',
+                                  position: 'relative',
+                                  marginBottom: '0.75rem',
+                                  color: '#4b5563',
+                                  lineHeight: '1.6'
+                                }}>
+                                  <span style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    color: 'var(--color-accent-gold)',
+                                    fontWeight: '700'
+                                  }}>•</span>
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {/* You'll Thrive If */}
+                          <div>
+                            <h4 style={{
+                              fontSize: '1.125rem',
+                              fontWeight: '700',
+                              color: 'var(--color-primary-dark)',
+                              marginBottom: '1rem'
+                            }}>
+                              You'll Thrive If
+                            </h4>
+                            <ul style={{
+                              listStyle: 'none',
+                              padding: 0,
+                              margin: 0
+                            }}>
+                              {job.youllThrive.map((item, i) => (
+                                <li key={i} style={{
+                                  paddingLeft: '1.5rem',
+                                  position: 'relative',
+                                  marginBottom: '0.75rem',
+                                  color: '#4b5563',
+                                  lineHeight: '1.6'
+                                }}>
+                                  <span style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    color: 'var(--color-accent-gold)',
+                                    fontWeight: '700'
+                                  }}>•</span>
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {/* Why Join */}
+                          <div>
+                            <h4 style={{
+                              fontSize: '1.125rem',
+                              fontWeight: '700',
+                              color: 'var(--color-primary-dark)',
+                              marginBottom: '1rem'
+                            }}>
+                              Why Join Momentum
+                            </h4>
+                            <ul style={{
+                              listStyle: 'none',
+                              padding: 0,
+                              margin: 0
+                            }}>
+                              {job.whyJoin.map((item, i) => (
+                                <li key={i} style={{
+                                  paddingLeft: '1.5rem',
+                                  position: 'relative',
+                                  marginBottom: '0.75rem',
+                                  color: '#4b5563',
+                                  lineHeight: '1.6'
+                                }}>
+                                  <span style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    color: 'var(--color-accent-gold)',
+                                    fontWeight: '700'
+                                  }}>•</span>
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {/* Requirements */}
+                          <div>
+                            <h4 style={{
+                              fontSize: '1.125rem',
+                              fontWeight: '700',
+                              color: 'var(--color-primary-dark)',
+                              marginBottom: '1rem'
+                            }}>
+                              Requirements
+                            </h4>
+                            <ul style={{
+                              listStyle: 'none',
+                              padding: 0,
+                              margin: 0
+                            }}>
+                              {job.requirements.map((item, i) => (
+                                <li key={i} style={{
+                                  paddingLeft: '1.5rem',
+                                  position: 'relative',
+                                  marginBottom: '0.75rem',
+                                  color: '#4b5563',
+                                  lineHeight: '1.6'
+                                }}>
+                                  <span style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    color: 'var(--color-accent-gold)',
+                                    fontWeight: '700'
+                                  }}>•</span>
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+
+                        {/* Compensation */}
+                        <div style={{
+                          marginTop: '2rem',
+                          padding: '1.5rem',
+                          background: '#f9fafb',
+                          borderRadius: '12px',
+                          border: '1px solid #e5e7eb'
+                        }}>
+                          <h4 style={{
+                            fontSize: '1rem',
+                            fontWeight: '700',
+                            color: 'var(--color-primary-dark)',
+                            marginBottom: '0.5rem'
+                          }}>
+                            💰 Compensation
+                          </h4>
+                          <p style={{
+                            color: '#4b5563',
+                            margin: 0,
+                            lineHeight: '1.6'
+                          }}>
+                            {job.compensation}
+                          </p>
+                        </div>
+
+                        {/* Apply Button */}
+                        <div style={{
+                          marginTop: '2rem',
+                          display: 'flex',
+                          gap: '1rem',
+                          flexWrap: 'wrap'
+                        }}>
+                          <Link
+                            to="/contact"
+                            style={{
+                              background: 'var(--color-primary-dark)',
+                              color: 'var(--color-white)',
+                              padding: '1rem 2.5rem',
+                              borderRadius: '8px',
+                              fontWeight: '600',
+                              fontSize: '1.05rem',
+                              textDecoration: 'none',
+                              transition: 'all 0.3s ease',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.5rem'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.opacity = '0.9';
+                              e.currentTarget.style.transform = 'translateY(-2px)';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.opacity = '1';
+                              e.currentTarget.style.transform = 'translateY(0)';
+                            }}
+                          >
+                            Apply for this Position
+                            <span>→</span>
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
+
+            <style>{`
+              @keyframes fadeIn {
+                from {
+                  opacity: 0;
+                  transform: translateY(-10px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+            `}</style>
 
             {/* Didn't find the perfect fit CTA */}
             <div
