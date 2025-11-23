@@ -23,23 +23,11 @@ const StaffTraining = () => {
           </div>
         </section>
 
-        {/* Core Philosophy Section */}
-        <section className="about-story-section">
-          <div className="container-new">
-            <h2 className="about-section-title" data-animate>Customer Service IS Sales</h2>
-            <div className="about-story-text" data-animate style={{ maxWidth: '800px' }}>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Shadow Method Section */}
         <section className="about-mission-section">
           <div className="container-new">
             <h2 className="about-section-title centered" data-animate>
-              Come Shadow Us
+             How we work 
             </h2>
             <div className="about-values-grid">
               <div className="about-value-card" data-animate>
@@ -61,6 +49,18 @@ const StaffTraining = () => {
             </div>
           </div>
         </section>
+        {/* Core Philosophy Section */}
+        <section className="about-story-section">
+          <div className="container-new">
+            <h2 className="about-section-title" data-animate>Customer Service IS Sales</h2>
+            <div className="about-story-text" data-animate style={{ maxWidth: '800px' }}>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+        </section>
+
 
         {/* Training Development Section */}
         <section className="about-story-section">
