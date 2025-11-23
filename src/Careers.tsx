@@ -64,7 +64,7 @@ const Careers = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '8rem 2rem 6rem'
+          padding: '6rem 2rem 4rem'
         }}>
           {/* Animated Gradient Background */}
           <div style={{
@@ -113,21 +113,27 @@ const Careers = () => {
             transform: `translateY(${scrollY * 0.15}px)`
           }}>
             <h1 className="mb-5" style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              fontWeight: '700',
+              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+              fontWeight: '800',
+              fontFamily: "'Playfair Display', serif",
               color: 'var(--color-white)',
-              lineHeight: '1.2',
-              textShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+              lineHeight: '1.1',
+              textShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+              letterSpacing: '-0.02em',
+              marginBottom: '2rem'
             }} data-animate>
               Shape your growth with us
             </h1>
             <p style={{
-              fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
+              fontSize: 'clamp(1.15rem, 2vw, 1.4rem)',
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: '400',
               color: 'rgba(255, 255, 255, 0.95)',
-              maxWidth: '800px',
+              maxWidth: '750px',
               margin: '0 auto',
-              lineHeight: '1.6',
-              textShadow: '0 2px 10px rgba(0, 0, 0, 0.2)'
+              lineHeight: '1.7',
+              textShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
+              letterSpacing: '-0.01em'
             }} data-animate>
               Join a team where authority is questioned, leadership is earned, that believes in everyone until proven otherwise.
             </p>
@@ -150,29 +156,33 @@ const Careers = () => {
         </section>
         <section className="about-story-section" style={{
           background: 'linear-gradient(180deg, #ffffff 0%, #f9fafb 100%)',
-          padding: '6rem 0'
+          padding: '5rem 0'
         }}>
           <div className="container-new">
             <div style={{
               textAlign: 'center',
-              maxWidth: '800px',
-              margin: '0 auto 4rem',
+              maxWidth: '850px',
+              margin: '0 auto 3rem',
               padding: '0 1rem'
             }}>
               <h2 className="about-section-title centered" data-animate style={{
-                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                fontSize: 'clamp(2.25rem, 4vw, 3.5rem)',
                 fontWeight: '700',
-                marginBottom: '1.25rem',
+                fontFamily: "'Playfair Display', serif",
+                marginBottom: '1.5rem',
                 color: 'var(--color-primary-dark)',
-                letterSpacing: '-0.02em'
+                letterSpacing: '-0.03em',
+                lineHeight: '1.15'
               }}>
               Working At Momentum Management
               </h2>
               <p className="about-mission-intro" data-animate style={{
-                fontSize: 'clamp(1rem, 2vw, 1.125rem)',
+                fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
+                fontFamily: "'Inter', sans-serif",
                 color: '#6b7280',
-                lineHeight: '1.7',
-                fontWeight: '400'
+                lineHeight: '1.8',
+                fontWeight: '400',
+                letterSpacing: '-0.01em'
               }}>
                 Real glimpses into what makes us different.
               </p>
@@ -227,6 +237,7 @@ const Careers = () => {
                     padding: '4rem 1.75rem 1.75rem',
                     color: 'white',
                     fontSize: '1rem',
+                    fontFamily: "'Inter', sans-serif",
                     fontWeight: '600',
                     letterSpacing: '0.01em'
                   }}>
@@ -255,12 +266,28 @@ const Careers = () => {
         </section>
 
 
-        <section id="open-positions" className="about-story-section">
+        <section id="open-positions" className="about-story-section" style={{ padding: '5rem 0' }}>
           <div className="container-new">
-            <h2 className="about-section-title mb-4" data-animate style={{ fontSize: '3rem' }}>
+            <h2 className="about-section-title mb-4" data-animate style={{
+              fontSize: 'clamp(2.25rem, 4vw, 3.5rem)',
+              fontWeight: '700',
+              fontFamily: "'Playfair Display', serif",
+              marginBottom: '1.5rem',
+              letterSpacing: '-0.03em',
+              lineHeight: '1.15'
+            }}>
               Available positions
             </h2>
-            <p className="mb-8" style={{ color: 'var(--color-text-muted)', maxWidth: '800px' }} data-animate>
+            <p className="mb-8" data-animate style={{
+              color: '#6b7280',
+              maxWidth: '850px',
+              fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
+              fontFamily: "'Inter', sans-serif",
+              lineHeight: '1.8',
+              fontWeight: '400',
+              letterSpacing: '-0.01em',
+              marginBottom: '2.5rem'
+            }}>
               Join a performance-driven team where you'll learn real sales, work with major brands, and have a clear path to advancement.
             </p>
 
@@ -296,19 +323,24 @@ const Careers = () => {
                     >
                       <div style={{ flex: 1 }}>
                         <h3 style={{
-                          fontSize: '1.5rem',
+                          fontSize: 'clamp(1.35rem, 2vw, 1.75rem)',
                           fontWeight: '700',
+                          fontFamily: "'Inter', sans-serif",
                           color: 'var(--color-primary-dark)',
                           margin: 0,
-                          marginBottom: '0.75rem'
+                          marginBottom: '1rem',
+                          letterSpacing: '-0.02em'
                         }}>
                           {job.title}
                         </h3>
                         <p style={{
                           color: '#6b7280',
-                          fontSize: '1rem',
-                          lineHeight: '1.6',
-                          margin: 0
+                          fontSize: 'clamp(0.95rem, 1.5vw, 1.05rem)',
+                          fontFamily: "'Inter', sans-serif",
+                          fontWeight: '400',
+                          lineHeight: '1.7',
+                          margin: 0,
+                          letterSpacing: '-0.01em'
                         }}>
                           {job.description}
                         </p>
@@ -317,9 +349,10 @@ const Careers = () => {
                         style={{
                           background: isExpanded ? 'var(--color-primary-dark)' : 'var(--color-accent-gold)',
                           color: isExpanded ? 'var(--color-white)' : 'var(--color-primary-dark)',
-                          padding: '0.875rem 2rem',
+                          padding: '1rem 2.25rem',
                           borderRadius: '8px',
                           fontWeight: '600',
+                          fontFamily: "'Inter', sans-serif",
                           fontSize: '1rem',
                           border: 'none',
                           cursor: 'pointer',
@@ -327,7 +360,8 @@ const Careers = () => {
                           whiteSpace: 'nowrap',
                           display: 'inline-flex',
                           alignItems: 'center',
-                          gap: '0.5rem'
+                          gap: '0.5rem',
+                          letterSpacing: '-0.01em'
                         }}
                       >
                         {isExpanded ? 'Close' : 'View Details'}
@@ -353,10 +387,13 @@ const Careers = () => {
                         }}>
                           <p style={{
                             color: '#4b5563',
-                            fontSize: '1rem',
+                            fontSize: '1.05rem',
+                            fontFamily: "'Inter', sans-serif",
+                            fontWeight: '400',
                             lineHeight: '1.8',
-                            marginBottom: '1.5rem',
-                            textAlign: 'justify'
+                            marginBottom: '2rem',
+                            textAlign: 'justify',
+                            letterSpacing: '-0.01em'
                           }}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
                           </p>
@@ -364,22 +401,53 @@ const Careers = () => {
                           <ul style={{
                             listStyle: 'disc',
                             paddingLeft: '1.5rem',
-                            margin: '1.5rem 0',
+                            margin: '2rem 0',
                             color: '#4b5563',
                             textAlign: 'left'
                           }}>
-                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Sed do eiusmod tempor incididunt ut labore et dolore</li>
-                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Ut enim ad minim veniam, quis nostrud exercitation</li>
-                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Duis aute irure dolor in reprehenderit in voluptate</li>
+                            <li style={{
+                              marginBottom: '0.75rem',
+                              lineHeight: '1.7',
+                              fontSize: '1rem',
+                              fontFamily: "'Inter', sans-serif",
+                              fontWeight: '400',
+                              letterSpacing: '-0.01em'
+                            }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                            <li style={{
+                              marginBottom: '0.75rem',
+                              lineHeight: '1.7',
+                              fontSize: '1rem',
+                              fontFamily: "'Inter', sans-serif",
+                              fontWeight: '400',
+                              letterSpacing: '-0.01em'
+                            }}>Sed do eiusmod tempor incididunt ut labore et dolore</li>
+                            <li style={{
+                              marginBottom: '0.75rem',
+                              lineHeight: '1.7',
+                              fontSize: '1rem',
+                              fontFamily: "'Inter', sans-serif",
+                              fontWeight: '400',
+                              letterSpacing: '-0.01em'
+                            }}>Ut enim ad minim veniam, quis nostrud exercitation</li>
+                            <li style={{
+                              marginBottom: '0.75rem',
+                              lineHeight: '1.7',
+                              fontSize: '1rem',
+                              fontFamily: "'Inter', sans-serif",
+                              fontWeight: '400',
+                              letterSpacing: '-0.01em'
+                            }}>Duis aute irure dolor in reprehenderit in voluptate</li>
                           </ul>
 
                           <p style={{
                             color: '#4b5563',
-                            fontSize: '1rem',
+                            fontSize: '1.05rem',
+                            fontFamily: "'Inter', sans-serif",
+                            fontWeight: '400',
                             lineHeight: '1.8',
-                            marginBottom: '1.5rem',
-                            textAlign: 'justify'
+                            marginBottom: '2rem',
+                            textAlign: 'justify',
+                            letterSpacing: '-0.01em'
                           }}>
                             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                           </p>
@@ -387,13 +455,34 @@ const Careers = () => {
                           <ul style={{
                             listStyle: 'disc',
                             paddingLeft: '1.5rem',
-                            margin: '1.5rem 0',
+                            margin: '2rem 0',
                             color: '#4b5563',
                             textAlign: 'left'
                           }}>
-                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Nemo enim ipsam voluptatem quia voluptas sit</li>
-                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Neque porro quisquam est, qui dolorem ipsum</li>
-                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Sed ut perspiciatis unde omnis iste natus error</li>
+                            <li style={{
+                              marginBottom: '0.75rem',
+                              lineHeight: '1.7',
+                              fontSize: '1rem',
+                              fontFamily: "'Inter', sans-serif",
+                              fontWeight: '400',
+                              letterSpacing: '-0.01em'
+                            }}>Nemo enim ipsam voluptatem quia voluptas sit</li>
+                            <li style={{
+                              marginBottom: '0.75rem',
+                              lineHeight: '1.7',
+                              fontSize: '1rem',
+                              fontFamily: "'Inter', sans-serif",
+                              fontWeight: '400',
+                              letterSpacing: '-0.01em'
+                            }}>Neque porro quisquam est, qui dolorem ipsum</li>
+                            <li style={{
+                              marginBottom: '0.75rem',
+                              lineHeight: '1.7',
+                              fontSize: '1rem',
+                              fontFamily: "'Inter', sans-serif",
+                              fontWeight: '400',
+                              letterSpacing: '-0.01em'
+                            }}>Sed ut perspiciatis unde omnis iste natus error</li>
                           </ul>
 
                           {/* Apply Button */}
@@ -410,13 +499,15 @@ const Careers = () => {
                                 color: 'var(--color-white)',
                                 padding: '1rem 2.5rem',
                                 borderRadius: '8px',
+                                fontFamily: "'Inter', sans-serif",
                                 fontWeight: '600',
                                 fontSize: '1.05rem',
                                 textDecoration: 'none',
                                 transition: 'all 0.3s ease',
                                 display: 'inline-flex',
                                 alignItems: 'center',
-                                gap: '0.5rem'
+                                gap: '0.5rem',
+                                letterSpacing: '-0.01em'
                               }}
                               onMouseEnter={(e) => {
                                 e.currentTarget.style.opacity = '0.9';
@@ -464,17 +555,23 @@ const Careers = () => {
               }}
             >
               <h3 className="mb-4" style={{
-                fontSize: '2rem',
+                fontSize: 'clamp(1.75rem, 3vw, 2.25rem)',
                 fontWeight: '700',
-                color: 'var(--color-white)'
+                fontFamily: "'Playfair Display', serif",
+                color: 'var(--color-white)',
+                letterSpacing: '-0.02em'
               }}>
                 Didn't find the perfect fit?
               </h3>
               <p className="mb-6" style={{
-                fontSize: '1.125rem',
-                color: 'rgba(255, 255, 255, 0.8)',
-                maxWidth: '600px',
-                margin: '0 auto'
+                fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: '400',
+                color: 'rgba(255, 255, 255, 0.9)',
+                maxWidth: '650px',
+                margin: '0 auto 2rem',
+                lineHeight: '1.7',
+                letterSpacing: '-0.01em'
               }}>
                 Tell us more about yourself, and we'll reach out when the right opportunity comes along.
               </p>
@@ -486,7 +583,9 @@ const Careers = () => {
                   color: 'var(--color-primary-dark)',
                   padding: '1rem 2.5rem',
                   fontSize: '1.1rem',
-                  fontWeight: '600'
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: '600',
+                  letterSpacing: '-0.01em'
                 }}
               >
                 Get in Touch
@@ -498,12 +597,31 @@ const Careers = () => {
 
 
         {/* Benefits & Perks Section */}
-        <section className="about-story-section">
+        <section className="about-story-section" style={{ padding: '5rem 0' }}>
           <div className="container-new">
-            <h2 className="about-section-title centered" data-animate>
+            <h2 className="about-section-title centered" data-animate style={{
+              fontSize: 'clamp(2.25rem, 4vw, 3.5rem)',
+              fontWeight: '700',
+              fontFamily: "'Playfair Display', serif",
+              marginBottom: '1.5rem',
+              color: 'var(--color-primary-dark)',
+              letterSpacing: '-0.03em',
+              lineHeight: '1.15',
+              textAlign: 'center'
+            }}>
               What You'll Get
             </h2>
-            <p className="about-mission-intro" data-animate>
+            <p className="about-mission-intro" data-animate style={{
+              fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
+              fontFamily: "'Inter', sans-serif",
+              color: '#6b7280',
+              lineHeight: '1.8',
+              fontWeight: '400',
+              letterSpacing: '-0.01em',
+              textAlign: 'center',
+              maxWidth: '850px',
+              margin: '0 auto 3rem'
+            }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
 
@@ -559,17 +677,22 @@ const Careers = () => {
                   }}
                 >
                   <h3 className="mb-3" style={{
-                    fontSize: '1.15rem',
+                    fontSize: '1.2rem',
                     fontWeight: '600',
-                    color: 'var(--color-primary-dark)'
+                    fontFamily: "'Inter', sans-serif",
+                    color: 'var(--color-primary-dark)',
+                    letterSpacing: '-0.01em'
                   }}>
                     {perk.title}
                   </h3>
                   <p style={{
-                    fontSize: '0.95rem',
-                    color: 'var(--color-text-muted)',
-                    lineHeight: '1.6',
-                    margin: 0
+                    fontSize: '1rem',
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: '400',
+                    color: '#6b7280',
+                    lineHeight: '1.7',
+                    margin: 0,
+                    letterSpacing: '-0.01em'
                   }}>
                     {perk.desc}
                   </p>
