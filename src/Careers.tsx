@@ -111,9 +111,9 @@ const Careers = () => {
   ];
 
   const lifePhotos = [
-    { url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop&q=80', alt: 'Team collaboration' },
-    { url: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop&q=80', alt: 'Team meeting' },
-    { url: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop&q=80', alt: 'Team celebration' }
+    { url: '/damon/DSCF5557.webp', alt: 'Team collaboration' },
+    { url: '/damon/.webp', alt: 'Team meeting' },
+    { url: '/damon/DSCF5619.webp', alt: 'Team celebration' }
   ];
 
   return (
@@ -125,7 +125,7 @@ const Careers = () => {
         <section style={{
           position: 'relative',
           minHeight: '600px',
-          background: `linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.85)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=900&fit=crop&q=80')`,
+          background: `linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.85)), url('/damon/DSCF5634_19-9.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           display: 'flex',
