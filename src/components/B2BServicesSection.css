@@ -8,109 +8,91 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 4rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-/* Left Side - Omnichannel */
-.b2b-services-left {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 60px;
 }
 
-.b2b-services-image-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
+/* Header section - Centered title and description */
+.b2b-services-header {
+  text-align: center;
+  max-width: 900px;
   margin: 0 auto;
-}
-
-.b2b-services-image {
-  width: 100%;
-  height: auto;
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-}
-
-.icon-circle {
-  position: absolute;
-  width: 56px;
-  height: 56px;
-  background: var(--color-white);
-  border-radius: 50%;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Content section - Buttons and card side by side */
+.b2b-services-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Left Side - Service Buttons (1/3 width) */
+.b2b-services-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.b2b-content-card {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.b2b-content-headline {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1e293b;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.b2b-content-body {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0;
+}
+
+.b2b-content-cta {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  color: var(--color-accent-gold);
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--color-accent-gold);
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
   transition: all 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
-.icon-circle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.4);
+.b2b-content-cta:hover {
+  background: #c9a53f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
-.icon-phone-1 {
-  top: 10%;
-  left: -8%;
+.b2b-content-cta svg {
+  transition: transform 0.3s ease;
 }
 
-.icon-whatsapp {
-  top: 10%;
-  right: -8%;
-}
-
-.icon-email {
-  bottom: 10%;
-  left: -8%;
-}
-
-.icon-video {
-  bottom: 10%;
-  right: -8%;
-}
-
-/* Dashed connection lines */
-.icon-circle::before {
-  content: '';
-  position: absolute;
-  width: 80px;
-  height: 2px;
-  background: linear-gradient(to right, transparent 0%, transparent 50%, var(--color-accent-gold) 50%, var(--color-accent-gold) 100%);
-  background-size: 8px 2px;
-  opacity: 0.3;
-}
-
-.icon-phone-1::before {
-  top: 50%;
-  left: 100%;
-  transform: rotate(-45deg);
-  transform-origin: 0 50%;
-}
-
-.icon-whatsapp::before {
-  top: 50%;
-  right: 100%;
-  transform: rotate(45deg);
-  transform-origin: 100% 50%;
-}
-
-.icon-email::before {
-  bottom: 50%;
-  left: 100%;
-  transform: rotate(45deg);
-  transform-origin: 0 50%;
-}
-
-.icon-video::before {
-  bottom: 50%;
-  right: 100%;
-  transform: rotate(-45deg);
-  transform-origin: 100% 50%;
+.b2b-content-cta:hover svg {
+  transform: translateX(4px);
 }
 
 .b2b-services-title {
@@ -167,14 +149,14 @@
   box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
 }
 
-/* Right Side - Services Grid */
+/* Right Side - Content Card (2/3 width) */
 .b2b-services-right {
+  flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 
-.b2b-services-right .service-description {
+.service-description {
   font-size: 1.125rem;
   line-height: 1.8;
   color: #334155;
@@ -219,7 +201,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 500px;
+  width: 100%;
 }
 
 .b2b-service-card {
@@ -234,6 +216,9 @@
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
 }
 
 .b2b-service-card:hover {
@@ -243,9 +228,28 @@
   background: rgba(212, 175, 55, 0.1);
 }
 
+.b2b-service-card.active {
+  background: var(--color-accent-gold);
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+}
+
+.b2b-service-card.active .b2b-service-title {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+.b2b-service-card.active .b2b-service-arrow {
+  color: var(--color-primary-dark);
+}
+
 .b2b-service-card:hover .b2b-service-arrow {
   transform: translateX(4px);
   color: var(--color-accent-gold);
+}
+
+.b2b-service-card.active:hover .b2b-service-arrow {
+  color: var(--color-primary-dark);
 }
 
 .b2b-service-title {
@@ -268,7 +272,11 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .b2b-services-container {
-    gap: 60px;
+    gap: 48px;
+  }
+
+  .b2b-services-content {
+    gap: 32px;
   }
 
   .b2b-services-title {
@@ -278,27 +286,36 @@
   .b2b-services-subtitle {
     font-size: 20px;
   }
+
+  .b2b-content-headline {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 968px) {
-  .b2b-services-container {
-    grid-template-columns: 1fr;
-    gap: 64px;
+  .b2b-services-content {
+    flex-direction: column;
+    gap: 40px;
   }
 
   .b2b-services-left {
-    max-width: 600px;
-    margin: 0 auto;
+    flex: 1;
+    width: 100%;
   }
 
-  .b2b-services-image-wrapper {
-    max-width: 400px;
+  .b2b-services-right {
+    flex: 1;
+    width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .b2b-services-container {
     padding: 0 2rem;
+  }
+
+  .b2b-services-header {
+    max-width: 100%;
   }
 }
 
@@ -328,29 +345,15 @@
     grid-template-columns: 1fr;
   }
 
-  .icon-circle {
-    width: 48px;
-    height: 48px;
+  .b2b-content-card {
+    padding: 32px 24px;
   }
 
-  .icon-circle svg {
-    width: 20px;
-    height: 20px;
+  .b2b-content-headline {
+    font-size: 24px;
   }
 
-  .icon-phone-1 {
-    left: 0;
-  }
-
-  .icon-whatsapp {
-    right: 0;
-  }
-
-  .icon-email {
-    left: 0;
-  }
-
-  .icon-video {
-    right: 0;
+  .b2b-content-body {
+    font-size: 16px;
   }
 }
