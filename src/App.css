@@ -2733,6 +2733,43 @@ body {
   /* Subtle shadow for depth */
 }
 
+/* Footer Excellence Section - Integrated in Left Column */
+.footer-excellence-integrated {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.footer-certification-badge-small {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.footer-excellence-content-small {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-excellence-title-small {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.footer-excellence-text-small {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 .footer-content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr;
@@ -2868,12 +2905,30 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
   }
+
+  .footer-certification-badge-small {
+    width: 70px;
+    height: 70px;
+  }
+
+  .footer-excellence-title-small {
+    font-size: 1rem;
+  }
+
+  .footer-excellence-text-small {
+    font-size: 0.8125rem;
+  }
 }
 
 @media (max-width: 48rem) {
   .footer-content {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+  }
+
+  .footer-certification-badge-small {
+    width: 60px;
+    height: 60px;
   }
 }
 

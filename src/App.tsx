@@ -21,7 +21,7 @@ const withDelay = (delay: number): AnimatedStyle => ({
 
 const MomentumLanding = () => {
   const revenueAnimationRef = useRef(false);
-  const [revenueCount, setRevenueCount] = useState(20);
+  const [revenueCount, setRevenueCount] = useState(50);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -89,7 +89,7 @@ const MomentumLanding = () => {
 
     // Use GSAP for smoother counter animation
     gsap.to({ value: 20 }, {
-      value: 50,
+      value: 65,
       duration: 1.6,
       ease: 'power2.out',
       onUpdate: function () {

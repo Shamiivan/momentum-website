@@ -8,7 +8,20 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-column footer-brand">
             <Logo />
-            <p className="footer-tagline">We bridge the gap between you and your customers.</p>
+            <p className="footer-tagline">The power behind the pitch</p>
+
+            {/* Recognized Excellence - Integrated */}
+            <div className="footer-excellence-integrated">
+              <img
+                src="/certification.webp"
+                alt="Top-performing sales and marketing partner certification"
+                className="footer-certification-badge-small"
+              />
+              <p className="footer-excellence-text-small">
+                Momentum Management is recognized as a top-performing sales and marketing partner,
+                known for delivering high-volume results and unmatched client satisfaction.
+              </p>
+            </div>
           </div>
 
           <div className="footer-column">

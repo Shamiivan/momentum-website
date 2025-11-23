@@ -69,28 +69,6 @@ const CaseStudies = () => {
           </div>
         </section>
 
-        {/* Trust Signals Section */}
-        <section className="trust-signals-section">
-          <div className="container-new">
-            <div className="trust-signals-wrapper" data-animate>
-              <div className="certification-badge-container">
-                <img
-                  src="/certification.webp"
-                  alt="Top-performing sales and marketing partner certification"
-                  className="certification-badge"
-                />
-              </div>
-              <div className="certification-content">
-                <h3 className="certification-title">Recognized Excellence</h3>
-                <p className="certification-text">
-                  Momentum Management is recognized as a top-performing sales and marketing partner,
-                  known for delivering high-volume results and unmatched client satisfaction.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Testimonials Section */}
         <section className="testimonials-section">
           <div className="container-new">
@@ -158,37 +136,6 @@ const CaseStudies = () => {
                     <span className="result-value">[Specific metric]</span>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Results Overview */}
-        <section className="service-overview-section">
-          <div className="container-new">
-            <h2 className="section-title-new" data-animate>
-              Proven Track Record
-            </h2>
-            <div className="stats-grid-new">
-              <div className="stat-card-new" data-animate style={withDelay(0.1)}>
-                <div className="stat-number-new">$50M</div>
-                <div className="stat-label-new">Revenue Generated</div>
-                <div className="stat-helper">for partner brands</div>
-              </div>
-              <div className="stat-card-new" data-animate style={withDelay(0.15)}>
-                <div className="stat-number-new">500</div>
-                <div className="stat-label-new">Trained Professionals</div>
-                <div className="stat-helper">across multiple channels</div>
-              </div>
-              <div className="stat-card-new" data-animate style={withDelay(0.2)}>
-                <div className="stat-number-new">3</div>
-                <div className="stat-label-new">Markets</div>
-                <div className="stat-helper">expanded in last year</div>
-              </div>
-              <div className="stat-card-new" data-animate style={withDelay(0.25)}>
-                <div className="stat-number-new">40K</div>
-                <div className="stat-label-new">Customers</div>
-                <div className="stat-helper">acquired through outreach</div>
               </div>
             </div>
           </div>
