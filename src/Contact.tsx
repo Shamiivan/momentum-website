@@ -15,9 +15,6 @@ const Contact = () => {
         <section className="contact-hero">
           <div className="container-new">
             <h1 className="contact-page-title">Get In Touch</h1>
-            <p className="contact-page-subtitle">
-              Ready to scale customer acquisition? Let's discuss how we can transform your growth trajectory.
-            </p>
           </div>
         </section>
 

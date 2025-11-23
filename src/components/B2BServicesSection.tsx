@@ -55,7 +55,9 @@ const B2BServicesSection = () => {
       <div className="b2b-services-container">
         <div className="b2b-services-header">
           <h2 className="b2b-services-title">Everyone Loves Buying. Everybody Hates Being Sold.</h2>
-          <p className="service-description">We specialize in B2B sales and marketing, helping you connect with your ideal customers through tailored strategies and expert guidance.</p>
+              <p className='service-description'>
+                You focus on your product. We focus on acquiring customers for it.
+              </p>
         </div>
 
         <div className="b2b-services-content">

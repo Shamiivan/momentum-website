@@ -39,31 +39,48 @@ const CaseStudies = () => {
         <section className="case-study-section-new">
           <div className="container-new">
             <div className="case-study-content-new" data-animate>
-              <h2 className="case-study-title-new">$40M for TELUS in 5 Years</h2>
+              <h2 className="case-study-title-new">$57.3M for TELUS in 5 Years</h2>
               <div className="case-study-text-new">
                 <p>
                   Over the past 5 years, TELUS partnered with Momentum Management to break into the Quebec market
                   and scale customer acquisition. By deploying our expert sales team across in-person, phone, and
-                  social media channels, we helped TELUS establish a strong local presence and generate over $40 million in revenue.
+                  social media channels, we helped TELUS establish a strong local presence and generate over $57.3 million in revenue.
                 </p>
                 <p>
                   This long-term collaboration continues to fuel consistent growth and retention in one of Canada's
                   most competitive markets.
                 </p>
               </div>
-              <div className="case-stats">
-                <div className="case-stat">
-                  <div className="case-stat-number">$40M</div>
-                  <div className="case-stat-label">Revenue</div>
-                </div>
-                <div className="case-stat">
-                  <div className="case-stat-number">5 Years</div>
-                  <div className="case-stat-label">Partnership</div>
-                </div>
-                <div className="case-stat">
-                  <div className="case-stat-number">Quebec</div>
-                  <div className="case-stat-label">Market</div>
-                </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Results Overview */}
+        <section className="service-overview-section">
+          <div className="container-new">
+            <h2 className="section-title-new" data-animate>
+              Proven Track Record
+            </h2>
+            <div className="stats-grid-new">
+              <div className="stat-card-new" data-animate style={withDelay(0.1)}>
+                <div className="stat-number-new">$50M+</div>
+                <div className="stat-label-new">Revenue Generated</div>
+                <div className="stat-helper">for partner brands</div>
+              </div>
+              <div className="stat-card-new" data-animate style={withDelay(0.15)}>
+                <div className="stat-number-new">500+</div>
+                <div className="stat-label-new">Trained Professionals</div>
+                <div className="stat-helper">across multiple channels</div>
+              </div>
+              <div className="stat-card-new" data-animate style={withDelay(0.2)}>
+                <div className="stat-number-new">3</div>
+                <div className="stat-label-new">Markets</div>
+                <div className="stat-helper">expanded in last year</div>
+              </div>
+              <div className="stat-card-new" data-animate style={withDelay(0.25)}>
+                <div className="stat-number-new">40K+</div>
+                <div className="stat-label-new">Customers</div>
+                <div className="stat-helper">acquired through outreach</div>
               </div>
             </div>
           </div>

@@ -211,9 +211,7 @@ const MomentumLanding = () => {
                 The power behind the pitch
             </h2>
             <div className="service-description" data-animate style={withDelay(0.1)}>
-              <p>
-                You focus on your product. We focus on acquiring customers for it.
-              </p>
+          <p className="service-description">We specialize in B2B sales and marketing, helping you connect with your ideal customers through tailored strategies and expert guidance.</p>
             </div>
             <div className="stats-grid-new">
               {serviceStats.map((stat, idx) => (
