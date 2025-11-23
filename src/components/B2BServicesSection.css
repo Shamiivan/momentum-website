@@ -1,7 +1,7 @@
 .b2b-services-section {
   padding: 80px 0;
   background: var(--color-white);
-  border-top: 3px solid var(--color-accent-gold);
+  border-top: 3px solid var(--color-primary-dark);
 }
 
 .b2b-services-container {
@@ -20,7 +20,8 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
+  align-items: center;
 }
 
 /* Content section - Buttons and card side by side */
@@ -28,6 +29,7 @@
   display: flex;
   gap: 40px;
   align-items: flex-start;
+  justify-content: center; /* Centering for content columns */
 }
 
 /* Left Side - Service Buttons (1/3 width) */
@@ -35,118 +37,99 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  max-width: 400px; /* Limit width */
 }
 
 .b2b-content-card {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-  border: 2px solid rgba(212, 175, 55, 0.3);
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.03) 0%, rgba(30, 58, 138, 0.01) 100%);
+  border: 1px solid rgba(30, 58, 138, 0.08);
   border-radius: 24px;
   padding: 48px;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+  min-height: 320px;
 }
 
 .b2b-content-headline {
   font-size: 32px;
   font-weight: 700;
-  line-height: 1.3;
-  color: #1e293b;
+  line-height: 1.25;
+  color: #0f172a;
   margin: 0;
-  transition: color 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.02em;
 }
 
 .b2b-content-body {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.7;
-  color: #334155;
+  color: #475569;
   margin: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .b2b-content-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  background: var(--color-accent-gold);
+  gap: 10px;
+  padding: 16px 32px;
+  background: transparent;
   color: var(--color-primary-dark);
-  text-decoration: none;
-  border-radius: 8px;
+  border: 2px solid transparent;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary-dark);
+  text-underline-offset: 0.3em;
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  font-size: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   align-self: flex-start;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  letter-spacing: -0.01em;
+  margin-top: 8px;
+  position: relative;
+  z-index: 0;
 }
 
-.b2b-content-cta:hover {
-  background: #c9a53f;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+.b2b-content-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--color-primary-dark);
+  border-radius: 12px;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.b2b-content-cta:hover::before {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .b2b-content-cta svg {
-  transition: transform 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 18px;
+  height: 18px;
+  position: relative;
+  z-index: 1;
 }
 
 .b2b-content-cta:hover svg {
-  transform: translateX(4px);
+  transform: translateX(6px);
 }
 
 .b2b-services-title {
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #1e293b;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f172a;
   margin: 0;
-}
-
-.b2b-services-channels {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.b2b-services-channel-item {
-  font-size: 16px;
-  color: var(--color-text-muted);
-  padding-left: 24px;
-  position: relative;
-}
-
-.b2b-services-channel-item::before {
-  content: '•';
-  position: absolute;
-  left: 8px;
-  color: var(--color-accent-gold);
-  font-size: 20px;
-}
-
-.b2b-services-cta-button {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 2px solid var(--color-accent-gold);
-  background: transparent;
-  color: var(--color-accent-gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 16px;
-}
-
-.b2b-services-cta-button:hover {
-  background: var(--color-accent-gold);
-  color: var(--color-primary-dark);
-  transform: translateX(8px);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+  text-align: center;
+  letter-spacing: -0.02em;
 }
 
 /* Right Side - Content Card (2/3 width) */
@@ -154,113 +137,107 @@
   flex: 2;
   display: flex;
   flex-direction: column;
+  max-width: 700px; /* Limit width */
 }
 
 .service-description {
   font-size: 1.125rem;
-  line-height: 1.8;
-  color: #334155;
+  line-height: 1.75;
+  color: #475569;
   margin: 0;
-}
-
-.b2b-services-subtitle {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.8;
-  color: #334155;
-  margin: 0;
-}
-
-.strikethrough-animation {
-  position: relative;
-  display: inline-block;
-}
-
-.strikethrough-animation::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--color-accent-gold);
-  transform: translateY(-50%);
-  animation: strikethrough 1.5s ease-in-out 0.5s forwards;
-}
-
-@keyframes strikethrough {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+  text-align: center;
+  font-weight: 400;
+  max-width: 700px;
 }
 
 .b2b-services-grid {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   width: 100%;
 }
 
 .b2b-service-card {
   background: var(--color-white);
-  padding: 24px 28px;
-  border-radius: 12px;
-  border: 2px solid rgba(212, 175, 55, 0.3);
+  padding: 20px 24px;
+  border-radius: 16px;
+  border: 1.5px solid rgba(30, 58, 138, 0.08);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 16px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
   width: 100%;
   text-align: left;
   font-family: inherit;
+  position: relative;
 }
 
 .b2b-service-card:hover {
-  border-color: var(--color-accent-gold);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
-  transform: translateY(-4px);
-  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(30, 58, 138, 0.25);
+  box-shadow: 0 4px 16px rgba(30, 58, 138, 0.08);
+  transform: translateY(-2px);
+  background: rgba(30, 58, 138, 0.02);
 }
 
 .b2b-service-card.active {
-  background: var(--color-accent-gold);
-  border-color: var(--color-accent-gold);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
+  transform: scale(1.02);
+}
+
+.b2b-service-icon {
+  color: var(--color-primary-dark);
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.b2b-service-card:hover .b2b-service-icon {
+  transform: scale(1.05);
+}
+
+.b2b-service-card.active .b2b-service-icon {
+  color: var(--color-white); /* White icon when active */
 }
 
 .b2b-service-card.active .b2b-service-title {
-  color: var(--color-primary-dark);
+  color: var(--color-white); /* White text when active */
   font-weight: 600;
 }
 
 .b2b-service-card.active .b2b-service-arrow {
-  color: var(--color-primary-dark);
+  color: var(--color-white); /* White arrow when active */
 }
 
 .b2b-service-card:hover .b2b-service-arrow {
   transform: translateX(4px);
-  color: var(--color-accent-gold);
-}
-
-.b2b-service-card.active:hover .b2b-service-arrow {
   color: var(--color-primary-dark);
 }
 
+.b2b-service-card.active:hover {
+  background: var(--color-primary-dark);
+  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(30, 58, 138, 0.25);
+}
+
+.b2b-service-card.active:hover .b2b-service-arrow {
+  color: var(--color-white);
+}
+
 .b2b-service-title {
-  font-size: 16px;
-  font-weight: 500;
-  color: #334155;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
   transition: color 0.3s ease;
+  margin-right: auto;
+  letter-spacing: -0.01em;
 }
 
 .b2b-service-card:hover .b2b-service-title {
-  color: var(--color-accent-gold);
+  color: var(--color-primary-dark);
 }
 
 .b2b-service-arrow {
@@ -283,10 +260,6 @@
     font-size: 36px;
   }
 
-  .b2b-services-subtitle {
-    font-size: 20px;
-  }
-
   .b2b-content-headline {
     font-size: 28px;
   }
@@ -296,16 +269,21 @@
   .b2b-services-content {
     flex-direction: column;
     gap: 40px;
+    align-items: center; /* Center items in column layout */
   }
 
   .b2b-services-left {
     flex: 1;
     width: 100%;
+    max-width: 400px; /* Limit width to keep it centered and readable */
+    margin: 0 auto; /* Center the left column */
   }
 
   .b2b-services-right {
     flex: 1;
     width: 100%;
+    max-width: 700px; /* Limit width to keep it centered and readable */
+    margin: 0 auto; /* Center the right column */
   }
 }
 
@@ -331,18 +309,6 @@
 
   .b2b-services-title {
     font-size: 32px;
-  }
-
-  .b2b-services-subtitle {
-    font-size: 18px;
-  }
-
-  .b2b-services-channels {
-    grid-template-columns: 1fr;
-  }
-
-  .b2b-services-grid {
-    grid-template-columns: 1fr;
   }
 
   .b2b-content-card {

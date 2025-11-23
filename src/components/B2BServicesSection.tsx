@@ -3,85 +3,97 @@ import { Link } from 'react-router-dom';
 import './B2BServicesSection.css';
 
 const B2BServicesSection = () => {
-  const [activeService, setActiveService] = useState('partnerships');
+  const [activeService, setActiveService] = useState('Partnerships');
 
   const services = [
-    {
-      id: 'partnerships',
-      title: 'Partnerships',
+    { 
+      title: 'Partnerships', 
       link: '/services/partnerships',
-      headline: 'Strategic Partnerships That Drive Growth',
-      body: 'Build meaningful relationships with partners who align with your vision. We help you identify, engage, and cultivate partnerships that create mutual value and accelerate your business growth.',
+      valueOffering: 'Forge Strategic Alliances',
+      description: 'We build and manage high-performing sales channels for your brand, connecting you with new customers and driving revenue growth. Our expertise in the Quebec market ensures your message resonates with the local audience.',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="8.5" cy="7" r="4"/>
+          <line x1="20" y1="8" x2="20" y2="14"/>
+          <line x1="23" y1="11" x2="17" y2="11"/>
+        </svg>
+      )
     },
-    {
-      id: 'training',
-      title: 'Staff/Sales Training',
+    { 
+      title: 'Staff/Sales Training', 
       link: '/services/staff-training',
-      headline: 'Empower Your Team to Sell with Confidence',
-      body: 'Transform your sales team into high-performing professionals. Our comprehensive training programs equip your staff with proven techniques, frameworks, and skills to close deals and build lasting customer relationships.',
+      valueOffering: 'Empower Your Team',
+      description: 'We provide comprehensive training programs that equip your sales team with the skills and knowledge they need to excel. From prospecting to closing, we cover it all.',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+          <path d="M12 14l6.16-3.422 A12.066 12.066 0 0 1 21 12"/>
+          <path d="M12 14l-6.16-3.422 A12.066 12.066 0 0 0 3 12"/>
+          <path d="M12 21l-9-5"/>
+          <path d="M12 21l9-5"/>
+        </svg>
+      )
     },
-    {
-      id: 'coaching',
-      title: 'Executive Coaching',
+    { 
+      title: 'Executive coaching', 
       link: '/services/executive-coaching',
-      headline: 'Unlock Your Leadership Potential',
-      body: 'Elevate your leadership capabilities with personalized coaching. We work with executives to develop strategic thinking, improve decision-making, and build the skills needed to lead high-performing teams.',
+      valueOffering: 'Elevate Your Leadership',
+      description: 'Our executive coaching services are designed to help leaders unlock their full potential. We provide personalized guidance and support to help you navigate challenges and achieve your goals.',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      )
     }
   ];
 
-  const activeContent = services.find(s => s.id === activeService);
+  const getActiveService = () => services.find(service => service.title === activeService);
 
   return (
     <section className="b2b-services-section">
       <div className="b2b-services-container">
-        {/* Top section - Title and Description */}
         <div className="b2b-services-header">
           <h2 className="b2b-services-title">Everyone Loves Buying. Everybody Hates Being Sold.</h2>
           <p className="service-description">We specialize in B2B sales and marketing, helping you connect with your ideal customers through tailored strategies and expert guidance.</p>
         </div>
 
-        {/* Bottom section - Buttons and Content Card */}
         <div className="b2b-services-content">
-          {/* Left side - Services buttons */}
           <div className="b2b-services-left">
             <div className="b2b-services-grid">
               {services.map((service) => (
                 <button
-                  key={service.id}
-                  onClick={() => setActiveService(service.id)}
-                  className={`b2b-service-card ${activeService === service.id ? 'active' : ''}`}
+                  key={service.title}
+                  className={`b2b-service-card ${activeService === service.title ? 'active' : ''}`}
+                  onClick={() => setActiveService(service.title)}
                 >
+                  <div className="b2b-service-icon">{service.icon}</div>
                   <span className="b2b-service-title">{service.title}</span>
-                  <svg
-                    className="b2b-service-arrow"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
+                  <svg className="b2b-service-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Right side - Dynamic content card */}
           <div className="b2b-services-right">
-            <div className="b2b-content-card">
-              <h3 className="b2b-content-headline">{activeContent?.headline}</h3>
-              <p className="b2b-content-body">{activeContent?.body}</p>
-              <Link to={activeContent?.link || '#'} className="b2b-content-cta">
-                Learn More
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </Link>
-            </div>
+            {getActiveService() && (
+              <div className="b2b-content-card">
+                <h3 className="b2b-content-headline">{getActiveService()?.valueOffering}</h3>
+                <p className="b2b-content-body">{getActiveService()?.description}</p>
+                <Link to={getActiveService()?.link || '/'} className="b2b-content-cta">
+                  {getActiveService()?.title === 'Partnerships' && 'Explore Our Partnership Model'}
+                  {getActiveService()?.title === 'Staff/Sales Training' && 'See Training in Action'}
+                  {getActiveService()?.title === 'Executive coaching' && 'View Coaching Programs'}
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

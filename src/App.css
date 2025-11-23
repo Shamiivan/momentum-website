@@ -1127,17 +1127,18 @@ body {
   border-radius: 0.625rem;
 }
 
-.service-description {
+.service-overview-section .service-description {
   max-width: 43.75rem;
   margin: 0 auto 4rem;
-  text-align: center;
+  text-align: center !important;
 }
 
-.service-description p {
+.service-overview-section .service-description p {
   font-size: 1.25rem;
   line-height: 1.8;
   color: #334155;
   margin-bottom: 1.5rem;
+  text-align: center !important;
 }
 
 .stats-grid-new {
