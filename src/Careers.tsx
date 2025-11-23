@@ -111,9 +111,12 @@ const Careers = () => {
   ];
 
   const lifePhotos = [
-    { url: '/damon/DSCF5557.webp', alt: 'Team collaboration' },
-    { url: '/damon/.webp', alt: 'Team meeting' },
-    { url: '/damon/DSCF5619.webp', alt: 'Team celebration' }
+    { url: '/damon/DSCF5557.webp', alt: 'We are all friends' },
+    { url: '/damon/DSCF5518.webp', alt: 'We are driven' },
+    { url: '/damon/DSCF5619.webp', alt: 'We believe in each other' },
+    { url: '/damon/DSCF5515.webp', alt: 'We support each other' },
+    { url: '/damon/DSCF5596.webp', alt: 'We are focused on growth' },
+    { url: '/damon/DSCF5613.webp', alt: 'We do a lot of training' }
   ];
 
   return (
@@ -153,19 +156,41 @@ const Careers = () => {
             </p>
           </div>
         </section>
-        <section className="about-story-section" style={{ background: '#fafafa' }}>
+        <section className="about-story-section" style={{
+          background: 'linear-gradient(180deg, #ffffff 0%, #f9fafb 100%)',
+          padding: '6rem 0'
+        }}>
           <div className="container-new">
-            <h2 className="about-section-title centered" data-animate>
-              A Day in the Life
-            </h2>
-            <p className="about-mission-intro" data-animate>
-              Real glimpses into what it's like to work at Momentum. No stock photos, just our culture.
-            </p>
+            <div style={{
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '0 auto 4rem',
+              padding: '0 1rem'
+            }}>
+              <h2 className="about-section-title centered" data-animate style={{
+                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                fontWeight: '700',
+                marginBottom: '1.25rem',
+                color: 'var(--color-primary-dark)',
+                letterSpacing: '-0.02em'
+              }}>
+              Working At Momentum Management
+              </h2>
+              <p className="about-mission-intro" data-animate style={{
+                fontSize: 'clamp(1rem, 2vw, 1.125rem)',
+                color: '#6b7280',
+                lineHeight: '1.7',
+                fontWeight: '400'
+              }}>
+                Real glimpses into what makes us different.
+              </p>
+            </div>
 
             <div className="mt-7" style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem'
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '2rem',
+              padding: '0 1rem'
             }}>
               {lifePhotos.map((photo, idx) => (
                 <div
@@ -173,12 +198,23 @@ const Careers = () => {
                   data-animate
                   style={{
                     '--delay': `${idx * 0.1}s`,
-                    borderRadius: '8px',
+                    borderRadius: '20px',
                     overflow: 'hidden',
-                    aspectRatio: '3/2',
+                    aspectRatio: '4/3',
                     position: 'relative',
-                    border: '1px solid #e5e7eb'
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 32px rgba(0, 0, 0, 0.08)',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                    cursor: 'pointer',
+                    background: '#ffffff'
                   } as React.CSSProperties}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-12px) scale(1.02)';
+                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12), 0 20px 60px rgba(0, 0, 0, 0.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 32px rgba(0, 0, 0, 0.08)';
+                  }}
                 >
                   <img
                     src={photo.url}
@@ -186,7 +222,8 @@ const Careers = () => {
                     style={{
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover'
+                      objectFit: 'cover',
+                      transition: 'transform 0.4s ease'
                     }}
                   />
                   <div style={{
@@ -194,11 +231,12 @@ const Careers = () => {
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    background: 'linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent)',
-                    padding: '2rem 1.5rem 1.5rem',
+                    background: 'linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%)',
+                    padding: '4rem 1.75rem 1.75rem',
                     color: 'white',
                     fontSize: '1rem',
-                    fontWeight: '600'
+                    fontWeight: '600',
+                    letterSpacing: '0.01em'
                   }}>
                     {photo.alt}
                   </div>
@@ -206,47 +244,21 @@ const Careers = () => {
               ))}
             </div>
 
-            {/* Culture Highlights */}
-            <div className="mt-8" style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '1.5rem'
-            }}>
-              {[
-                { title: 'Monday Kick-offs', desc: 'Start the week together, share wins, set goals' },
-                { title: 'Friday Wins', desc: 'Celebrate closed deals and team achievements' },
-                { title: 'Live Call Reviews', desc: 'Learn from real calls, get instant feedback' },
-                { title: 'Monthly Challenges', desc: 'Friendly competition with real prizes' }
-              ].map((item, idx) => (
-                <div
-                  key={item.title}
-                  data-animate
-                  style={{
-                    '--delay': `${idx * 0.1}s`,
-                    background: 'var(--color-white)',
-                    borderRadius: '8px',
-                    padding: '1.5rem',
-                    border: '1px solid #e5e7eb'
-                  } as React.CSSProperties}
-                >
-                  <h4 className="mb-2" style={{
-                    fontSize: '1rem',
-                    fontWeight: '600',
-                    color: 'var(--color-primary-dark)'
-                  }}>
-                    {item.title}
-                  </h4>
-                  <p style={{
-                    fontSize: '0.9rem',
-                    color: 'var(--color-text-muted)',
-                    margin: 0,
-                    lineHeight: '1.6'
-                  }}>
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <style>{`
+              @media (max-width: 1024px) {
+                .mt-7 {
+                  grid-template-columns: repeat(2, 1fr) !important;
+                  gap: 1.5rem !important;
+                }
+              }
+              @media (max-width: 640px) {
+                .mt-7 {
+                  grid-template-columns: 1fr !important;
+                  gap: 1.25rem !important;
+                }
+              }
+            `}</style>
+
           </div>
         </section>
 
@@ -458,23 +470,6 @@ const Careers = () => {
                   </p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Life at Momentum Section */}
-        {/* Open Positions Section */}
-        {/* CTA Section */}
-        <section className="about-cta-section">
-          <div className="container-new">
-            <div className="about-cta-content" data-animate>
-              <h2 className="about-cta-title">Ready to Join the Team?</h2>
-              <p className="about-cta-subtitle">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Apply today or get in touch to learn more.
-              </p>
-              <Link to="/contact" className="btn-primary-new btn-large">
-                Get In Touch
-              </Link>
             </div>
           </div>
         </section>
