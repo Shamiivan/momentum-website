@@ -224,17 +224,15 @@ const Careers = () => {
                       }}
                     >
                       <div style={{ flex: 1 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.75rem' }}>
-                          <span style={{ fontSize: '2rem', lineHeight: '1' }}>{job.icon}</span>
-                          <h3 style={{
-                            fontSize: '1.5rem',
-                            fontWeight: '700',
-                            color: 'var(--color-primary-dark)',
-                            margin: 0
-                          }}>
-                            {job.title}
-                          </h3>
-                        </div>
+                        <h3 style={{
+                          fontSize: '1.5rem',
+                          fontWeight: '700',
+                          color: 'var(--color-primary-dark)',
+                          margin: 0,
+                          marginBottom: '0.75rem'
+                        }}>
+                          {job.title}
+                        </h3>
                         <p style={{
                           color: '#6b7280',
                           fontSize: '1rem',
@@ -275,216 +273,93 @@ const Careers = () => {
                     {/* Expanded Content */}
                     {isExpanded && (
                       <div style={{
-                        padding: '0 2.5rem 2.5rem',
+                        padding: '2.5rem',
                         borderTop: '1px solid #e5e7eb',
                         animation: 'fadeIn 0.3s ease-in-out'
                       }}>
                         <div style={{
-                          display: 'grid',
-                          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                          gap: '2.5rem',
-                          marginTop: '2rem'
+                          textAlign: 'left'
                         }}>
-                          {/* What You'll Do */}
-                          <div>
-                            <h4 style={{
-                              fontSize: '1.125rem',
-                              fontWeight: '700',
-                              color: 'var(--color-primary-dark)',
-                              marginBottom: '1rem'
-                            }}>
-                              What You'll Do
-                            </h4>
-                            <ul style={{
-                              listStyle: 'none',
-                              padding: 0,
-                              margin: 0
-                            }}>
-                              {job.whatYouDo.map((item, i) => (
-                                <li key={i} style={{
-                                  paddingLeft: '1.5rem',
-                                  position: 'relative',
-                                  marginBottom: '0.75rem',
-                                  color: '#4b5563',
-                                  lineHeight: '1.6'
-                                }}>
-                                  <span style={{
-                                    position: 'absolute',
-                                    left: 0,
-                                    color: 'var(--color-accent-gold)',
-                                    fontWeight: '700'
-                                  }}>•</span>
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* You'll Thrive If */}
-                          <div>
-                            <h4 style={{
-                              fontSize: '1.125rem',
-                              fontWeight: '700',
-                              color: 'var(--color-primary-dark)',
-                              marginBottom: '1rem'
-                            }}>
-                              You'll Thrive If
-                            </h4>
-                            <ul style={{
-                              listStyle: 'none',
-                              padding: 0,
-                              margin: 0
-                            }}>
-                              {job.youllThrive.map((item, i) => (
-                                <li key={i} style={{
-                                  paddingLeft: '1.5rem',
-                                  position: 'relative',
-                                  marginBottom: '0.75rem',
-                                  color: '#4b5563',
-                                  lineHeight: '1.6'
-                                }}>
-                                  <span style={{
-                                    position: 'absolute',
-                                    left: 0,
-                                    color: 'var(--color-accent-gold)',
-                                    fontWeight: '700'
-                                  }}>•</span>
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Why Join */}
-                          <div>
-                            <h4 style={{
-                              fontSize: '1.125rem',
-                              fontWeight: '700',
-                              color: 'var(--color-primary-dark)',
-                              marginBottom: '1rem'
-                            }}>
-                              Why Join Momentum
-                            </h4>
-                            <ul style={{
-                              listStyle: 'none',
-                              padding: 0,
-                              margin: 0
-                            }}>
-                              {job.whyJoin.map((item, i) => (
-                                <li key={i} style={{
-                                  paddingLeft: '1.5rem',
-                                  position: 'relative',
-                                  marginBottom: '0.75rem',
-                                  color: '#4b5563',
-                                  lineHeight: '1.6'
-                                }}>
-                                  <span style={{
-                                    position: 'absolute',
-                                    left: 0,
-                                    color: 'var(--color-accent-gold)',
-                                    fontWeight: '700'
-                                  }}>•</span>
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Requirements */}
-                          <div>
-                            <h4 style={{
-                              fontSize: '1.125rem',
-                              fontWeight: '700',
-                              color: 'var(--color-primary-dark)',
-                              marginBottom: '1rem'
-                            }}>
-                              Requirements
-                            </h4>
-                            <ul style={{
-                              listStyle: 'none',
-                              padding: 0,
-                              margin: 0
-                            }}>
-                              {job.requirements.map((item, i) => (
-                                <li key={i} style={{
-                                  paddingLeft: '1.5rem',
-                                  position: 'relative',
-                                  marginBottom: '0.75rem',
-                                  color: '#4b5563',
-                                  lineHeight: '1.6'
-                                }}>
-                                  <span style={{
-                                    position: 'absolute',
-                                    left: 0,
-                                    color: 'var(--color-accent-gold)',
-                                    fontWeight: '700'
-                                  }}>•</span>
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-
-                        {/* Compensation */}
-                        <div style={{
-                          marginTop: '2rem',
-                          padding: '1.5rem',
-                          background: '#f9fafb',
-                          borderRadius: '12px',
-                          border: '1px solid #e5e7eb'
-                        }}>
-                          <h4 style={{
-                            fontSize: '1rem',
-                            fontWeight: '700',
-                            color: 'var(--color-primary-dark)',
-                            marginBottom: '0.5rem'
-                          }}>
-                            💰 Compensation
-                          </h4>
                           <p style={{
                             color: '#4b5563',
-                            margin: 0,
-                            lineHeight: '1.6'
+                            fontSize: '1rem',
+                            lineHeight: '1.8',
+                            marginBottom: '1.5rem',
+                            textAlign: 'justify'
                           }}>
-                            {job.compensation}
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
                           </p>
-                        </div>
 
-                        {/* Apply Button */}
-                        <div style={{
-                          marginTop: '2rem',
-                          display: 'flex',
-                          gap: '1rem',
-                          flexWrap: 'wrap'
-                        }}>
-                          <Link
-                            to="/contact"
-                            style={{
-                              background: 'var(--color-primary-dark)',
-                              color: 'var(--color-white)',
-                              padding: '1rem 2.5rem',
-                              borderRadius: '8px',
-                              fontWeight: '600',
-                              fontSize: '1.05rem',
-                              textDecoration: 'none',
-                              transition: 'all 0.3s ease',
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '0.5rem'
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.opacity = '0.9';
-                              e.currentTarget.style.transform = 'translateY(-2px)';
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.opacity = '1';
-                              e.currentTarget.style.transform = 'translateY(0)';
-                            }}
-                          >
-                            Apply for this Position
-                            <span>→</span>
-                          </Link>
+                          <ul style={{
+                            listStyle: 'disc',
+                            paddingLeft: '1.5rem',
+                            margin: '1.5rem 0',
+                            color: '#4b5563',
+                            textAlign: 'left'
+                          }}>
+                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Sed do eiusmod tempor incididunt ut labore et dolore</li>
+                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Ut enim ad minim veniam, quis nostrud exercitation</li>
+                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Duis aute irure dolor in reprehenderit in voluptate</li>
+                          </ul>
+
+                          <p style={{
+                            color: '#4b5563',
+                            fontSize: '1rem',
+                            lineHeight: '1.8',
+                            marginBottom: '1.5rem',
+                            textAlign: 'justify'
+                          }}>
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+
+                          <ul style={{
+                            listStyle: 'disc',
+                            paddingLeft: '1.5rem',
+                            margin: '1.5rem 0',
+                            color: '#4b5563',
+                            textAlign: 'left'
+                          }}>
+                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Nemo enim ipsam voluptatem quia voluptas sit</li>
+                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Neque porro quisquam est, qui dolorem ipsum</li>
+                            <li style={{ marginBottom: '0.5rem', lineHeight: '1.6' }}>Sed ut perspiciatis unde omnis iste natus error</li>
+                          </ul>
+
+                          {/* Apply Button */}
+                          <div style={{
+                            marginTop: '2.5rem',
+                            display: 'flex',
+                            gap: '1rem',
+                            flexWrap: 'wrap'
+                          }}>
+                            <Link
+                              to="/contact"
+                              style={{
+                                background: 'var(--color-primary-dark)',
+                                color: 'var(--color-white)',
+                                padding: '1rem 2.5rem',
+                                borderRadius: '8px',
+                                fontWeight: '600',
+                                fontSize: '1.05rem',
+                                textDecoration: 'none',
+                                transition: 'all 0.3s ease',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.5rem'
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.opacity = '0.9';
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.opacity = '1';
+                                e.currentTarget.style.transform = 'translateY(0)';
+                              }}
+                            >
+                              Apply for this Position
+                              <span>→</span>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     )}
