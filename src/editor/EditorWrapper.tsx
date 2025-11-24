@@ -21,6 +21,7 @@ import { EditablePhotoGallery } from './components/sections/EditablePhotoGallery
 import { useDisableAnimations } from './useDisableAnimations';
 import { getHomeTemplate } from './templates/homeTemplate';
 import { getAboutTemplate } from './templates/aboutTemplate';
+import { getCareersTemplate } from './templates/careersTemplate';
 import '../App.css'; // Import main site styles
 import './EditorWrapper.css';
 
@@ -38,6 +39,7 @@ export const EditorWrapper = ({ onSave, initialData, pageId }: EditorWrapperProp
     if (initialData) return initialData;
     if (pageId === 'home') return getHomeTemplate();
     if (pageId === 'about') return getAboutTemplate();
+    if (pageId === 'careers') return getCareersTemplate();
     return undefined;
   };
 

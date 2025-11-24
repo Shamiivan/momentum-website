@@ -1,0 +1,188 @@
+export const getCareersTemplate = (): string => {
+  const template = {
+    ROOT: {
+      type: { resolvedName: 'EditableContainer' },
+      isCanvas: true,
+      props: {
+        background: 'transparent',
+        padding: '0',
+      },
+      displayName: 'EditableContainer',
+      custom: {},
+      hidden: false,
+      nodes: ['hero', 'jobs', 'perks', 'gallery', 'cta'],
+      linkedNodes: {},
+    },
+    hero: {
+      type: { resolvedName: 'EditableHero' },
+      isCanvas: false,
+      props: {
+        title: 'Join Our Team',
+        subtitle: 'Build your career in performance-driven sales. We offer real training, major brands, and clear advancement.',
+        buttonText: 'View Open Positions',
+        buttonLink: '#jobs',
+        backgroundImage: '',
+        height: '500px',
+        textColor: 'var(--color-primary-dark)',
+        overlayOpacity: 0.3,
+      },
+      displayName: 'EditableHero',
+      custom: {},
+      hidden: false,
+      nodes: [],
+      linkedNodes: {},
+    },
+    jobs: {
+      type: { resolvedName: 'EditableJobsGrid' },
+      isCanvas: false,
+      props: {
+        title: 'Available Positions',
+        subtitle: 'Join a performance-driven team where you\'ll learn real sales, work with major brands, and have a clear path to advancement.',
+        jobs: [
+          {
+            title: 'Sales Associate',
+            description: 'Start your career in direct sales with comprehensive training and mentorship.',
+            requirements: [
+              'High school diploma or equivalent',
+              'Strong communication skills',
+              'Willingness to learn',
+              'Professional attitude',
+            ],
+            responsibilities: [
+              'Engage with customers in a professional manner',
+              'Present product offerings effectively',
+              'Build customer relationships',
+              'Meet performance targets',
+            ],
+            applyLink: '/contact',
+          },
+          {
+            title: 'Team Lead',
+            description: 'Lead a team of sales associates and drive performance.',
+            requirements: [
+              '1+ year of sales experience',
+              'Proven leadership skills',
+              'Strong performance track record',
+              'Coaching and mentoring ability',
+            ],
+            responsibilities: [
+              'Manage and mentor a team of 5-10 sales associates',
+              'Drive team performance and motivation',
+              'Conduct training and development sessions',
+              'Report on team metrics and progress',
+            ],
+            applyLink: '/contact',
+          },
+          {
+            title: 'Account Manager',
+            description: 'Manage client relationships and campaign delivery for major brands.',
+            requirements: [
+              '2+ years of account management experience',
+              'CRM proficiency',
+              'Excellent communication skills',
+              'Problem-solving ability',
+            ],
+            responsibilities: [
+              'Own client relationships and satisfaction',
+              'Monitor campaign performance and optimize results',
+              'Identify upsell and expansion opportunities',
+              'Coordinate with internal teams for delivery',
+            ],
+            applyLink: '/contact',
+          },
+        ],
+        backgroundColor: '#f9fafb',
+      },
+      displayName: 'EditableJobsGrid',
+      custom: {},
+      hidden: false,
+      nodes: [],
+      linkedNodes: {},
+    },
+    perks: {
+      type: { resolvedName: 'EditablePerksGrid' },
+      isCanvas: false,
+      props: {
+        title: 'Why Work With Us',
+        subtitle: 'We offer competitive benefits, real career growth, and a supportive team environment.',
+        perks: [
+          {
+            title: 'Competitive Compensation',
+            description: 'Industry-leading base salary plus uncapped performance bonuses. Top performers can double their base compensation.',
+          },
+          {
+            title: 'Career Advancement',
+            description: 'Clear promotion paths from Sales Associate to Team Lead to Manager. We promote from within based on merit.',
+          },
+          {
+            title: 'Professional Training',
+            description: 'Comprehensive onboarding and ongoing sales training. Learn consultative selling techniques that work.',
+          },
+          {
+            title: 'Health & Benefits',
+            description: 'Full health, dental, and vision coverage for you and your family. We invest in your wellbeing.',
+          },
+          {
+            title: 'Flexible Schedule',
+            description: 'Work-life balance with flexible scheduling options. We understand the importance of personal time.',
+          },
+          {
+            title: 'Team Culture',
+            description: 'Supportive, performance-driven culture where everyone celebrates wins together. You\'re never alone.',
+          },
+        ],
+        columns: 3,
+        backgroundColor: 'transparent',
+      },
+      displayName: 'EditablePerksGrid',
+      custom: {},
+      hidden: false,
+      nodes: [],
+      linkedNodes: {},
+    },
+    gallery: {
+      type: { resolvedName: 'EditablePhotoGallery' },
+      isCanvas: false,
+      props: {
+        title: 'Life at Momentum',
+        subtitle: 'See what it\'s like to be part of our team.',
+        photos: [
+          { url: '/team-photo-1.jpg', alt: 'Team collaboration session' },
+          { url: '/team-photo-2.jpg', alt: 'Office environment' },
+          { url: '/team-photo-3.jpg', alt: 'Team building event' },
+          { url: '/team-photo-4.jpg', alt: 'Team celebration' },
+          { url: '/team-photo-5.jpg', alt: 'Training session' },
+          { url: '/team-photo-6.jpg', alt: 'Team meeting' },
+          { url: '/team-photo-7.jpg', alt: 'Company event' },
+          { url: '/team-photo-8.jpg', alt: 'Team success celebration' },
+        ],
+        columns: 4,
+        backgroundColor: '#f9fafb',
+      },
+      displayName: 'EditablePhotoGallery',
+      custom: {},
+      hidden: false,
+      nodes: [],
+      linkedNodes: {},
+    },
+    cta: {
+      type: { resolvedName: 'EditableCTA' },
+      isCanvas: false,
+      props: {
+        title: 'Ready to Start Your Career?',
+        subtitle: 'Apply now or reach out to learn more about opportunities at Momentum.',
+        buttonText: 'Contact Us',
+        buttonLink: '/contact',
+        backgroundColor: 'var(--color-primary-dark)',
+        textColor: 'white',
+      },
+      displayName: 'EditableCTA',
+      custom: {},
+      hidden: false,
+      nodes: [],
+      linkedNodes: {},
+    },
+  };
+
+  return JSON.stringify(template);
+};
