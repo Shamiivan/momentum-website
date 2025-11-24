@@ -1,0 +1,35 @@
+{
+  "header": {
+    "services": "Services",
+    "careers": "Carrières",
+    "about": "À propos",
+    "faq": "FAQ",
+    "contact": "Contactez-nous",
+    "partnerships": "Partenariats",
+    "staffTraining": "Formation du personnel",
+    "executiveCoaching": "Coaching exécutif",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "footer": {
+    "tagline": "La force derrière l'argumentaire",
+    "certificationAlt": "Certification de partenaire de vente et marketing performant",
+    "excellenceText": "Momentum Management est reconnu comme un partenaire de vente et marketing performant, reconnu pour offrir des résultats à fort volume et une satisfaction client inégalée.",
+    "company": "Entreprise",
+    "about": "À propos",
+    "services": "Services",
+    "careers": "Carrières",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "solutions": "Solutions",
+    "partnerships": "Partenariats",
+    "staffTraining": "Formation du personnel",
+    "executiveCoaching": "Coaching exécutif",
+    "contactHeading": "Contact",
+    "address1": "4845 Rue Jean-Talon O",
+    "address2": "Montreal, QC H4P 1W7",
+    "copyright": "© 2025 Momentum Management. Tous droits réservés.",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d'utilisation"
+  }
+}

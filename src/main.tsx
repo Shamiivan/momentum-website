@@ -16,6 +16,12 @@ import { ProtectedRoute } from './editor/ProtectedRoute.tsx'
 import { LoginPage } from './editor/LoginPage.tsx'
 import { AdminDashboard } from './editor/AdminDashboard.tsx'
 import { EditorPage } from './editor/EditorPage.tsx'
+import { FEATURE_FLAGS } from './config/featureFlags.ts'
+
+// Conditionally initialize i18n
+if (FEATURE_FLAGS.ENABLE_I18N) {
+  await import('./i18n/config.ts');
+}
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

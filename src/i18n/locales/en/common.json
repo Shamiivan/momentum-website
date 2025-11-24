@@ -1,0 +1,35 @@
+{
+  "header": {
+    "services": "Services",
+    "careers": "Careers",
+    "about": "About Us",
+    "faq": "FAQ",
+    "contact": "Contact Us",
+    "partnerships": "Partnerships",
+    "staffTraining": "Staff Training",
+    "executiveCoaching": "Executive Coaching",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "tagline": "The power behind the pitch",
+    "certificationAlt": "Top-performing sales and marketing partner certification",
+    "excellenceText": "Momentum Management is recognized as a top-performing sales and marketing partner, known for delivering high-volume results and unmatched client satisfaction.",
+    "company": "Company",
+    "about": "About",
+    "services": "Services",
+    "careers": "Careers",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "solutions": "Solutions",
+    "partnerships": "Partnerships",
+    "staffTraining": "Staff Training",
+    "executiveCoaching": "Executive Coaching",
+    "contactHeading": "Contact",
+    "address1": "4845 Rue Jean-Talon O",
+    "address2": "Montreal, QC H4P 1W7",
+    "copyright": "© 2025 Momentum Management. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  }
+}
