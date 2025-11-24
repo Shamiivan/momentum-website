@@ -39,6 +39,6 @@ export const EditorPage = () => {
   }
 
   return (
-    <EditorWrapper onSave={handleSave} initialData={initialData} />
+    <EditorWrapper onSave={handleSave} initialData={initialData} pageId={pageId} />
   );
 };

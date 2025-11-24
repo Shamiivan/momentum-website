@@ -14,16 +14,25 @@ import { EditableCaseStudy } from './components/sections/EditableCaseStudy';
 import { EditableFAQ } from './components/sections/EditableFAQ';
 import { EditableCTA } from './components/sections/EditableCTA';
 import { useDisableAnimations } from './useDisableAnimations';
+import { getHomeTemplate } from './templates/homeTemplate';
 import '../App.css'; // Import main site styles
 import './EditorWrapper.css';
 
 interface EditorWrapperProps {
   onSave?: (data: string) => void;
   initialData?: string;
+  pageId?: string;
 }
 
-export const EditorWrapper = ({ onSave, initialData }: EditorWrapperProps) => {
+export const EditorWrapper = ({ onSave, initialData, pageId }: EditorWrapperProps) => {
   const [enabled, setEnabled] = useState(true);
+
+  // Load template if no initialData and pageId is 'home'
+  const getInitialData = () => {
+    if (initialData) return initialData;
+    if (pageId === 'home') return getHomeTemplate();
+    return undefined;
+  };
 
   // Disable GSAP ScrollTrigger animations in editor
   useDisableAnimations();
@@ -73,7 +82,7 @@ export const EditorWrapper = ({ onSave, initialData }: EditorWrapperProps) => {
           )}
 
           <div className="editor-canvas">
-            <Frame data={initialData}>
+            <Frame data={getInitialData()}>
               <Element
                 is={EditableContainer}
                 canvas
