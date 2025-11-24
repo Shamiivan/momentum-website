@@ -11,216 +11,298 @@
 ## Pre-Commit Quality Gates (REQUIRED for ALL commits)
 ```bash
 # Before EVERY commit, run:
-npm run lint:fix
-npm run type-check
-npm run build
+pnpm run lint:fix
+pnpm run type-check
+pnpm run build
 
 # Only commit if all 3 pass
 ```
 
 ---
 
-## Phase 0: Foundation Setup (Deploy 1)
-**Goal:** Add quality checks and prepare tooling
-**Risk:** Very Low
-**Rollback:** Easy (just package.json changes)
+## ✅ COMPLETED PHASES
 
-### Tasks:
-1. Update `package.json` scripts:
-   ```json
-   "lint:fix": "eslint . --fix --max-warnings 0",
-   "type-check": "tsc --noEmit --pretty",
-   "ship": "npm run lint:fix && npm run type-check && npm run build && git push"
-   ```
+### ✅ Phase 0: Foundation Setup
+- Added quality check scripts (lint:fix, type-check, ship)
+- Documented existing linting issues
 
-2. Run `npm run type-check` to identify existing issues
-3. Document any type errors (DO NOT fix yet, just document)
-4. Create `.github/workflows/quality-check.yml` (optional CI)
+### ✅ Phase 1: CSS Design Tokens
+- Created `src/styles/design-tokens.css`
+- Imported in `src/index.css`
 
-**Commit:** `chore: add lint:fix, type-check, and ship scripts`
-**Deploy:** Merge to main (no user-facing changes)
+### ✅ Phase 2: i18n Infrastructure
+- Installed i18next packages
+- Created translation files (en/fr)
+- Added feature flag (ENABLE_I18N = false)
 
----
+### ✅ Phase 3: Shared Settings Components
+- ColorPicker.tsx
+- SpacingControl.tsx
+- TypographyControl.tsx
+- BorderControl.tsx
 
-## Phase 1: CSS Design Tokens Only (Deploy 2)
-**Goal:** Create foundation without breaking existing styles
-**Risk:** Very Low (new files only, nothing changes)
+### ✅ Phase 4: Enhanced EditableText
+- Added fontFamily, lineHeight, letterSpacing, margin, padding props
+- Integrated shared settings components
 
-### Tasks:
-1. Create `src/styles/design-tokens.css`:
-   - Extract all `--color-*` variables from existing CSS
-   - Add opacity variations (--gold-5, --gold-10, etc.)
-   - Add spacing scale (--space-1 through --space-12)
-   - Add border-radius scale (--radius-sm, md, lg, xl)
-   - Add shadow scale (--shadow-sm, md, lg, xl)
-   - Add typography scale (--text-xs through --text-5xl)
-   - Add transition variables
-
-2. Import in `src/index.css`:
-   ```css
-   @import './styles/design-tokens.css';
-   ```
-
-3. **DO NOT change any existing CSS yet** - just create tokens
-
-**Files Changed:** 2 files (new design-tokens.css, update index.css)
-**Commit:** `feat: add CSS design tokens system`
-**Validation:** `npm run ship`
-**Deploy:** Merge to main
-**Rollback:** Remove import from index.css
+### ✅ Phase 5: EditableButton
+- Created `src/editor/components/base/EditableButton.tsx`
+- Registered in EditorWrapper resolver
 
 ---
 
-## Phase 2: i18n Infrastructure (Deploy 3)
-**Goal:** Add i18n without changing any existing text
-**Risk:** Low (feature flag can disable)
+## 🚧 ACTIVE PHASES - Editor Full Page Display Fix
 
-### Tasks:
-1. Install dependencies:
-   ```bash
-   npm install i18next react-i18next i18next-browser-languagedetector
-   ```
-
-2. Create `src/i18n/config.ts` with basic setup
-
-3. Create translation files (copy existing English text):
-   - `src/i18n/locales/en/common.json`
-   - `src/i18n/locales/en/home.json`
-   - `src/i18n/locales/fr/common.json` (same as EN for now)
-   - `src/i18n/locales/fr/home.json` (same as EN for now)
-
-4. Wrap `main.tsx` with `I18nextProvider` (behind feature flag)
-
-5. Add feature flag to enable/disable i18n:
-   ```typescript
-   const ENABLE_I18N = false; // Set to true to enable
-   ```
-
-**Files Changed:** 8 files (package.json, 1 config, 4 JSON, main.tsx, feature flag)
-**Commit:** `feat: add i18n infrastructure (disabled by default)`
-**Validation:** `npm run ship`
-**Deploy:** Merge to main
-**Rollback:** Set `ENABLE_I18N = false`
-
----
-
-## Phase 3: Shared Settings Components (Deploy 4)
-**Goal:** Create reusable Craft.js controls
-**Risk:** Very Low (new components, not used yet)
-
-### Tasks:
-1. Create folder: `src/editor/components/settings/`
-
-2. Create components (one at a time, one commit each):
-   - **Deploy 4a:** `ColorPicker.tsx` (basic version with hex input only)
-   - **Deploy 4b:** `SpacingControl.tsx` (single value input)
-   - **Deploy 4c:** `TypographyControl.tsx` (fontSize, fontWeight only)
-   - **Deploy 4d:** `BorderControl.tsx` (borderRadius only)
-
-3. Each component is standalone, fully typed, with props interface
-
-**Files Changed:** 1 file per deploy (4 mini-deploys)
-**Commits:**
-- `feat: add ColorPicker settings component`
-- `feat: add SpacingControl settings component`
-- `feat: add TypographyControl settings component`
-- `feat: add BorderControl settings component`
-
-**Validation:** `npm run ship` after each
-**Deploy:** Merge each individually
-**Rollback:** Each component independent
-
----
-
-## Phase 4: Enhanced EditableText (Deploy 5)
-**Goal:** Add props to existing EditableText without breaking it
-**Risk:** Medium (modifies existing component)
-
-### Tasks:
-1. Read current `src/editor/components/EditableText.tsx`
-
-2. Add NEW optional props (with defaults matching current behavior):
-   ```typescript
-   fontFamily?: string;
-   lineHeight?: string;
-   letterSpacing?: string;
-   margin?: string;
-   padding?: string;
-   ```
-
-3. Update settings panel to use new `TypographyControl`
-
-4. Test in editor with existing pages (should look identical)
-
-**Files Changed:** 2 files (EditableText.tsx, EditableText settings)
-**Commit:** `feat: enhance EditableText with typography controls`
-**Validation:**
-```bash
-npm run ship
-# Manually test editor loads existing pages correctly
-```
-**Deploy:** Merge to main
-**Rollback:** Git revert single commit
-
----
-
-## Phase 5: Create EditableButton (Deploy 6)
-**Goal:** New base component
+### Phase 6: EditableStatsGrid Component (Deploy 6)
+**Goal:** Create editable stats section component
 **Risk:** Very Low (new component)
+**Issue Fixed:** Enable full page editing instead of just hero section
 
-### Tasks:
-1. Create `src/editor/components/base/EditableButton.tsx`
-2. Create settings component `EditableButtonSettings.tsx`
-3. Register in `EditorWrapper.tsx` resolver
-4. Add to Toolbox (optional, can skip for now)
+#### Tasks:
+1. Create `src/editor/components/sections/EditableStatsGrid.tsx`
+2. Props interface:
+   ```typescript
+   {
+     stats: Array<{
+       number: string;
+       label: string;
+       helper: string;
+     }>;
+     columns?: number;
+   }
+   ```
+3. Settings panel to add/remove/edit individual stat items
+4. Register in `EditorWrapper.tsx` resolver
 
-**Files Changed:** 3 files
-**Commit:** `feat: add EditableButton base component`
-**Validation:** `npm run ship`
+**Files Changed:** 2 files (new component + EditorWrapper)
+**Commit:** `feat: add EditableStatsGrid section component`
+**Validation:** `pnpm run type-check && pnpm run build`
 **Deploy:** Merge to main
 **Rollback:** Remove from resolver
 
 ---
 
-## Phase 6: Move Files to New Structure (Deploy 7)
+### Phase 7: EditableServicesSection (Deploy 7)
+**Goal:** Editable B2B services display
+**Risk:** Very Low (new component)
+
+#### Tasks:
+1. Create `src/editor/components/sections/EditableServicesSection.tsx`
+2. Props interface:
+   ```typescript
+   {
+     title: string;
+     description: string;
+     services: Array<{
+       icon: string;
+       title: string;
+       description: string;
+     }>;
+   }
+   ```
+3. Settings panel for title, description, and service items array
+4. Register in resolver
+
+**Files Changed:** 2 files
+**Commit:** `feat: add EditableServicesSection component`
+**Validation:** `pnpm run type-check && pnpm run build`
+**Deploy:** Merge to main
+**Rollback:** Remove from resolver
+
+---
+
+### Phase 8: EditableCaseStudy (Deploy 8)
+**Goal:** Editable case study section
+**Risk:** Very Low (new component)
+
+#### Tasks:
+1. Create `src/editor/components/sections/EditableCaseStudy.tsx`
+2. Props interface:
+   ```typescript
+   {
+     image: string;
+     title: string;
+     description: string;
+     buttonText: string;
+     buttonLink: string;
+   }
+   ```
+3. Settings panel with image upload support
+4. Register in resolver
+
+**Files Changed:** 2 files
+**Commit:** `feat: add EditableCaseStudy section component`
+**Validation:** `pnpm run type-check && pnpm run build`
+**Deploy:** Merge to main
+**Rollback:** Remove from resolver
+
+---
+
+### Phase 9: EditableFAQ (Deploy 9)
+**Goal:** Editable FAQ accordion section
+**Risk:** Low (interactive component)
+
+#### Tasks:
+1. Create `src/editor/components/sections/EditableFAQ.tsx`
+2. Props interface:
+   ```typescript
+   {
+     title: string;
+     faqs: Array<{
+       question: string;
+       answer: string;
+     }>;
+   }
+   ```
+3. Settings panel to add/remove/edit FAQ items
+4. Include accordion expand/collapse functionality
+5. Register in resolver
+
+**Files Changed:** 2 files
+**Commit:** `feat: add EditableFAQ section component`
+**Validation:** `pnpm run type-check && pnpm run build`
+**Deploy:** Merge to main
+**Rollback:** Remove from resolver
+
+---
+
+### Phase 10: EditableCTA (Deploy 10)
+**Goal:** Editable call-to-action section
+**Risk:** Very Low (new component)
+
+#### Tasks:
+1. Create `src/editor/components/sections/EditableCTA.tsx`
+2. Props interface:
+   ```typescript
+   {
+     title: string;
+     subtitle: string;
+     buttonText: string;
+     buttonLink: string;
+     backgroundColor?: string;
+   }
+   ```
+3. Settings panel with color picker integration
+4. Register in resolver
+
+**Files Changed:** 2 files
+**Commit:** `feat: add EditableCTA section component`
+**Validation:** `pnpm run type-check && pnpm run build`
+**Deploy:** Merge to main
+**Rollback:** Remove from resolver
+
+---
+
+### Phase 11: Home Page Template (Deploy 11)
+**Goal:** Default template with all Home sections pre-populated
+**Risk:** Low (template system)
+
+#### Tasks:
+1. Create `src/editor/templates/` folder
+2. Create `src/editor/templates/homeTemplate.ts`:
+   - Export function that returns serialized Craft.js JSON
+   - Include: EditableHero, EditableStatsGrid, EditableServicesSection, EditableCaseStudy, EditableFAQ, EditableCTA
+   - Pre-populate with current Home.tsx content
+3. Update `EditorWrapper.tsx`:
+   ```typescript
+   const [initialData, setInitialData] = useState(() => {
+     if (savedData) return savedData;
+     if (pageId === 'home') return getHomeTemplate();
+     return undefined;
+   });
+   ```
+4. Test: Open editor for "home" → see full page with all sections
+
+**Files Changed:** 3 files (new folder, template, EditorWrapper)
+**Commit:** `feat: add Home page default template`
+**Validation:**
+```bash
+pnpm run type-check && pnpm run build
+# Manual: Open /admin/editor/home → verify full page loads
+```
+**Deploy:** Merge to main
+**Rollback:** Revert EditorWrapper changes
+
+---
+
+### Phase 12: About Page Components & Template (Deploy 12)
+**Goal:** About page template with team/values sections
+**Risk:** Low
+
+#### Tasks:
+1. Create `src/editor/components/sections/EditableTeamGrid.tsx`
+   ```typescript
+   {
+     title: string;
+     members: Array<{
+       name: string;
+       role: string;
+       bio: string;
+       image: string;
+     }>;
+   }
+   ```
+2. Create `src/editor/components/sections/EditableValuesGrid.tsx`
+   ```typescript
+   {
+     title: string;
+     values: Array<{
+       title: string;
+       description: string;
+     }>;
+   }
+   ```
+3. Create `src/editor/templates/aboutTemplate.ts` with all About sections
+4. Update EditorWrapper to handle pageId === 'about'
+5. Register components in resolver
+
+**Files Changed:** 5 files
+**Commit:** `feat: add About page template and components`
+**Validation:** `pnpm run type-check && pnpm run build`
+**Deploy:** Merge to main
+**Rollback:** Remove components from resolver
+
+---
+
+## 📋 REMAINING PHASES - Original Refactor Plan
+
+### Phase 13: Move Files to New Structure (Deploy 13)
 **Goal:** Reorganize without breaking imports
 **Risk:** Medium-High (many file moves)
 
-### Mitigation Strategy - ONE component at a time:
+#### Mitigation Strategy - ONE component at a time:
 
-**Deploy 7a:** Move EditableText
-1. Create `src/editor/components/base/` folder
-2. **Copy** (don't move) `EditableText.tsx` to new location
-3. Update imports in both old and new location to export from new location
-4. Test everything still works
-5. Delete old file
-6. **Commit:** `refactor: move EditableText to base/ folder`
-7. **Validation:** `npm run ship && npm run build`
+**Deploy 13a:** Move EditableText
+1. **Copy** (don't move) `EditableText.tsx` to `src/editor/components/base/`
+2. Update all imports
+3. Test everything still works
+4. Delete old file
+5. **Commit:** `refactor: move EditableText to base/ folder`
+6. **Validation:** `pnpm run ship && pnpm run build`
 
-**Deploy 7b:** Move EditableContainer
-1. Repeat same process
+**Deploy 13b:** Move EditableContainer
+1. Repeat same process to `base/`
 2. **Commit:** `refactor: move EditableContainer to base/ folder`
 
-**Deploy 7c:** Move EditableHero
-1. Create `src/editor/components/sections/` folder
-2. Repeat process
-3. **Commit:** `refactor: move EditableHero to sections/ folder`
+**Deploy 13c:** Move EditableHero
+1. Already in sections/, skip or verify location
+2. **Commit:** `refactor: verify EditableHero in sections/ folder`
 
-**Deploy 7d:** Move EditableStatCard
-1. Repeat process
+**Deploy 13d:** Move EditableStatCard
+1. Move to `sections/` folder
 2. **Commit:** `refactor: move EditableStatCard to sections/ folder`
 
 **Files Changed:** 1 component move per deploy (4 mini-deploys)
-**Validation:** `npm run ship` after EACH move
+**Validation:** `pnpm run ship` after EACH move
 **Rollback:** Each move is independent, easy to revert
 
 ---
 
-## Phase 7: Consolidate Button Styles (Deploy 8)
+### Phase 14: Consolidate Button Styles (Deploy 14)
 **Goal:** Single source of truth for button styles
 **Risk:** Medium (changes existing buttons)
 
-### Tasks:
+#### Tasks:
 1. Create `src/styles/components/buttons.css`:
    ```css
    .btn {
@@ -230,25 +312,25 @@ npm run ship
    .btn-secondary { /* Dark button */ }
    ```
 
-2. Import in `src/styles/global.css`
+2. Import in `src/index.css`
 
 3. Update **ONE button at a time**, test, commit:
-   - **Deploy 8a:** Update `.header-cta-new` to use `.btn .btn-primary`
-   - **Deploy 8b:** Update `.btn-submit-contact` to use `.btn .btn-primary`
-   - **Deploy 8c:** Update `.login-button` to use `.btn .btn-primary`
+   - **Deploy 14a:** Update `.btn-primary-new` to use `.btn .btn-primary`
+   - **Deploy 14b:** Update `.btn-secondary-new` to use `.btn .btn-secondary`
+   - **Deploy 14c:** Update login/contact buttons
 
 **Files Changed:** 1-2 files per mini-deploy
-**Commits:** `refactor: consolidate header button styles to .btn`
-**Validation:** Visual regression test + `npm run ship`
+**Commits:** `refactor: consolidate [location] button styles to .btn`
+**Validation:** Visual regression test + `pnpm run ship`
 **Rollback:** Independent per button
 
 ---
 
-## Phase 8: Add Language Switcher UI (Deploy 9)
+### Phase 15: Add Language Switcher UI (Deploy 15)
 **Goal:** Add language toggle to header
 **Risk:** Low (UI only, behind feature flag)
 
-### Tasks:
+#### Tasks:
 1. Create `src/components/LanguageSwitcher.tsx`:
    - Toggle button (EN | FR)
    - Uses i18n changeLanguage
@@ -260,36 +342,36 @@ npm run ship
 
 **Files Changed:** 2 files (LanguageSwitcher.tsx, Header.tsx)
 **Commit:** `feat: add language switcher component`
-**Validation:** `npm run ship`
+**Validation:** `pnpm run ship`
 **Deploy:** Merge to main (hidden by feature flag)
 **Rollback:** Remove from Header
 
 ---
 
-## Phase 9: Translate Header & Footer (Deploy 10)
+### Phase 16: Translate Header & Footer (Deploy 16)
 **Goal:** First i18n implementation
 **Risk:** Low (can toggle off)
 
-### Tasks:
+#### Tasks:
 1. Update `src/i18n/locales/en/common.json` with header/footer text
 2. Update `src/i18n/locales/fr/common.json` with French translations
 3. Wrap Header text with `useTranslation()` hook
 4. Wrap Footer text with `useTranslation()` hook
-5. Enable i18n: `ENABLE_I18N = true`
+5. Enable i18n: `ENABLE_I18N = true` in featureFlags.ts
 
 **Files Changed:** 4 files
 **Commit:** `feat: add French translations for Header and Footer`
-**Validation:** `npm run ship` + test both languages work
+**Validation:** `pnpm run ship` + test both languages work
 **Deploy:** Merge to main
 **Rollback:** Set `ENABLE_I18N = false`
 
 ---
 
-## Phase 10: Consolidate Form Styles (Deploy 11)
+### Phase 17: Consolidate Form Styles (Deploy 17)
 **Goal:** Reusable form input styles
 **Risk:** Medium
 
-### Tasks:
+#### Tasks:
 1. Create `src/styles/components/forms.css`
 2. Extract common input styles:
    ```css
@@ -304,30 +386,37 @@ npm run ship
 
 **Files Changed:** 4 files (1 new CSS, 3 component updates)
 **Commit:** `refactor: consolidate form styles`
-**Validation:** `npm run ship` + manual form testing
+**Validation:** `pnpm run ship` + manual form testing
 **Deploy:** Merge to main
 
 ---
 
 ## Deployment Cadence
 
-### Week 1:
-- **Mon:** Deploy 1 (Quality scripts)
-- **Tue:** Deploy 2 (Design tokens)
-- **Wed:** Deploy 3 (i18n infra)
-- **Thu:** Deploy 4a-4d (Settings components)
-- **Fri:** Deploy 5 (EditableButton)
+### Week 1 (Completed):
+- ✅ Deploy 1 (Quality scripts)
+- ✅ Deploy 2 (Design tokens)
+- ✅ Deploy 3 (i18n infra)
+- ✅ Deploy 4a-4d (Settings components)
+- ✅ Deploy 5 (EditableButton)
 
-### Week 2:
-- **Mon:** Deploy 6 (EditableImage)
-- **Tue:** Deploy 7a-7d (File moves)
-- **Wed:** Deploy 8a-8c (Button consolidation)
-- **Thu:** Deploy 9 (Language switcher)
-- **Fri:** Deploy 10 (Header/Footer i18n)
+### Week 2 (Current - Editor Fix):
+- **Mon:** Deploy 6 (EditableStatsGrid)
+- **Tue:** Deploy 7 (EditableServicesSection)
+- **Wed:** Deploy 8 (EditableCaseStudy)
+- **Thu:** Deploy 9 (EditableFAQ)
+- **Fri:** Deploy 10 (EditableCTA)
 
 ### Week 3:
-- **Mon:** Deploy 11 (Form consolidation)
-- Continue with remaining sections...
+- **Mon:** Deploy 11 (Home template)
+- **Tue:** Deploy 12 (About template)
+- **Wed:** Deploy 13a-13d (File moves)
+- **Thu:** Deploy 14a-14c (Button consolidation)
+- **Fri:** Deploy 15 (Language switcher)
+
+### Week 4:
+- **Mon:** Deploy 16 (Header/Footer i18n)
+- **Tue:** Deploy 17 (Form consolidation)
 
 ---
 
@@ -336,13 +425,13 @@ npm run ship
 ### Before Every Commit:
 ```bash
 # 1. Lint and fix
-npm run lint:fix
+pnpm run lint:fix
 
 # 2. Type check
-npm run type-check
+pnpm run type-check
 
 # 3. Build succeeds
-npm run build
+pnpm run build
 
 # 4. Manual testing (checklist):
 # - Load homepage
@@ -357,7 +446,7 @@ git commit -m "feat: specific change description"
 
 ### Before Every Deploy:
 ```bash
-npm run ship  # Runs all checks + push
+pnpm run ship  # Runs all checks + push
 ```
 
 ---
@@ -396,8 +485,9 @@ git revert <commit-hash>
 ## Risk Mitigation
 
 ### High-Risk Changes:
-- File moves (Phase 6)
-- Style consolidation (Phases 7, 10)
+- File moves (Phase 13)
+- Style consolidation (Phases 14, 17)
+- Editor template system (Phases 11-12)
 
 ### Mitigation:
 1. **ONE component at a time**
@@ -408,6 +498,10 @@ git revert <commit-hash>
 
 ---
 
-**Total Deploys:** 11 major phases, ~20-25 individual deploys
-**Timeline:** 2-3 weeks at 2-3 deploys/day
-**Current Branch:** `refactor/craftjs-i18n-redesign`
+## Current Status
+
+**Branch:** `refactor/craftjs-i18n-redesign`
+**Completed:** Phases 0-5 (10 commits)
+**Next:** Phase 6 - EditableStatsGrid Component
+**Total Remaining Deploys:** 12 phases (~20-25 individual deploys)
+**Timeline:** 3 weeks at 2-3 deploys/day
