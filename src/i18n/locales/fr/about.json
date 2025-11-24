@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "label": "À PROPOS",
+    "title": "La force derrière l'argumentaire"
+  },
+  "story": {
+    "title": "Tout a commencé ainsi",
+    "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fondé avec la mission de combler le fossé entre les marques et les clients.",
+    "paragraph2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Nous avons vu un vide dans l'industrie qui devait être comblé - de véritables partenariats basés sur la performance.",
+    "imageAlt": "Réunion d'affaires"
+  },
+  "images": {
+    "teamCollaboration": "Collaboration d'équipe",
+    "professionalTeamMember": "Membre professionnel de l'équipe"
+  },
+  "mission": {
+    "title": "Ce qui nous motive",
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+    "values": [
+      {
+        "title": "Nous aidons, nous ne vendons pas",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Obsédés par des résultats mesurables, pas des mesures de vanité. Le modèle basé sur la performance reflète notre engagement. Nous ne gagnons que lorsque vous gagnez."
+      },
+      {
+        "title": "Travail acharné",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Compréhension approfondie du marché nord-américain. Maîtrise culturelle et bilan éprouvé dans toute la région."
+      },
+      {
+        "title": "Énergie",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Payé uniquement lorsque les clients obtiennent des résultats. Incitations alignées, aucun risque de provision. Véritable partenariat, modèle de succès partagé."
+      },
+      {
+        "title": "Méritocratie",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Contrairement aux agences spécialisées dans un seul canal. 6 canaux, approche intégrée. Nous allons là où se trouvent vos clients."
+      }
+    ]
+  },
+  "culture": {
+    "title": "Énoncé de mission",
+    "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    "paragraph2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.",
+    "paragraph3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+    "teamCelebration": "Célébration d'équipe",
+    "teamWorkingTogether": "Équipe travaillant ensemble"
+  },
+  "leadership": {
+    "title": "Rencontrez nos fondateurs",
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Les visionnaires derrière notre succès.",
+    "founders": [
+      {
+        "name": "John Doe",
+        "role": "Co-fondateur et PDG",
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Plus de 15 ans d'expérience dans les ventes multicanaux et le développement des affaires. A dirigé des partenariats avec des entreprises Fortune 500 générant plus de 40 M$ de revenus."
+      },
+      {
+        "name": "Jane Smith",
+        "role": "Co-fondatrice et COO",
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Experte en expansion du marché québécois et excellence opérationnelle. A construit et formé des équipes de vente de plus de 500 professionnels à travers l'Amérique du Nord."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Grandissons ensemble",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
+    "button": "Planifier une consultation gratuite"
+  }
+}

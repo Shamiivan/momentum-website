@@ -1,11 +1,13 @@
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { usePageScroll } from './hooks/usePageScroll'
+import { useTranslation } from 'react-i18next'
 import './App.css'
 import './Contact.css'
 
 const Contact = () => {
   usePageScroll();
+  const { t } = useTranslation('contact');
 
   return (
     <>
@@ -14,7 +16,7 @@ const Contact = () => {
       <main className="contact-page">
         <section className="contact-hero">
           <div className="container-new">
-            <h1 className="contact-page-title">Get In Touch</h1>
+            <h1 className="contact-page-title">{t('hero.title')}</h1>
           </div>
         </section>
 
@@ -22,91 +24,91 @@ const Contact = () => {
           <div className="container-new">
             <div className="contact-wrapper">
               <div className="contact-form-container">
-                <h2 className="form-section-title">Send us a message</h2>
+                <h2 className="form-section-title">{t('form.title')}</h2>
                 <form className="contact-form">
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="firstName">First Name *</label>
+                      <label htmlFor="firstName">{t('form.firstName')} {t('form.required')}</label>
                       <input
                         type="text"
                         id="firstName"
                         name="firstName"
                         required
-                        placeholder="John"
+                        placeholder={t('form.firstNamePlaceholder')}
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="lastName">Last Name *</label>
+                      <label htmlFor="lastName">{t('form.lastName')} {t('form.required')}</label>
                       <input
                         type="text"
                         id="lastName"
                         name="lastName"
                         required
-                        placeholder="Doe"
+                        placeholder={t('form.lastNamePlaceholder')}
                       />
                     </div>
                   </div>
 
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="email">Email *</label>
+                      <label htmlFor="email">{t('form.email')} {t('form.required')}</label>
                       <input
                         type="email"
                         id="email"
                         name="email"
                         required
-                        placeholder="john@company.com"
+                        placeholder={t('form.emailPlaceholder')}
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="phone">Phone</label>
+                      <label htmlFor="phone">{t('form.phone')}</label>
                       <input
                         type="tel"
                         id="phone"
                         name="phone"
-                        placeholder="+1 (514) 123-4567"
+                        placeholder={t('form.phonePlaceholder')}
                       />
                     </div>
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="company">Company Name *</label>
+                    <label htmlFor="company">{t('form.company')} {t('form.required')}</label>
                     <input
                       type="text"
                       id="company"
                       name="company"
                       required
-                      placeholder="Your Company Inc."
+                      placeholder={t('form.companyPlaceholder')}
                     />
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="message">How can we help? *</label>
+                    <label htmlFor="message">{t('form.message')} {t('form.required')}</label>
                     <textarea
                       id="message"
                       name="message"
                       rows={6}
                       required
-                      placeholder="Tell us about your goals, problems, and how we can help..."
+                      placeholder={t('form.messagePlaceholder')}
                     ></textarea>
                   </div>
 
                   <button type="submit" className="btn-submit-contact">
-                    Send Message
+                    {t('form.submit')}
                   </button>
 
                   <p className="form-note">
                     <span className="pulse-dot"></span>
-                    We typically respond within 2 hours during business hours
+                    {t('form.responseTime')}
                   </p>
                 </form>
               </div>
 
               <div className="contact-info-container">
                 <div className="contact-info-card">
-                  <h3 className="contact-info-title">Contact Information</h3>
+                  <h3 className="contact-info-title">{t('contactInfo.title')}</h3>
                   <p className="contact-info-text">
-                    Get in touch with us directly or fill out the form and we'll get back to you promptly.
+                    {t('contactInfo.description')}
                   </p>
 
                   <div className="contact-details">
@@ -118,7 +120,7 @@ const Contact = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4>Location</h4>
+                        <h4>{t('contactInfo.location')}</h4>
                         <p>4845 Rue Jean-Talon O</p>
                         <p>Montreal, QC H4P 1W7</p>
                       </div>
@@ -132,7 +134,7 @@ const Contact = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4>Email</h4>
+                        <h4>{t('contactInfo.email')}</h4>
                         <a href="mailto:info@momentummanagement.ca">info@momentummanagement.ca</a>
                       </div>
                     </div>
@@ -144,17 +146,17 @@ const Contact = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4>Phone</h4>
+                        <h4>{t('contactInfo.phone')}</h4>
                         <a href="tel:+18773540317">+1 (877) 354-0317</a>
                       </div>
                     </div>
                   </div>
 
                   <div className="contact-cta-box">
-                    <h4>Looking for immediate assistance?</h4>
-                    <p>Schedule a call with our team to discuss your customer acquisition strategy.</p>
+                    <h4>{t('contactInfo.ctaTitle')}</h4>
+                    <p>{t('contactInfo.ctaDescription')}</p>
                     <a href="mailto:info@momentummanagement.ca" className="btn-contact-alt">
-                      Email Us
+                      {t('contactInfo.ctaButton')}
                     </a>
                   </div>
                 </div>

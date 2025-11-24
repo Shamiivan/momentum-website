@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './B2BServicesSection.css';
 
 const B2BServicesSection = () => {
+  const { t } = useTranslation('home');
   const [activeService, setActiveService] = useState('Partnerships');
 
   const services = [
-    { 
-      title: 'Partnerships', 
+    {
+      title: t('b2bServices.partnerships.title'),
+      key: 'Partnerships',
       link: '/services/partnerships',
-      valueOffering: 'Forge Strategic Alliances',
-      description: 'We build and manage high-performing sales channels for your brand, connecting you with new customers and driving revenue growth. Our expertise in North America markets ensures your message resonates with the local audience.',
+      valueOffering: t('b2bServices.partnerships.valueOffering'),
+      description: t('b2bServices.partnerships.description'),
+      cta: t('b2bServices.partnerships.cta'),
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -20,11 +24,13 @@ const B2BServicesSection = () => {
         </svg>
       )
     },
-    { 
-      title: 'Staff/Sales Training', 
+    {
+      title: t('b2bServices.staffTraining.title'),
+      key: 'Staff/Sales Training',
       link: '/services/staff-training',
-      valueOffering: 'Empower Your Team',
-      description: 'We provide comprehensive training programs that equip your sales team and customer service with the skills and knowledge they need to excel. From prospecting, closing and delivering, we cover it all.',
+      valueOffering: t('b2bServices.staffTraining.valueOffering'),
+      description: t('b2bServices.staffTraining.description'),
+      cta: t('b2bServices.staffTraining.cta'),
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 14l9-5-9-5-9 5 9 5z"/>
@@ -35,11 +41,13 @@ const B2BServicesSection = () => {
         </svg>
       )
     },
-    { 
-      title: 'Executive coaching', 
+    {
+      title: t('b2bServices.executiveCoaching.title'),
+      key: 'Executive coaching',
       link: '/services/executive-coaching',
-      valueOffering: 'Elevate Your Leadership',
-      description: 'Our executive coaching services are designed to help leaders unlock their full potential. We provide personalized guidance and support to help you navigate challenges and achieve your goals.',
+      valueOffering: t('b2bServices.executiveCoaching.valueOffering'),
+      description: t('b2bServices.executiveCoaching.description'),
+      cta: t('b2bServices.executiveCoaching.cta'),
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -48,16 +56,16 @@ const B2BServicesSection = () => {
     }
   ];
 
-  const getActiveService = () => services.find(service => service.title === activeService);
+  const getActiveService = () => services.find(service => service.key === activeService);
 
   return (
     <section className="b2b-services-section">
       <div className="b2b-services-container">
         <div className="b2b-services-header">
-          <h2 className="b2b-services-title">Everyone Loves Buying. Everybody Hates Being Sold.</h2>
-              <p className='service-description'>
-                You focus on your product. We focus on acquiring customers for it.
-              </p>
+          <h2 className="b2b-services-title">{t('b2bServices.title')}</h2>
+          <p className='service-description'>
+            {t('b2bServices.description')}
+          </p>
         </div>
 
         <div className="b2b-services-content">
@@ -65,9 +73,9 @@ const B2BServicesSection = () => {
             <div className="b2b-services-grid">
               {services.map((service) => (
                 <button
-                  key={service.title}
-                  className={`b2b-service-card ${activeService === service.title ? 'active' : ''}`}
-                  onClick={() => setActiveService(service.title)}
+                  key={service.key}
+                  className={`b2b-service-card ${activeService === service.key ? 'active' : ''}`}
+                  onClick={() => setActiveService(service.key)}
                 >
                   <div className="b2b-service-icon">{service.icon}</div>
                   <span className="b2b-service-title">{service.title}</span>
@@ -86,9 +94,7 @@ const B2BServicesSection = () => {
                 <h3 className="b2b-content-headline">{getActiveService()?.valueOffering}</h3>
                 <p className="b2b-content-body">{getActiveService()?.description}</p>
                 <Link to={getActiveService()?.link || '/'} className="b2b-content-cta">
-                  {getActiveService()?.title === 'Partnerships' && 'Explore Our Partnership Model'}
-                  {getActiveService()?.title === 'Staff/Sales Training' && 'See Training in Action'}
-                  {getActiveService()?.title === 'Executive coaching' && 'View Coaching Programs'}
+                  {getActiveService()?.cta}
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />

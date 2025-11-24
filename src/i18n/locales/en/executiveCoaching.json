@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "label": "EXECUTIVE COACHING",
+    "title": "Leadership is Earned, Not Given",
+    "subtitle": "Strategic coaching for leaders who work FOR their people. Develop the mindset and strategy to scale."
+  },
+  "philosophy": {
+    "title": "Our Leadership Philosophy",
+    "points": [
+      {"title": "Leadership Starts and Ends With You", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "You Work FOR the People", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Trust Them With the Future", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Believe in Everyone", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+    ]
+  },
+  "energy": {
+    "title": "Money Has Energy, Leadership Has Power",
+    "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. The mindset shift from manager to leader.",
+    "paragraph2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Understanding the energy and feeling of resources.",
+    "paragraph3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Your energy affects the entire organization. Be the cheetah.",
+    "imageAlt": "Leadership energy"
+  },
+  "coaching": {
+    "title": "Strategy & Execution",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Key coaching areas we focus on.",
+    "areas": [
+      {"title": "Earned Authority", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Decision-Making Speed", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Trust & Delegation", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Listening Down", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Strategic Thinking", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+    ]
+  },
+  "process": {
+    "title": "The Coaching Process",
+    "steps": [
+      {"step": "01", "title": "Discovery Call", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"step": "02", "title": "1-on-1 Sessions", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"step": "03", "title": "Strategic Planning", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"step": "04", "title": "Accountability & Support", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+    ]
+  },
+  "cta": {
+    "title": "Ready to Earn Your Leadership?",
+    "subtitle": "Book a free discovery call to discuss your goals and see if we're the right fit.",
+    "button": "Book Discovery Call"
+  }
+}

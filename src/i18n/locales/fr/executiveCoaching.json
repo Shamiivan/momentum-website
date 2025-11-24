@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "label": "COACHING EXÉCUTIF",
+    "title": "Le leadership se gagne, il n'est pas donné",
+    "subtitle": "Coaching stratégique pour les dirigeants qui travaillent POUR leur équipe. Développez la mentalité et la stratégie pour évoluer."
+  },
+  "philosophy": {
+    "title": "Notre philosophie de leadership",
+    "points": [
+      {"title": "Le leadership commence et se termine avec vous", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Vous travaillez POUR les gens", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Confiez-leur l'avenir", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Croyez en chacun", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+    ]
+  },
+  "energy": {
+    "title": "L'argent a de l'énergie, le leadership a du pouvoir",
+    "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Le changement de mentalité de gestionnaire à leader.",
+    "paragraph2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Comprendre l'énergie et le sentiment des ressources.",
+    "paragraph3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Votre énergie affecte toute l'organisation. Soyez le guépard.",
+    "imageAlt": "Énergie du leadership"
+  },
+  "coaching": {
+    "title": "Stratégie et exécution",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Principaux domaines de coaching sur lesquels nous nous concentrons.",
+    "areas": [
+      {"title": "Autorité gagnée", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Vitesse de prise de décision", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Confiance et délégation", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Écoute descendante", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"title": "Pensée stratégique", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+    ]
+  },
+  "process": {
+    "title": "Le processus de coaching",
+    "steps": [
+      {"step": "01", "title": "Appel de découverte", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"step": "02", "title": "Séances individuelles", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"step": "03", "title": "Planification stratégique", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"step": "04", "title": "Responsabilité et soutien", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+    ]
+  },
+  "cta": {
+    "title": "Prêt à gagner votre leadership?",
+    "subtitle": "Réservez un appel de découverte gratuit pour discuter de vos objectifs et voir si nous sommes le bon choix.",
+    "button": "Réserver un appel de découverte"
+  }
+}

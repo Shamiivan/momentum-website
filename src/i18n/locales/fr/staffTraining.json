@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "label": "FORMATION DU PERSONNEL",
+    "title": "Les ventes construisent l'entreprise",
+    "subtitle": "Des programmes de formation complets qui transforment votre équipe en professionnels de la vente performants"
+  },
+  "howWeWork": {
+    "title": "Comment nous travaillons",
+    "methods": [
+      {
+        "title": "Observer et apprendre",
+        "description": "Votre équipe observe nos professionnels de la vente experts pour apprendre des techniques éprouvées dans des scénarios réels."
+      },
+      {
+        "title": "Pratique pratique",
+        "description": "Séances de jeux de rôle interactifs et simulations pour renforcer la confiance et affiner les compétences."
+      },
+      {
+        "title": "Rétroaction personnalisée",
+        "description": "Coaching continu et évaluations de performance pour assurer une amélioration constante."
+      },
+      {
+        "title": "Soutien continu",
+        "description": "Ressources post-formation et suivis pour maintenir l'élan et renforcer l'apprentissage."
+      }
+    ]
+  },
+  "philosophy": {
+    "title": "Le service client EST les ventes",
+    "paragraph1": "Chaque interaction avec un client est une opportunité de créer de la confiance, de résoudre des problèmes et de créer des relations durables. Nous formons votre équipe à voir le service client non pas comme une fonction séparée, mais comme la base de ventes réussies.",
+    "paragraph2": "Notre approche intègre l'empathie, l'écoute active et la résolution de problèmes dans chaque point de contact, transformant les conversations de support en opportunités de croissance."
+  },
+  "development": {
+    "title": "Nous développons votre matériel de formation",
+    "paragraph1": "Pas de scripts génériques ou d'approches universelles. Nous créons des matériels de formation personnalisés adaptés à votre industrie, vos produits et votre public cible.",
+    "paragraph2": "Des manuels de vente aux guides de traitement des objections, nous développons des ressources pratiques que votre équipe peut consulter longtemps après la fin de la formation."
+  },
+  "training": {
+    "title": "Ensuite, nous formons votre équipe",
+    "topics": [
+      {
+        "title": "Prospection et génération de prospects",
+        "description": "Identifier et qualifier des prospects de grande valeur grâce à une sensibilisation stratégique et à l'établissement de relations."
+      },
+      {
+        "title": "Vente consultative",
+        "description": "Maîtriser la vente basée sur les besoins pour positionner votre solution comme la solution parfaite aux défis des clients."
+      },
+      {
+        "title": "Techniques de conclusion",
+        "description": "Surmonter les objections et guider en toute confiance les prospects vers l'engagement sans tactiques de pression élevée."
+      },
+      {
+        "title": "Gestion des relations",
+        "description": "Construire une fidélité client à long terme grâce à un service exceptionnel et une croissance stratégique des comptes."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Prêt à construire votre entreprise?",
+    "button": "Planifier une consultation de formation"
+  }
+}

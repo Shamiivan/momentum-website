@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Header from './components/Header'
@@ -20,6 +21,7 @@ const withDelay = (delay: number): AnimatedStyle => ({
 });
 
 const MomentumLanding = () => {
+  const { t } = useTranslation('home');
   const revenueAnimationRef = useRef(false);
   const [revenueCount, setRevenueCount] = useState(50);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
@@ -114,38 +116,29 @@ const MomentumLanding = () => {
   ];
 
   const serviceStats = [
-    { number: '$65M', label: 'Revenue Generated', helper: 'for partner brands' },
-    { number: '1000', label: 'Trained Professionals', helper: 'across multiple channels' },
-    { number: '3', label: 'Markets', helper: 'expanded in last year' },
-    { number: '40K', label: 'Customers', helper: 'acquired through outreach' }
-  ];
-
-  const faqs = [
     {
-      q: 'How does payment actually work?',
-      a: 'We get paid based on customers delivered. For B2C with monthly recurring revenue, payment is per active subscription. For B2B contract-based sales, payment is per closed deal. No monthly retainers, no upfront costs—only results.'
+      number: t('serviceOverview.stats.revenueGenerated.number'),
+      label: t('serviceOverview.stats.revenueGenerated.label'),
+      helper: t('serviceOverview.stats.revenueGenerated.helper')
     },
     {
-      q: 'What industries do you work with?',
-      a: 'We specialize in B2B companies with complex sales cycles, particularly those expanding into Quebec or scaling multi-channel acquisition. Telecommunications, SaaS, financial services, and professional services are our sweet spots.'
+      number: t('serviceOverview.stats.trainedProfessionals.number'),
+      label: t('serviceOverview.stats.trainedProfessionals.label'),
+      helper: t('serviceOverview.stats.trainedProfessionals.helper')
     },
     {
-      q: 'How quickly can we get started?',
-      a: 'Our streamlined onboarding gets you up and running in 30 days—compared to the 11+ months it takes to build an in-house team. Your dedicated account manager handles everything from strategy to team deployment.'
+      number: t('serviceOverview.stats.markets.number'),
+      label: t('serviceOverview.stats.markets.label'),
+      helper: t('serviceOverview.stats.markets.helper')
     },
     {
-      q: 'What makes you different from traditional agencies?',
-      a: 'Three things: (1) Deep Quebec market expertise you can\'t build overnight, (2) Multi-channel mastery—not just one tactic, and (3) A proven $40M track record with TELUS. We don\'t just generate leads; we build sustainable growth engines.'
-    },
-    {
-      q: 'Do you require long-term contracts?',
-      a: 'No. We work on performance terms with flexible engagement models. Because we only get paid when you get customers, our incentives are aligned. Most clients stay because the results speak for themselves.'
-    },
-    {
-      q: 'How do you measure success?',
-      a: 'Customers acquired, customer acquisition cost (CAC), and revenue generated. We integrate with your CRM and tracking systems to provide full transparency. Every customer is tracked, attributed, and tied to our delivery.'
+      number: t('serviceOverview.stats.customers.number'),
+      label: t('serviceOverview.stats.customers.label'),
+      helper: t('serviceOverview.stats.customers.helper')
     }
   ];
+
+  const faqs = t('faq.questions', { returnObjects: true }) as Array<{ question: string; answer: string }>;
 
   return (
     <>
@@ -157,21 +150,21 @@ const MomentumLanding = () => {
           <div className="animated-grid"></div>
           <div className="hero-container">
             <h1 className="revenue-counter" data-animate style={withDelay(0)}>
-              <span className="revenue-line">${revenueCount} Million Generated For National Brands</span>
+              <span className="revenue-line">{t('hero.revenueCounter', { count: revenueCount })}</span>
             </h1>
             <p className="hero-subtitle-new" data-animate style={withDelay(0.15)}>
-              We bridge the gap between you and your customers.
+              {t('hero.subtitle')}
             </p>
             <div className="hero-cta-group-new" data-animate style={withDelay(0.25)}>
               <Link to="/contact" className="btn-primary-new">
-                Schedule a Free Consultation
+                {t('hero.ctaPrimary')}
               </Link>
               <Link to="/services" className="btn-secondary-new">
-                See How We Do It
+                {t('hero.ctaSecondary')}
               </Link>
             </div>
             <div className="scroll-indicator" data-animate style={withDelay(0.35)}>
-              <span>↓</span>
+              <span>{t('hero.scrollIndicator')}</span>
             </div>
           </div>
         </section>
@@ -179,7 +172,7 @@ const MomentumLanding = () => {
         {/* Social Proof Section */}
         <section className="social-proof-section" aria-label="Trusted partners">
           <div className="container-new">
-            <p className="trusted-label">Trusted by Industry-leading brands across North America:</p>
+            <p className="trusted-label">{t('socialProof.trustedLabel')}</p>
             <div
               className="partners-marquee-wrapper"
               data-animate
@@ -208,10 +201,10 @@ const MomentumLanding = () => {
         <section className="service-overview-section" id="services">
           <div className="container-new">
             <h2 className="section-title-new" data-animate>
-                The power behind the pitch
+              {t('serviceOverview.title')}
             </h2>
             <div className="service-description" data-animate style={withDelay(0.1)}>
-          <p className="service-description">We specialize in B2B sales and marketing, helping you connect with your ideal customers through tailored strategies and expert guidance.</p>
+              <p className="service-description">{t('serviceOverview.description')}</p>
             </div>
             <div className="stats-grid-new">
               {serviceStats.map((stat, idx) => (
@@ -236,14 +229,13 @@ const MomentumLanding = () => {
           <div className="container-new">
             <div className="case-study-grid">
               <div className="case-study-visual" data-animate>
-                <img src="/growth-chart.svg" alt="Revenue Growth Chart" className="growth-chart" loading="lazy" />
+                <img src="/growth-chart.svg" alt={t('caseStudy.imageAlt')} className="growth-chart" loading="lazy" />
               </div>
               <div className="case-study-content-new" data-animate style={withDelay(0.1)}>
-                <h2 className="case-study-title-new">$57.3M for TELUS in 4 Years</h2>
+                <h2 className="case-study-title-new">{t('caseStudy.title')}</h2>
                 <div className="case-study-text-new">
                   <p>
-                    Over the past 5 years, we helped TELUS break into the Quebec market and generate over $57.3 million in revenue
-                    by deploying expert sales teams across in-person, phone, and social media channels.
+                    {t('caseStudy.description')}
                   </p>
                 </div>
                 <Link
@@ -252,7 +244,7 @@ const MomentumLanding = () => {
                   data-animate
                   style={withDelay(0.2)}
                 >
-                  Read Full Case Study
+                  {t('caseStudy.cta')}
                 </Link>
               </div>
             </div>
@@ -263,12 +255,12 @@ const MomentumLanding = () => {
         <section className="final-cta-section" id="cta" aria-label="Contact call-to-action">
           <div className="container-new">
             <div className="cta-content-new" data-animate>
-              <h2 className="cta-title-new">Let's Talk</h2>
+              <h2 className="cta-title-new">{t('finalCta.title')}</h2>
               <p className="cta-subtitle-new">
-                Get in touch to discuss how we can help grow your business.
+                {t('finalCta.subtitle')}
               </p>
               <Link to="/contact" className="btn-cta-large">
-                Contact Us
+                {t('finalCta.cta')}
               </Link>
             </div>
           </div>
@@ -276,7 +268,7 @@ const MomentumLanding = () => {
         {/* FAQ Section */}
         <section className="faq-section-new" id="faq" aria-labelledby="faq-heading">
           <div className="container-new">
-            <h2 className="section-title-new" data-animate id="faq-heading">Frequently Asked Questions</h2>
+            <h2 className="section-title-new" data-animate id="faq-heading">{t('faq.title')}</h2>
             <div className="faq-list">
               {faqs.map((faq, idx) => (
                 <div
@@ -289,11 +281,11 @@ const MomentumLanding = () => {
                     aria-expanded={activeAccordion === idx}
                     aria-controls={`faq-answer-${idx}`}
                   >
-                    <span>{faq.q}</span>
+                    <span>{faq.question}</span>
                     <span className="faq-icon" aria-hidden="true">{activeAccordion === idx ? '−' : '+'}</span>
                   </button>
                   <div className="faq-answer" id={`faq-answer-${idx}`} role="region">
-                    <p>{faq.a}</p>
+                    <p>{faq.answer}</p>
                   </div>
                 </div>
               ))}
@@ -307,7 +299,7 @@ const MomentumLanding = () => {
       <button
         className={`scroll-to-top ${showScrollTop ? 'visible' : ''}`}
         onClick={scrollToTop}
-        aria-label="Scroll to top"
+        aria-label={t('scrollToTop')}
       >
         ↑
       </button>

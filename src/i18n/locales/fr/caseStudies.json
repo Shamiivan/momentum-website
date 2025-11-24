@@ -1,0 +1,66 @@
+{
+  "hero": {
+    "title": "Études de cas",
+    "subtitle": "Des résultats concrets d'entreprises que nous avons aidées à croître"
+  },
+  "featured": {
+    "title": "57,3 M$ pour TELUS en 5 ans",
+    "paragraph1": "Au cours des 5 dernières années, TELUS s'est associé à Momentum Management pour percer le marché québécois et développer l'acquisition de clients. En déployant notre équipe de vente experte sur les canaux en personne, par téléphone et sur les réseaux sociaux, nous avons aidé TELUS à établir une forte présence locale et à générer plus de 57,3 millions de dollars de revenus.",
+    "paragraph2": "Cette collaboration à long terme continue d'alimenter une croissance et une rétention constantes dans l'un des marchés les plus compétitifs du Canada."
+  },
+  "results": {
+    "title": "Bilan éprouvé",
+    "stats": {
+      "revenue": {
+        "number": "50 M$+",
+        "label": "Revenus générés",
+        "helper": "pour les marques partenaires"
+      },
+      "professionals": {
+        "number": "500+",
+        "label": "Professionnels formés",
+        "helper": "sur plusieurs canaux"
+      },
+      "markets": {
+        "number": "3",
+        "label": "Marchés",
+        "helper": "élargis l'année dernière"
+      },
+      "customers": {
+        "number": "40K+",
+        "label": "Clients",
+        "helper": "acquis par prospection"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Ce que disent nos partenaires",
+    "subtitle": "Des commentaires réels d'entreprises que nous avons aidées à croître",
+    "items": [
+      {
+        "quote": "Travailler avec Momentum Management a transformé notre stratégie de marché québécois. Leur expertise locale et leur approche multicanal ont fourni une croissance client constante que nous ne pouvions pas réaliser par nous-mêmes.",
+        "author": "[Nom du client]",
+        "title": "[Titre], [Nom de l'entreprise]",
+        "result": "[Métrique spécifique]"
+      },
+      {
+        "quote": "Le modèle basé sur la performance s'alignait parfaitement avec nos objectifs. Aucun coût initial, et ils n'étaient payés que lorsque nous acquérions des clients. C'est rafraîchissant de travailler avec un partenaire qui partage notre risque.",
+        "author": "[Nom du client]",
+        "title": "[Titre], [Nom de l'entreprise]",
+        "result": "[Métrique spécifique]"
+      },
+      {
+        "quote": "Après des résultats décevants avec les agences traditionnelles, l'accent mis par Momentum Management sur l'acquisition réelle de clients—et non seulement la génération de prospects—était exactement ce dont nous avions besoin.",
+        "author": "[Nom du client]",
+        "title": "[Titre], [Nom de l'entreprise]",
+        "result": "[Métrique spécifique]"
+      }
+    ],
+    "resultLabel": "Résultat:"
+  },
+  "cta": {
+    "title": "Prêt à créer votre histoire de succès?",
+    "subtitle": "Discutons de la façon dont nous pouvons vous aider à obtenir des résultats similaires.",
+    "button": "Commencer"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "title": "Nous construisons le pont entre votre entreprise et vos clients.",
+    "subtitle": "Des partenariats basés sur la performance qui créent des équipes de vente autosuffisantes grâce au déploiement multicanal.",
+    "button": "Commencez votre partenariat"
+  },
+  "howItWorks": {
+    "title": "Comment fonctionnent les partenariats",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Découverte et alignement",
+        "description": "Nous comprenons votre entreprise, vos objectifs et votre marché pour définir ensemble les indicateurs de succès."
+      },
+      {
+        "step": "02",
+        "title": "Nous vous montrons",
+        "description": "Notre équipe exécute sur les canaux choisis pendant que vous observez les méthodes éprouvées en action."
+      },
+      {
+        "step": "03",
+        "title": "Observation et apprentissage",
+        "description": "Votre équipe suit nos représentants avec un apprentissage pratique sur le terrain et un coaching en temps réel."
+      },
+      {
+        "step": "04",
+        "title": "Vous en êtes propriétaire",
+        "description": "Votre équipe exécute de manière indépendante avec notre soutien continu et des manuels documentés."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Prêt à commencer votre partenariat?",
+    "subtitle": "Planifiez une consultation gratuite et nous vous aiderons à déterminer la meilleure approche pour vos objectifs commerciaux.",
+    "button": "Planifier une consultation gratuite"
+  }
+}

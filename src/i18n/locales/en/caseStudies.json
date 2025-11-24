@@ -1,0 +1,66 @@
+{
+  "hero": {
+    "title": "Case Studies",
+    "subtitle": "Real results from businesses we've helped grow"
+  },
+  "featured": {
+    "title": "$57.3M for TELUS in 5 Years",
+    "paragraph1": "Over the past 5 years, TELUS partnered with Momentum Management to break into the Quebec market and scale customer acquisition. By deploying our expert sales team across in-person, phone, and social media channels, we helped TELUS establish a strong local presence and generate over $57.3 million in revenue.",
+    "paragraph2": "This long-term collaboration continues to fuel consistent growth and retention in one of Canada's most competitive markets."
+  },
+  "results": {
+    "title": "Proven Track Record",
+    "stats": {
+      "revenue": {
+        "number": "$50M+",
+        "label": "Revenue Generated",
+        "helper": "for partner brands"
+      },
+      "professionals": {
+        "number": "500+",
+        "label": "Trained Professionals",
+        "helper": "across multiple channels"
+      },
+      "markets": {
+        "number": "3",
+        "label": "Markets",
+        "helper": "expanded in last year"
+      },
+      "customers": {
+        "number": "40K+",
+        "label": "Customers",
+        "helper": "acquired through outreach"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "What Our Partners Say",
+    "subtitle": "Real feedback from businesses we've helped grow",
+    "items": [
+      {
+        "quote": "Working with Momentum Management transformed our Quebec market strategy. Their local expertise and multi-channel approach delivered consistent customer growth we couldn't achieve on our own.",
+        "author": "[Client Name]",
+        "title": "[Title], [Company Name]",
+        "result": "[Specific metric]"
+      },
+      {
+        "quote": "The performance-based model aligned perfectly with our goals. No upfront costs, and they only got paid when we acquired customers. It's refreshing to work with a partner who shares our risk.",
+        "author": "[Client Name]",
+        "title": "[Title], [Company Name]",
+        "result": "[Specific metric]"
+      },
+      {
+        "quote": "After disappointing results with traditional agencies, Momentum Management's focus on actual customer acquisition—not just lead generation—was exactly what we needed.",
+        "author": "[Client Name]",
+        "title": "[Title], [Company Name]",
+        "result": "[Specific metric]"
+      }
+    ],
+    "resultLabel": "Result:"
+  },
+  "cta": {
+    "title": "Ready to Create Your Success Story?",
+    "subtitle": "Let's discuss how we can help you achieve similar results.",
+    "button": "Get Started"
+  }
+}

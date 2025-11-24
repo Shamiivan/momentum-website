@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "title": "Shape your growth with us",
+    "subtitle": "Join a team where authority is questioned, leadership is earned, that believes in everyone until proven otherwise."
+  },
+  "workingAt": {
+    "title": "Working At Momentum Management",
+    "subtitle": "Real glimpses into what makes us different."
+  },
+  "photos": {
+    "friends": "We are all friends",
+    "driven": "We are driven",
+    "believeInEachOther": "We believe in each other",
+    "supportEachOther": "We support each other",
+    "focusedOnGrowth": "We are focused on growth",
+    "training": "We do a lot of training"
+  },
+  "openPositions": {
+    "title": "Available positions",
+    "subtitle": "Join a performance-driven team where you'll learn real sales, work with major brands, and have a clear path to advancement.",
+    "viewDetails": "View Details",
+    "close": "Close",
+    "applyButton": "Apply for this Position",
+    "notFound": {
+      "title": "Didn't find the perfect fit?",
+      "subtitle": "Tell us more about yourself, and we'll reach out when the right opportunity comes along.",
+      "button": "Get in Touch"
+    }
+  },
+  "perks": {
+    "title": "What You'll Get",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "items": [
+      {
+        "title": "Performance-Based Pay",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam quis nostrud."
+      },
+      {
+        "title": "Clear Growth Path",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit."
+      },
+      {
+        "title": "Real Training",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non."
+      },
+      {
+        "title": "Flexible Work",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste."
+      },
+      {
+        "title": "Big Brand Experience",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia."
+      },
+      {
+        "title": "Mentorship That Matters",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis autem vel eum iure reprehenderit."
+      }
+    ]
+  }
+}

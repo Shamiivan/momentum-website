@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Logo from './Logo'
-import LanguageSwitcher from './LanguageSwitcher'
 import './Header.css'
 
 const Header = () => {
@@ -150,15 +149,11 @@ const Header = () => {
           <Link to="/contact" className="nav-cta-mobile" onClick={() => setMobileMenuOpen(false)}>
             {t('header.contact')}
           </Link>
-          <LanguageSwitcher />
         </nav>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <LanguageSwitcher />
-          <Link to="/contact" className="header-cta-new header-cta-desktop">
-            {t('header.contact')}
-          </Link>
-        </div>
+        <Link to="/contact" className="header-cta-new header-cta-desktop">
+          {t('header.contact')}
+        </Link>
       </div>
     </header>
   );

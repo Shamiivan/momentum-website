@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { usePageScroll } from './hooks/usePageScroll'
@@ -8,42 +9,15 @@ import './App.css'
 const About = () => {
   usePageScroll();
   useScrollAnimation();
+  const { t } = useTranslation('about');
 
-  const founders = [
-    {
-      name: 'John Doe',
-      role: 'Co-Founder & CEO',
-      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Over 15 years of experience in multi-channel sales and business development. Led partnerships with Fortune 500 companies generating $40M+ in revenue.',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&q=80',
-      linkedin: '#'
-    },
-    {
-      name: 'Jane Smith',
-      role: 'Co-Founder & COO',
-      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Expert in Quebec market expansion and operational excellence. Built and trained sales teams of 500+ professionals across North America.',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&q=80',
-      linkedin: '#'
-    }
-  ];
+  const founders = (t('leadership.founders', { returnObjects: true }) as Array<{name: string; role: string; bio: string}>).map((founder, idx) => ({
+    ...founder,
+    image: idx === 0 ? 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&q=80' : 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&q=80',
+    linkedin: '#'
+  }));
 
-  const values = [
-    {
-      title: 'We Help, We do not Sell',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Obsessed with measurable outcomes, not vanity metrics. Performance-based model reflects our commitment. We only win when you win.'
-    },
-    {
-      title: 'Hardwork',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Deep understanding of the North American market. Cultural fluency and proven track record across the region.'
-    },
-    {
-      title: 'Energy',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Only paid when clients get customers. Aligned incentives, no retainer risk. True partnership, shared success model.'
-    },
-    {
-      title: 'Meritocracy',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Unlike agencies specializing in one channel. 6 channels, integrated approach. We go where your customers are.'
-    }
-  ];
+  const values = t('mission.values', { returnObjects: true }) as Array<{title: string; description: string}>;
 
   return (
     <>
@@ -53,9 +27,9 @@ const About = () => {
         {/* Hero Section */}
         <section className="about-hero">
           <div className="container-new">
-            <p className="about-label" data-animate>ABOUT US</p>
+            <p className="about-label" data-animate>{t('hero.label')}</p>
             <h1 className="about-hero-title" data-animate>
-            The Power Behind The Pitch
+              {t('hero.title')}
             </h1>
           </div>
         </section>
@@ -65,23 +39,20 @@ const About = () => {
           <div className="container-new">
             <div className="about-story-grid">
               <div className="about-story-content">
-                <h2 className="about-section-title" data-animate>How It All Began</h2>
+                <h2 className="about-section-title" data-animate>{t('story.title')}</h2>
                 <div className="about-story-text" data-animate>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Founded with a mission to bridge the gap between brands and customers.
+                    {t('story.paragraph1')}
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. We saw a gap in the industry
-                    that needed to be filled - true performance-based partnerships.
+                    {t('story.paragraph2')}
                   </p>
                 </div>
               </div>
               <div className="about-story-image" data-animate>
                 <img
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=900&fit=crop&q=80"
-                  alt="Business meeting"
+                  alt={t('story.imageAlt')}
                   className="about-feature-image"
                 />
               </div>
@@ -95,14 +66,14 @@ const About = () => {
               <div className="about-image-wrapper">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80"
-                  alt="Team collaboration"
+                  alt={t('images.teamCollaboration')}
                   className="about-image"
                 />
               </div>
               <div className="about-image-wrapper">
                 <img
                   src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop&q=80"
-                  alt="Professional team member"
+                  alt={t('images.professionalTeamMember')}
                   className="about-image"
                 />
               </div>
@@ -114,11 +85,10 @@ const About = () => {
         <section className="about-mission-section">
           <div className="container-new">
             <h2 className="about-section-title centered" data-animate>
-              What Drives Us
+              {t('mission.title')}
             </h2>
             <p className="about-mission-intro" data-animate>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+              {t('mission.intro')}
             </p>
             <div className="about-values-grid">
               {values.map((value, idx) => (
@@ -159,19 +129,16 @@ const About = () => {
                 </div>
               </div>
               <div className="about-culture-content">
-                <h2 className="about-section-title" data-animate>Mission Statement</h2>
+                <h2 className="about-section-title" data-animate>{t('culture.title')}</h2>
                 <div className="about-culture-text" data-animate>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    {t('culture.paragraph1')}
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.
+                    {t('culture.paragraph2')}
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                    {t('culture.paragraph3')}
                   </p>
                 </div>
               </div>
@@ -183,10 +150,10 @@ const About = () => {
         <section className="about-leadership-section">
           <div className="container-new">
             <h2 className="about-section-title centered" data-animate>
-              Meet Our Founders
+              {t('leadership.title')}
             </h2>
             <p className="about-leadership-intro" data-animate>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. The visionaries behind our success.
+              {t('leadership.intro')}
             </p>
             <div className="about-founders-grid">
               {founders.map((founder, idx) => (
@@ -217,12 +184,12 @@ const About = () => {
         <section className="about-cta-section">
           <div className="container-new">
             <div className="about-cta-content" data-animate>
-              <h2 className="about-cta-title">Let's Grow Together</h2>
+              <h2 className="about-cta-title">{t('cta.title')}</h2>
               <p className="about-cta-subtitle">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+                {t('cta.subtitle')}
               </p>
               <Link to="/contact" className="btn-primary-new btn-large">
-                Schedule a Free Consultation
+                {t('cta.button')}
               </Link>
             </div>
           </div>

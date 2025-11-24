@@ -1,6 +1,101 @@
 {
   "hero": {
-    "title": "Home Hero Title",
-    "subtitle": "Home Hero Subtitle"
-  }
+    "revenueCounter": "${{count}} Million Generated For National Brands",
+    "subtitle": "We bridge the gap between you and your customers.",
+    "ctaPrimary": "Schedule a Free Consultation",
+    "ctaSecondary": "See How We Do It",
+    "scrollIndicator": "↓"
+  },
+  "socialProof": {
+    "trustedLabel": "Trusted by Industry-leading brands across North America:"
+  },
+  "serviceOverview": {
+    "title": "The power behind the pitch",
+    "description": "We specialize in B2B sales and marketing, helping you connect with your ideal customers through tailored strategies and expert guidance.",
+    "stats": {
+      "revenueGenerated": {
+        "number": "$65M",
+        "label": "Revenue Generated",
+        "helper": "for partner brands"
+      },
+      "trainedProfessionals": {
+        "number": "1000",
+        "label": "Trained Professionals",
+        "helper": "across multiple channels"
+      },
+      "markets": {
+        "number": "3",
+        "label": "Markets",
+        "helper": "expanded in last year"
+      },
+      "customers": {
+        "number": "40K",
+        "label": "Customers",
+        "helper": "acquired through outreach"
+      }
+    }
+  },
+  "b2bServices": {
+    "title": "Everyone Loves Buying. Everybody Hates Being Sold.",
+    "description": "You focus on your product. We focus on acquiring customers for it.",
+    "partnerships": {
+      "title": "Partnerships",
+      "valueOffering": "Forge Strategic Alliances",
+      "description": "We build and manage high-performing sales channels for your brand, connecting you with new customers and driving revenue growth. Our expertise in North America markets ensures your message resonates with the local audience.",
+      "cta": "Explore Our Partnership Model"
+    },
+    "staffTraining": {
+      "title": "Staff/Sales Training",
+      "valueOffering": "Empower Your Team",
+      "description": "We provide comprehensive training programs that equip your sales team and customer service with the skills and knowledge they need to excel. From prospecting, closing and delivering, we cover it all.",
+      "cta": "See Training in Action"
+    },
+    "executiveCoaching": {
+      "title": "Executive coaching",
+      "valueOffering": "Elevate Your Leadership",
+      "description": "Our executive coaching services are designed to help leaders unlock their full potential. We provide personalized guidance and support to help you navigate challenges and achieve your goals.",
+      "cta": "View Coaching Programs"
+    }
+  },
+  "caseStudy": {
+    "title": "$57.3M for TELUS in 4 Years",
+    "description": "Over the past 5 years, we helped TELUS break into the Quebec market and generate over $57.3 million in revenue by deploying expert sales teams across in-person, phone, and social media channels.",
+    "cta": "Read Full Case Study",
+    "imageAlt": "Revenue Growth Chart"
+  },
+  "finalCta": {
+    "title": "Let's Talk",
+    "subtitle": "Get in touch to discuss how we can help grow your business.",
+    "cta": "Contact Us"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": [
+      {
+        "question": "How does payment actually work?",
+        "answer": "We get paid based on customers delivered. For B2C with monthly recurring revenue, payment is per active subscription. For B2B contract-based sales, payment is per closed deal. No monthly retainers, no upfront costs—only results."
+      },
+      {
+        "question": "What industries do you work with?",
+        "answer": "We specialize in B2B companies with complex sales cycles, particularly those expanding into Quebec or scaling multi-channel acquisition. Telecommunications, SaaS, financial services, and professional services are our sweet spots."
+      },
+      {
+        "question": "How quickly can we get started?",
+        "answer": "Our streamlined onboarding gets you up and running in 30 days—compared to the 11+ months it takes to build an in-house team. Your dedicated account manager handles everything from strategy to team deployment."
+      },
+      {
+        "question": "What makes you different from traditional agencies?",
+        "answer": "Three things: (1) Deep Quebec market expertise you can't build overnight, (2) Multi-channel mastery—not just one tactic, and (3) A proven $40M track record with TELUS. We don't just generate leads; we build sustainable growth engines."
+      },
+      {
+        "question": "Do you require long-term contracts?",
+        "answer": "No. We work on performance terms with flexible engagement models. Because we only get paid when you get customers, our incentives are aligned. Most clients stay because the results speak for themselves."
+      },
+      {
+        "question": "How do you measure success?",
+        "answer": "Customers acquired, customer acquisition cost (CAC), and revenue generated. We integrate with your CRM and tracking systems to provide full transparency. Every customer is tracked, attributed, and tied to our delivery."
+      }
+    ]
+  },
+  "scrollToTop": "Scroll to top"
 }

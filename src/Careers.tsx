@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { jobs } from './data/jobs'
 import './App.css'
 
 const Careers = () => {
+  const { t } = useTranslation('careers');
   const [expandedJob, setExpandedJob] = useState<string | null>(null);
   const [scrollY, setScrollY] = useState(0);
 
@@ -43,13 +45,51 @@ const Careers = () => {
   }, []);
 
   const lifePhotos = [
-    { url: '/damon/DSCF5557.webp', alt: 'We are all friends' },
-    { url: '/damon/DSCF5518.webp', alt: 'We are driven' },
-    { url: '/damon/DSCF5619.webp', alt: 'We believe in each other' },
-    { url: '/damon/DSCF5515.webp', alt: 'We support each other' },
-    { url: '/damon/DSCF5596.webp', alt: 'We are focused on growth' },
-    { url: '/damon/DSCF5613.webp', alt: 'We do a lot of training' }
+    { url: '/damon/DSCF5557.webp', alt: t('photos.friends') },
+    { url: '/damon/DSCF5518.webp', alt: t('photos.driven') },
+    { url: '/damon/DSCF5619.webp', alt: t('photos.believeInEachOther') },
+    { url: '/damon/DSCF5515.webp', alt: t('photos.supportEachOther') },
+    { url: '/damon/DSCF5596.webp', alt: t('photos.focusedOnGrowth') },
+    { url: '/damon/DSCF5613.webp', alt: t('photos.training') }
   ];
+
+  // Fallback perks array in case translation fails
+  const defaultPerks = [
+    {
+      title: 'Performance-Based Pay',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam quis nostrud.'
+    },
+    {
+      title: 'Clear Growth Path',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.'
+    },
+    {
+      title: 'Real Training',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non.'
+    },
+    {
+      title: 'Flexible Work',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste.'
+    },
+    {
+      title: 'Big Brand Experience',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia.'
+    },
+    {
+      title: 'Mentorship That Matters',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis autem vel eum iure reprehenderit.'
+    }
+  ];
+
+  let perks = defaultPerks;
+  try {
+    const perksData = t('perks.items', { returnObjects: true });
+    if (Array.isArray(perksData) && perksData.length > 0) {
+      perks = perksData as Array<{title: string; description: string}>;
+    }
+  } catch (e) {
+    console.error('Failed to load perks translation:', e);
+  }
 
   return (
     <>
@@ -122,7 +162,7 @@ const Careers = () => {
               letterSpacing: '-0.02em',
               marginBottom: '2rem'
             }} data-animate>
-              Shape your growth with us
+              {t('hero.title')}
             </h1>
             <p style={{
               fontSize: 'clamp(1.15rem, 2vw, 1.4rem)',
@@ -135,7 +175,7 @@ const Careers = () => {
               textShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
               letterSpacing: '-0.01em'
             }} data-animate>
-              Join a team where authority is questioned, leadership is earned, that believes in everyone until proven otherwise.
+              {t('hero.subtitle')}
             </p>
           </div>
 
@@ -174,7 +214,7 @@ const Careers = () => {
                 letterSpacing: '-0.03em',
                 lineHeight: '1.15'
               }}>
-              Working At Momentum Management
+                {t('workingAt.title')}
               </h2>
               <p className="about-mission-intro" data-animate style={{
                 fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
@@ -184,7 +224,7 @@ const Careers = () => {
                 fontWeight: '400',
                 letterSpacing: '-0.01em'
               }}>
-                Real glimpses into what makes us different.
+                {t('workingAt.subtitle')}
               </p>
             </div>
 
@@ -276,7 +316,7 @@ const Careers = () => {
               letterSpacing: '-0.03em',
               lineHeight: '1.15'
             }}>
-              Available positions
+              {t('openPositions.title')}
             </h2>
             <p className="mb-8" data-animate style={{
               color: '#6b7280',
@@ -288,7 +328,7 @@ const Careers = () => {
               letterSpacing: '-0.01em',
               marginBottom: '2.5rem'
             }}>
-              Join a performance-driven team where you'll learn real sales, work with major brands, and have a clear path to advancement.
+              {t('openPositions.subtitle')}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -364,7 +404,7 @@ const Careers = () => {
                           letterSpacing: '-0.01em'
                         }}
                       >
-                        {isExpanded ? 'Close' : 'View Details'}
+                        {isExpanded ? t('openPositions.close') : t('openPositions.viewDetails')}
                         <span style={{
                           transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
                           transition: 'transform 0.3s ease',
@@ -518,7 +558,7 @@ const Careers = () => {
                                 e.currentTarget.style.transform = 'translateY(0)';
                               }}
                             >
-                              Apply for this Position
+                              {t('openPositions.applyButton')}
                               <span>→</span>
                             </Link>
                           </div>
@@ -561,7 +601,7 @@ const Careers = () => {
                 color: 'var(--color-white)',
                 letterSpacing: '-0.02em'
               }}>
-                Didn't find the perfect fit?
+                {t('openPositions.notFound.title')}
               </h3>
               <p className="mb-6" style={{
                 fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
@@ -573,7 +613,7 @@ const Careers = () => {
                 lineHeight: '1.7',
                 letterSpacing: '-0.01em'
               }}>
-                Tell us more about yourself, and we'll reach out when the right opportunity comes along.
+                {t('openPositions.notFound.subtitle')}
               </p>
               <Link
                 to="/contact"
@@ -588,7 +628,7 @@ const Careers = () => {
                   letterSpacing: '-0.01em'
                 }}
               >
-                Get in Touch
+                {t('openPositions.notFound.button')}
               </Link>
             </div>
           </div>
@@ -609,7 +649,7 @@ const Careers = () => {
               lineHeight: '1.15',
               textAlign: 'center'
             }}>
-              What You'll Get
+              {t('perks.title')}
             </h2>
             <p className="about-mission-intro" data-animate style={{
               fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
@@ -622,7 +662,7 @@ const Careers = () => {
               maxWidth: '850px',
               margin: '0 auto 3rem'
             }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {t('perks.subtitle')}
             </p>
 
             <div className="mt-7" style={{
@@ -630,32 +670,7 @@ const Careers = () => {
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
               gap: '2rem'
             }}>
-              {[
-                {
-                  title: 'Performance-Based Pay',
-                  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam quis nostrud.'
-                },
-                {
-                  title: 'Clear Growth Path',
-                  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.'
-                },
-                {
-                  title: 'Real Training',
-                  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non.'
-                },
-                {
-                  title: 'Flexible Work',
-                  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste.'
-                },
-                {
-                  title: 'Big Brand Experience',
-                  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia.'
-                },
-                {
-                  title: 'Mentorship That Matters',
-                  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis autem vel eum iure reprehenderit.'
-                }
-              ].map((perk, idx) => (
+              {perks.map((perk, idx) => (
                 <div
                   key={perk.title}
                   data-animate
@@ -694,7 +709,7 @@ const Careers = () => {
                     margin: 0,
                     letterSpacing: '-0.01em'
                   }}>
-                    {perk.desc}
+                    {perk.description}
                   </p>
                 </div>
               ))}

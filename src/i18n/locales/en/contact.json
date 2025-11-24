@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "Get In Touch"
+  },
+  "form": {
+    "title": "Send us a message",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "John",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Doe",
+    "email": "Email",
+    "emailPlaceholder": "john@company.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+1 (514) 123-4567",
+    "company": "Company Name",
+    "companyPlaceholder": "Your Company Inc.",
+    "message": "How can we help?",
+    "messagePlaceholder": "Tell us about your goals, problems, and how we can help...",
+    "submit": "Send Message",
+    "responseTime": "We typically respond within 2 hours during business hours",
+    "required": "*"
+  },
+  "contactInfo": {
+    "title": "Contact Information",
+    "description": "Get in touch with us directly or fill out the form and we'll get back to you promptly.",
+    "location": "Location",
+    "email": "Email",
+    "phone": "Phone",
+    "ctaTitle": "Looking for immediate assistance?",
+    "ctaDescription": "Schedule a call with our team to discuss your customer acquisition strategy.",
+    "ctaButton": "Email Us"
+  }
+}

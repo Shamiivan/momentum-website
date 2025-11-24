@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "title": "Façonnez votre croissance avec nous",
+    "subtitle": "Rejoignez une équipe où l'autorité est questionnée, le leadership est gagné, qui croit en chacun jusqu'à preuve du contraire."
+  },
+  "workingAt": {
+    "title": "Travailler chez Momentum Management",
+    "subtitle": "De vrais aperçus de ce qui nous rend différents."
+  },
+  "photos": {
+    "friends": "Nous sommes tous amis",
+    "driven": "Nous sommes motivés",
+    "believeInEachOther": "Nous croyons les uns aux autres",
+    "supportEachOther": "Nous nous soutenons mutuellement",
+    "focusedOnGrowth": "Nous sommes concentrés sur la croissance",
+    "training": "Nous faisons beaucoup de formation"
+  },
+  "openPositions": {
+    "title": "Postes disponibles",
+    "subtitle": "Rejoignez une équipe axée sur la performance où vous apprendrez de vraies techniques de vente, travaillerez avec de grandes marques et aurez un chemin clair vers l'avancement.",
+    "viewDetails": "Voir les détails",
+    "close": "Fermer",
+    "applyButton": "Postuler pour ce poste",
+    "notFound": {
+      "title": "Vous n'avez pas trouvé le poste idéal?",
+      "subtitle": "Parlez-nous de vous et nous vous contacterons lorsque la bonne opportunité se présentera.",
+      "button": "Contactez-nous"
+    }
+  },
+  "perks": {
+    "title": "Ce que vous obtiendrez",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "items": [
+      {
+        "title": "Rémunération basée sur la performance",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam quis nostrud."
+      },
+      {
+        "title": "Chemin de croissance clair",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit."
+      },
+      {
+        "title": "Formation réelle",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non."
+      },
+      {
+        "title": "Travail flexible",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste."
+      },
+      {
+        "title": "Expérience de grandes marques",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia."
+      },
+      {
+        "title": "Mentorat qui compte",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis autem vel eum iure reprehenderit."
+      }
+    ]
+  }
+}

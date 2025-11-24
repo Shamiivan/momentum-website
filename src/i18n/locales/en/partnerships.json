@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "title": "We build the bridge between your business and your customers.",
+    "subtitle": "Performance-based partnerships that create self-sufficient sales teams through multi-channel deployment.",
+    "button": "Start Your Partnership"
+  },
+  "howItWorks": {
+    "title": "How Partnerships Work",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Discovery & Alignment",
+        "description": "We understand your business, goals, and market to define success metrics together."
+      },
+      {
+        "step": "02",
+        "title": "We Show You",
+        "description": "Our team executes across chosen channels while you observe proven methods in action."
+      },
+      {
+        "step": "03",
+        "title": "Shadow & Learn",
+        "description": "Your team shadows our reps with hands-on learning in the field and real-time coaching."
+      },
+      {
+        "step": "04",
+        "title": "You Own It",
+        "description": "Your team executes independently with our ongoing support and documented playbooks."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Start Your Partnership?",
+    "subtitle": "Schedule a free consultation and we'll help you determine the best approach for your business goals.",
+    "button": "Schedule Free Consultation"
+  }
+}

@@ -1,6 +1,101 @@
 {
   "hero": {
-    "title": "Titre du héros d'accueil",
-    "subtitle": "Sous-titre du héros d'accueil"
-  }
+    "revenueCounter": "{{count}} millions $ générés pour les marques nationales",
+    "subtitle": "Nous comblons le fossé entre vous et vos clients.",
+    "ctaPrimary": "Planifier une consultation gratuite",
+    "ctaSecondary": "Voir comment nous le faisons",
+    "scrollIndicator": "↓"
+  },
+  "socialProof": {
+    "trustedLabel": "Approuvé par les marques de premier plan de l'industrie à travers l'Amérique du Nord :"
+  },
+  "serviceOverview": {
+    "title": "La force derrière l'argumentaire",
+    "description": "Nous nous spécialisons dans les ventes et le marketing B2B, vous aidant à vous connecter avec vos clients idéaux grâce à des stratégies sur mesure et des conseils d'experts.",
+    "stats": {
+      "revenueGenerated": {
+        "number": "65 M$",
+        "label": "Revenus générés",
+        "helper": "pour les marques partenaires"
+      },
+      "trainedProfessionals": {
+        "number": "1000",
+        "label": "Professionnels formés",
+        "helper": "sur plusieurs canaux"
+      },
+      "markets": {
+        "number": "3",
+        "label": "Marchés",
+        "helper": "élargis l'année dernière"
+      },
+      "customers": {
+        "number": "40K",
+        "label": "Clients",
+        "helper": "acquis par prospection"
+      }
+    }
+  },
+  "b2bServices": {
+    "title": "Tout le monde aime acheter. Tout le monde déteste se faire vendre.",
+    "description": "Vous vous concentrez sur votre produit. Nous nous concentrons sur l'acquisition de clients pour celui-ci.",
+    "partnerships": {
+      "title": "Partenariats",
+      "valueOffering": "Forger des alliances stratégiques",
+      "description": "Nous construisons et gérons des canaux de vente performants pour votre marque, vous connectant à de nouveaux clients et stimulant la croissance des revenus. Notre expertise des marchés nord-américains garantit que votre message résonne avec le public local.",
+      "cta": "Explorer notre modèle de partenariat"
+    },
+    "staffTraining": {
+      "title": "Formation du personnel/ventes",
+      "valueOffering": "Responsabilisez votre équipe",
+      "description": "Nous offrons des programmes de formation complets qui dotent votre équipe de vente et de service à la clientèle des compétences et des connaissances dont ils ont besoin pour exceller. De la prospection, à la conclusion et à la livraison, nous couvrons tout.",
+      "cta": "Voir la formation en action"
+    },
+    "executiveCoaching": {
+      "title": "Coaching exécutif",
+      "valueOffering": "Élevez votre leadership",
+      "description": "Nos services de coaching exécutif sont conçus pour aider les dirigeants à libérer leur plein potentiel. Nous fournissons des conseils et un soutien personnalisés pour vous aider à relever les défis et à atteindre vos objectifs.",
+      "cta": "Voir les programmes de coaching"
+    }
+  },
+  "caseStudy": {
+    "title": "57,3 M$ pour TELUS en 4 ans",
+    "description": "Au cours des 5 dernières années, nous avons aidé TELUS à percer le marché québécois et à générer plus de 57,3 millions de dollars de revenus en déployant des équipes de vente expertes sur les canaux en personne, par téléphone et sur les réseaux sociaux.",
+    "cta": "Lire l'étude de cas complète",
+    "imageAlt": "Graphique de croissance des revenus"
+  },
+  "finalCta": {
+    "title": "Parlons-en",
+    "subtitle": "Contactez-nous pour discuter de la façon dont nous pouvons vous aider à développer votre entreprise.",
+    "cta": "Contactez-nous"
+  },
+  "faq": {
+    "title": "Questions fréquemment posées",
+    "questions": [
+      {
+        "question": "Comment fonctionne réellement le paiement ?",
+        "answer": "Nous sommes payés en fonction des clients livrés. Pour le B2C avec des revenus récurrents mensuels, le paiement est par abonnement actif. Pour les ventes B2B basées sur des contrats, le paiement est par transaction conclue. Pas d'honoraires mensuels, pas de coûts initiaux—seulement des résultats."
+      },
+      {
+        "question": "Dans quelles industries travaillez-vous ?",
+        "answer": "Nous nous spécialisons dans les entreprises B2B avec des cycles de vente complexes, en particulier celles qui se développent au Québec ou qui étendent l'acquisition multicanal. Les télécommunications, les SaaS, les services financiers et les services professionnels sont nos points forts."
+      },
+      {
+        "question": "À quelle vitesse pouvons-nous commencer ?",
+        "answer": "Notre intégration rationalisée vous permet d'être opérationnel en 30 jours—comparé aux 11 mois et plus qu'il faut pour construire une équipe interne. Votre gestionnaire de compte dédié s'occupe de tout, de la stratégie au déploiement de l'équipe."
+      },
+      {
+        "question": "Qu'est-ce qui vous différencie des agences traditionnelles ?",
+        "answer": "Trois choses : (1) Une expertise approfondie du marché québécois que vous ne pouvez pas construire du jour au lendemain, (2) Une maîtrise multicanal—pas seulement une tactique, et (3) Un bilan éprouvé de 40 M$ avec TELUS. Nous ne générons pas seulement des prospects ; nous construisons des moteurs de croissance durables."
+      },
+      {
+        "question": "Exigez-vous des contrats à long terme ?",
+        "answer": "Non. Nous travaillons selon des conditions de performance avec des modèles d'engagement flexibles. Parce que nous ne sommes payés que lorsque vous obtenez des clients, nos incitations sont alignées. La plupart des clients restent parce que les résultats parlent d'eux-mêmes."
+      },
+      {
+        "question": "Comment mesurez-vous le succès ?",
+        "answer": "Clients acquis, coût d'acquisition client (CAC) et revenus générés. Nous nous intégrons à vos systèmes CRM et de suivi pour fournir une transparence totale. Chaque client est suivi, attribué et lié à notre livraison."
+      }
+    ]
+  },
+  "scrollToTop": "Retour en haut"
 }

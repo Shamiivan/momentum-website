@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "label": "ABOUT US",
+    "title": "The Power Behind The Pitch"
+  },
+  "story": {
+    "title": "How It All Began",
+    "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Founded with a mission to bridge the gap between brands and customers.",
+    "paragraph2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. We saw a gap in the industry that needed to be filled - true performance-based partnerships.",
+    "imageAlt": "Business meeting"
+  },
+  "images": {
+    "teamCollaboration": "Team collaboration",
+    "professionalTeamMember": "Professional team member"
+  },
+  "mission": {
+    "title": "What Drives Us",
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+    "values": [
+      {
+        "title": "We Help, We do not Sell",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Obsessed with measurable outcomes, not vanity metrics. Performance-based model reflects our commitment. We only win when you win."
+      },
+      {
+        "title": "Hardwork",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Deep understanding of the North American market. Cultural fluency and proven track record across the region."
+      },
+      {
+        "title": "Energy",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Only paid when clients get customers. Aligned incentives, no retainer risk. True partnership, shared success model."
+      },
+      {
+        "title": "Meritocracy",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Unlike agencies specializing in one channel. 6 channels, integrated approach. We go where your customers are."
+      }
+    ]
+  },
+  "culture": {
+    "title": "Mission Statement",
+    "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    "paragraph2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.",
+    "paragraph3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+    "teamCelebration": "Team celebration",
+    "teamWorkingTogether": "Team working together"
+  },
+  "leadership": {
+    "title": "Meet Our Founders",
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. The visionaries behind our success.",
+    "founders": [
+      {
+        "name": "John Doe",
+        "role": "Co-Founder & CEO",
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Over 15 years of experience in multi-channel sales and business development. Led partnerships with Fortune 500 companies generating $40M+ in revenue."
+      },
+      {
+        "name": "Jane Smith",
+        "role": "Co-Founder & COO",
+        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Expert in Quebec market expansion and operational excellence. Built and trained sales teams of 500+ professionals across North America."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Let's Grow Together",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.",
+    "button": "Schedule a Free Consultation"
+  }
+}

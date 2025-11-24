@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Logo from './Logo';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -63,6 +64,8 @@ const Footer = () => {
             <a href="#privacy">{t('footer.privacyPolicy')}</a>
             <span className="footer-separator">•</span>
             <a href="#terms">{t('footer.termsOfService')}</a>
+            <span className="footer-separator">•</span>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>

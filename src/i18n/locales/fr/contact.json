@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "Contactez-nous"
+  },
+  "form": {
+    "title": "Envoyez-nous un message",
+    "firstName": "Prénom",
+    "firstNamePlaceholder": "Jean",
+    "lastName": "Nom",
+    "lastNamePlaceholder": "Dupont",
+    "email": "Courriel",
+    "emailPlaceholder": "jean@entreprise.com",
+    "phone": "Téléphone",
+    "phonePlaceholder": "+1 (514) 123-4567",
+    "company": "Nom de l'entreprise",
+    "companyPlaceholder": "Votre Entreprise Inc.",
+    "message": "Comment pouvons-nous vous aider?",
+    "messagePlaceholder": "Parlez-nous de vos objectifs, problèmes et de la façon dont nous pouvons vous aider...",
+    "submit": "Envoyer le message",
+    "responseTime": "Nous répondons généralement dans les 2 heures pendant les heures ouvrables",
+    "required": "*"
+  },
+  "contactInfo": {
+    "title": "Coordonnées",
+    "description": "Contactez-nous directement ou remplissez le formulaire et nous vous répondrons rapidement.",
+    "location": "Emplacement",
+    "email": "Courriel",
+    "phone": "Téléphone",
+    "ctaTitle": "Besoin d'une assistance immédiate?",
+    "ctaDescription": "Planifiez un appel avec notre équipe pour discuter de votre stratégie d'acquisition de clients.",
+    "ctaButton": "Envoyez-nous un courriel"
+  }
+}

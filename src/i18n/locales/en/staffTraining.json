@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "label": "STAFF TRAINING",
+    "title": "Sales Builds the Company",
+    "subtitle": "Comprehensive training programs that transform your team into high-performing sales professionals"
+  },
+  "howWeWork": {
+    "title": "How We Work",
+    "methods": [
+      {
+        "title": "Shadow & Learn",
+        "description": "Your team shadows our expert sales professionals to learn proven techniques in real-world scenarios."
+      },
+      {
+        "title": "Hands-On Practice",
+        "description": "Interactive role-play sessions and simulations to build confidence and refine skills."
+      },
+      {
+        "title": "Personalized Feedback",
+        "description": "Continuous coaching and performance reviews to ensure steady improvement."
+      },
+      {
+        "title": "Ongoing Support",
+        "description": "Post-training resources and check-ins to maintain momentum and reinforce learning."
+      }
+    ]
+  },
+  "philosophy": {
+    "title": "Customer Service IS Sales",
+    "paragraph1": "Every customer interaction is an opportunity to build trust, solve problems, and create lasting relationships. We train your team to view customer service not as a separate function, but as the foundation of successful sales.",
+    "paragraph2": "Our approach integrates empathy, active listening, and problem-solving into every touchpoint, turning support conversations into growth opportunities."
+  },
+  "development": {
+    "title": "We Develop Your Training Material",
+    "paragraph1": "No generic scripts or one-size-fits-all approaches. We create customized training materials tailored to your industry, products, and target audience.",
+    "paragraph2": "From sales playbooks to objection-handling guides, we develop practical resources your team can reference long after training ends."
+  },
+  "training": {
+    "title": "Then We Train Your Team",
+    "topics": [
+      {
+        "title": "Prospecting & Lead Generation",
+        "description": "Identify and qualify high-value leads through strategic outreach and relationship building."
+      },
+      {
+        "title": "Consultative Selling",
+        "description": "Master needs-based selling to position your solution as the perfect fit for customer challenges."
+      },
+      {
+        "title": "Closing Techniques",
+        "description": "Overcome objections and confidently guide prospects to commitment without high-pressure tactics."
+      },
+      {
+        "title": "Relationship Management",
+        "description": "Build long-term customer loyalty through exceptional service and strategic account growth."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Build Your Company?",
+    "button": "Schedule Training Consultation"
+  }
+}
