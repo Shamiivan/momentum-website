@@ -13,8 +13,11 @@ import { EditableServicesSection } from './components/sections/EditableServicesS
 import { EditableCaseStudy } from './components/sections/EditableCaseStudy';
 import { EditableFAQ } from './components/sections/EditableFAQ';
 import { EditableCTA } from './components/sections/EditableCTA';
+import { EditableTeamGrid } from './components/sections/EditableTeamGrid';
+import { EditableValuesGrid } from './components/sections/EditableValuesGrid';
 import { useDisableAnimations } from './useDisableAnimations';
 import { getHomeTemplate } from './templates/homeTemplate';
+import { getAboutTemplate } from './templates/aboutTemplate';
 import '../App.css'; // Import main site styles
 import './EditorWrapper.css';
 
@@ -27,10 +30,11 @@ interface EditorWrapperProps {
 export const EditorWrapper = ({ onSave, initialData, pageId }: EditorWrapperProps) => {
   const [enabled, setEnabled] = useState(true);
 
-  // Load template if no initialData and pageId is 'home'
+  // Load template if no initialData based on pageId
   const getInitialData = () => {
     if (initialData) return initialData;
     if (pageId === 'home') return getHomeTemplate();
+    if (pageId === 'about') return getAboutTemplate();
     return undefined;
   };
 
@@ -65,6 +69,8 @@ export const EditorWrapper = ({ onSave, initialData, pageId }: EditorWrapperProp
           EditableCaseStudy,
           EditableFAQ,
           EditableCTA,
+          EditableTeamGrid,
+          EditableValuesGrid,
         }}
         enabled={enabled}
       >
