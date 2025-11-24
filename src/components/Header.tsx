@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
+import LanguageSwitcher from './LanguageSwitcher'
 import './Header.css'
 
 const Header = () => {
@@ -147,11 +148,15 @@ const Header = () => {
           <Link to="/contact" className="nav-cta-mobile" onClick={() => setMobileMenuOpen(false)}>
             Contact Us
           </Link>
+          <LanguageSwitcher />
         </nav>
 
-        <Link to="/contact" className="header-cta-new header-cta-desktop">
-          Contact Us
-        </Link>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <LanguageSwitcher />
+          <Link to="/contact" className="header-cta-new header-cta-desktop">
+            Contact Us
+          </Link>
+        </div>
       </div>
     </header>
   );
