@@ -12,6 +12,7 @@ import { EditableStatsGrid } from './components/sections/EditableStatsGrid';
 import { EditableServicesSection } from './components/sections/EditableServicesSection';
 import { EditableCaseStudy } from './components/sections/EditableCaseStudy';
 import { EditableFAQ } from './components/sections/EditableFAQ';
+import { EditableCTA } from './components/sections/EditableCTA';
 import { useDisableAnimations } from './useDisableAnimations';
 import '../App.css'; // Import main site styles
 import './EditorWrapper.css';
@@ -54,6 +55,7 @@ export const EditorWrapper = ({ onSave, initialData }: EditorWrapperProps) => {
           EditableServicesSection,
           EditableCaseStudy,
           EditableFAQ,
+          EditableCTA,
         }}
         enabled={enabled}
       >
