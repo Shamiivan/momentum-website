@@ -15,6 +15,9 @@ import { EditableFAQ } from './components/sections/EditableFAQ';
 import { EditableCTA } from './components/sections/EditableCTA';
 import { EditableTeamGrid } from './components/sections/EditableTeamGrid';
 import { EditableValuesGrid } from './components/sections/EditableValuesGrid';
+import { EditableJobsGrid } from './components/sections/EditableJobsGrid';
+import { EditablePerksGrid } from './components/sections/EditablePerksGrid';
+import { EditablePhotoGallery } from './components/sections/EditablePhotoGallery';
 import { useDisableAnimations } from './useDisableAnimations';
 import { getHomeTemplate } from './templates/homeTemplate';
 import { getAboutTemplate } from './templates/aboutTemplate';
@@ -71,6 +74,9 @@ export const EditorWrapper = ({ onSave, initialData, pageId }: EditorWrapperProp
           EditableCTA,
           EditableTeamGrid,
           EditableValuesGrid,
+          EditableJobsGrid,
+          EditablePerksGrid,
+          EditablePhotoGallery,
         }}
         enabled={enabled}
       >
