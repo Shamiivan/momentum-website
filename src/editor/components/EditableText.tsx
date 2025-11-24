@@ -1,4 +1,7 @@
 import { useNode } from '@craftjs/core';
+import { TypographyControl } from './settings/TypographyControl';
+import { ColorPicker } from './settings/ColorPicker';
+import { SpacingControl } from './settings/SpacingControl';
 
 interface EditableTextProps {
   text?: string;
@@ -6,6 +9,11 @@ interface EditableTextProps {
   fontWeight?: string;
   color?: string;
   tag?: 'h1' | 'h2' | 'h3' | 'p' | 'span';
+  fontFamily?: string;
+  lineHeight?: string;
+  letterSpacing?: string;
+  margin?: string;
+  padding?: string;
 }
 
 export const EditableText = ({
@@ -14,6 +22,11 @@ export const EditableText = ({
   fontWeight = 'normal',
   color = 'inherit',
   tag: Tag = 'p',
+  fontFamily = 'inherit',
+  lineHeight = 'inherit',
+  letterSpacing = 'inherit',
+  margin = '0',
+  padding = '0.5rem',
 }: EditableTextProps) => {
   const {
     connectors: { connect, drag },
@@ -33,8 +46,11 @@ export const EditableText = ({
         fontSize,
         fontWeight,
         color,
-        margin: 0,
-        padding: '0.5rem',
+        fontFamily,
+        lineHeight,
+        letterSpacing,
+        margin,
+        padding,
         border: selected ? '2px dashed #d4af37' : '2px dashed transparent',
         cursor: 'move',
       }}
@@ -53,12 +69,22 @@ const EditableTextSettings = () => {
     fontWeight,
     color,
     tag,
+    fontFamily,
+    lineHeight,
+    letterSpacing,
+    margin,
+    padding,
   } = useNode((node) => ({
     text: node.data.props.text,
     fontSize: node.data.props.fontSize,
     fontWeight: node.data.props.fontWeight,
     color: node.data.props.color,
     tag: node.data.props.tag,
+    fontFamily: node.data.props.fontFamily,
+    lineHeight: node.data.props.lineHeight,
+    letterSpacing: node.data.props.letterSpacing,
+    margin: node.data.props.margin,
+    padding: node.data.props.padding,
   }));
 
   return (
@@ -92,41 +118,63 @@ const EditableTextSettings = () => {
         </select>
       </div>
 
+      <ColorPicker
+        label="Text Color"
+        value={color}
+        onChange={(value) => setProp((props: EditableTextProps) => (props.color = value))}
+      />
+
+      <TypographyControl
+        fontSize={fontSize}
+        fontWeight={fontWeight}
+        onFontSizeChange={(value) => setProp((props: EditableTextProps) => (props.fontSize = value))}
+        onFontWeightChange={(value) => setProp((props: EditableTextProps) => (props.fontWeight = value))}
+      />
+
       <div className="editor-settings-section">
-        <label className="editor-settings-label">Font Size</label>
+        <label className="editor-settings-label">Font Family</label>
         <input
           type="text"
           className="editor-settings-input"
-          value={fontSize}
-          onChange={(e) => setProp((props: EditableTextProps) => (props.fontSize = e.target.value))}
-          placeholder="e.g., 1.5rem, 24px"
+          value={fontFamily}
+          onChange={(e) => setProp((props: EditableTextProps) => (props.fontFamily = e.target.value))}
+          placeholder="e.g., Arial, sans-serif"
         />
       </div>
 
       <div className="editor-settings-section">
-        <label className="editor-settings-label">Font Weight</label>
-        <select
-          className="editor-settings-select"
-          value={fontWeight}
-          onChange={(e) => setProp((props: EditableTextProps) => (props.fontWeight = e.target.value))}
-        >
-          <option value="normal">Normal</option>
-          <option value="500">Medium</option>
-          <option value="600">Semi-Bold</option>
-          <option value="700">Bold</option>
-        </select>
-      </div>
-
-      <div className="editor-settings-section">
-        <label className="editor-settings-label">Color</label>
+        <label className="editor-settings-label">Line Height</label>
         <input
           type="text"
           className="editor-settings-input"
-          value={color}
-          onChange={(e) => setProp((props: EditableTextProps) => (props.color = e.target.value))}
-          placeholder="e.g., #333, var(--color-text)"
+          value={lineHeight}
+          onChange={(e) => setProp((props: EditableTextProps) => (props.lineHeight = e.target.value))}
+          placeholder="e.g., 1.5, 24px"
         />
       </div>
+
+      <div className="editor-settings-section">
+        <label className="editor-settings-label">Letter Spacing</label>
+        <input
+          type="text"
+          className="editor-settings-input"
+          value={letterSpacing}
+          onChange={(e) => setProp((props: EditableTextProps) => (props.letterSpacing = e.target.value))}
+          placeholder="e.g., 0.05em, 1px"
+        />
+      </div>
+
+      <SpacingControl
+        label="Margin"
+        value={margin}
+        onChange={(value) => setProp((props: EditableTextProps) => (props.margin = value))}
+      />
+
+      <SpacingControl
+        label="Padding"
+        value={padding}
+        onChange={(value) => setProp((props: EditableTextProps) => (props.padding = value))}
+      />
     </div>
   );
 };
@@ -138,6 +186,11 @@ EditableText.craft = {
     fontWeight: 'normal',
     color: 'inherit',
     tag: 'p',
+    fontFamily: 'inherit',
+    lineHeight: 'inherit',
+    letterSpacing: 'inherit',
+    margin: '0',
+    padding: '0.5rem',
   },
   related: {
     settings: EditableTextSettings,
