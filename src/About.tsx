@@ -55,11 +55,8 @@ const About = () => {
           <div className="container-new">
             <p className="about-label" data-animate>ABOUT US</p>
             <h1 className="about-hero-title" data-animate>
-              We're here to help you grow
+            The Power Behind The Pitch
             </h1>
-            <p className="about-hero-subtitle" data-animate>
-              Performance-based growth across 6 channels. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
           </div>
         </section>
 
