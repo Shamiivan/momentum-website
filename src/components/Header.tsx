@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Logo from './Logo'
 import LanguageSwitcher from './LanguageSwitcher'
 import './Header.css'
 
 const Header = () => {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -58,7 +60,7 @@ const Header = () => {
         <button
           className="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={mobileMenuOpen ? t('header.closeMenu') : t('header.openMenu')}
           aria-expanded={mobileMenuOpen}
         >
           <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}>
@@ -79,19 +81,19 @@ const Header = () => {
               className="nav-link nav-dropdown-button"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}
             >
-              Services
+              {t('header.services')}
               <span style={{ fontSize: '0.7rem' }}>▼</span>
             </button>
             {servicesOpen && (
               <div className="dropdown-menu">
                 <Link to="/services/partnerships">
-                  Partnerships
+                  {t('header.partnerships')}
                 </Link>
                 <Link to="/services/staff-training">
-                  Staff Training
+                  {t('header.staffTraining')}
                 </Link>
                 <Link to="/services/executive-coaching">
-                  Executive Coaching
+                  {t('header.executiveCoaching')}
                 </Link>
               </div>
             )}
@@ -100,7 +102,7 @@ const Header = () => {
           {/* Mobile Services (expandable) */}
           <div className="mobile-only mobile-services-section">
             <button className="mobile-services-title">
-              Services
+              {t('header.services')}
             </button>
             <div className="mobile-services-submenu">
               <Link
@@ -108,27 +110,27 @@ const Header = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="mobile-submenu-item"
               >
-                <span className="submenu-arrow">→</span> Partnerships
+                <span className="submenu-arrow">→</span> {t('header.partnerships')}
               </Link>
               <Link
                 to="/services/staff-training"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mobile-submenu-item"
               >
-                <span className="submenu-arrow">→</span> Staff Training
+                <span className="submenu-arrow">→</span> {t('header.staffTraining')}
               </Link>
               <Link
                 to="/services/executive-coaching"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mobile-submenu-item"
               >
-                <span className="submenu-arrow">→</span> Executive Coaching
+                <span className="submenu-arrow">→</span> {t('header.executiveCoaching')}
               </Link>
             </div>
           </div>
 
-          <Link to="/careers" onClick={() => setMobileMenuOpen(false)}>Careers</Link>
-          <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+          <Link to="/careers" onClick={() => setMobileMenuOpen(false)}>{t('header.careers')}</Link>
+          <Link to="/about" onClick={() => setMobileMenuOpen(false)}>{t('header.about')}</Link>
           <a
             href="/#faq"
             onClick={(e) => {
@@ -143,10 +145,10 @@ const Header = () => {
               }
             }}
           >
-            FAQ
+            {t('header.faq')}
           </a>
           <Link to="/contact" className="nav-cta-mobile" onClick={() => setMobileMenuOpen(false)}>
-            Contact Us
+            {t('header.contact')}
           </Link>
           <LanguageSwitcher />
         </nav>
@@ -154,7 +156,7 @@ const Header = () => {
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <LanguageSwitcher />
           <Link to="/contact" className="header-cta-new header-cta-desktop">
-            Contact Us
+            {t('header.contact')}
           </Link>
         </div>
       </div>
