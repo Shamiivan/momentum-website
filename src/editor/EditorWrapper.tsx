@@ -8,6 +8,7 @@ import { EditableContainer } from './components/EditableContainer';
 import { EditableHero } from './components/EditableHero';
 import { EditableStatCard } from './components/EditableStatCard';
 import { EditableButton } from './components/base/EditableButton';
+import { EditableStatsGrid } from './components/sections/EditableStatsGrid';
 import { useDisableAnimations } from './useDisableAnimations';
 import '../App.css'; // Import main site styles
 import './EditorWrapper.css';
@@ -46,6 +47,7 @@ export const EditorWrapper = ({ onSave, initialData }: EditorWrapperProps) => {
           EditableHero,
           EditableStatCard,
           EditableButton,
+          EditableStatsGrid,
         }}
         enabled={enabled}
       >
