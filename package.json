@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "npx eslint",
+    "lint:fix": "npx eslint  --fix --max-warnings 0",
+    "type-check": "npx tsc --noEmit --pretty",
+    "ship": "pnpm run lint:fix && pnpm run type-check && pnpm run build && git push",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -25,6 +28,7 @@
     "@vitejs/plugin-react": "^5.0.4",
     "babel-plugin-react-compiler": "^19.1.0-rc.3",
     "eslint": "^9.36.0",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
