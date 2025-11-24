@@ -7,6 +7,7 @@ import { EditableText } from './components/EditableText';
 import { EditableContainer } from './components/EditableContainer';
 import { EditableHero } from './components/EditableHero';
 import { EditableStatCard } from './components/EditableStatCard';
+import { EditableButton } from './components/base/EditableButton';
 import { useDisableAnimations } from './useDisableAnimations';
 import '../App.css'; // Import main site styles
 import './EditorWrapper.css';
@@ -44,6 +45,7 @@ export const EditorWrapper = ({ onSave, initialData }: EditorWrapperProps) => {
           EditableContainer,
           EditableHero,
           EditableStatCard,
+          EditableButton,
         }}
         enabled={enabled}
       >
