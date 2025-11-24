@@ -76,10 +76,6 @@ const About = () => {
                     in voluptate velit esse cillum dolore eu fugiat nulla pariatur. We saw a gap in the industry
                     that needed to be filled - true performance-based partnerships.
                   </p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Today, 25+ companies served, $50M+ generated,
-                    and 500+ professionals trained. We continue to grow by staying true to our core mission.
-                  </p>
                 </div>
               </div>
               <div className="about-story-image" data-animate>
